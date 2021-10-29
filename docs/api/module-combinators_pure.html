@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>combinators/pure - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-combinators_pure.html">combinators/pure</a><ul class='methods'><li data-type='method'><a href="module-combinators_pure.html#.B">B</a></li><li data-type='method'><a href="module-combinators_pure.html#.C">C</a></li><li data-type='method'><a href="module-combinators_pure.html#.I">I</a></li><li data-type='method'><a href="module-combinators_pure.html#.K">K</a></li><li data-type='method'><a href="module-combinators_pure.html#.S">S</a></li><li data-type='method'><a href="module-combinators_pure.html#.W">W</a></li></ul></li><li><a href="module-functions.html">functions</a><ul class='methods'><li data-type='method'><a href="module-functions.html#.curry">curry</a></li><li data-type='method'><a href="module-functions.html#.scan">scan</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">combinators/pure</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".B"><span class="type-signature">(static) </span>B<span class="signature">(a, b, c)</span><span class="type-signature"> &rarr; {V}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="combinators_pure_B.js.html">combinators/pure/B.js</a>, <a href="combinators_pure_B.js.html#line36">line 36</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>The <strong>B</strong> combinator. This is the composition combinator.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type signature</td>
+<td><code>(a -&gt; b) -&gt; (c -&gt; a) -&gt; c -&gt; b</code></td>
+</tr>
+<tr>
+<td>Lambda representation</td>
+<td><code>λxyz.x(yz)</code></td>
+</tr>
+<tr>
+<td>SK system</td>
+<td><code>S(KS)K</code></td>
+</tr>
+<tr>
+<td>BCKW system</td>
+<td><code>B</code></td>
+</tr>
+<tr>
+<td>Bird</td>
+<td>Bluebird</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>B</strong> combinator performs the composition of two single-argument functions. This
+means that the second function (<code>b</code>) is applied to an argument, and then the first
+function (<code>a</code>) is applied to that result. This is the basic way of combining two
+functions into another function that does the same thing as the two component functions
+being applied in reverse order.</p>
+<p>As the composition combinator, <strong>B</strong> has equivalent operators in many languages,
+including <code>.</code> in Haskell, <code>∘</code> in APL, and <code>&amp;</code> in J. Concatenative languages (such as
+Forth and Factor) are called concatenative because composition is done by simply naming
+two functions next to each other (&quot;concatenating&quot; the functions).</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>a</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A function of one argument of type U that returns a result of
+type V. This return value becomes the return value of the entire combinator.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>b</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A function of one argument of type T that returns a result of
+type U. This return value becomes the argument for function <code>a</code>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>c</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">T</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A value of type T. This value becomes the argument for function <code>b</code>.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A value of type V, which is returned by function <code>a</code>.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">V</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".C"><span class="type-signature">(static) </span>C<span class="signature">(a, b, c)</span><span class="type-signature"> &rarr; {V}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="combinators_pure_C.js.html">combinators/pure/C.js</a>, <a href="combinators_pure_C.js.html#line27">line 27</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>The <strong>C</strong> combinator. This is the flip or swap combinator.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type signature</td>
+<td><code>(a -&gt; b -&gt; c) -&gt; b -&gt; a -&gt; c</code></td>
+</tr>
+<tr>
+<td>Lambda representation</td>
+<td><code>λxyz.xzy</code></td>
+</tr>
+<tr>
+<td>SK system</td>
+<td><code>S(S(K(S(KS)K))S)(KK)</code></td>
+</tr>
+<tr>
+<td>BCKW system</td>
+<td><code>C</code></td>
+</tr>
+<tr>
+<td>Bird</td>
+<td>Cardinal</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>C</strong> combinator swaps the order of its second and third arguments <code>b</code> and <code>c</code> and
+then applies the first argument function <code>a</code> to those arguments in their new order.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>a</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A function of two arguments of types U and T which returns a
+value of type V. This return value is the return value of the full combinator.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>b</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">T</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A value of type T. This becomes the second argument to function <code>a</code>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>c</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">U</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A value of type U. This becomes the first argument to function <code>a</code>.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The return value of function <code>a</code>.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">V</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".I"><span class="type-signature">(static) </span>I<span class="signature">(a)</span><span class="type-signature"> &rarr; {T}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="combinators_pure_I.js.html">combinators/pure/I.js</a>, <a href="combinators_pure_I.js.html#line23">line 23</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>The <strong>I</strong> combinator. This is the identity combinator.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type signature</td>
+<td><code>a -&gt; a</code></td>
+</tr>
+<tr>
+<td>Lambda representation</td>
+<td><code>λx.x</code></td>
+</tr>
+<tr>
+<td>SK system</td>
+<td><code>SKK</code></td>
+</tr>
+<tr>
+<td>BCKW system</td>
+<td><code>WK</code></td>
+</tr>
+<tr>
+<td>Bird</td>
+<td>Identity bird</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>I</strong> combinator simply returns whatever value is passed to it.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>a</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">T</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A value of type T.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The same value that was passed into the combinator.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">T</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".K"><span class="type-signature">(static) </span>K<span class="signature">(a)</span><span class="type-signature"> &rarr; {function}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="combinators_pure_K.js.html">combinators/pure/K.js</a>, <a href="combinators_pure_K.js.html#line31">line 31</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>The <strong>K</strong> combinator. This is the constant combinator.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type signature</td>
+<td><code>a -&gt; b -&gt; a</code></td>
+</tr>
+<tr>
+<td>Lambda representation</td>
+<td><code>λxy.x</code></td>
+</tr>
+<tr>
+<td>SK system</td>
+<td><code>K</code></td>
+</tr>
+<tr>
+<td>BCKW system</td>
+<td><code>K</code></td>
+</tr>
+<tr>
+<td>Bird</td>
+<td>Kestrel</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>K</strong> combinator produces functions (closures) that return the <strong>K</strong> combinator's
+first argument, no matter what arguments are passed to the produced function.</p>
+<p>For this reason the type signature given above doesn't really match the JavaScript
+implementation's type signature. There is no equivalent to the <code>b</code> parameter inthe type
+signature above; it's not considered good style to include a parameter that doesn't get
+referenced in the body of the function. Besides, the produced function, like all
+JavaScript functions, can take arbitrary arguments even if the parameter list is empty.
+These arguments are simply ignored, which is exactly the desired effect anyway.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>a</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">T</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A value that will be returned by the returned constant function.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A function which ignores its arguments and returns <code>a</code>.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">function</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".S"><span class="type-signature">(static) </span>S<span class="signature">(a, b, c)</span><span class="type-signature"> &rarr; {V}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="combinators_pure_S.js.html">combinators/pure/S.js</a>, <a href="combinators_pure_S.js.html#line36">line 36</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>The <strong>S</strong> combinator. This is the substitution combinator.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type signature</td>
+<td><code>(a -&gt; b -&gt; c) -&gt; (a -&gt; b) -&gt; a -&gt; c</code></td>
+</tr>
+<tr>
+<td>Lambda representation</td>
+<td><code>λxyz.xz(yz)</code></td>
+</tr>
+<tr>
+<td>SK system</td>
+<td><code>S</code></td>
+</tr>
+<tr>
+<td>BCKW system</td>
+<td><code>B(BW)(BBC)</code></td>
+</tr>
+<tr>
+<td>Bird</td>
+<td>Starling</td>
+</tr>
+</tbody>
+</table>
+<p>The idea of substitution comes from the fact that, rather than merely applying <code>a</code> to
+<code>b</code>, it first <em>substitutes</em> them both by applying a third argument <code>c</code> to each of them
+before performing that application.</p>
+<p>(In fact, Moses Schönfinkel named this combinator &quot;<strong>S</strong>&quot; in 1924, where the combinator's
+name in German was <em>Verschmelzungsfunktion</em> or &quot;fusion function&quot;. The <strong>S</strong> was to avoid
+confusion with another combinator that he named <em>Vertauschungsfunktion</em> (&quot;swap
+function&quot;); rather than name either of them <strong>V</strong>, he went with the first letters of the
+roots <em>schmelzen</em> and <em>tauschen</em>. The latter he called <strong>T</strong>, which Haskell Curry renamed
+to <strong>C</strong> in 1930. Curry chose to keep <strong>S</strong> though.)</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>a</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A function of two arguments of types T and U which returns a
+value of type V. This return value is the return value of the entire combinator.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>b</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A function of one argument of type T which returns a value of
+type U. This return value is passed into function <code>a</code>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>c</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">T</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A value of type T, which is passed into both functions <code>a</code> and <code>b</code>.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A value of type V, the type returned by function <code>a</code>.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">V</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".W"><span class="type-signature">(static) </span>W<span class="signature">(a, b)</span><span class="type-signature"> &rarr; {U}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="combinators_pure_W.js.html">combinators/pure/W.js</a>, <a href="combinators_pure_W.js.html#line27">line 27</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>The <strong>W</strong> combinator. This is the duplicate combinator.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type signature</td>
+<td><code>(a -&gt; a -&gt; b) -&gt; a -&gt; b</code></td>
+</tr>
+<tr>
+<td>Lambda representation</td>
+<td><code>λxy.xyy</code></td>
+</tr>
+<tr>
+<td>SK system</td>
+<td><code>SS(SK)</code></td>
+</tr>
+<tr>
+<td>BCKW system</td>
+<td><code>W</code></td>
+</tr>
+<tr>
+<td>Bird</td>
+<td>Warbler</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>W</strong> combinator duplicates its second argument <code>b</code> and then applies its first
+argument <code>a</code> to both instances of <code>b</code>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>a</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A function of two arguments, both of type T, which returns a
+value of type U. This return value becomes the return value of the full combinator.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>b</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">T</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A value of type T. This value is duplicated and passed (twice) to function
+<code>a</code>.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The result of function <code>a</code> when applied to <code>b</code> twice.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">U</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

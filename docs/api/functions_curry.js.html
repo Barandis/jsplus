@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>curry.js - Documentation</title>
+    <title>functions/curry.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -27,12 +27,12 @@
 
 <nav >
     
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#curry">curry</a></li><li><a href="global.html#scan">scan</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-combinators_pure.html">combinators/pure</a><ul class='methods'><li data-type='method'><a href="module-combinators_pure.html#.B">B</a></li><li data-type='method'><a href="module-combinators_pure.html#.C">C</a></li><li data-type='method'><a href="module-combinators_pure.html#.I">I</a></li><li data-type='method'><a href="module-combinators_pure.html#.K">K</a></li><li data-type='method'><a href="module-combinators_pure.html#.S">S</a></li><li data-type='method'><a href="module-combinators_pure.html#.W">W</a></li></ul></li><li><a href="module-functions.html">functions</a><ul class='methods'><li data-type='method'><a href="module-functions.html#.curry">curry</a></li><li data-type='method'><a href="module-functions.html#.scan">scan</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
     
-    <h1 class="page-title">curry.js</h1>
+    <h1 class="page-title">functions/curry.js</h1>
     
 
     
@@ -80,6 +80,7 @@
  * @returns {function} A new function that behaves as `fn`, unless it's called with fewer
  *      arguments than the number given in `fn`'s definition. In this case, the new function
  *      will return another new function that accepts the *rest* of the arguments.
+ * @alias module:functions.curry
  */
 function curry(fn) {
   return function curried(...args) {

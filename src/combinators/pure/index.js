@@ -4,9 +4,13 @@
 // https://opensource.org/licenses/MIT
 
 /**
- * @module functions
+ * @module combinators/pure
  */
 module.exports = {
-  curry: require('./curry'),
-  scan: require('./scan'),
+  B: require('./B'),
+  C: require('./C'),
+  I: require('./I'),
+  K: require('./K'),
+  S: require('./S'),
+  W: require('./W'),
 }

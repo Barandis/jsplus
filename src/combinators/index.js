@@ -3,10 +3,6 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-/**
- * @module functions
- */
-module.exports = {
-  curry: require('./curry'),
-  scan: require('./scan'),
-}
+const pure = require('./pure')
+
+module.exports = { ...pure }

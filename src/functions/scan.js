@@ -24,6 +24,7 @@
  * @param {U} initial The initial value provided to the reducer function on its first call.
  * @returns {U[]} A collection of all of the values returned by the reducer function. This
  *     array will have one element for each time the reducer function was executed.
+ * @alias module:functions.scan
  */
 function scan(iterable, reducer, initial) {
   const values = []

@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>scan.js - Documentation</title>
+    <title>combinators/pure/index.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -27,12 +27,12 @@
 
 <nav >
     
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#curry">curry</a></li><li><a href="global.html#scan">scan</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-combinators_pure.html">combinators/pure</a><ul class='methods'><li data-type='method'><a href="module-combinators_pure.html#.B">B</a></li><li data-type='method'><a href="module-combinators_pure.html#.C">C</a></li><li data-type='method'><a href="module-combinators_pure.html#.I">I</a></li><li data-type='method'><a href="module-combinators_pure.html#.K">K</a></li><li data-type='method'><a href="module-combinators_pure.html#.S">S</a></li><li data-type='method'><a href="module-combinators_pure.html#.W">W</a></li></ul></li><li><a href="module-functions.html">functions</a><ul class='methods'><li data-type='method'><a href="module-functions.html#.curry">curry</a></li><li data-type='method'><a href="module-functions.html#.scan">scan</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
     
-    <h1 class="page-title">scan.js</h1>
+    <h1 class="page-title">combinators/pure/index.js</h1>
     
 
     
@@ -48,40 +48,16 @@
 // https://opensource.org/licenses/MIT
 
 /**
- * Reduces a collection, returning all of the intermediate reduction values. This is the
- * same as a `reduce` function except that it collects all intermediate results while
- * `reduce` will only return the final result.
- *
- * ### Example
- *
- * ```javascript
- * const array = [1, 2, 3, 4, 5]
- * const sum = (a, b) => a + b
- *
- * const results = scan(array, sum, 0)
- * console.log(results)  // [1,3,6,10,15]
- * ```
- *
- * @param {Iterable&lt;T>} iterable The iterable supplying values to the reducer function.
- * @param {function(U,T):U} reducer The reducer function, taking a result and a value and
- *     returning the two reduced together.
- * @param {U} initial The initial value provided to the reducer function on its first call.
- * @returns {U[]} A collection of all of the values returned by the reducer function. This
- *     array will have one element for each time the reducer function was executed.
+ * @module combinators/pure
  */
-function scan(iterable, reducer, initial) {
-  const values = []
-
-  Array.from(iterable).reduce((acc, value) => {
-    const result = reducer(acc, value)
-    values.push(result)
-    return result
-  }, initial)
-
-  return values
+module.exports = {
+  B: require('./B'),
+  C: require('./C'),
+  I: require('./I'),
+  K: require('./K'),
+  S: require('./S'),
+  W: require('./W'),
 }
-
-module.exports = scan
 </code></pre>
         </article>
     </section>

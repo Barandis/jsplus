@@ -36,6 +36,7 @@
  * @returns {function} A new function that behaves as `fn`, unless it's called with fewer
  *      arguments than the number given in `fn`'s definition. In this case, the new function
  *      will return another new function that accepts the *rest* of the arguments.
+ * @alias module:functions.curry
  */
 function curry(fn) {
   return function curried(...args) {
