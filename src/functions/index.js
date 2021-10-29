@@ -5,4 +5,5 @@
 
 module.exports = {
   curry: require('./curry'),
+  scan: require('./scan'),
 }

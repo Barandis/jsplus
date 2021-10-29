@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>curry.js - Documentation</title>
+    <title>scan.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">curry.js</h1>
+    <h1 class="page-title">scan.js</h1>
     
 
     
@@ -48,46 +48,40 @@
 // https://opensource.org/licenses/MIT
 
 /**
- * Produces a curried function out of a regular function.
+ * Reduces a collection, returning all of the intermediate reduction values. This is the
+ * same as a `reduce` function except that it collects all intermediate results while
+ * `reduce` will only return the final result.
  *
- * This curried function is quite flexible. If it is called with the same number of
- * arguments as the original function, then it will simply execute the original function.
- *
- * However, if it is called with fewer arguments, it will return a function that takes only
- * the *remaining* arguments and still produces the same result. The returned function is
- * itself curried, so this process can be done again.
- *
- * This currying function requires that its original function specify its arguments. It will
- * not work on functions that use `arguments` to determine its arguments. Rest parameters
- * and default parameters are not counted, so using this function with them will produce
- * curried functions that expect a number of arguments in total that do not include those
- * parameters (or anything after them).
- *
- * ### Examples
+ * ### Example
  *
  * ```javascript
- * const sum = curry((a, b, c) => a + b + c)
+ * const array = [1, 2, 3, 4, 5]
+ * const sum = (a, b) => a + b
  *
- * // Each of the following are equivalent, and all return 6.
- * sum(1, 2, 3)
- * sum(1, 2)(3)
- * sum(1)(2, 3)
- * sum()(1, 2, 3)
- * sum(1)(2)(3)
+ * const results = scan(array, sum, 0)
+ * console.log(results)  // [1,3,6,10,15]
  * ```
  *
- * @param {function} fn A function of any number of arguments.
- * @returns {function} A new function that behaves as `fn`, unless it's called with fewer
- *      arguments than the number given in `fn`'s definition. In this case, the new function
- *      will return another new function that accepts the *rest* of the arguments.
+ * @param {Iterable&lt;T>} iterable The iterable supplying values to the reducer function.
+ * @param {function(U,T):U} reducer The reducer function, taking a result and a value and
+ *     returning the two reduced together.
+ * @param {U} initial The initial value provided to the reducer function on its first call.
+ * @returns {U[]} A collection of all of the values returned by the reducer function. This
+ *     array will have one element for each time the reducer function was executed.
  */
-function curry(fn) {
-  return function curried(...args) {
-    return args.length >= fn.length ? fn(...args) : (...rest) => curried(...args, ...rest)
-  }
+function scan(iterable, reducer, initial) {
+  const values = []
+
+  Array.from(iterable).reduce((acc, value) => {
+    const result = reducer(acc, value)
+    values.push(result)
+    return result
+  }, initial)
+
+  return values
 }
 
-module.exports = curry
+module.exports = scan
 </code></pre>
         </article>
     </section>
