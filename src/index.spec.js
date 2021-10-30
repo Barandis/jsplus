@@ -3,7 +3,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const { expect } = require('test/common')
+const { expect } = require('chai')
 
 const index = require('.')
 
@@ -15,6 +15,7 @@ const S = require('./combinators/pure/S')
 const W = require('./combinators/pure/W')
 
 const curry = require('./functions/curry')
+const partial = require('./functions/partial')
 const scan = require('./functions/scan')
 
 describe('src index', () => {
@@ -29,6 +30,7 @@ describe('src index', () => {
 
     // functions
     expect(curry).to.equal(index.curry)
+    expect(partial).to.equal(index.partial)
     expect(scan).to.equal(index.scan)
   })
 })

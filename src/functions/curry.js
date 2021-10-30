@@ -19,17 +19,17 @@
  * curried functions that expect a number of arguments in total that do not include those
  * parameters (or anything after them).
  *
- * ### Examples
+ * # Examples
  *
  * ```javascript
  * const sum = curry((a, b, c) => a + b + c)
  *
- * // Each of the following are equivalent, and all return 6.
- * sum(1, 2, 3)
- * sum(1, 2)(3)
- * sum(1)(2, 3)
- * sum()(1, 2, 3)
- * sum(1)(2)(3)
+ * // Each of the following are equivalent, and all print '6' to the console.
+ * console.log(sum(1, 2, 3))
+ * console.log(sum(1, 2)(3))
+ * console.log(sum(1)(2, 3))
+ * console.log(sum()(1, 2, 3))
+ * console.log(sum(1)(2)(3))
  * ```
  *
  * @param {function} fn A function of any number of arguments.

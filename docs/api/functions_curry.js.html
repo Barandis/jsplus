@@ -27,7 +27,7 @@
 
 <nav >
     
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-combinators_pure.html">combinators/pure</a><ul class='methods'><li data-type='method'><a href="module-combinators_pure.html#.B">B</a></li><li data-type='method'><a href="module-combinators_pure.html#.C">C</a></li><li data-type='method'><a href="module-combinators_pure.html#.I">I</a></li><li data-type='method'><a href="module-combinators_pure.html#.K">K</a></li><li data-type='method'><a href="module-combinators_pure.html#.S">S</a></li><li data-type='method'><a href="module-combinators_pure.html#.W">W</a></li></ul></li><li><a href="module-functions.html">functions</a><ul class='methods'><li data-type='method'><a href="module-functions.html#.curry">curry</a></li><li data-type='method'><a href="module-functions.html#.scan">scan</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-combinators_pure.html">combinators/pure</a><ul class='methods'><li data-type='method'><a href="module-combinators_pure.html#.B">B</a></li><li data-type='method'><a href="module-combinators_pure.html#.C">C</a></li><li data-type='method'><a href="module-combinators_pure.html#.I">I</a></li><li data-type='method'><a href="module-combinators_pure.html#.K">K</a></li><li data-type='method'><a href="module-combinators_pure.html#.S">S</a></li><li data-type='method'><a href="module-combinators_pure.html#.W">W</a></li></ul></li><li><a href="module-functions.html">functions</a><ul class='methods'><li data-type='method'><a href="module-functions.html#.curry">curry</a></li><li data-type='method'><a href="module-functions.html#.partial">partial</a></li><li data-type='method'><a href="module-functions.html#.scan">scan</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -63,17 +63,17 @@
  * curried functions that expect a number of arguments in total that do not include those
  * parameters (or anything after them).
  *
- * ### Examples
+ * # Examples
  *
  * ```javascript
  * const sum = curry((a, b, c) => a + b + c)
  *
- * // Each of the following are equivalent, and all return 6.
- * sum(1, 2, 3)
- * sum(1, 2)(3)
- * sum(1)(2, 3)
- * sum()(1, 2, 3)
- * sum(1)(2)(3)
+ * // Each of the following are equivalent, and all print '6' to the console.
+ * console.log(sum(1, 2, 3))
+ * console.log(sum(1, 2)(3))
+ * console.log(sum(1)(2, 3))
+ * console.log(sum()(1, 2, 3))
+ * console.log(sum(1)(2)(3))
  * ```
  *
  * @param {function} fn A function of any number of arguments.

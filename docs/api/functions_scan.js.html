@@ -27,7 +27,7 @@
 
 <nav >
     
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-combinators_pure.html">combinators/pure</a><ul class='methods'><li data-type='method'><a href="module-combinators_pure.html#.B">B</a></li><li data-type='method'><a href="module-combinators_pure.html#.C">C</a></li><li data-type='method'><a href="module-combinators_pure.html#.I">I</a></li><li data-type='method'><a href="module-combinators_pure.html#.K">K</a></li><li data-type='method'><a href="module-combinators_pure.html#.S">S</a></li><li data-type='method'><a href="module-combinators_pure.html#.W">W</a></li></ul></li><li><a href="module-functions.html">functions</a><ul class='methods'><li data-type='method'><a href="module-functions.html#.curry">curry</a></li><li data-type='method'><a href="module-functions.html#.scan">scan</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-combinators_pure.html">combinators/pure</a><ul class='methods'><li data-type='method'><a href="module-combinators_pure.html#.B">B</a></li><li data-type='method'><a href="module-combinators_pure.html#.C">C</a></li><li data-type='method'><a href="module-combinators_pure.html#.I">I</a></li><li data-type='method'><a href="module-combinators_pure.html#.K">K</a></li><li data-type='method'><a href="module-combinators_pure.html#.S">S</a></li><li data-type='method'><a href="module-combinators_pure.html#.W">W</a></li></ul></li><li><a href="module-functions.html">functions</a><ul class='methods'><li data-type='method'><a href="module-functions.html#.curry">curry</a></li><li data-type='method'><a href="module-functions.html#.partial">partial</a></li><li data-type='method'><a href="module-functions.html#.scan">scan</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -52,7 +52,7 @@
  * same as a `reduce` function except that it collects all intermediate results while
  * `reduce` will only return the final result.
  *
- * ### Example
+ * # Examples
  *
  * ```javascript
  * const array = [1, 2, 3, 4, 5]
@@ -62,11 +62,11 @@
  * console.log(results)  // [1,3,6,10,15]
  * ```
  *
- * @param {Iterable&lt;T>} iterable The iterable supplying values to the reducer function.
- * @param {function(U,T):U} reducer The reducer function, taking a result and a value and
+ * @param {iterable} iterable The iterable supplying values to the reducer function.
+ * @param {function} reducer The reducer function, taking a result and a value and
  *     returning the two reduced together.
- * @param {U} initial The initial value provided to the reducer function on its first call.
- * @returns {U[]} A collection of all of the values returned by the reducer function. This
+ * @param {*} initial The initial value provided to the reducer function on its first call.
+ * @returns {array} A collection of all of the values returned by the reducer function. This
  *     array will have one element for each time the reducer function was executed.
  * @alias module:functions.scan
  */

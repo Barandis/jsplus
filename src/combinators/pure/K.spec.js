@@ -3,7 +3,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const { expect } = require('test/common')
+const { expect } = require('chai')
 const K = require('./K')
 const I = require('./I')
 const S = require('./S')

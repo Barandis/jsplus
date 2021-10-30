@@ -8,5 +8,6 @@
  */
 module.exports = {
   curry: require('./curry'),
+  partial: require('./partial'),
   scan: require('./scan'),
 }
