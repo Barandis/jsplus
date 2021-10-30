@@ -29,4 +29,26 @@ describe('curry', () => {
     const result = sum(1)(2)(3)
     expect(result).to.equal(6)
   })
+  it('will not curry a function that it has already curried', () => {
+    const csum = curry(sum)
+    expect(csum(1, 2, 3)).to.equal(6)
+    expect(csum(1, 2)(3)).to.equal(6)
+    expect(csum(1)(2, 3)).to.equal(6)
+    expect(csum()(1, 2, 3)).to.equal(6)
+    expect(csum(1)(2)(3)).to.equal(6)
+  })
+  it('will not curry a function with 0 or 1 arguments', () => {
+    const zeroArg = () => null
+    const oneArg = x => x
+
+    expect(curry(zeroArg)).to.equal(zeroArg)
+    expect(curry(oneArg)).to.equal(oneArg)
+  })
+  it('will not curry a manually curried function', () => {
+    const csum = a => b => c => a + b + c
+    const ccsum = curry(csum)
+
+    expect(csum).to.equal(ccsum)
+    expect(ccsum(1)(2)(3)).to.equal(6)
+  })
 })

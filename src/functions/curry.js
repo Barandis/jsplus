@@ -3,6 +3,8 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
+const CURRIED = Symbol('barandis/curried')
+
 /**
  * Produces a curried function out of a regular function.
  *
@@ -18,6 +20,11 @@
  * and default parameters are not counted, so using this function with them will produce
  * curried functions that expect a number of arguments in total that do not include those
  * parameters (or anything after them).
+ *
+ * If a function has already been curried by this function, or if it has less than two
+ * arguments, passing that function to `curry` will be a no-op (the same function will be
+ * returned without modification). A corollary is that `curry` will not curry a fully
+ * curried function (one in which no parameter list has more than one parameter).
  *
  * # Examples
  *
@@ -39,9 +46,14 @@
  * @alias module:functions.curry
  */
 function curry(fn) {
-  return function curried(...args) {
+  if (fn[CURRIED] || fn.length < 2) return fn
+
+  function curried(...args) {
     return args.length >= fn.length ? fn(...args) : (...rest) => curried(...args, ...rest)
   }
+  Object.defineProperty(curried, CURRIED, { value: true })
+
+  return curried
 }
 
 module.exports = curry
