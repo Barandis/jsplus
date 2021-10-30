@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>functions/curry.js - Documentation</title>
+    <title>combinators/flip.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">functions/curry.js</h1>
+    <h1 class="page-title">combinators/flip.js</h1>
     
 
     
@@ -47,60 +47,42 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const CURRIED = Symbol('barandis/curried')
+const curry = require('functions/curry')
 
 /**
- * Produces a curried function out of a regular function.
+ * Flips the order of the arguments on a two-argument function.
  *
- * This curried function is quite flexible. If it is called with the same number of
- * arguments as the original function, then it will simply execute the original function.
+ * This is an implementation of the **{@link module:combinators/pure.C|C}** combinator that
+ * dispenses with the requirement that its function argument is a curried function. `flip`
+ * will work with both. The result, either way, is a curried function with the argument
+ * order reversed.
  *
- * However, if it is called with fewer arguments, it will return a function that takes only
- * the *remaining* arguments and still produces the same result. The returned function is
- * itself curried, so this process can be done again.
+ * `flip` itself comes pre-curried so it's easy to generate a unary function out of a binary
+ * function with its *second* argument applied instead of its first.
  *
- * This currying function requires that its original function specify its arguments. It will
- * not work on functions that use `arguments` to determine its arguments. Rest parameters
- * and default parameters are not counted, so using this function with them will produce
- * curried functions that expect a number of arguments in total that do not include those
- * parameters (or anything after them).
- *
- * If a function has already been curried by this function, or if it has less than two
- * arguments, passing that function to `curry` will be a no-op (the same function will be
- * returned without modification). A corollary is that `curry` will not curry a fully
- * curried function (one in which no parameter list has more than one parameter).
- *
- * # Examples
+ * # Example
  *
  * ```javascript
- * const sum = curry((a, b, c) => a + b + c)
+ * const sub = (x, y) => x - y
  *
- * // Each of the following are equivalent, and all print '6' to the console.
- * console.log(sum(1, 2, 3))
- * console.log(sum(1, 2)(3))
- * console.log(sum(1)(2, 3))
- * console.log(sum()(1, 2, 3))
- * console.log(sum(1)(2)(3))
+ * // These are all equivalent and all print 4 to the console
+ * console.log(flip(sub, 1, 5)) // evaluate directly
+ * console.log(flip(sub, 1)(5)) // produce 1-argument function
+ * console.log(flip(sub)(1, 5)) // produce 2-argument function
  * ```
  *
- * @param {function} fn A function of any number of arguments.
- * @returns {function} A new function that behaves as `fn`, unless it's called with fewer
- *      arguments than the number given in `fn`'s definition. In this case, the new function
- *      will return another new function that accepts the *rest* of the arguments.
- * @alias module:functions.curry
+ * @param {function} fn A function of two arguments.
+ * @param {*} x The first argument, which `fn` will apply as its second argument.
+ * @param {*} y The second argument, which `fn` will apply as its first argument.
+ * @returns {function} A curried function which expects its arguments in reverse order from
+ *      `fn` but otherwise behaves the same.
+ * @alias module:combinators.flip
  */
-function curry(fn) {
-  if (fn[CURRIED] || fn.length &lt; 2) return fn
-
-  function curried(...args) {
-    return args.length >= fn.length ? fn(...args) : (...rest) => curried(...args, ...rest)
-  }
-  Object.defineProperty(curried, CURRIED, { value: true })
-
-  return curried
+function flip(fn, x, y) {
+  return curry(fn)(y)(x)
 }
 
-module.exports = curry
+module.exports = curry(flip)
 </code></pre>
         </article>
     </section>

@@ -5,4 +5,10 @@
 
 const pure = require('./pure')
 
-module.exports = { ...pure }
+/**
+ * @module combinators
+ */
+module.exports = {
+  ...pure,
+  flip: require('./flip'),
+}
