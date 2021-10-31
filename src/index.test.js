@@ -7,7 +7,9 @@ const { expect } = require('chai')
 
 const index = require('.')
 
+const compose = require('./combinators/compose')
 const flip = require('./combinators/flip')
+const pipe = require('./combinators/pipe')
 
 const B = require('./combinators/pure/B')
 const C = require('./combinators/pure/C')
@@ -30,7 +32,9 @@ const scan = require('./functions/scan')
 describe('src index', () => {
   it('provides all of the exported functions', () => {
     // combinators
+    expect(compose).to.equal(index.compose)
     expect(flip).to.equal(index.flip)
+    expect(pipe).to.equal(index.pipe)
 
     // pure combinators
     expect(B).to.equal(index.B)

@@ -27,7 +27,7 @@
 
 <nav >
     
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-combinators.html">combinators</a><ul class='methods'><li data-type='method'><a href="module-combinators.html#.flip">flip</a></li></ul></li><li><a href="module-combinators_pure.html">combinators/pure</a><ul class='methods'><li data-type='method'><a href="module-combinators_pure.html#.B">B</a></li><li data-type='method'><a href="module-combinators_pure.html#.C">C</a></li><li data-type='method'><a href="module-combinators_pure.html#.I">I</a></li><li data-type='method'><a href="module-combinators_pure.html#.K">K</a></li><li data-type='method'><a href="module-combinators_pure.html#.S">S</a></li><li data-type='method'><a href="module-combinators_pure.html#.W">W</a></li></ul></li><li><a href="module-functions.html">functions</a><ul class='methods'><li data-type='method'><a href="module-functions.html#.curry">curry</a></li><li data-type='method'><a href="module-functions.html#.curry2">curry2</a></li><li data-type='method'><a href="module-functions.html#.curry3">curry3</a></li><li data-type='method'><a href="module-functions.html#.curry4">curry4</a></li><li data-type='method'><a href="module-functions.html#.curry5">curry5</a></li><li data-type='method'><a href="module-functions.html#.curryn">curryn</a></li><li data-type='method'><a href="module-functions.html#.enumerate">enumerate</a></li><li data-type='method'><a href="module-functions.html#.partial">partial</a></li><li data-type='method'><a href="module-functions.html#.range">range</a></li><li data-type='method'><a href="module-functions.html#.scan">scan</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-combinators.html">combinators</a><ul class='methods'><li data-type='method'><a href="module-combinators.html#.compose">compose</a></li><li data-type='method'><a href="module-combinators.html#.flip">flip</a></li><li data-type='method'><a href="module-combinators.html#.pipe">pipe</a></li></ul></li><li><a href="module-combinators_pure.html">combinators/pure</a><ul class='methods'><li data-type='method'><a href="module-combinators_pure.html#.B">B</a></li><li data-type='method'><a href="module-combinators_pure.html#.C">C</a></li><li data-type='method'><a href="module-combinators_pure.html#.I">I</a></li><li data-type='method'><a href="module-combinators_pure.html#.K">K</a></li><li data-type='method'><a href="module-combinators_pure.html#.S">S</a></li><li data-type='method'><a href="module-combinators_pure.html#.W">W</a></li></ul></li><li><a href="module-functions.html">functions</a><ul class='methods'><li data-type='method'><a href="module-functions.html#.curry">curry</a></li><li data-type='method'><a href="module-functions.html#.curry2">curry2</a></li><li data-type='method'><a href="module-functions.html#.curry3">curry3</a></li><li data-type='method'><a href="module-functions.html#.curry4">curry4</a></li><li data-type='method'><a href="module-functions.html#.curry5">curry5</a></li><li data-type='method'><a href="module-functions.html#.curryn">curryn</a></li><li data-type='method'><a href="module-functions.html#.enumerate">enumerate</a></li><li data-type='method'><a href="module-functions.html#.partial">partial</a></li><li data-type='method'><a href="module-functions.html#.range">range</a></li><li data-type='method'><a href="module-functions.html#.scan">scan</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -75,6 +75,181 @@
 
     
         <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".compose"><span class="type-signature">(static) </span>compose<span class="signature">(&hellip;fns)</span><span class="type-signature"> &rarr; {function}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="combinators_compose.js.html">combinators/compose.js</a>, <a href="combinators_compose.js.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Combines two or more single-parameter functions into one single-parameter function that
+passes the results from its contained functions to the next and returns the result of the
+last contained function.</p>
+<p>The order of the functions is reversed, as is traditional in functional programming. If
+you need the order to not be reversed, use <code><a href="module-combinators.html#.pipe">pipe</a></code>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fns</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The functions that should be composed into a single function.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A single function that is the composition of all of the provided
+functions.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">function</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
 
         
             
@@ -275,6 +450,183 @@ console.log(flip(sub)(1, 5)) // produce 2-argument function
 <div class="param-desc">
     <p>A curried function which expects its arguments in reverse order from
 <code>fn</code> but otherwise behaves the same.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">function</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".pipe"><span class="type-signature">(static) </span>pipe<span class="signature">(&hellip;fns)</span><span class="type-signature"> &rarr; {function}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="combinators_pipe.js.html">combinators/pipe.js</a>, <a href="combinators_pipe.js.html#line21">line 21</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Combines two or more single-parameter functions into one single-parameter function that
+passes the results from its contained functions to the next and returns the result of the
+last contained function.</p>
+<p>The order of the functions is <em>not</em> reversed. The first function listed is the first
+applied. This is contrary to the order most often used in functional programming (and
+opposite of the order in <code><a href="module-combinators.html#.compose">compose</a></code>), but there are
+times when the piped order makes more sense than the composed order.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>fns</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>The functions that should be composed into a single function.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>A single function that is the composition of all of the provided
+functions, but with the order of execution reversed.</p>
 </div>
 
 

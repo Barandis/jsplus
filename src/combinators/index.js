@@ -10,5 +10,7 @@ const pure = require('./pure')
  */
 module.exports = {
   ...pure,
+  compose: require('./compose'),
   flip: require('./flip'),
+  pipe: require('./pipe'),
 }

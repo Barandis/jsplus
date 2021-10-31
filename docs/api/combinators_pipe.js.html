@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>combinators/pure/K.js - Documentation</title>
+    <title>combinators/pipe.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">combinators/pure/K.js</h1>
+    <h1 class="page-title">combinators/pipe.js</h1>
     
 
     
@@ -48,33 +48,25 @@
 // https://opensource.org/licenses/MIT
 
 /**
- * The **K** combinator. This is the constant combinator.
+ * Combines two or more single-parameter functions into one single-parameter function that
+ * passes the results from its contained functions to the next and returns the result of the
+ * last contained function.
  *
- * | Property              | Value         |
- * |-----------------------|---------------|
- * | Type signature        | `a -> b -> a` |
- * | Lambda representation | `λxy.x`       |
- * | SK system             | `K`           |
- * | BCKW system           | `K`           |
- * | Bird                  | Kestrel       |
+ * The order of the functions is *not* reversed. The first function listed is the first
+ * applied. This is contrary to the order most often used in functional programming (and
+ * opposite of the order in `{@link module:combinators.compose|compose}`), but there are
+ * times when the piped order makes more sense than the composed order.
  *
- * The **K** combinator produces functions (closures) that return the **K** combinator's
- * first argument, no matter what arguments are passed to the produced function.
- *
- * For this reason the type signature given above doesn't really match the JavaScript
- * implementation's type signature. There is no equivalent to the `b` parameter inthe type
- * signature above; it's not considered good style to include a parameter that doesn't get
- * referenced in the body of the function. Besides, the produced function, like all
- * JavaScript functions, can take arbitrary arguments even if the parameter list is empty.
- * These arguments are simply ignored, which is exactly the desired effect anyway.
- *
- * @param {T} a A value that will be returned by the returned constant function.
- * @returns {function():T} A function which ignores its arguments and returns `a`.
- * @alias module:combinators/pure.K
+ * @param {...function} fns The functions that should be composed into a single function.
+ * @returns {function} A single function that is the composition of all of the provided
+ *     functions, but with the order of execution reversed.
+ * @alias module:combinators.pipe
  */
-const K = a => () => a
+function pipe(...fns) {
+  return x => fns.reduce((y, f) => f(y), x)
+}
 
-module.exports = K
+module.exports = pipe
 </code></pre>
         </article>
     </section>
