@@ -13,6 +13,8 @@ module.exports = {
   curry4: require('./curry4'),
   curry5: require('./curry5'),
   curryn: require('./curryn'),
+  enumerate: require('./enumerate'),
   partial: require('./partial'),
+  range: require('./range'),
   scan: require('./scan'),
 }

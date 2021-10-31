@@ -27,7 +27,7 @@
 
 <nav >
     
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-combinators.html">combinators</a><ul class='methods'><li data-type='method'><a href="module-combinators.html#.flip">flip</a></li></ul></li><li><a href="module-combinators_pure.html">combinators/pure</a><ul class='methods'><li data-type='method'><a href="module-combinators_pure.html#.B">B</a></li><li data-type='method'><a href="module-combinators_pure.html#.C">C</a></li><li data-type='method'><a href="module-combinators_pure.html#.I">I</a></li><li data-type='method'><a href="module-combinators_pure.html#.K">K</a></li><li data-type='method'><a href="module-combinators_pure.html#.S">S</a></li><li data-type='method'><a href="module-combinators_pure.html#.W">W</a></li></ul></li><li><a href="module-functions.html">functions</a><ul class='methods'><li data-type='method'><a href="module-functions.html#.curry">curry</a></li><li data-type='method'><a href="module-functions.html#.curry2">curry2</a></li><li data-type='method'><a href="module-functions.html#.curry3">curry3</a></li><li data-type='method'><a href="module-functions.html#.curry4">curry4</a></li><li data-type='method'><a href="module-functions.html#.curry5">curry5</a></li><li data-type='method'><a href="module-functions.html#.curryn">curryn</a></li><li data-type='method'><a href="module-functions.html#.partial">partial</a></li><li data-type='method'><a href="module-functions.html#.scan">scan</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-combinators.html">combinators</a><ul class='methods'><li data-type='method'><a href="module-combinators.html#.flip">flip</a></li></ul></li><li><a href="module-combinators_pure.html">combinators/pure</a><ul class='methods'><li data-type='method'><a href="module-combinators_pure.html#.B">B</a></li><li data-type='method'><a href="module-combinators_pure.html#.C">C</a></li><li data-type='method'><a href="module-combinators_pure.html#.I">I</a></li><li data-type='method'><a href="module-combinators_pure.html#.K">K</a></li><li data-type='method'><a href="module-combinators_pure.html#.S">S</a></li><li data-type='method'><a href="module-combinators_pure.html#.W">W</a></li></ul></li><li><a href="module-functions.html">functions</a><ul class='methods'><li data-type='method'><a href="module-functions.html#.curry">curry</a></li><li data-type='method'><a href="module-functions.html#.curry2">curry2</a></li><li data-type='method'><a href="module-functions.html#.curry3">curry3</a></li><li data-type='method'><a href="module-functions.html#.curry4">curry4</a></li><li data-type='method'><a href="module-functions.html#.curry5">curry5</a></li><li data-type='method'><a href="module-functions.html#.curryn">curryn</a></li><li data-type='method'><a href="module-functions.html#.enumerate">enumerate</a></li><li data-type='method'><a href="module-functions.html#.partial">partial</a></li><li data-type='method'><a href="module-functions.html#.range">range</a></li><li data-type='method'><a href="module-functions.html#.scan">scan</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -1170,6 +1170,232 @@ function, and so on, <code>n</code> times.</p>
 
     
 
+    <h4 class="name" id=".enumerate"><span class="type-signature">(generator, static) </span>enumerate<span class="signature">(iterable, start<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {array}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="functions_enumerate.js.html">functions/enumerate.js</a>, <a href="functions_enumerate.js.html#line29">line 29</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Generates a set of pairs of iterable elements with their indices. This is inspired by
+Python's <code>enumerate</code> function.</p>
+<p>For arrays, these two statements do the same thing:</p>
+<ul>
+<li><code>for (const [i, value] of array.entries()) { ... }</code></li>
+<li><code>for (const [i, value] of enumerate(array)) { ... }</code></li>
+</ul>
+<p>The difference is that <code>enumerate</code> works on <em>any</em> iterable, not only those that have
+<code>entries</code> defined upon them.</p>
+<p>This function also provides the option to start the index (the first element of the
+yielded tuple) from a number other than 0. This number can be passed in as the optional
+<code>start</code> parameter.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>iterable</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">iterable</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>The iterable to be enumerated.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>start</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>0</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>The index of the first tuple that gets yielded. Every
+succeeding tuple has its index incremented by 1.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+<h5>Yields:</h5>		
+		
+        
+<div class="param-desc">
+    A tuple of the index of a value in the iterable and the value
+    itself.
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array</span>
+
+
+    </dd>
+</dl>
+		
+    
+
+        
+            
+
+    
+
     <h4 class="name" id=".partial"><span class="type-signature">(static) </span>partial<span class="signature">(fn, &hellip;args)</span><span class="type-signature"> &rarr; {function}</span></h4>
 
     
@@ -1386,6 +1612,350 @@ them after <code>args</code> are applied.</p>
     
 
 
+
+        
+            
+
+    
+
+    <h4 class="name" id=".range"><span class="type-signature">(generator, static) </span>range<span class="signature">(start<span class="signature-attributes">opt</span>, end, step<span class="signature-attributes">opt</span>, inclusive<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="functions_range.js.html">functions/range.js</a>, <a href="functions_range.js.html#line75">line 75</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Generates a range of numbers. This is inspired by Python's <code>range</code> function.</p>
+<p>This generator yields a range of numbers, starting with <code>start</code> and incrementing each
+succeeding number by <code>step</code> until <code>end</code> is reached. If <code>inclusive</code> is true, then <code>end</code>
+itself can be included in the range.</p>
+<p>If only one numeric parameter is provided, it is assumed to be <code>end</code>. Two numbers are
+interpreted as <code>start</code> and <code>end</code>. In any cases where they aren't specified, <code>start</code> is
+<code>0</code> and <code>step</code> is <code>1</code>.</p>
+<p>If <code>start</code> is greater than <code>end</code>, the range will run in reverse. In this case, each
+successive number is <em>de</em>cremented by <code>step</code>. <code>step</code> itself should always be positive; if
+a negative <code>step</code> is provided, its absolute value will be used instead, and if <code>0</code> is
+provided, it will be regarded as <code>1</code>. The direction of the iteration is always determined
+by <code>start</code> and <code>end</code>.</p>
+<h1>Examples</h1>
+<pre class="prettyprint source lang-javascript"><code>// Taking advantage of the fact that `range` is an iterator by using
+// the spread operator to make arrays out of it
+const e = [...range(4)]
+console.log(e)    // [0,1,2,3]
+
+const ei = [...range(4, true)]
+console.log(ei)   // [0,1,2,3,4]
+
+const se = [...range(2, 4)]
+console.log(se)   // [2,3]
+
+// 0 is necessary because range(4, 2) would be interpreted as a
+// start of 4 and end of 2, producing [4,3]
+const sep = [...range(0, 4, 2)]
+console.log(sep)  // [0,2]
+
+const sepi = [...range(0, 4, 2, true)]
+console.log(sepi) // [0,2,4]
+
+// Probably the most common use: in `for...of` loops
+const a = [0, 1, 2, 3]
+const b = [0, 5, 10, 15]
+const c = []
+// reversed; range produces 3, 2, 1, 0
+for (const i of range(3, 0, true)) {
+  c.push(a[i] * b[i])
+}
+console.log(c)    // [45,20,5,0]
+
+// Sometimes you just need a loop to run x times without caring
+// about the index; suggest using _ in that case
+function line(length) {
+  let result = ''
+  for (const _ of range(length)) result += '-'
+  return result
+}
+console.log(line(10))  // &quot;----------&quot;
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>start</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>0</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>The first number of the range.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>end</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>The last number of the range. By default this number forms the upper
+bound of the range without being included in it.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>step</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>1</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>The number to increase the yielded value by during each
+iteration.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inclusive</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>false</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>Determines whether <code>end</code> should be included as part of
+the range.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+<h5>Yields:</h5>		
+		
+        
+<div class="param-desc">
+    The values that make up the range.
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+		
+    
 
         
             
