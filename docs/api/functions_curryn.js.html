@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>combinators/pure/B.js - Documentation</title>
+    <title>functions/curryn.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">combinators/pure/B.js</h1>
+    <h1 class="page-title">functions/curryn.js</h1>
     
 
     
@@ -48,38 +48,53 @@
 // https://opensource.org/licenses/MIT
 
 /**
- * The **B** combinator. This is the composition combinator.
+ * Curries a function with an arbitrary number of arguments.
  *
- * | Property              | Value                            |
- * |-----------------------|----------------------------------|
- * | Type signature        | `(a -> b) -> (c -> a) -> c -> b` |
- * | Lambda representation | `λxyz.x(yz)`                     |
- * | SK system             | `S(KS)K`                         |
- * | BCKW system           | `B`                              |
- * | Bird                  | Bluebird                         |
+ * This function behaves much like `{@link module:functions.curry2|curry2}`,
+ * `{@link module:functions.curry3|curry3}`, `{@link module:functions.curry4|curry4}`, and
+ * `{@link module:functions.curry5|curry5}` in that arguments must be provided in sets of
+ * parentheses with no more than one argument within each set. In fact, passing the
+ * appropriate number as the first parameter to this function will make it act just like any
+ * of those listed (i.e., `curryn(2, fn)` will behave the same as `curry2(fn)`). However, if
+ * the number of arguments is known at write-time, it's best to use the specific function
+ * for that number of arguments as it will be faster.
  *
- * The **B** combinator performs the composition of two single-argument functions. This
- * means that the second function (`b`) is applied to an argument, and then the first
- * function (`a`) is applied to that result. This is the basic way of combining two
- * functions into another function that does the same thing as the two component functions
- * being applied in reverse order.
+ * Rather, this function is useful in two cases: when you either don't know until runtime
+ * how many arguments a function will be using, or when you want to curry a function of more
+ * than 5 arguments (because there is no specific curry function for parameter lists that
+ * large).
  *
- * As the composition combinator, **B** has equivalent operators in many languages,
- * including `.` in Haskell, `∘` in APL, and `&amp;` in J. Concatenative languages (such as
- * Forth and Factor) are called concatenative because composition is done by simply naming
- * two functions next to each other ("concatenating" the functions).
+ * # Examples
  *
- * @param {function(U):V} a A function of one argument of type U that returns a result of
- *      type V. This return value becomes the return value of the entire combinator.
- * @param {function(T):U} b A function of one argument of type T that returns a result of
- *      type U. This return value becomes the argument for function `a`.
- * @param {T} c A value of type T. This value becomes the argument for function `b`.
- * @returns {V} A value of type V, which is returned by function `a`.
- * @alias module:combinators/pure.B
+ * ```javascript
+ * // variadic function, will sum any number of numbers given to it
+ * const sum = (...ns) => ns.reduce((a, b) => a + b, 0)
+ *
+ * const sum2 = curryn(2, sum)
+ * console.log(sum2(1)(2))             // 3
+ *
+ * const sum6 = curryn(6, sum)
+ * console.log(sum6(1)(2)(3)(4)(5)(6)) // 21
+ * console.log(sum6(1)(2)(3)(4)(5))    // function curried(a)
+ * ```
+ *
+ * @param {number} n The number of arguments that the function to be curried has.
+ * @param {function} fn The function to be curried.
+ * @returns {function} A single-argument function that returns another single-argument
+ *      function, and so on, `n` times.
+ * @alias module:functions.curryn
  */
-const B = a => b => c => a(b(c))
+function curryn(n, fn) {
+  if (n &lt; 2) return fn
 
-module.exports = B
+  function curried(remaining, ...args) {
+    return remaining === 0 ? fn(...args) : a => curried(remaining - 1, ...args, a)
+  }
+
+  return (...args) => curried(n - 1, ...args)
+}
+
+module.exports = curryn
 </code></pre>
         </article>
     </section>

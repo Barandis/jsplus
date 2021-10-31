@@ -4,7 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 const { expect } = require('chai')
-const curry = require('./curry')
+const curry = require('functions/curry')
 
 describe('curry', () => {
   const sum = curry((a, b, c) => a + b + c)

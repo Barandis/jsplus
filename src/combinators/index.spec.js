@@ -7,6 +7,8 @@ const { expect } = require('chai')
 
 const index = require('.')
 
+const flip = require('./flip')
+
 const B = require('./pure/B')
 const C = require('./pure/C')
 const I = require('./pure/I')
@@ -16,6 +18,8 @@ const W = require('./pure/W')
 
 describe('combinators index', () => {
   it('provides all of the exported combinators', () => {
+    expect(flip).to.equal(index.flip)
+
     expect(B).to.equal(index.B)
     expect(C).to.equal(index.C)
     expect(I).to.equal(index.I)

@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>combinators/pure/B.js - Documentation</title>
+    <title>functions/curry2.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">combinators/pure/B.js</h1>
+    <h1 class="page-title">functions/curry2.js</h1>
     
 
     
@@ -48,38 +48,35 @@
 // https://opensource.org/licenses/MIT
 
 /**
- * The **B** combinator. This is the composition combinator.
+ * Curries a two-argument function.
  *
- * | Property              | Value                            |
- * |-----------------------|----------------------------------|
- * | Type signature        | `(a -> b) -> (c -> a) -> c -> b` |
- * | Lambda representation | `λxyz.x(yz)`                     |
- * | SK system             | `S(KS)K`                         |
- * | BCKW system           | `B`                              |
- * | Bird                  | Bluebird                         |
+ * Unlike in `{@link module:functions.curry|curry}`, the curried function so produced must
+ * take its arguments one at a time. It will not accept multiple arguments within a single
+ * set of parentheses. The advantage is that it works with functions that have rest or
+ * default parameters.
  *
- * The **B** combinator performs the composition of two single-argument functions. This
- * means that the second function (`b`) is applied to an argument, and then the first
- * function (`a`) is applied to that result. This is the basic way of combining two
- * functions into another function that does the same thing as the two component functions
- * being applied in reverse order.
+ * # Examples
  *
- * As the composition combinator, **B** has equivalent operators in many languages,
- * including `.` in Haskell, `∘` in APL, and `&amp;` in J. Concatenative languages (such as
- * Forth and Factor) are called concatenative because composition is done by simply naming
- * two functions next to each other ("concatenating" the functions).
+ * ```javascript
+ * const sum = curry2((a, b) => a + b)
  *
- * @param {function(U):V} a A function of one argument of type U that returns a result of
- *      type V. This return value becomes the return value of the entire combinator.
- * @param {function(T):U} b A function of one argument of type T that returns a result of
- *      type U. This return value becomes the argument for function `a`.
- * @param {T} c A value of type T. This value becomes the argument for function `b`.
- * @returns {V} A value of type V, which is returned by function `a`.
- * @alias module:combinators/pure.B
+ * // This is the only possible calling format.
+ * console.log(sum(1)(2)) // 3
+ *
+ * // This will not work. It is the same as sum(1) as the second argument is ignored.
+ * console.log(sum(1, 2)) // function curry2(b)
+ * ```
+ *
+ * @param {function} fn A function of two arguments.
+ * @returns {function} A function that takes its arguments singly in two sets of
+ *     parentheses.
+ * @alias module:functions.curry2
  */
-const B = a => b => c => a(b(c))
+function curry2(fn) {
+  return a => b => fn(a, b)
+}
 
-module.exports = B
+module.exports = curry2
 </code></pre>
         </article>
     </section>

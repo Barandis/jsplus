@@ -4,7 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 const { expect } = require('chai')
-const partial = require('./partial')
+const partial = require('functions/partial')
 
 describe('partial', () => {
   it('partially applies arguments to a function', () => {
