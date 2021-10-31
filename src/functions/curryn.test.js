@@ -9,6 +9,19 @@ const curryn = require('functions/curryn')
 const sum = (...ns) => ns.reduce((a, b) => a + b, 0)
 
 describe('curryn', () => {
+  describe('with 1 argument', () => {
+    const sum1 = curryn(1, sum)
+
+    it('works when passing a single argument', () => {
+      const result = sum1(1)
+      expect(result).to.equal(1)
+    })
+    it('works when passing multiple arguments because currying 1 does nothing', () => {
+      const result = sum1(1, 2, 3, 4, 5)
+      expect(result).to.equal(15)
+    })
+  })
+
   describe('with 2 arguments', () => {
     const sum2 = curryn(2, sum)
 
