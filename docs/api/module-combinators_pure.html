@@ -27,7 +27,7 @@
 
 <nav >
     
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-combinators.html">combinators</a><ul class='methods'><li data-type='method'><a href="module-combinators.html#.compose">compose</a></li><li data-type='method'><a href="module-combinators.html#.flip">flip</a></li><li data-type='method'><a href="module-combinators.html#.pipe">pipe</a></li></ul></li><li><a href="module-combinators_pure.html">combinators/pure</a><ul class='methods'><li data-type='method'><a href="module-combinators_pure.html#.B">B</a></li><li data-type='method'><a href="module-combinators_pure.html#.C">C</a></li><li data-type='method'><a href="module-combinators_pure.html#.I">I</a></li><li data-type='method'><a href="module-combinators_pure.html#.K">K</a></li><li data-type='method'><a href="module-combinators_pure.html#.S">S</a></li><li data-type='method'><a href="module-combinators_pure.html#.W">W</a></li></ul></li><li><a href="module-functions.html">functions</a><ul class='methods'><li data-type='method'><a href="module-functions.html#.curry">curry</a></li><li data-type='method'><a href="module-functions.html#.curry2">curry2</a></li><li data-type='method'><a href="module-functions.html#.curry3">curry3</a></li><li data-type='method'><a href="module-functions.html#.curry4">curry4</a></li><li data-type='method'><a href="module-functions.html#.curry5">curry5</a></li><li data-type='method'><a href="module-functions.html#.curryn">curryn</a></li><li data-type='method'><a href="module-functions.html#.enumerate">enumerate</a></li><li data-type='method'><a href="module-functions.html#.partial">partial</a></li><li data-type='method'><a href="module-functions.html#.range">range</a></li><li data-type='method'><a href="module-functions.html#.scan">scan</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-combinators.html">combinators</a><ul class='methods'><li data-type='method'><a href="module-combinators.html#.compose">compose</a></li><li data-type='method'><a href="module-combinators.html#.flip">flip</a></li><li data-type='method'><a href="module-combinators.html#.pipe">pipe</a></li></ul></li><li><a href="module-combinators_pure.html">combinators/pure</a><ul class='methods'><li data-type='method'><a href="module-combinators_pure.html#.B">B</a></li><li data-type='method'><a href="module-combinators_pure.html#.C">C</a></li><li data-type='method'><a href="module-combinators_pure.html#.I">I</a></li><li data-type='method'><a href="module-combinators_pure.html#.Is">Is</a></li><li data-type='method'><a href="module-combinators_pure.html#.K">K</a></li><li data-type='method'><a href="module-combinators_pure.html#.S">S</a></li><li data-type='method'><a href="module-combinators_pure.html#.T">T</a></li><li data-type='method'><a href="module-combinators_pure.html#.W">W</a></li></ul></li><li><a href="module-functions.html">functions</a><ul class='methods'><li data-type='method'><a href="module-functions.html#.curry">curry</a></li><li data-type='method'><a href="module-functions.html#.curry2">curry2</a></li><li data-type='method'><a href="module-functions.html#.curry3">curry3</a></li><li data-type='method'><a href="module-functions.html#.curry4">curry4</a></li><li data-type='method'><a href="module-functions.html#.curry5">curry5</a></li><li data-type='method'><a href="module-functions.html#.curryn">curryn</a></li><li data-type='method'><a href="module-functions.html#.enumerate">enumerate</a></li><li data-type='method'><a href="module-functions.html#.partial">partial</a></li><li data-type='method'><a href="module-functions.html#.range">range</a></li><li data-type='method'><a href="module-functions.html#.scan">scan</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -754,6 +754,223 @@ combinator's return value.</p></td>
 
     
 
+    <h4 class="name" id=".Is"><span class="type-signature">(static) </span>Is<span class="signature">(a, b)</span><span class="type-signature"> &rarr; {*}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="combinators_pure_Is.js.html">combinators/pure/Is.js</a>, <a href="combinators_pure_Is.js.html#line29">line 29</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>The <strong>I*</strong> combinator. This is the function application combinator.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type signature</td>
+<td><code>(a -&gt; b) -&gt; a -&gt; b</code></td>
+</tr>
+<tr>
+<td>Lambda representation</td>
+<td><code>λxy.xy</code></td>
+</tr>
+<tr>
+<td>SK system</td>
+<td><code>SK(SK)</code></td>
+</tr>
+<tr>
+<td>BCKW system</td>
+<td><code>BWK</code></td>
+</tr>
+<tr>
+<td>Bird</td>
+<td>Identity once removed</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>I*</strong> combinator represents normal function application. This is known in some
+literature as the <strong>A</strong> combinator, but this does not appear to be widespread. It fits
+with the concept in <em>To Mock a Mockingbird</em> of starred combinators that represent a
+combinator's action &quot;once removed&quot;, and while <strong>I*</strong> doesn't appear in that book, other
+starred combinators that are derived similarly do.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>a</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A function of one parameter. This will receive <code>b</code> as an argument and
+its return value becomes the combinator's return value.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>b</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A value that is given to <code>a</code> as its argument.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The return value of function <code>a</code> when applied to value <code>b</code>.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
     <h4 class="name" id=".K"><span class="type-signature">(static) </span>K<span class="signature">(a)</span><span class="type-signature"> &rarr; {function}</span></h4>
 
     
@@ -766,7 +983,7 @@ combinator's return value.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="combinators_pure_K.js.html">combinators/pure/K.js</a>, <a href="combinators_pure_K.js.html#line31">line 31</a>
+        <a href="combinators_pure_K.js.html">combinators/pure/K.js</a>, <a href="combinators_pure_K.js.html#line35">line 35</a>
     </li></ul></dd>
     
 
@@ -845,6 +1062,9 @@ signature above; it's not considered good style to include a parameter that does
 referenced in the body of the function. Besides, the produced function, like all
 JavaScript functions, can take arbitrary arguments even if the parameter list is empty.
 These arguments are simply ignored, which is exactly the desired effect anyway.</p>
+<p>The <strong>K</strong> combinator is one of the two primitive combinators of the SK calculus. This
+means that any possible computation can be performed as sequences of these two
+combinators.</p>
 </div>
 
 
@@ -950,7 +1170,7 @@ These arguments are simply ignored, which is exactly the desired effect anyway.<
 
     
 
-    <h4 class="name" id=".S"><span class="type-signature">(static) </span>S<span class="signature">(a, b, c)</span><span class="type-signature"> &rarr; {V}</span></h4>
+    <h4 class="name" id=".S"><span class="type-signature">(static) </span>S<span class="signature">(a, b, c)</span><span class="type-signature"> &rarr; {*}</span></h4>
 
     
 
@@ -962,7 +1182,7 @@ These arguments are simply ignored, which is exactly the desired effect anyway.<
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="combinators_pure_S.js.html">combinators/pure/S.js</a>, <a href="combinators_pure_S.js.html#line36">line 36</a>
+        <a href="combinators_pure_S.js.html">combinators/pure/S.js</a>, <a href="combinators_pure_S.js.html#line42">line 42</a>
     </li></ul></dd>
     
 
@@ -1042,6 +1262,9 @@ confusion with another combinator that he named <em>Vertauschungsfunktion</em> (
 function&quot;); rather than name either of them <strong>V</strong>, he went with the first letters of the
 roots <em>schmelzen</em> and <em>tauschen</em>. The latter he called <strong>T</strong>, which Haskell Curry renamed
 to <strong>C</strong> in 1930. Curry chose to keep <strong>S</strong> though.)</p>
+<p>The <strong>S</strong> combinator is one of the two primitive combinators of the SK calculus. This
+means that any possible computation can be performed as sequences of these two
+combinators.</p>
 </div>
 
 
@@ -1095,8 +1318,9 @@ to <strong>C</strong> in 1930. Curry chose to keep <strong>S</strong> though.)</
 
             
 
-            <td class="description last"><p>A function of two arguments of types T and U which returns a
-value of type V. This return value is the return value of the entire combinator.</p></td>
+            <td class="description last"><p>A function of two parameters. It will take as arguments the value <code>c</code>
+and the return value of function <code>b</code>. This function's return value becomes the
+return value of the combinator.</p></td>
         </tr>
 
     
@@ -1119,8 +1343,8 @@ value of type V. This return value is the return value of the entire combinator.
 
             
 
-            <td class="description last"><p>A function of one argument of type T which returns a value of
-type U. This return value is passed into function <code>a</code>.</p></td>
+            <td class="description last"><p>A function of one parameter. Its argument will be the value <code>c</code>, and
+its return value will become the second argument of function <code>a</code>.</p></td>
         </tr>
 
     
@@ -1133,7 +1357,7 @@ type U. This return value is passed into function <code>a</code>.</p></td>
             <td class="type">
             
                 
-<span class="param-type">T</span>
+<span class="param-type">*</span>
 
 
             
@@ -1143,7 +1367,8 @@ type U. This return value is passed into function <code>a</code>.</p></td>
 
             
 
-            <td class="description last"><p>A value of type T, which is passed into both functions <code>a</code> and <code>b</code>.</p></td>
+            <td class="description last"><p>A value which becomes the first argument of both function <code>a</code> and function
+<code>b</code>.</p></td>
         </tr>
 
     
@@ -1169,7 +1394,7 @@ type U. This return value is passed into function <code>a</code>.</p></td>
 
         
 <div class="param-desc">
-    <p>A value of type V, the type returned by function <code>a</code>.</p>
+    <p>The value returned by function <code>a</code>.</p>
 </div>
 
 
@@ -1180,7 +1405,223 @@ type U. This return value is passed into function <code>a</code>.</p></td>
     </dt>
     <dd>
         
-<span class="param-type">V</span>
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".T"><span class="type-signature">(static) </span>T<span class="signature">(a, b)</span><span class="type-signature"> &rarr; {*}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="combinators_pure_T.js.html">combinators/pure/T.js</a>, <a href="combinators_pure_T.js.html#line28">line 28</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>The <strong>T</strong> combinator. This is commonly known as the thrush combinator.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type signature</td>
+<td><code>a -&gt; (a -&gt; b) -&gt; b</code></td>
+</tr>
+<tr>
+<td>Lambda representation</td>
+<td><code>λxy.yx</code></td>
+</tr>
+<tr>
+<td>SK system</td>
+<td><code>S(K(S(SKK)))K</code></td>
+</tr>
+<tr>
+<td>BCKW system</td>
+<td><code>C(WK)</code></td>
+</tr>
+<tr>
+<td>Bird</td>
+<td>Thrush</td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>T</strong> combinator reverses function application, applying the function <code>b</code> to the
+value <code>a</code>. This is a not-uncommon operation, and unlike many combinators, that operation
+has adopted the bird name in many languages; i.e., both Haskell and Racket have a
+<code>thrush</code> function.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>a</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A value which gets passed to function <code>b</code>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>b</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A function of one parameter. This gets applied to value <code>a</code> and the
+return value becomes the return value of the combinator.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The value returned from applying function <code>b</code> to value <code>a</code>.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
 
 
     </dd>
