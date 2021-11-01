@@ -27,7 +27,7 @@
 
 <nav >
     
-    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-combinators.html">combinators</a><ul class='methods'><li data-type='method'><a href="module-combinators.html#.compose">compose</a></li><li data-type='method'><a href="module-combinators.html#.flip">flip</a></li><li data-type='method'><a href="module-combinators.html#.pipe">pipe</a></li></ul></li><li><a href="module-combinators_pure.html">combinators/pure</a><ul class='methods'><li data-type='method'><a href="module-combinators_pure.html#.B">B</a></li><li data-type='method'><a href="module-combinators_pure.html#.C">C</a></li><li data-type='method'><a href="module-combinators_pure.html#.I">I</a></li><li data-type='method'><a href="module-combinators_pure.html#.Is">Is</a></li><li data-type='method'><a href="module-combinators_pure.html#.K">K</a></li><li data-type='method'><a href="module-combinators_pure.html#.S">S</a></li><li data-type='method'><a href="module-combinators_pure.html#.T">T</a></li><li data-type='method'><a href="module-combinators_pure.html#.W">W</a></li></ul></li><li><a href="module-functions.html">functions</a><ul class='methods'><li data-type='method'><a href="module-functions.html#.curry">curry</a></li><li data-type='method'><a href="module-functions.html#.curry2">curry2</a></li><li data-type='method'><a href="module-functions.html#.curry3">curry3</a></li><li data-type='method'><a href="module-functions.html#.curry4">curry4</a></li><li data-type='method'><a href="module-functions.html#.curry5">curry5</a></li><li data-type='method'><a href="module-functions.html#.curryn">curryn</a></li><li data-type='method'><a href="module-functions.html#.enumerate">enumerate</a></li><li data-type='method'><a href="module-functions.html#.partial">partial</a></li><li data-type='method'><a href="module-functions.html#.range">range</a></li><li data-type='method'><a href="module-functions.html#.scan">scan</a></li></ul></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-combinators.html">combinators</a><ul class='methods'><li data-type='method'><a href="module-combinators.html#.compose">compose</a></li><li data-type='method'><a href="module-combinators.html#.flip">flip</a></li><li data-type='method'><a href="module-combinators.html#.pipe">pipe</a></li></ul></li><li><a href="module-combinators_pure.html">combinators/pure</a><ul class='methods'><li data-type='method'><a href="module-combinators_pure.html#.B">B</a></li><li data-type='method'><a href="module-combinators_pure.html#.C">C</a></li><li data-type='method'><a href="module-combinators_pure.html#.I">I</a></li><li data-type='method'><a href="module-combinators_pure.html#.Is">Is</a></li><li data-type='method'><a href="module-combinators_pure.html#.K">K</a></li><li data-type='method'><a href="module-combinators_pure.html#.Psi">Psi</a></li><li data-type='method'><a href="module-combinators_pure.html#.S">S</a></li><li data-type='method'><a href="module-combinators_pure.html#.Sp">Sp</a></li><li data-type='method'><a href="module-combinators_pure.html#.T">T</a></li><li data-type='method'><a href="module-combinators_pure.html#.W">W</a></li></ul></li><li><a href="module-functions.html">functions</a><ul class='methods'><li data-type='method'><a href="module-functions.html#.curry">curry</a></li><li data-type='method'><a href="module-functions.html#.curry2">curry2</a></li><li data-type='method'><a href="module-functions.html#.curry3">curry3</a></li><li data-type='method'><a href="module-functions.html#.curry4">curry4</a></li><li data-type='method'><a href="module-functions.html#.curry5">curry5</a></li><li data-type='method'><a href="module-functions.html#.curryn">curryn</a></li><li data-type='method'><a href="module-functions.html#.enumerate">enumerate</a></li><li data-type='method'><a href="module-functions.html#.partial">partial</a></li><li data-type='method'><a href="module-functions.html#.range">range</a></li><li data-type='method'><a href="module-functions.html#.scan">scan</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
@@ -1170,6 +1170,266 @@ combinators.</p>
 
     
 
+    <h4 class="name" id=".Psi"><span class="type-signature">(static) </span>Psi<span class="signature">(a, b, c, d)</span><span class="type-signature"> &rarr; {*}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="combinators_pure_Psi.js.html">combinators/pure/Psi.js</a>, <a href="combinators_pure_Psi.js.html#line39">line 39</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>The <strong>Ψ</strong> (psi) combinator.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type signature</td>
+<td><code>(a -&gt; a -&gt; b) -&gt; (c -&gt; a) -&gt; c -&gt; c -&gt; b</code></td>
+</tr>
+<tr>
+<td>Lambda representation</td>
+<td><code>λxyzw.x(yz)(yw)</code></td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>Ψ</strong> combinator applies its second argument separately to its third and fourth
+arguments, and then it applies its first argument to the two results. This has the effect
+of passing two arguments, separately, to a unary function and then combining the results
+with a binary function.</p>
+<p>This is similar to the <strong><a href="module-combinators_pure.html#.Sp">S'</a></strong> combinator, except that
+instead of using one value applied to two different unary functions, it uses two
+different values applied to a single unary function.</p>
+<p>This is called the <strong>P</strong> combinator in the fantasy-land spec, which is convenient because
+there really isn't another P combinator, but it's called &quot;psi&quot; in nearly every other
+instance (both in languages and literature). It does not appear in <em>To Mock a
+Mockingbird</em>.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>a</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A function of two parameters. It's applied to the return values of
+both applications of function <code>b</code>. Its return value becomes the return value of the
+combinator.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>b</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A function of one parameter. It's applied separately to the values
+<code>c</code> and <code>d</code>, and those return values are provided as arguments to function <code>a</code>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>c</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A value to which function <code>b</code> is applied.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>d</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A value to which function <code>b</code> is applied.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The result of function <code>a</code> being applied to the results of function <code>b</code>'s
+applications to each of <code>c</code> and <code>d</code>.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
     <h4 class="name" id=".S"><span class="type-signature">(static) </span>S<span class="signature">(a, b, c)</span><span class="type-signature"> &rarr; {*}</span></h4>
 
     
@@ -1395,6 +1655,266 @@ its return value will become the second argument of function <code>a</code>.</p>
         
 <div class="param-desc">
     <p>The value returned by function <code>a</code>.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">*</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".Sp"><span class="type-signature">(static) </span>Sp<span class="signature">(a, b, c, d)</span><span class="type-signature"> &rarr; {*}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="combinators_pure_Sp.js.html">combinators/pure/Sp.js</a>, <a href="combinators_pure_Sp.js.html#line39">line 39</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>The <strong>S'</strong> combinator.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Type signature</td>
+<td><code>(b -&gt; c -&gt; d) -&gt; (a -&gt; b) -&gt; (a -&gt; c) -&gt; a -&gt; d</code></td>
+</tr>
+<tr>
+<td>Lambda representation</td>
+<td><code>λxyzw.x(yw)(zw)</code></td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>S'</strong> combinator applies both its second and third arguments separately to its
+fourth argument, then it applies its first argument to the two results. This has the
+effect of passing an argument to two different unary functions and then combining the
+results with a binary function.</p>
+<p>This is similar to the <strong><a href="module-combinators_pure.html#.Psi">Ψ</a></strong> combinator, except that
+instead of using two different values applied to one unary function, it uses one value
+applied to two different unary functions.</p>
+<p>This is a commonly seen combinator in functional and array languages. It is <code>liftA2</code> in
+Haskell and is represented by the fork construction that originated in J and worked its
+way into some modern dialects of APL. As such it's very useful in point-free programming.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>a</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A function of two parameters. It's applied to the return values of
+the applications of functions <code>b</code> and <code>c</code>. Its return value becomes the return value
+of the combinator.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>b</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A function of one parameter. It's applied to the value <code>d</code> to produce
+one of the arguments for function <code>a</code>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>c</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A function of one parameter. It's applied to the value <code>d</code> to produce
+one of the arguments for function <code>a</code>.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>d</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A value to which functions <code>b</code> and <code>c</code> are applied.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The result of function <code>a</code> being applied to the results of function <code>b</code>'s
+and function <code>c</code>'s applications to value <code>d</code>.</p>
 </div>
 
 

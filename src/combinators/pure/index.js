@@ -12,7 +12,9 @@ module.exports = {
   I: require('./I'),
   Is: require('./Is'),
   K: require('./K'),
+  Psi: require('./Psi'),
   S: require('./S'),
+  Sp: require('./Sp'),
   T: require('./T'),
   W: require('./W'),
 }

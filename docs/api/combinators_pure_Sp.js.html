@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>combinators/pure/S.js - Documentation</title>
+    <title>combinators/pure/Sp.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">combinators/pure/S.js</h1>
+    <h1 class="page-title">combinators/pure/Sp.js</h1>
     
 
     
@@ -48,44 +48,41 @@
 // https://opensource.org/licenses/MIT
 
 /**
- * The **S** combinator. This is the substitution combinator.
+ * The **S'** combinator.
  *
- * | Property              | Value                                 |
- * |-----------------------|---------------------------------------|
- * | Type signature        | `(a -> b -> c) -> (a -> b) -> a -> c` |
- * | Lambda representation | `λxyz.xz(yz)`                         |
- * | SK system             | `S`                                   |
- * | BCKW system           | `B(BW)(BBC)`                          |
- * | Bird                  | Starling                              |
+ * | Property              | Value                                             |
+ * |-----------------------|---------------------------------------------------|
+ * | Type signature        | `(b -> c -> d) -> (a -> b) -> (a -> c) -> a -> d` |
+ * | Lambda representation | `λxyzw.x(yw)(zw)`                                 |
  *
- * The idea of substitution comes from the fact that, rather than merely applying `a` to
- * `b`, it first *substitutes* them both by applying a third argument `c` to each of them
- * before performing that application.
+ * The **S'** combinator applies both its second and third arguments separately to its
+ * fourth argument, then it applies its first argument to the two results. This has the
+ * effect of passing an argument to two different unary functions and then combining the
+ * results with a binary function.
  *
- * (In fact, Moses Schönfinkel named this combinator "**S**" in 1924, where the combinator's
- * name in German was *Verschmelzungsfunktion* or "fusion function". The **S** was to avoid
- * confusion with another combinator that he named *Vertauschungsfunktion* ("swap
- * function"); rather than name either of them **V**, he went with the first letters of the
- * roots *schmelzen* and *tauschen*. The latter he called **T**, which Haskell Curry renamed
- * to **C** in 1930. Curry chose to keep **S** though.)
+ * This is similar to the **{@link module:combinators/pure.Psi|Ψ}** combinator, except that
+ * instead of using two different values applied to one unary function, it uses one value
+ * applied to two different unary functions.
  *
- * The **S** combinator is one of the two primitive combinators of the SK calculus. This
- * means that any possible computation can be performed as sequences of these two
- * combinators.
+ * This is a commonly seen combinator in functional and array languages. It is `liftA2` in
+ * Haskell and is represented by the fork construction that originated in J and worked its
+ * way into some modern dialects of APL. As such it's very useful in point-free programming.
  *
- * @param {function} a A function of two parameters. It will take as arguments the value `c`
- *      and the return value of function `b`. This function's return value becomes the
- *      return value of the combinator.
- * @param {function} b A function of one parameter. Its argument will be the value `c`, and
- *      its return value will become the second argument of function `a`.
- * @param {*} c A value which becomes the first argument of both function `a` and function
- *      `b`.
- * @returns {*} The value returned by function `a`.
- * @alias module:combinators/pure.S
+ * @param {function} a A function of two parameters. It's applied to the return values of
+ *      the applications of functions `b` and `c`. Its return value becomes the return value
+ *      of the combinator.
+ * @param {function} b A function of one parameter. It's applied to the value `d` to produce
+ *      one of the arguments for function `a`.
+ * @param {function} c A function of one parameter. It's applied to the value `d` to produce
+ *      one of the arguments for function `a`.
+ * @param {*} d A value to which functions `b` and `c` are applied.
+ * @returns {*} The result of function `a` being applied to the results of function `b`'s
+ *      and function `c`'s applications to value `d`.
+ * @alias module:combinators/pure.Sp
  */
-const S = a => b => c => a(c)(b(c))
+const Sp = a => b => c => d => a(b(d))(c(d))
 
-module.exports = S
+module.exports = Sp
 </code></pre>
         </article>
     </section>
