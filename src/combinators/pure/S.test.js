@@ -4,12 +4,12 @@
 // https://opensource.org/licenses/MIT
 
 const { expect } = require('chai')
-const B = require('./B')
-const C = require('./C')
-const K = require('./K')
-const I = require('./I')
-const S = require('./S')
-const W = require('./W')
+const B = require('combinators/pure/B')
+const C = require('combinators/pure/C')
+const K = require('combinators/pure/K')
+const I = require('combinators/pure/I')
+const S = require('combinators/pure/S')
+const W = require('combinators/pure/W')
 
 describe('S combinator', () => {
   it('applies its first two arguments to its third, and then applies the results', () => {

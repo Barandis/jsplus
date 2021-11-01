@@ -5,30 +5,30 @@
 
 const { expect } = require('chai')
 
+const compose = require('combinators/compose')
+const flip = require('combinators/flip')
+const pipe = require('combinators/pipe')
+
+const A = require('combinators/pure/A')
+const B = require('combinators/pure/B')
+const C = require('combinators/pure/C')
+const I = require('combinators/pure/I')
+const K = require('combinators/pure/K')
+const S = require('combinators/pure/S')
+const W = require('combinators/pure/W')
+
+const curry = require('functions/curry')
+const curry2 = require('functions/curry2')
+const curry3 = require('functions/curry3')
+const curry4 = require('functions/curry4')
+const curry5 = require('functions/curry5')
+const curryn = require('functions/curryn')
+const enumerate = require('functions/enumerate')
+const partial = require('functions/partial')
+const range = require('functions/range')
+const scan = require('functions/scan')
+
 const index = require('.')
-
-const compose = require('./combinators/compose')
-const flip = require('./combinators/flip')
-const pipe = require('./combinators/pipe')
-
-const A = require('./combinators/pure/A')
-const B = require('./combinators/pure/B')
-const C = require('./combinators/pure/C')
-const I = require('./combinators/pure/I')
-const K = require('./combinators/pure/K')
-const S = require('./combinators/pure/S')
-const W = require('./combinators/pure/W')
-
-const curry = require('./functions/curry')
-const curry2 = require('./functions/curry2')
-const curry3 = require('./functions/curry3')
-const curry4 = require('./functions/curry4')
-const curry5 = require('./functions/curry5')
-const curryn = require('./functions/curryn')
-const enumerate = require('./functions/enumerate')
-const partial = require('./functions/partial')
-const range = require('./functions/range')
-const scan = require('./functions/scan')
 
 describe('src index', () => {
   it('provides all of the exported functions', () => {

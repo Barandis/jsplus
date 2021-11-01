@@ -5,18 +5,18 @@
 
 const { expect } = require('chai')
 
-const index = require('.')
+const index = require('functions')
 
-const curry = require('./curry')
-const curry2 = require('./curry2')
-const curry3 = require('./curry3')
-const curry4 = require('./curry4')
-const curry5 = require('./curry5')
-const curryn = require('./curryn')
-const enumerate = require('./enumerate')
-const partial = require('./partial')
-const range = require('./range')
-const scan = require('./scan')
+const curry = require('functions/curry')
+const curry2 = require('functions/curry2')
+const curry3 = require('functions/curry3')
+const curry4 = require('functions/curry4')
+const curry5 = require('functions/curry5')
+const curryn = require('functions/curryn')
+const enumerate = require('functions/enumerate')
+const partial = require('functions/partial')
+const range = require('functions/range')
+const scan = require('functions/scan')
 
 describe('functions index', () => {
   it('provides all of the exported functions', () => {

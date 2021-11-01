@@ -5,19 +5,19 @@
 
 const { expect } = require('chai')
 
-const index = require('.')
+const index = require('combinators')
 
-const compose = require('./compose')
-const flip = require('./flip')
-const pipe = require('./pipe')
+const compose = require('combinators/compose')
+const flip = require('combinators/flip')
+const pipe = require('combinators/pipe')
 
-const A = require('./pure/A')
-const B = require('./pure/B')
-const C = require('./pure/C')
-const I = require('./pure/I')
-const K = require('./pure/K')
-const S = require('./pure/S')
-const W = require('./pure/W')
+const A = require('combinators/pure/A')
+const B = require('combinators/pure/B')
+const C = require('combinators/pure/C')
+const I = require('combinators/pure/I')
+const K = require('combinators/pure/K')
+const S = require('combinators/pure/S')
+const W = require('combinators/pure/W')
 
 describe('combinators index', () => {
   it('provides all of the exported combinators', () => {

@@ -4,9 +4,9 @@
 // https://opensource.org/licenses/MIT
 
 const { expect } = require('chai')
-const K = require('./K')
-const S = require('./S')
-const W = require('./W')
+const K = require('combinators/pure/K')
+const S = require('combinators/pure/S')
+const W = require('combinators/pure/W')
 
 describe('W combinator', () => {
   const add = x => y => x + y

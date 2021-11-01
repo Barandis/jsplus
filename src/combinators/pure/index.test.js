@@ -5,15 +5,15 @@
 
 const { expect } = require('chai')
 
-const index = require('.')
+const index = require('combinators/pure')
 
-const A = require('./A')
-const B = require('./B')
-const C = require('./C')
-const I = require('./I')
-const K = require('./K')
-const S = require('./S')
-const W = require('./W')
+const A = require('combinators/pure/A')
+const B = require('combinators/pure/B')
+const C = require('combinators/pure/C')
+const I = require('combinators/pure/I')
+const K = require('combinators/pure/K')
+const S = require('combinators/pure/S')
+const W = require('combinators/pure/W')
 
 describe('pure combinators index', () => {
   it('provides all of the exported combinators', () => {
