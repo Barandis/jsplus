@@ -7,6 +7,7 @@
  * @module combinators/pure
  */
 module.exports = {
+  A: require('./A'),
   B: require('./B'),
   C: require('./C'),
   I: require('./I'),

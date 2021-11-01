@@ -11,6 +11,7 @@ const compose = require('./compose')
 const flip = require('./flip')
 const pipe = require('./pipe')
 
+const A = require('./pure/A')
 const B = require('./pure/B')
 const C = require('./pure/C')
 const I = require('./pure/I')
@@ -24,6 +25,7 @@ describe('combinators index', () => {
     expect(flip).to.equal(index.flip)
     expect(pipe).to.equal(index.pipe)
 
+    expect(A).to.equal(index.A)
     expect(B).to.equal(index.B)
     expect(C).to.equal(index.C)
     expect(I).to.equal(index.I)

@@ -11,6 +11,7 @@ const compose = require('./combinators/compose')
 const flip = require('./combinators/flip')
 const pipe = require('./combinators/pipe')
 
+const A = require('./combinators/pure/A')
 const B = require('./combinators/pure/B')
 const C = require('./combinators/pure/C')
 const I = require('./combinators/pure/I')
@@ -37,6 +38,7 @@ describe('src index', () => {
     expect(pipe).to.equal(index.pipe)
 
     // pure combinators
+    expect(A).to.equal(index.A)
     expect(B).to.equal(index.B)
     expect(C).to.equal(index.C)
     expect(I).to.equal(index.I)

@@ -7,6 +7,7 @@ const { expect } = require('chai')
 
 const index = require('.')
 
+const A = require('./A')
 const B = require('./B')
 const C = require('./C')
 const I = require('./I')
@@ -16,6 +17,7 @@ const W = require('./W')
 
 describe('pure combinators index', () => {
   it('provides all of the exported combinators', () => {
+    expect(A).to.equal(index.A)
     expect(B).to.equal(index.B)
     expect(C).to.equal(index.C)
     expect(I).to.equal(index.I)
