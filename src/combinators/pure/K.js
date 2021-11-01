@@ -24,6 +24,10 @@
  * JavaScript functions, can take arbitrary arguments even if the parameter list is empty.
  * These arguments are simply ignored, which is exactly the desired effect anyway.
  *
+ * The **K** combinator is one of the two primitive combinators of the SK calculus. This
+ * means that any possible computation can be performed as sequences of these two
+ * combinators.
+ *
  * @param {*} a A value that will be returned by the returned constant function.
  * @returns {function} A function which ignores its argument(s) and returns `a`.
  * @alias module:combinators/pure.K

@@ -25,12 +25,18 @@
  * roots *schmelzen* and *tauschen*. The latter he called **T**, which Haskell Curry renamed
  * to **C** in 1930. Curry chose to keep **S** though.)
  *
- * @param {Function(T,U):V} a A function of two arguments of types T and U which returns a
- *      value of type V. This return value is the return value of the entire combinator.
- * @param {function(T):U} b A function of one argument of type T which returns a value of
- *      type U. This return value is passed into function `a`.
- * @param {T} c A value of type T, which is passed into both functions `a` and `b`.
- * @returns {V} A value of type V, the type returned by function `a`.
+ * The **S** combinator is one of the two primitive combinators of the SK calculus. This
+ * means that any possible computation can be performed as sequences of these two
+ * combinators.
+ *
+ * @param {function} a A function of two parameters. It will take as arguments the value `c`
+ *      and the return value of function `b`. This function's return value becomes the
+ *      return value of the combinator.
+ * @param {function} b A function of one parameter. Its argument will be the value `c`, and
+ *      its return value will become the second argument of function `a`.
+ * @param {*} c A value which becomes the first argument of both function `a` and function
+ *      `b`.
+ * @returns {*} The value returned by function `a`.
  * @alias module:combinators/pure.S
  */
 const S = a => b => c => a(c)(b(c))
