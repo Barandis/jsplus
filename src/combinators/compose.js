@@ -8,6 +8,10 @@
  * passes the results from its contained functions to the next and returns the result of the
  * last contained function.
  *
+ * This is an implementation of the **{@link module:combinators/pure.B|B}** combinator
+ * except that it can compose more than two functions. (In the case of three or more, it's
+ * the same as using the **B** combinator multiple times.)
+ *
  * The order of the functions is reversed, as is traditional in functional programming. If
  * you need the order to not be reversed, use `{@link module:combinators.pipe|pipe}`.
  *

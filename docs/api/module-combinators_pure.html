@@ -81,7 +81,7 @@
 
     
 
-    <h4 class="name" id=".B"><span class="type-signature">(static) </span>B<span class="signature">(a, b, c)</span><span class="type-signature"> &rarr; {V}</span></h4>
+    <h4 class="name" id=".B"><span class="type-signature">(static) </span>B<span class="signature">(a, b, c)</span><span class="type-signature"> &rarr; {*}</span></h4>
 
     
 
@@ -93,7 +93,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="combinators_pure_B.js.html">combinators/pure/B.js</a>, <a href="combinators_pure_B.js.html#line36">line 36</a>
+        <a href="combinators_pure_B.js.html">combinators/pure/B.js</a>, <a href="combinators_pure_B.js.html#line37">line 37</a>
     </li></ul></dd>
     
 
@@ -164,7 +164,7 @@
 </tr>
 </tbody>
 </table>
-<p>The <strong>B</strong> combinator performs the composition of two single-argument functions. This
+<p>The <strong>B</strong> combinator performs the composition of two single-parameter functions. This
 means that the second function (<code>b</code>) is applied to an argument, and then the first
 function (<code>a</code>) is applied to that result. This is the basic way of combining two
 functions into another function that does the same thing as the two component functions
@@ -226,8 +226,9 @@ two functions next to each other (&quot;concatenating&quot; the functions).</p>
 
             
 
-            <td class="description last"><p>A function of one argument of type U that returns a result of
-type V. This return value becomes the return value of the entire combinator.</p></td>
+            <td class="description last"><p>A function of one parameter. This function accepts the return value
+from <code>b</code>, and this function's return value becomes the return value of the
+combinator.</p></td>
         </tr>
 
     
@@ -250,8 +251,8 @@ type V. This return value becomes the return value of the entire combinator.</p>
 
             
 
-            <td class="description last"><p>A function of one argument of type T that returns a result of
-type U. This return value becomes the argument for function <code>a</code>.</p></td>
+            <td class="description last"><p>A function of one parameter. This function takes <code>c</code> as its argument,
+and its return value becomes the argument to <code>a</code>.</p></td>
         </tr>
 
     
@@ -264,7 +265,7 @@ type U. This return value becomes the argument for function <code>a</code>.</p><
             <td class="type">
             
                 
-<span class="param-type">T</span>
+<span class="param-type">*</span>
 
 
             
@@ -274,7 +275,7 @@ type U. This return value becomes the argument for function <code>a</code>.</p><
 
             
 
-            <td class="description last"><p>A value of type T. This value becomes the argument for function <code>b</code>.</p></td>
+            <td class="description last"><p>A value that becomes <code>b</code>'s argument.</p></td>
         </tr>
 
     
@@ -300,7 +301,7 @@ type U. This return value becomes the argument for function <code>a</code>.</p><
 
         
 <div class="param-desc">
-    <p>A value of type V, which is returned by function <code>a</code>.</p>
+    <p>The return value of function <code>a</code>.</p>
 </div>
 
 
@@ -311,7 +312,7 @@ type U. This return value becomes the argument for function <code>a</code>.</p><
     </dt>
     <dd>
         
-<span class="param-type">V</span>
+<span class="param-type">*</span>
 
 
     </dd>
@@ -326,7 +327,7 @@ type U. This return value becomes the argument for function <code>a</code>.</p><
 
     
 
-    <h4 class="name" id=".C"><span class="type-signature">(static) </span>C<span class="signature">(a, b, c)</span><span class="type-signature"> &rarr; {V}</span></h4>
+    <h4 class="name" id=".C"><span class="type-signature">(static) </span>C<span class="signature">(a, b, c)</span><span class="type-signature"> &rarr; {*}</span></h4>
 
     
 
@@ -338,7 +339,7 @@ type U. This return value becomes the argument for function <code>a</code>.</p><
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="combinators_pure_C.js.html">combinators/pure/C.js</a>, <a href="combinators_pure_C.js.html#line27">line 27</a>
+        <a href="combinators_pure_C.js.html">combinators/pure/C.js</a>, <a href="combinators_pure_C.js.html#line28">line 28</a>
     </li></ul></dd>
     
 
@@ -464,8 +465,9 @@ then applies the first argument function <code>a</code> to those arguments in th
 
             
 
-            <td class="description last"><p>A function of two arguments of types U and T which returns a
-value of type V. This return value is the return value of the full combinator.</p></td>
+            <td class="description last"><p>A function of two parameters. This function needs to be able to
+accept <code>c</code> and <code>b</code> as arguments (in that order), and its return value will be the
+combinator's return value.</p></td>
         </tr>
 
     
@@ -478,7 +480,7 @@ value of type V. This return value is the return value of the full combinator.</
             <td class="type">
             
                 
-<span class="param-type">T</span>
+<span class="param-type">*</span>
 
 
             
@@ -488,7 +490,7 @@ value of type V. This return value is the return value of the full combinator.</
 
             
 
-            <td class="description last"><p>A value of type T. This becomes the second argument to function <code>a</code>.</p></td>
+            <td class="description last"><p>A value that will become <code>a</code>'s second argument.</p></td>
         </tr>
 
     
@@ -501,7 +503,7 @@ value of type V. This return value is the return value of the full combinator.</
             <td class="type">
             
                 
-<span class="param-type">U</span>
+<span class="param-type">*</span>
 
 
             
@@ -511,7 +513,7 @@ value of type V. This return value is the return value of the full combinator.</
 
             
 
-            <td class="description last"><p>A value of type U. This becomes the first argument to function <code>a</code>.</p></td>
+            <td class="description last"><p>A value that will become <code>a</code>'s first argument.</p></td>
         </tr>
 
     
@@ -548,7 +550,7 @@ value of type V. This return value is the return value of the full combinator.</
     </dt>
     <dd>
         
-<span class="param-type">V</span>
+<span class="param-type">*</span>
 
 
     </dd>
@@ -563,7 +565,7 @@ value of type V. This return value is the return value of the full combinator.</
 
     
 
-    <h4 class="name" id=".I"><span class="type-signature">(static) </span>I<span class="signature">(a)</span><span class="type-signature"> &rarr; {T}</span></h4>
+    <h4 class="name" id=".I"><span class="type-signature">(static) </span>I<span class="signature">(a)</span><span class="type-signature"> &rarr; {*}</span></h4>
 
     
 
@@ -690,7 +692,7 @@ value of type V. This return value is the return value of the full combinator.</
             <td class="type">
             
                 
-<span class="param-type">T</span>
+<span class="param-type">*</span>
 
 
             
@@ -700,7 +702,7 @@ value of type V. This return value is the return value of the full combinator.</
 
             
 
-            <td class="description last"><p>A value of type T.</p></td>
+            <td class="description last"><p>A value of any type.</p></td>
         </tr>
 
     
@@ -726,7 +728,7 @@ value of type V. This return value is the return value of the full combinator.</
 
         
 <div class="param-desc">
-    <p>The same value that was passed into the combinator.</p>
+    <p>The same value that was passed in as <code>a</code>.</p>
 </div>
 
 
@@ -737,7 +739,7 @@ value of type V. This return value is the return value of the full combinator.</
     </dt>
     <dd>
         
-<span class="param-type">T</span>
+<span class="param-type">*</span>
 
 
     </dd>
@@ -838,7 +840,7 @@ value of type V. This return value is the return value of the full combinator.</
 <p>The <strong>K</strong> combinator produces functions (closures) that return the <strong>K</strong> combinator's
 first argument, no matter what arguments are passed to the produced function.</p>
 <p>For this reason the type signature given above doesn't really match the JavaScript
-implementation's type signature. There is no equivalent to the <code>b</code> parameter inthe type
+implementation's type signature. There is no equivalent to the <code>b</code> parameter in the type
 signature above; it's not considered good style to include a parameter that doesn't get
 referenced in the body of the function. Besides, the produced function, like all
 JavaScript functions, can take arbitrary arguments even if the parameter list is empty.
@@ -886,7 +888,7 @@ These arguments are simply ignored, which is exactly the desired effect anyway.<
             <td class="type">
             
                 
-<span class="param-type">T</span>
+<span class="param-type">*</span>
 
 
             
@@ -922,7 +924,7 @@ These arguments are simply ignored, which is exactly the desired effect anyway.<
 
         
 <div class="param-desc">
-    <p>A function which ignores its arguments and returns <code>a</code>.</p>
+    <p>A function which ignores its argument(s) and returns <code>a</code>.</p>
 </div>
 
 
@@ -1193,7 +1195,7 @@ type U. This return value is passed into function <code>a</code>.</p></td>
 
     
 
-    <h4 class="name" id=".W"><span class="type-signature">(static) </span>W<span class="signature">(a, b)</span><span class="type-signature"> &rarr; {U}</span></h4>
+    <h4 class="name" id=".W"><span class="type-signature">(static) </span>W<span class="signature">(a, b)</span><span class="type-signature"> &rarr; {*}</span></h4>
 
     
 
@@ -1331,8 +1333,8 @@ argument <code>a</code> to both instances of <code>b</code>.</p>
 
             
 
-            <td class="description last"><p>A function of two arguments, both of type T, which returns a
-value of type U. This return value becomes the return value of the full combinator.</p></td>
+            <td class="description last"><p>A function of two parameters. It will receive value <code>b</code> as both
+arguments, and its return value will be the return value for the combinator.</p></td>
         </tr>
 
     
@@ -1345,7 +1347,7 @@ value of type U. This return value becomes the return value of the full combinat
             <td class="type">
             
                 
-<span class="param-type">T</span>
+<span class="param-type">*</span>
 
 
             
@@ -1393,7 +1395,7 @@ value of type U. This return value becomes the return value of the full combinat
     </dt>
     <dd>
         
-<span class="param-type">U</span>
+<span class="param-type">*</span>
 
 
     </dd>

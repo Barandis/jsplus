@@ -52,6 +52,11 @@
  * passes the results from its contained functions to the next and returns the result of the
  * last contained function.
  *
+ * This is an implementation of the **{@link module:combinators/pure.B|B}** combinator
+ * except that the order of the composed functions is reversed and that it can compose more
+ * than two functions. (In the case of three or more, it's the same as using the **B**
+ * combinator multiple times.)
+ *
  * The order of the functions is *not* reversed. The first function listed is the first
  * applied. This is contrary to the order most often used in functional programming (and
  * opposite of the order in `{@link module:combinators.compose|compose}`), but there are

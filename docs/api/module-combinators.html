@@ -93,7 +93,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="combinators_compose.js.html">combinators/compose.js</a>, <a href="combinators_compose.js.html#line19">line 19</a>
+        <a href="combinators_compose.js.html">combinators/compose.js</a>, <a href="combinators_compose.js.html#line23">line 23</a>
     </li></ul></dd>
     
 
@@ -136,6 +136,9 @@
     <p>Combines two or more single-parameter functions into one single-parameter function that
 passes the results from its contained functions to the next and returns the result of the
 last contained function.</p>
+<p>This is an implementation of the <strong><a href="module-combinators_pure.html#.B">B</a></strong> combinator
+except that it can compose more than two functions. (In the case of three or more, it's
+the same as using the <strong>B</strong> combinator multiple times.)</p>
 <p>The order of the functions is reversed, as is traditional in functional programming. If
 you need the order to not be reversed, use <code><a href="module-combinators.html#.pipe">pipe</a></code>.</p>
 </div>
@@ -487,7 +490,7 @@ console.log(flip(sub)(1, 5)) // produce 2-argument function
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="combinators_pipe.js.html">combinators/pipe.js</a>, <a href="combinators_pipe.js.html#line21">line 21</a>
+        <a href="combinators_pipe.js.html">combinators/pipe.js</a>, <a href="combinators_pipe.js.html#line26">line 26</a>
     </li></ul></dd>
     
 
@@ -530,6 +533,10 @@ console.log(flip(sub)(1, 5)) // produce 2-argument function
     <p>Combines two or more single-parameter functions into one single-parameter function that
 passes the results from its contained functions to the next and returns the result of the
 last contained function.</p>
+<p>This is an implementation of the <strong><a href="module-combinators_pure.html#.B">B</a></strong> combinator
+except that the order of the composed functions is reversed and that it can compose more
+than two functions. (In the case of three or more, it's the same as using the <strong>B</strong>
+combinator multiple times.)</p>
 <p>The order of the functions is <em>not</em> reversed. The first function listed is the first
 applied. This is contrary to the order most often used in functional programming (and
 opposite of the order in <code><a href="module-combinators.html#.compose">compose</a></code>), but there are

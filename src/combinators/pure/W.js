@@ -17,11 +17,11 @@
  * The **W** combinator duplicates its second argument `b` and then applies its first
  * argument `a` to both instances of `b`.
  *
- * @param {function(T,T):U} a A function of two arguments, both of type T, which returns a
- *      value of type U. This return value becomes the return value of the full combinator.
- * @param {T} b A value of type T. This value is duplicated and passed (twice) to function
+ * @param {function} a A function of two parameters. It will receive value `b` as both
+ *      arguments, and its return value will be the return value for the combinator.
+ * @param {*} b A value of type T. This value is duplicated and passed (twice) to function
  *      `a`.
- * @returns {U} The result of function `a` when applied to `b` twice.
+ * @returns {*} The result of function `a` when applied to `b` twice.
  * @alias module:combinators/pure.W
  */
 const W = a => b => a(b)(b)
