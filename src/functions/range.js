@@ -20,8 +20,6 @@
  * provided, it will be regarded as `1`. The direction of the iteration is always determined
  * by `start` and `end`.
  *
- * # Examples
- *
  * ```javascript
  * // Taking advantage of the fact that `range` is an iterator by using
  * // the spread operator to make arrays out of it

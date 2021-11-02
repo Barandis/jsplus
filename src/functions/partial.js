@@ -15,8 +15,6 @@
  * satisfy the function it partially completes. Another call (presumably with empty
  * parentheses) will have to be made to get the return value.
  *
- * # Examples
- *
  * ```javascript
  * const sum = partial((a, b, c) => a + b + c, 1, 2)
  *

@@ -8,8 +8,6 @@
  * same as a `reduce` function except that it collects all intermediate results while
  * `reduce` will only return the final result.
  *
- * # Examples
- *
  * ```javascript
  * const array = [1, 2, 3, 4, 5]
  * const sum = (a, b) => a + b

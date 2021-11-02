@@ -20,8 +20,6 @@
  * than 5 arguments (because there is no specific curry function for parameter lists that
  * large).
  *
- * # Examples
- *
  * ```javascript
  * // variadic function, will sum any number of numbers given to it
  * const sum = (...ns) => ns.reduce((a, b) => a + b, 0)

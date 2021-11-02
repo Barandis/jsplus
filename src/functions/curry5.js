@@ -11,8 +11,6 @@
  * set of parentheses. The advantage is that it works with functions that have rest or
  * default parameters.
  *
- * # Examples
- *
  * ```javascript
  * const sum = curry4((a, b, c, d, e) => a + b + c + d + e)
  *

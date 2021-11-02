@@ -26,8 +26,6 @@ const CURRIED = Symbol('barandis/curried')
  * returned without modification). A corollary is that `curry` will not curry a fully
  * curried function (one in which no parameter list has more than one parameter).
  *
- * # Examples
- *
  * ```javascript
  * const sum = curry((a, b, c) => a + b + c)
  *

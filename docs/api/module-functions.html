@@ -93,7 +93,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="functions_curry.js.html">functions/curry.js</a>, <a href="functions_curry.js.html#line48">line 48</a>
+        <a href="functions_curry.js.html">functions/curry.js</a>, <a href="functions_curry.js.html#line46">line 46</a>
     </li></ul></dd>
     
 
@@ -148,7 +148,6 @@ parameters (or anything after them).</p>
 arguments, passing that function to <code>curry</code> will be a no-op (the same function will be
 returned without modification). A corollary is that <code>curry</code> will not curry a fully
 curried function (one in which no parameter list has more than one parameter).</p>
-<h1>Examples</h1>
 <pre class="prettyprint source lang-javascript"><code>const sum = curry((a, b, c) => a + b + c)
 
 // Each of the following are equivalent, and all print '6' to the console.
@@ -277,7 +276,7 @@ will return another new function that accepts the <em>rest</em> of the arguments
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="functions_curry2.js.html">functions/curry2.js</a>, <a href="functions_curry2.js.html#line31">line 31</a>
+        <a href="functions_curry2.js.html">functions/curry2.js</a>, <a href="functions_curry2.js.html#line29">line 29</a>
     </li></ul></dd>
     
 
@@ -322,7 +321,6 @@ will return another new function that accepts the <em>rest</em> of the arguments
 take its arguments one at a time. It will not accept multiple arguments within a single
 set of parentheses. The advantage is that it works with functions that have rest or
 default parameters.</p>
-<h1>Examples</h1>
 <pre class="prettyprint source lang-javascript"><code>const sum = curry2((a, b) => a + b)
 
 // This is the only possible calling format.
@@ -449,7 +447,7 @@ parentheses.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="functions_curry3.js.html">functions/curry3.js</a>, <a href="functions_curry3.js.html#line35">line 35</a>
+        <a href="functions_curry3.js.html">functions/curry3.js</a>, <a href="functions_curry3.js.html#line33">line 33</a>
     </li></ul></dd>
     
 
@@ -494,7 +492,6 @@ parentheses.</p>
 take its arguments one at a time. It will not accept multiple arguments within a single
 set of parentheses. The advantage is that it works with functions that have rest or
 default parameters.</p>
-<h1>Examples</h1>
 <pre class="prettyprint source lang-javascript"><code>const sum = curry3((a, b, c) => a + b + c)
 
 // This is the only possible calling format.
@@ -625,7 +622,7 @@ parentheses.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="functions_curry4.js.html">functions/curry4.js</a>, <a href="functions_curry4.js.html#line35">line 35</a>
+        <a href="functions_curry4.js.html">functions/curry4.js</a>, <a href="functions_curry4.js.html#line33">line 33</a>
     </li></ul></dd>
     
 
@@ -670,7 +667,6 @@ parentheses.</p>
 take its arguments one at a time. It will not accept multiple arguments within a single
 set of parentheses. The advantage is that it works with functions that have rest or
 default parameters.</p>
-<h1>Examples</h1>
 <pre class="prettyprint source lang-javascript"><code>const sum = curry4((a, b, c, d) => a + b + c + d)
 
 // This is the only possible calling format.
@@ -801,7 +797,7 @@ parentheses.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="functions_curry5.js.html">functions/curry5.js</a>, <a href="functions_curry5.js.html#line35">line 35</a>
+        <a href="functions_curry5.js.html">functions/curry5.js</a>, <a href="functions_curry5.js.html#line33">line 33</a>
     </li></ul></dd>
     
 
@@ -846,7 +842,6 @@ parentheses.</p>
 take its arguments one at a time. It will not accept multiple arguments within a single
 set of parentheses. The advantage is that it works with functions that have rest or
 default parameters.</p>
-<h1>Examples</h1>
 <pre class="prettyprint source lang-javascript"><code>const sum = curry4((a, b, c, d, e) => a + b + c + d + e)
 
 // This is the only possible calling format.
@@ -977,7 +972,7 @@ parentheses.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="functions_curryn.js.html">functions/curryn.js</a>, <a href="functions_curryn.js.html#line43">line 43</a>
+        <a href="functions_curryn.js.html">functions/curryn.js</a>, <a href="functions_curryn.js.html#line41">line 41</a>
     </li></ul></dd>
     
 
@@ -1030,7 +1025,6 @@ for that number of arguments as it will be faster.</p>
 how many arguments a function will be using, or when you want to curry a function of more
 than 5 arguments (because there is no specific curry function for parameter lists that
 large).</p>
-<h1>Examples</h1>
 <pre class="prettyprint source lang-javascript"><code>// variadic function, will sum any number of numbers given to it
 const sum = (...ns) => ns.reduce((a, b) => a + b, 0)
 
@@ -1408,7 +1402,7 @@ succeeding tuple has its index incremented by 1.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="functions_partial.js.html">functions/partial.js</a>, <a href="functions_partial.js.html#line40">line 40</a>
+        <a href="functions_partial.js.html">functions/partial.js</a>, <a href="functions_partial.js.html#line38">line 38</a>
     </li></ul></dd>
     
 
@@ -1456,7 +1450,6 @@ more arguments, and calling <em>that</em> function will result in an answer.</p>
 <p>Note that this function always returns a function, even when provided enough arguments to
 satisfy the function it partially completes. Another call (presumably with empty
 parentheses) will have to be made to get the return value.</p>
-<h1>Examples</h1>
 <pre class="prettyprint source lang-javascript"><code>const sum = partial((a, b, c) => a + b + c, 1, 2)
 
 console.log(sum(3))    // 6
@@ -1630,7 +1623,7 @@ them after <code>args</code> are applied.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="functions_range.js.html">functions/range.js</a>, <a href="functions_range.js.html#line75">line 75</a>
+        <a href="functions_range.js.html">functions/range.js</a>, <a href="functions_range.js.html#line73">line 73</a>
     </li></ul></dd>
     
 
@@ -1682,7 +1675,6 @@ successive number is <em>de</em>cremented by <code>step</code>. <code>step</code
 a negative <code>step</code> is provided, its absolute value will be used instead, and if <code>0</code> is
 provided, it will be regarded as <code>1</code>. The direction of the iteration is always determined
 by <code>start</code> and <code>end</code>.</p>
-<h1>Examples</h1>
 <pre class="prettyprint source lang-javascript"><code>// Taking advantage of the fact that `range` is an iterator by using
 // the spread operator to make arrays out of it
 const e = [...range(4)]
@@ -1974,7 +1966,7 @@ the range.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="functions_scan.js.html">functions/scan.js</a>, <a href="functions_scan.js.html#line29">line 29</a>
+        <a href="functions_scan.js.html">functions/scan.js</a>, <a href="functions_scan.js.html#line27">line 27</a>
     </li></ul></dd>
     
 
@@ -2017,7 +2009,6 @@ the range.</p></td>
     <p>Reduces a collection, returning all of the intermediate reduction values. This is the
 same as a <code>reduce</code> function except that it collects all intermediate results while
 <code>reduce</code> will only return the final result.</p>
-<h1>Examples</h1>
 <pre class="prettyprint source lang-javascript"><code>const array = [1, 2, 3, 4, 5]
 const sum = (a, b) => a + b
 
