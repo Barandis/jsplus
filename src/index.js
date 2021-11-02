@@ -5,5 +5,6 @@
 
 const combinators = require('./combinators')
 const functions = require('./functions')
+const operators = require('./operators')
 
-module.exports = { ...combinators, ...functions }
+module.exports = { ...combinators, ...functions, ...operators }

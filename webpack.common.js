@@ -28,6 +28,7 @@ module.exports = {
     alias: {
       combinators: path.resolve(__dirname, 'src/combinators'),
       functions: path.resolve(__dirname, 'src/functions'),
+      operators: path.resolve(__dirname, 'src/operators'),
       test: path.resolve(__dirname, 'test'),
     },
   },

@@ -1,0 +1,3161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>operators - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-combinators.html">combinators</a><ul class='methods'><li data-type='method'><a href="module-combinators.html#.compose">compose</a></li><li data-type='method'><a href="module-combinators.html#.flip">flip</a></li><li data-type='method'><a href="module-combinators.html#.pipe">pipe</a></li></ul></li><li><a href="module-combinators_pure.html">combinators/pure</a><ul class='methods'><li data-type='method'><a href="module-combinators_pure.html#.B">B</a></li><li data-type='method'><a href="module-combinators_pure.html#.C">C</a></li><li data-type='method'><a href="module-combinators_pure.html#.I">I</a></li><li data-type='method'><a href="module-combinators_pure.html#.Is">Is</a></li><li data-type='method'><a href="module-combinators_pure.html#.K">K</a></li><li data-type='method'><a href="module-combinators_pure.html#.Psi">Psi</a></li><li data-type='method'><a href="module-combinators_pure.html#.S">S</a></li><li data-type='method'><a href="module-combinators_pure.html#.Sp">Sp</a></li><li data-type='method'><a href="module-combinators_pure.html#.T">T</a></li><li data-type='method'><a href="module-combinators_pure.html#.W">W</a></li></ul></li><li><a href="module-functions.html">functions</a><ul class='methods'><li data-type='method'><a href="module-functions.html#.curry">curry</a></li><li data-type='method'><a href="module-functions.html#.curry2">curry2</a></li><li data-type='method'><a href="module-functions.html#.curry3">curry3</a></li><li data-type='method'><a href="module-functions.html#.curry4">curry4</a></li><li data-type='method'><a href="module-functions.html#.curry5">curry5</a></li><li data-type='method'><a href="module-functions.html#.curryn">curryn</a></li><li data-type='method'><a href="module-functions.html#.enumerate">enumerate</a></li><li data-type='method'><a href="module-functions.html#.partial">partial</a></li><li data-type='method'><a href="module-functions.html#.range">range</a></li><li data-type='method'><a href="module-functions.html#.scan">scan</a></li></ul></li><li><a href="module-operators.html">operators</a><ul class='methods'><li data-type='method'><a href="module-operators.html#.add">add</a></li><li data-type='method'><a href="module-operators.html#.ceq">ceq</a></li><li data-type='method'><a href="module-operators.html#.cne">cne</a></li><li data-type='method'><a href="module-operators.html#.div">div</a></li><li data-type='method'><a href="module-operators.html#.eq">eq</a></li><li data-type='method'><a href="module-operators.html#.ge">ge</a></li><li data-type='method'><a href="module-operators.html#.gt">gt</a></li><li data-type='method'><a href="module-operators.html#.le">le</a></li><li data-type='method'><a href="module-operators.html#.lt">lt</a></li><li data-type='method'><a href="module-operators.html#.mul">mul</a></li><li data-type='method'><a href="module-operators.html#.ne">ne</a></li><li data-type='method'><a href="module-operators.html#.neg">neg</a></li><li data-type='method'><a href="module-operators.html#.pos">pos</a></li><li data-type='method'><a href="module-operators.html#.pow">pow</a></li><li data-type='method'><a href="module-operators.html#.rem">rem</a></li><li data-type='method'><a href="module-operators.html#.sub">sub</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">operators</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".add"><span class="type-signature">(static) </span>add<span class="signature">(x, y)</span><span class="type-signature"> &rarr; {number|string}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="operators_add.js.html">operators/add.js</a>, <a href="operators_add.js.html#line28">line 28</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>A curried function version of the binary <code>+</code> operator.</p>
+<p>This works with strings as well as with numbers.</p>
+<pre class="prettyprint source lang-javascript"><code>console.log(4 + 7)     // 11
+console.log(add(4, 7)) // 11
+console.log(add(4)(7)) // 11
+
+const add4 = add(4)
+console.log(add4(7))   // 11
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+|
+
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The first operand.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+|
+
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The second operand.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The sum of <code>x</code> and <code>y</code> (if numbers) or <code>x</code> and <code>y</code> concatenated
+(if strings).</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+|
+
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".ceq"><span class="type-signature">(static) </span>ceq<span class="signature">(x, y)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="operators_ceq.js.html">operators/ceq.js</a>, <a href="operators_ceq.js.html#line33">line 33</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>A curried function version of the <code>==</code> operator.</p>
+<p>The <code>c</code> in <code>ceq</code> is for &quot;coercing&quot;. You <em>probably</em> mean to use
+<code><a href="module-operators.html#.eq">eq</a></code> instead.</p>
+<pre class="prettyprint source lang-javascript"><code>console.log(3 == '3')    // true
+console.log(ceq(3, '3')) // true
+console.log(ceq(3)('3')) // true
+
+const ceq3 = ceq(3)
+console.log(ceq3('3'))   // true
+
+console.log(3 == 4)      // false
+console.log(ceq(3, 4))   // false
+console.log(ceq(3)(4))   // false
+console.log(ceq3(4))     // false
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The first parameter.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The second parameter.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Whether the two arguments are equal, with equality defined by <code>==</code>.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".cne"><span class="type-signature">(static) </span>cne<span class="signature">(x, y)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="operators_cne.js.html">operators/cne.js</a>, <a href="operators_cne.js.html#line33">line 33</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>A curried function version of the <code>!=</code> operator.</p>
+<p>The <code>c</code> in <code>cne</code> is for &quot;coercing&quot;. You <em>probably</em> mean to use
+<code><a href="module-operators.html#.ne">ne</a></code> instead.</p>
+<pre class="prettyprint source lang-javascript"><code>console.log(3 != '3')    // false
+console.log(cne(3, '3')) // false
+console.log(cne(3)('3')) // false
+
+const cne3 = cne(3)
+console.log(cne3('3'))   // false
+
+console.log(3 != 4)      // true
+console.log(cne(3, 4))   // true
+console.log(cne(3)(4))   // true
+console.log(cne3(4))     // true
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The first parameter.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The second parameter.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Whether the two arguments are unequal, with equality defined by <code>==</code>.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".div"><span class="type-signature">(static) </span>div<span class="signature">(x, y)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="operators_div.js.html">operators/div.js</a>, <a href="operators_div.js.html#line36">line 36</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>A curried function version of the <code>/</code> operator.</p>
+<p>Note that when used with a single argument, that argument is the dividend (the number
+that gets divided). If you need the argument to be the divisor (the number by which the
+dividend is divided), use the <code><a href="module-combinators.html#.flip">flip</a></code> combinator. See the
+examples below.</p>
+<pre class="prettyprint source lang-javascript"><code>console.log(4 / 7)           // 0.5714285714285714
+console.log(div(4, 7))       // 0.5714285714285714
+console.log(div(4)(7))       // 0.5714285714285714
+
+const div4 = div(4)
+console.log(div4(7))         // 0.5714285714285714
+
+console.log(flip(div)(4, 7)) // 1.75
+console.log(flip(div)(4)(7)) // 1.75
+
+const dividedBy4 = flip(div, 4)
+console.log(dividedBy4(7))   // 1.75
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The dividend.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The divisor.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The quotient of <code>x</code> and <code>y</code>.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".eq"><span class="type-signature">(static) </span>eq<span class="signature">(x, y)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="operators_eq.js.html">operators/eq.js</a>, <a href="operators_eq.js.html#line30">line 30</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>A curried function version of the <code>===</code> operator.</p>
+<pre class="prettyprint source lang-javascript"><code>console.log(3 === '3')  // false
+console.log(eq(3, '3')) // false
+console.log(eq(3)('3')) // false
+
+const eq3 = eq(3)
+console.log(eq3('3'))   // false
+
+console.log(3 === 3)    // true
+console.log(eq(3, 3))   // true
+console.log(eq(3)(3))   // true
+console.log(eq3(3))     // true
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The first parameter.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The second parameter.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Whether the two arguments are equal, with equality defined by <code>===</code>.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".ge"><span class="type-signature">(static) </span>ge<span class="signature">(x, y)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="operators_ge.js.html">operators/ge.js</a>, <a href="operators_ge.js.html#line37">line 37</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>A curried function version of the <code>&gt;=</code> operator.</p>
+<p>Note that when used with a single argument, that argument is the one on the <em>left</em> side
+of the <code>&gt;=</code>. If you need the argument to be the one on the <em>right</em> side, you can either
+swap the arguments and use <code><a href="module-operators.html#.le">le</a></code> or use the
+<code><a href="module-combinators.html#.flip">flip</a></code> combinator on <code>ge</code>. See the examples below.</p>
+<pre class="prettyprint source lang-javascript"><code>console.log(4 >= 3)      // true
+console.log(ge(4, 3))    // true
+console.log(ge(4)(3))    // true
+
+const geFrom4 = ge(4)
+// This is the same as x => 4 >= x
+console.log(geFrom4(3))  // true
+
+// To do x => x >= 4, there are two choices
+const ge4a = flip(ge, 4) // Actual x => x >= 4
+const ge4b = le(4)       // x => 4 &lt;= x is the same thing
+console.log(ge4a(3))     // false
+console.log(ge4b(3))     // false
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The first parameter.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The second parameter.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Whether <code>x</code> is greater than or equal to <code>y</code>.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".gt"><span class="type-signature">(static) </span>gt<span class="signature">(x, y)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="operators_gt.js.html">operators/gt.js</a>, <a href="operators_gt.js.html#line37">line 37</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>A curried function version of the <code>&gt;</code> operator.</p>
+<p>Note that when used with a single argument, that argument is the one on the <em>left</em> side
+of the <code>&gt;</code>. If you need the argument to be the one on the <em>right</em> side, you can either
+swap the arguments and use <code><a href="module-operators.html#.lt">lt</a></code> or use the
+<code><a href="module-combinators.html#.flip">flip</a></code> combinator on <code>gt</code>. See the examples below.</p>
+<pre class="prettyprint source lang-javascript"><code>console.log(4 > 3)       // true
+console.log(gt(4, 3))    // true
+console.log(gt(4)(3))    // true
+
+const gtFrom4 = gt(4)
+// This is the same as x => 4 > x
+console.log(gtFrom4(3))  // true
+
+// To do x => x > 4, there are two choices
+const gt4a = flip(gt, 4) // Actual x => x > 4
+const gt4b = lt(4)       // x => 4 &lt; x is the same thing
+console.log(gt4a(3))     // false
+console.log(gt4b(3))     // false
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The first parameter.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The second parameter.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Whether <code>x</code> is greater than <code>y</code>.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".le"><span class="type-signature">(static) </span>le<span class="signature">(x, y)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="operators_le.js.html">operators/le.js</a>, <a href="operators_le.js.html#line37">line 37</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>A curried function version of the <code>&lt;=</code> operator.</p>
+<p>Note that when used with a single argument, that argument is the one on the <em>left</em> side
+of the <code>&lt;=</code>. If you need the argument to be the one on the <em>right</em> side, you can either
+swap the arguments and use <code><a href="module-operators.html#.ge">ge</a></code> or use the
+<code><a href="module-combinators.html#.flip">flip</a></code> combinator on <code>le</code>. See the examples below.</p>
+<pre class="prettyprint source lang-javascript"><code>console.log(3 &lt;= 4)      // true
+console.log(le(3, 4))    // true
+console.log(le(3)(4))    // true
+
+const leFrom3 = le(3)
+// This is the same as x => 3 &lt;= x
+console.log(leFrom3(4))  // true
+
+// To do x => x &lt;= 3, there are two choices
+const le3a = flip(le, 3) // Actual x => x &lt;= 3
+const le3b = ge(3)       // x => 3 >= x is the same thing
+console.log(le3a(4))     // false
+console.log(le3b(4))     // false
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The first parameter.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The second parameter.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Whether <code>x</code> is less than or equal to <code>y</code>.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".lt"><span class="type-signature">(static) </span>lt<span class="signature">(x, y)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="operators_lt.js.html">operators/lt.js</a>, <a href="operators_lt.js.html#line37">line 37</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>A curried function version of the <code>&lt;</code> operator.</p>
+<p>Note that when used with a single argument, that argument is the one on the <em>left</em> side
+of the <code>&lt;</code>. If you need the argument to be the one on the <em>right</em> side, you can either
+swap the arguments and use <code><a href="module-operators.html#.gt">gt</a></code> or use the
+<code><a href="module-combinators.html#.flip">flip</a></code> combinator on <code>lt</code>. See the examples below.</p>
+<pre class="prettyprint source lang-javascript"><code>console.log(3 &lt; 4)       // true
+console.log(lt(3, 4))    // true
+console.log(lt(3)(4))    // true
+
+const ltFrom3 = lt(3)
+// This is the same as x => 3 &lt; x
+console.log(ltFrom3(4))  // true
+
+// To do x => x &lt; 3, there are two choices
+const lt3a = flip(lt, 3) // Actual x => x &lt; 3
+const lt3b = gt(3)       // x => 3 > x is the same thing
+console.log(lt3a(4))     // false
+console.log(lt3b(4))     // false
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The first parameter.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The second parameter.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Whether <code>x</code> is less than <code>y</code>.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".mul"><span class="type-signature">(static) </span>mul<span class="signature">(x, y)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="operators_mul.js.html">operators/mul.js</a>, <a href="operators_mul.js.html#line25">line 25</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>A curried function version of the <code>*</code> operator.</p>
+<pre class="prettyprint source lang-javascript"><code>console.log(4 * 7)     // 28
+console.log(mul(4, 7)) // 28
+console.log(mul(4)(7)) // 28
+
+const mul4 = mul(4)
+console.log(mul4(7))   // 28
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The first operand.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The second operand.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The product of <code>x</code> and <code>y</code>.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".ne"><span class="type-signature">(static) </span>ne<span class="signature">(x, y)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="operators_ne.js.html">operators/ne.js</a>, <a href="operators_ne.js.html#line30">line 30</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>A curried function version of the <code>!==</code> operator.</p>
+<pre class="prettyprint source lang-javascript"><code>console.log(3 !== '3')  // true
+console.log(ne(3, '3')) // true
+console.log(ne(3)('3')) // true
+
+const ne3 = ne(3)
+console.log(ne3('3'))   // true
+
+console.log(3 !== 3)    // false
+console.log(ne(3, 3))   // false
+console.log(ne(3)(3))   // false
+console.log(ne3(3))     // false
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The first parameter.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The second parameter.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>Whether the two arguments are unequal, with equality defined by <code>===</code>.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".neg"><span class="type-signature">(static) </span>neg<span class="signature">(x)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="operators_neg.js.html">operators/neg.js</a>, <a href="operators_neg.js.html#line18">line 18</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>A function version of the unary <code>-</code> operator.</p>
+<pre class="prettyprint source lang-javascript"><code>console.log(-4)     // -4
+console.log(neg(4)) // -4
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The number to negate.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The negated number.</p>
+</div>
+
+
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".pos"><span class="type-signature">(static) </span>pos<span class="signature">(x)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="operators_pos.js.html">operators/pos.js</a>, <a href="operators_pos.js.html#line21">line 21</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>A function version of the unary <code>+</code> operator.</p>
+<pre class="prettyprint source lang-javascript"><code>console.log(+'3')      // 3
+console.log(pos('3'))  // 3
+
+console.log(+true)     // 1
+console.log(pos(true)) // 1
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to convert to a number.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The number that <code>x</code> was converted to, or <code>NaN</code> if it could not be converted.</p>
+</div>
+
+
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".pow"><span class="type-signature">(static) </span>pow<span class="signature">(x, y)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="operators_pow.js.html">operators/pow.js</a>, <a href="operators_pow.js.html#line36">line 36</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>A curried function version of the <code>**</code> operator.</p>
+<p>Note that when used with a single argument, that argument is the base (the number that is
+raised to a power). If you need the argument to be the exponent (the power that the base
+is raised to), use the <code><a href="module-combinators.html#.flip">flip</a></code> combinator. See the
+examples below.</p>
+<pre class="prettyprint source lang-javascript"><code>console.log(2 ** 5)          // 32
+console.log(pow(2, 5))       // 32
+console.log(pow(2)(5))       // 32
+
+const powerOf2 = pow(2)
+console.log(powerOf2(5))     // 32
+
+console.log(flip(pow)(2, 5)) // 25
+console.log(flip(pow)(2)(5)) // 25
+
+const square = flip(pow, 2)
+console.log(square(5))       // 25
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The base.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The exponent.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The base raised to the power of the exponent.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".rem"><span class="type-signature">(static) </span>rem<span class="signature">(x, y)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="operators_rem.js.html">operators/rem.js</a>, <a href="operators_rem.js.html#line36">line 36</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>A curried function version of the <code>%</code> operator.</p>
+<p>Note that when used with a single argument, that argument is the dividend (the number
+that gets divided). If you need the argument to be the divisor (the number by which the
+dividend is divided), use the <code><a href="module-combinators.html#.flip">flip</a></code> combinator. See the
+examples below.</p>
+<pre class="prettyprint source lang-javascript"><code>console.log(4 % 7)           // 4
+console.log(rem(4, 7))       // 4
+console.log(rem(4)(7))       // 4
+
+const rem4 = rem(4)
+console.log(rem4(7))         // 4
+
+console.log(flip(rem)(4, 7)) // 3
+console.log(flip(rem)(4)(7)) // 3
+
+const remWith4 = flip(rem, 4)
+console.log(remWith4(7))     // 3
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The dividend.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The divisor.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The remainder left when <code>x</code> is divided by <code>y</code>.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".sub"><span class="type-signature">(static) </span>sub<span class="signature">(x, y)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="operators_sub.js.html">operators/sub.js</a>, <a href="operators_sub.js.html#line36">line 36</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>A curried function version of the binary <code>-</code> operator.</p>
+<p>Note that when used with a single argument, that argument is the minuend (the number from
+which the other is subtracted). If you need the argument to be the subtrahend (the number
+that is subtracted from the other number), use the <code><a href="module-combinators.html#.flip">flip</a></code>
+combinator. See the examples below.</p>
+<pre class="prettyprint source lang-javascript"><code>console.log(4 - 7)           // -3
+console.log(sub(4, 7))       // -3
+console.log(sub(4)(7))       // -3
+
+const sub4 = sub(4)
+console.log(sub4(7))         // -3
+
+console.log(flip(sub)(4, 7)) // 3
+console.log(flip(sub)(4)(7)) // 3
+
+const minus4 = flip(sub, 4)
+console.log(minus4(7))       // 3
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The minuend.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The subtrahend.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>The difference of <code>x</code> and <code>y</code>.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>
