@@ -15,6 +15,7 @@ module.exports = {
   brs: require('./brs'),
   burs: require('./burs'),
   bxor: require('./bxor'),
+  coal: require('./coal'),
   ceq: require('./ceq'),
   cne: require('./cne'),
   cond: require('./cond'),
