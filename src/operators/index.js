@@ -8,6 +8,13 @@
  */
 module.exports = {
   add: require('./add'),
+  band: require('./band'),
+  blsr: require('./blsr'),
+  bnot: require('./bnot'),
+  bor: require('./bor'),
+  bshl: require('./bshl'),
+  bshr: require('./bshr'),
+  bxor: require('./bxor'),
   ceq: require('./ceq'),
   cne: require('./cne'),
   div: require('./div'),
