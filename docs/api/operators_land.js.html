@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>operators/ge.js - Documentation</title>
+    <title>operators/land.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">operators/ge.js</h1>
+    <h1 class="page-title">operators/land.js</h1>
     
 
     
@@ -50,39 +50,36 @@
 const curry = require('functions/curry')
 
 /**
- * A curried function version of the `>=` operator.
+ * A curried function version of the `&amp;&amp;` operator.
  *
- * Note that when used with a single argument, that argument is the one on the *left* side
- * of the `>=`. If you need the argument to be the one on the *right* side, you can either
- * swap the arguments and use `{@link module:operators.le|le}` or use the
- * `{@link module:combinators.flip|flip}` combinator on `ge`. See the examples below.
+ * Note that, while this function still has the short-circuiting behavior of the `&amp;&amp;`
+ * operator, it still requires both arguments be provided even if the first is enough to
+ * determine the outcome. In other words, `land(false)` will still need a second argument
+ * before it provides its answer, even though enough is there to determine that the return
+ * value will be `false` and that the second argument won't even be evaluated when provided.
  *
  * ```javascript
- * console.log(4 >= 3)      // true
- * console.log(ge(4, 3))    // true
- * console.log(ge(4)(3))    // true
+ * console.log(true &amp;&amp; false)     // false
+ * console.log(land(true, false)) // false
+ * console.log(land(true)(false)) // false
  *
- * const geFrom4 = ge(4)
- * // This is the same as x => 4 >= x
- * console.log(geFrom4(3))  // true
- *
- * // To do x => x >= 4, there are two choices
- * const ge4a = flip(ge, 4) // Actual x => x >= 4
- * const ge4b = le(4)       // x => 4 &lt;= x is the same thing
- * console.log(ge4a(3))     // false
- * console.log(ge4b(3))     // false
+ * // This will result in `false` no matter the second argument, but the
+ * // second argument is still necessary
+ * const andFalse = land(false)
+ * console.log(andFalse(true))    // false
  * ```
  *
- * @param {*} x The first parameter.
- * @param {*} y The second parameter.
- * @returns {boolean} Whether `x` is greater than or equal to `y`.
- * @alias module:operators.ge
+ * @param {*} x The first operand.
+ * @param {*} y The second operand.
+ * @returns {*} The logical AND of `x` and `y`. It will return the first argument if it
+ *      evaluates to `false`, otherwise it'll return the second argument.
+ * @alias module:operators.land
  */
-function ge(x, y) {
-  return x >= y
+function land(x, y) {
+  return x &amp;&amp; y
 }
 
-module.exports = curry(ge)
+module.exports = curry(land)
 </code></pre>
         </article>
     </section>
