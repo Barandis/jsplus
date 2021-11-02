@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>operators/sub.js - Documentation</title>
+    <title>operators/burs.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">operators/sub.js</h1>
+    <h1 class="page-title">operators/burs.js</h1>
     
 
     
@@ -50,38 +50,43 @@
 const curry = require('functions/curry')
 
 /**
- * A curried function version of the binary `-` operator.
+ * A curried function version of the `>>>` operator.
  *
- * Note that when used with a single argument, that argument is the minuend (the number from
- * which the other is subtracted). If you need the argument to be the subtrahend (the number
- * that is subtracted from the other number), use the `{@link module:combinators.swap|swap}`
- * combinator. See the examples below.
+ * `burs` stands for "bitwise unsigned right shift". This is in contrast to
+ * `{@link module:operators.bshr|brs}`, which is an *signed* right shift. The difference is
+ * that `brs` shifts copies of the sign bit onto the left, while `burs` shifts 0's onto
+ * the left.
+ *
+ * For positive numbers, signed and unsigned shifts are identical. They can produce some
+ * very different results on negative numbers, though.
+ *
+ * Note that when used with a single argument, that argument is the one on the *left* side
+ * of the `>>>`. If you need the argument to be the one on the *right* side, you can use the
+ * `{@link module:combinators.swap|swap}` combinator on `burs`. See the examples below.
  *
  * ```javascript
- * console.log(4 - 7)           // -3
- * console.log(sub(4, 7))       // -3
- * console.log(sub(4)(7))       // -3
+ * console.log(-114 >>> 2)    // 1073741795
+ * console.log(burs(-114, 2)) // 1073741795
+ * console.log(burs(-114)(2)) // 1073741795
  *
- * const sub4 = sub(4)
- * console.log(sub4(7))         // -3
+ * const urs114 = burs(-114)
+ * console.log(urs114(2))     // 1073741795
  *
- * console.log(swap(sub)(4, 7)) // 3
- * console.log(swap(sub)(4)(7)) // 3
- *
- * const minus4 = swap(sub, 4)
- * console.log(minus4(7))       // 3
+ * const ursBy2 = swap(burs, 2)
+ * console.log(ursBy2(-114))  // 1073741795
  * ```
  *
- * @param {number} x The minuend.
- * @param {number} y The subtrahend.
- * @returns {number} The difference of `x` and `y`.
- * @alias module:operators.sub
+ * @param {number} x The number to be shifted.
+ * @param {number} y The number of bits to right shift `x`.
+ * @returns {number} The result of shifting `x` to the right by `y` bits, shifting 0's onto
+ *      the left.
+ * @alias module:operators.burs
  */
-function sub(x, y) {
-  return x - y
+function burs(x, y) {
+  return x >>> y
 }
 
-module.exports = curry(sub)
+module.exports = curry(burs)
 </code></pre>
         </article>
     </section>

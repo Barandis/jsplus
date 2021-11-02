@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>operators/sub.js - Documentation</title>
+    <title>operators/brs.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">operators/sub.js</h1>
+    <h1 class="page-title">operators/brs.js</h1>
     
 
     
@@ -50,38 +50,35 @@
 const curry = require('functions/curry')
 
 /**
- * A curried function version of the binary `-` operator.
+ * A curried function version of the `>>` operator.
  *
- * Note that when used with a single argument, that argument is the minuend (the number from
- * which the other is subtracted). If you need the argument to be the subtrahend (the number
- * that is subtracted from the other number), use the `{@link module:combinators.swap|swap}`
- * combinator. See the examples below.
+ * Note that when used with a single argument, that argument is the one on the *left* side
+ * of the `>>`. If you need the argument to be the one on the *right* side, you can use the
+ * `{@link module:combinators.swap|swap}` combinator on `brs`. See the examples below.
  *
  * ```javascript
- * console.log(4 - 7)           // -3
- * console.log(sub(4, 7))       // -3
- * console.log(sub(4)(7))       // -3
+ * console.log(-114 >> 2)    // -29
+ * console.log(brs(-114, 2)) // -29
+ * console.log(brs(-114)(2)) // -29
  *
- * const sub4 = sub(4)
- * console.log(sub4(7))         // -3
+ * const rs114 = brs(-114)
+ * console.log(rs114(2))     // -29
  *
- * console.log(swap(sub)(4, 7)) // 3
- * console.log(swap(sub)(4)(7)) // 3
- *
- * const minus4 = swap(sub, 4)
- * console.log(minus4(7))       // 3
+ * const rsBy2 = swap(brs, 2)
+ * console.log(rsBy2(-114))  // -29
  * ```
  *
- * @param {number} x The minuend.
- * @param {number} y The subtrahend.
- * @returns {number} The difference of `x` and `y`.
- * @alias module:operators.sub
+ * @param {number} x The number to be shifted.
+ * @param {number} y The number of bits to right shift `x`.
+ * @returns {number} The result of shifting `x` to the right by `y` bits, shifting the sign
+ *      bit onto the left.
+ * @alias module:operators.brs
  */
-function sub(x, y) {
-  return x - y
+function brs(x, y) {
+  return x >> y
 }
 
-module.exports = curry(sub)
+module.exports = curry(brs)
 </code></pre>
         </article>
     </section>
