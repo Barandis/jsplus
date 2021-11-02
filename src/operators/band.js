@@ -6,7 +6,7 @@
 const curry = require('functions/curry')
 
 /**
- * A curried function version of the `&` operator.
+ * A curried function version of the `&` bitwise and operator.
  *
  * ```javascript
  * console.log(114 & 75)      // 66

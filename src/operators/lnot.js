@@ -4,7 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 /**
- * A function version of the `!` operator.
+ * A function version of the `!` logical not operator.
  *
  * ```javascript
  * console.log(!0)         // true

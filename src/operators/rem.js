@@ -6,7 +6,7 @@
 const curry = require('functions/curry')
 
 /**
- * A curried function version of the `%` operator.
+ * A curried function version of the `%` remainder operator.
  *
  * Note that when used with a single argument, that argument is the dividend (the number
  * that gets divided). If you need the argument to be the divisor (the number by which the

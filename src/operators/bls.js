@@ -6,7 +6,7 @@
 const curry = require('functions/curry')
 
 /**
- * A curried function version of the `<<` operator.
+ * A curried function version of the `<<` bitwise left shift operator.
  *
  * Note that when used with a single argument, that argument is the one on the *left* side
  * of the `<<`. If you need the argument to be the one on the *right* side, you can use the

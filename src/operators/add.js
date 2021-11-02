@@ -6,7 +6,7 @@
 const curry = require('functions/curry')
 
 /**
- * A curried function version of the binary `+` operator.
+ * A curried function version of the binary `+` addition/concatenation operator.
  *
  * This works with strings as well as with numbers.
  *

@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>combinators/index.js - Documentation</title>
+    <title>operators/plus.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">combinators/index.js</h1>
+    <h1 class="page-title">operators/plus.js</h1>
     
 
     
@@ -47,19 +47,26 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const pure = require('./pure')
-
 /**
- * @module combinators
+ * A function version of the unary `+` plus operator.
+ *
+ * ```javascript
+ * console.log(+'3')      // 3
+ * console.log(pos('3'))  // 3
+ *
+ * console.log(+true)     // 1
+ * console.log(pos(true)) // 1
+ * ```
+ *
+ * @param {*} x The value to convert to a number.
+ * @returns The number that `x` was converted to, or `NaN` if it could not be converted.
+ * @alias module:operators.plus
  */
-module.exports = {
-  ...pure,
-  compose: require('./compose'),
-  pipe: require('./pipe'),
-  rotl: require('./rotl'),
-  rotr: require('./rotr'),
-  swap: require('./swap'),
+function plus(x) {
+  return +x
 }
+
+module.exports = plus
 </code></pre>
         </article>
     </section>

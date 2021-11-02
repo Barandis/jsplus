@@ -32,7 +32,7 @@ module.exports = {
   ne: require('./ne'),
   neg: require('./neg'),
   opt: require('./opt'),
-  pos: require('./pos'),
+  plus: require('./plus'),
   pow: require('./pow'),
   prop: require('./prop'),
   rem: require('./rem'),

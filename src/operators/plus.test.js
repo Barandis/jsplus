@@ -6,21 +6,21 @@
 const { expect } = require('chai')
 
 const range = require('functions/range')
-const pos = require('operators/pos')
+const plus = require('operators/plus')
 
 const { rand } = require('test/utils')
 
-describe('pos', () => {
+describe('plus', () => {
   it('converts a string to a number', () => {
     for (const _ of range(10)) {
       const a = rand(-1000, 1000).toString()
-      expect(pos(a)).to.equal(+a)
+      expect(plus(a)).to.equal(+a)
     }
   })
   it('converts a boolean to a number', () => {
     for (const _ of range(10)) {
       const a = rand(-1000, 1000) < 0
-      expect(pos(a)).to.equal(+a)
+      expect(plus(a)).to.equal(+a)
     }
   })
 })

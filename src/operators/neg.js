@@ -4,7 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 /**
- * A function version of the unary `-` operator.
+ * A function version of the unary `-` negation operator.
  *
  * ```javascript
  * console.log(-4)     // -4

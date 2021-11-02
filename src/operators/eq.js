@@ -6,7 +6,7 @@
 const curry = require('functions/curry')
 
 /**
- * A curried function version of the `===` operator.
+ * A curried function version of the `===` equals operator.
  *
  * ```javascript
  * console.log(3 === '3')  // false

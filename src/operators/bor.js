@@ -6,7 +6,7 @@
 const curry = require('functions/curry')
 
 /**
- * A curried function version of the `|` operator.
+ * A curried function version of the `|` bitwise or operator.
  *
  * ```javascript
  * console.log(114 | 75)     // 123

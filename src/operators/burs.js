@@ -6,12 +6,12 @@
 const curry = require('functions/curry')
 
 /**
- * A curried function version of the `>>>` operator.
+ * A curried function version of the `>>>` bitwise unsigned right shift operator.
  *
- * `burs` stands for "bitwise unsigned right shift". This is in contrast to
+ * The `u` in `burs` stands for "unsigned". This is in contrast to
  * `{@link module:operators.bshr|brs}`, which is an *signed* right shift. The difference is
- * that `brs` shifts copies of the sign bit onto the left, while `burs` shifts 0's onto
- * the left.
+ * that `brs` shifts copies of the sign bit onto the left, while `burs` shifts 0's onto the
+ * left.
  *
  * For positive numbers, signed and unsigned shifts are identical. They can produce some
  * very different results on negative numbers, though.

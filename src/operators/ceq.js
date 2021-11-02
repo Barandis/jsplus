@@ -6,10 +6,9 @@
 const curry = require('functions/curry')
 
 /**
- * A curried function version of the `==` operator.
+ * A curried function version of the `==` coercing equals operator.
  *
- * The `c` in `ceq` is for "coercing". You *probably* mean to use
- * `{@link module:operators.eq|eq}` instead.
+ * You *probably* mean to use `{@link module:operators.eq|eq}` instead.
  *
  * ```javascript
  * console.log(3 == '3')    // true

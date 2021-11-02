@@ -6,10 +6,9 @@
 const curry = require('functions/curry')
 
 /**
- * A curried function version of the `!=` operator.
+ * A curried function version of the `!=` coercing not equals operator.
  *
- * The `c` in `cne` is for "coercing". You *probably* mean to use
- * `{@link module:operators.ne|ne}` instead.
+ * You *probably* mean to use `{@link module:operators.ne|ne}` instead.
  *
  * ```javascript
  * console.log(3 != '3')    // false

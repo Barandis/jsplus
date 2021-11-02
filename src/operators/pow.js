@@ -6,7 +6,7 @@
 const curry = require('functions/curry')
 
 /**
- * A curried function version of the `**` operator.
+ * A curried function version of the `**` exponentiation operator.
  *
  * Note that when used with a single argument, that argument is the base (the number that is
  * raised to a power). If you need the argument to be the exponent (the power that the base

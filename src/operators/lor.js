@@ -6,7 +6,7 @@
 const curry = require('functions/curry')
 
 /**
- * A curried function version of the `||` operator.
+ * A curried function version of the `||` logical or operator.
  *
  * Note that, while this function still has the short-circuiting behavior of the `||`
  * operator, it still requires both arguments be provided even if the first is enough to

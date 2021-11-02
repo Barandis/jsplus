@@ -6,7 +6,7 @@
 const curry = require('functions/curry')
 
 /**
- * A curried function version of the binary `-` operator.
+ * A curried function version of the binary `-` subtraction operator.
  *
  * Note that when used with a single argument, that argument is the minuend (the number from
  * which the other is subtracted). If you need the argument to be the subtrahend (the number
