@@ -6,7 +6,7 @@
 const { expect } = require('chai')
 const range = require('functions/range')
 const pow = require('operators/pow')
-const { rand, randInt } = require('./test_utils')
+const { rand, randInt } = require('test/utils')
 
 describe('pow', () => {
   it('raises one number to another power', () => {

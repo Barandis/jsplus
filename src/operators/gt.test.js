@@ -6,7 +6,7 @@
 const { expect } = require('chai')
 const range = require('functions/range')
 const gt = require('operators/gt')
-const { rand } = require('./test_utils')
+const { rand } = require('test/utils')
 
 describe('gt', () => {
   it('tests two numbers for greater than', () => {

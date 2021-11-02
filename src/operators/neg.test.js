@@ -6,7 +6,7 @@
 const { expect } = require('chai')
 const range = require('functions/range')
 const neg = require('operators/neg')
-const { rand } = require('./test_utils')
+const { rand } = require('test/utils')
 
 describe('neg', () => {
   it('negates a number', () => {

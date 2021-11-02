@@ -6,7 +6,7 @@
 const { expect } = require('chai')
 const range = require('functions/range')
 const cne = require('operators/cne')
-const { rand } = require('./test_utils')
+const { rand } = require('test/utils')
 
 describe('cne', () => {
   it('tests two numbers for inequality', () => {

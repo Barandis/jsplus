@@ -6,7 +6,7 @@
 const { expect } = require('chai')
 const range = require('functions/range')
 const div = require('operators/div')
-const { rand } = require('./test_utils')
+const { rand } = require('test/utils')
 
 describe('div', () => {
   it('divides two numbers', () => {

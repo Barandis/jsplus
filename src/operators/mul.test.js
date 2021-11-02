@@ -6,7 +6,7 @@
 const { expect } = require('chai')
 const range = require('functions/range')
 const mul = require('operators/mul')
-const { rand } = require('./test_utils')
+const { rand } = require('test/utils')
 
 describe('mul', () => {
   it('multiples two numbers', () => {

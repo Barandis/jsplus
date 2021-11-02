@@ -6,7 +6,7 @@
 const { expect } = require('chai')
 const range = require('functions/range')
 const pos = require('operators/pos')
-const { rand } = require('./test_utils')
+const { rand } = require('test/utils')
 
 describe('pos', () => {
   it('converts a string to a number', () => {
