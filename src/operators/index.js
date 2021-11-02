@@ -31,8 +31,10 @@ module.exports = {
   mul: require('./mul'),
   ne: require('./ne'),
   neg: require('./neg'),
+  opt: require('./opt'),
   pos: require('./pos'),
   pow: require('./pow'),
+  prop: require('./prop'),
   rem: require('./rem'),
   sub: require('./sub'),
 }
