@@ -10,7 +10,7 @@ const curry = require('functions/curry')
  *
  * Note that when used with a single argument, that argument is the one on the *left* side
  * of the `<<`. If you need the argument to be the one on the *right* side, you can use the
- * `{@link module:combinators.flip|flip}` combinator on `bshl`. See the examples below.
+ * `{@link module:combinators.swap|swap}` combinator on `bshl`. See the examples below.
  *
  * ```javascript
  * console.log(114 << 2)     // 456
@@ -20,7 +20,7 @@ const curry = require('functions/curry')
  * const shl114 = bshl(114)
  * console.log(shl114(2))    // 456
  *
- * const shlBy2 = flip(bshl, 2)
+ * const shlBy2 = swap(bshl, 2)
  * console.log(shlBy2(114))  // 456
  * ```
  *

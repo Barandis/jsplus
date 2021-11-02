@@ -9,10 +9,13 @@
 module.exports = {
   B: require('./B'),
   C: require('./C'),
+  Cs: require('./Cs'),
   I: require('./I'),
   Is: require('./Is'),
   K: require('./K'),
   Psi: require('./Psi'),
+  R: require('./R'),
+  Rs: require('./Rs'),
   S: require('./S'),
   Sp: require('./Sp'),
   T: require('./T'),

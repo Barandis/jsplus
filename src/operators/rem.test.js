@@ -4,8 +4,11 @@
 // https://opensource.org/licenses/MIT
 
 const { expect } = require('chai')
+
+const swap = require('combinators/swap')
 const range = require('functions/range')
 const rem = require('operators/rem')
+
 const { rand } = require('test/utils')
 
 describe('rem', () => {
@@ -17,6 +20,16 @@ describe('rem', () => {
         expect(rem(a, b))
           .to.equal(rem(a)(b))
           .and.to.equal(a % b)
+      }
+    }
+  })
+  it('applies a right operand with swap', () => {
+    for (const _ of range(10)) {
+      const a = rand(-1000, 1000)
+      const b = rand(-1000, 1000)
+      if (a !== 0) {
+        const rembya = swap(rem)(a)
+        expect(rembya(b)).to.equal(b % a)
       }
     }
   })

@@ -6,13 +6,13 @@
 /**
  * The **I\*** combinator. This is the function application combinator.
  *
- * | Property              | Value                 |
- * |-----------------------|-----------------------|
- * | Type signature        | `(a -> b) -> a -> b`  |
- * | Lambda representation | `λxy.xy`              |
- * | SK system             | `SK(SK)`              |
- * | BCKW system           | `BWK`                 |
- * | Bird                  | Identity once removed |
+ * | Property              | Value                   |
+ * |-----------------------|-------------------------|
+ * | Type signature        | `(a -> b) -> a -> b`    |
+ * | Lambda representation | `λxy.xy`                |
+ * | SK system             | `SK(SK)`                |
+ * | BCKW system           | `BWK`                   |
+ * | Bird                  | Identity (once removed) |
  *
  * The **I\*** combinator represents normal function application. This is known in some
  * literature as the **A** combinator, but this does not appear to be widespread. It fits

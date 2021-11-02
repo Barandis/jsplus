@@ -4,6 +4,8 @@
 // https://opensource.org/licenses/MIT
 
 const { expect } = require('chai')
+
+const swap = require('combinators/swap')
 const range = require('functions/range')
 const ge = require('operators/ge')
 const { rand } = require('test/utils')
@@ -19,6 +21,14 @@ describe('ge', () => {
       expect(ge(a, b))
         .to.equal(ge(a)(b))
         .to.equal(a >= b)
+    }
+  })
+  it('applies a right operand with swap', () => {
+    for (const _ of range(10)) {
+      const a = rand(-1000, 1000)
+      const b = rand(-1000, 1000)
+      const gea = swap(ge)(a)
+      expect(gea(b)).to.equal(b >= a)
     }
   })
 })

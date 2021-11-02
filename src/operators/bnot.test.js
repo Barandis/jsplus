@@ -4,8 +4,10 @@
 // https://opensource.org/licenses/MIT
 
 const { expect } = require('chai')
+
 const range = require('functions/range')
 const bnot = require('operators/bnot')
+
 const { randInt } = require('test/utils')
 
 describe('bnot', () => {

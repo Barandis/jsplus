@@ -18,7 +18,7 @@ const curry = require('functions/curry')
  *
  * Note that when used with a single argument, that argument is the one on the *left* side
  * of the `>>>`. If you need the argument to be the one on the *right* side, you can use the
- * `{@link module:combinators.flip|flip}` combinator on `blsr`. See the examples below.
+ * `{@link module:combinators.swap|swap}` combinator on `blsr`. See the examples below.
  *
  * ```javascript
  * console.log(-114 >>> 2)    // 1073741795
@@ -28,7 +28,7 @@ const curry = require('functions/curry')
  * const lsr114 = blsr(-114)
  * console.log(lsr114(2))     // 1073741795
  *
- * const lsrBy2 = flip(blsr, 2)
+ * const lsrBy2 = swap(blsr, 2)
  * console.log(lsrBy2(-114))  // 1073741795
  * ```
  *

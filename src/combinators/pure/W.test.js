@@ -4,6 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 const { expect } = require('chai')
+
 const K = require('combinators/pure/K')
 const S = require('combinators/pure/S')
 const W = require('combinators/pure/W')

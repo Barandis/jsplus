@@ -4,7 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 const { expect } = require('chai')
-const flip = require('combinators/flip')
+const swap = require('combinators/swap')
 const pipe = require('combinators/pipe')
 const curry = require('functions/curry')
 
@@ -20,15 +20,15 @@ describe('pipe', () => {
     const result = pipe(m(inc), f(odd), t(2))([0, 1, 2, 3, 4])
     expect(result).to.deep.equal([1, 3])
   })
-  it('works in conjunction with curry and flip', () => {
+  it('works in conjunction with curry and swap', () => {
     const map = (iterable, fn) => Array.from(iterable).map(fn)
     const filter = (iterable, fn) => Array.from(iterable).filter(fn)
     const take = (iterable, n) => Array.from(iterable).slice(0, n)
 
     const result = pipe(
-      flip(curry(map))(inc),
-      flip(curry(filter))(odd),
-      flip(curry(take))(2),
+      swap(curry(map))(inc),
+      swap(curry(filter))(odd),
+      swap(curry(take))(2),
     )([0, 1, 2, 3, 4])
     expect(result).to.deep.equal([1, 3])
   })

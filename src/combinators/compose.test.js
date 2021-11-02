@@ -5,7 +5,7 @@
 
 const { expect } = require('chai')
 const compose = require('combinators/compose')
-const flip = require('combinators/flip')
+const swap = require('combinators/swap')
 const curry = require('functions/curry')
 
 const inc = x => x + 1
@@ -20,15 +20,15 @@ describe('compose', () => {
     const result = compose(t(2), f(odd), m(inc))([0, 1, 2, 3, 4])
     expect(result).to.deep.equal([1, 3])
   })
-  it('works in conjunction with curry and flip', () => {
+  it('works in conjunction with curry and swap', () => {
     const map = (iterable, fn) => Array.from(iterable).map(fn)
     const filter = (iterable, fn) => Array.from(iterable).filter(fn)
     const take = (iterable, n) => Array.from(iterable).slice(0, n)
 
     const result = compose(
-      flip(curry(take))(2),
-      flip(curry(filter))(odd),
-      flip(curry(map))(inc),
+      swap(curry(take))(2),
+      swap(curry(filter))(odd),
+      swap(curry(map))(inc),
     )([0, 1, 2, 3, 4])
     expect(result).to.deep.equal([1, 3])
   })

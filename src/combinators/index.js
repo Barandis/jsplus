@@ -11,6 +11,8 @@ const pure = require('./pure')
 module.exports = {
   ...pure,
   compose: require('./compose'),
-  flip: require('./flip'),
   pipe: require('./pipe'),
+  rotl: require('./rotl'),
+  rotr: require('./rotr'),
+  swap: require('./swap'),
 }

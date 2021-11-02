@@ -17,6 +17,7 @@ module.exports = {
   bxor: require('./bxor'),
   ceq: require('./ceq'),
   cne: require('./cne'),
+  cond: require('./cond'),
   div: require('./div'),
   eq: require('./eq'),
   ge: require('./ge'),

@@ -10,7 +10,7 @@ const curry = require('functions/curry')
  *
  * Note that when used with a single argument, that argument is the dividend (the number
  * that gets divided). If you need the argument to be the divisor (the number by which the
- * dividend is divided), use the `{@link module:combinators.flip|flip}` combinator. See the
+ * dividend is divided), use the `{@link module:combinators.swap|swap}` combinator. See the
  * examples below.
  *
  * ```javascript
@@ -21,10 +21,10 @@ const curry = require('functions/curry')
  * const rem4 = rem(4)
  * console.log(rem4(7))         // 4
  *
- * console.log(flip(rem)(4, 7)) // 3
- * console.log(flip(rem)(4)(7)) // 3
+ * console.log(swap(rem)(4, 7)) // 3
+ * console.log(swap(rem)(4)(7)) // 3
  *
- * const remWith4 = flip(rem, 4)
+ * const remWith4 = swap(rem, 4)
  * console.log(remWith4(7))     // 3
  * ```
  *

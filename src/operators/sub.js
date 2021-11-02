@@ -10,7 +10,7 @@ const curry = require('functions/curry')
  *
  * Note that when used with a single argument, that argument is the minuend (the number from
  * which the other is subtracted). If you need the argument to be the subtrahend (the number
- * that is subtracted from the other number), use the `{@link module:combinators.flip|flip}`
+ * that is subtracted from the other number), use the `{@link module:combinators.swap|swap}`
  * combinator. See the examples below.
  *
  * ```javascript
@@ -21,10 +21,10 @@ const curry = require('functions/curry')
  * const sub4 = sub(4)
  * console.log(sub4(7))         // -3
  *
- * console.log(flip(sub)(4, 7)) // 3
- * console.log(flip(sub)(4)(7)) // 3
+ * console.log(swap(sub)(4, 7)) // 3
+ * console.log(swap(sub)(4)(7)) // 3
  *
- * const minus4 = flip(sub, 4)
+ * const minus4 = swap(sub, 4)
  * console.log(minus4(7))       // 3
  * ```
  *

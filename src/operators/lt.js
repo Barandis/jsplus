@@ -11,7 +11,7 @@ const curry = require('functions/curry')
  * Note that when used with a single argument, that argument is the one on the *left* side
  * of the `<`. If you need the argument to be the one on the *right* side, you can either
  * swap the arguments and use `{@link module:operators.gt|gt}` or use the
- * `{@link module:combinators.flip|flip}` combinator on `lt`. See the examples below.
+ * `{@link module:combinators.swap|swap}` combinator on `lt`. See the examples below.
  *
  * ```javascript
  * console.log(3 < 4)       // true
@@ -23,7 +23,7 @@ const curry = require('functions/curry')
  * console.log(ltFrom3(4))  // true
  *
  * // To do x => x < 3, there are two choices
- * const lt3a = flip(lt, 3) // Actual x => x < 3
+ * const lt3a = swap(lt, 3) // Actual x => x < 3
  * const lt3b = gt(3)       // x => 3 > x is the same thing
  * console.log(lt3a(4))     // false
  * console.log(lt3b(4))     // false

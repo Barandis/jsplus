@@ -10,7 +10,7 @@ const curry = require('functions/curry')
  *
  * Note that when used with a single argument, that argument is the base (the number that is
  * raised to a power). If you need the argument to be the exponent (the power that the base
- * is raised to), use the `{@link module:combinators.flip|flip}` combinator. See the
+ * is raised to), use the `{@link module:combinators.swap|swap}` combinator. See the
  * examples below.
  *
  * ```javascript
@@ -21,10 +21,10 @@ const curry = require('functions/curry')
  * const powerOf2 = pow(2)
  * console.log(powerOf2(5))     // 32
  *
- * console.log(flip(pow)(2, 5)) // 25
- * console.log(flip(pow)(2)(5)) // 25
+ * console.log(swap(pow)(2, 5)) // 25
+ * console.log(swap(pow)(2)(5)) // 25
  *
- * const square = flip(pow, 2)
+ * const square = swap(pow, 2)
  * console.log(square(5))       // 25
  * ```
  *
