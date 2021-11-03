@@ -5,14 +5,10 @@
 
 const { expect } = require('chai')
 
-const K = require('combinators/pure/K')
-const S = require('combinators/pure/S')
-const W = require('combinators/pure/W')
+const { K, S, W } = require('combinators/pure')
+const { add, mul } = require('operators')
 
 describe('W combinator', () => {
-  const add = x => y => x + y
-  const mul = x => y => x * y
-
   it('doubles its second argument', () => {
     expect(W(add)(4)).to.equal(8)
     expect(W(mul)(12)).to.equal(144)

@@ -4,6 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 const { expect } = require('chai')
+
 const curryn = require('functions/curryn')
 
 const sum = (...ns) => ns.reduce((a, b) => a + b, 0)

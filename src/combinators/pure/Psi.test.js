@@ -4,15 +4,9 @@
 // https://opensource.org/licenses/MIT
 
 const { expect } = require('chai')
-const B = require('combinators/pure/B')
-const C = require('combinators/pure/C')
-const I = require('combinators/pure/I')
-const Psi = require('combinators/pure/Psi')
 
-const add = x => y => x + y
-const mul = x => y => x * y
-const sub = x => y => x - y
-const neg = x => -x
+const { B, C, I, Psi } = require('combinators/pure')
+const { add, mul, neg, sub } = require('operators')
 
 describe('Ψ combinator', () => {
   const f = mul(2)

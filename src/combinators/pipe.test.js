@@ -4,12 +4,13 @@
 // https://opensource.org/licenses/MIT
 
 const { expect } = require('chai')
-const swap = require('combinators/swap')
-const pipe = require('combinators/pipe')
-const curry = require('functions/curry')
 
-const inc = x => x + 1
-const odd = x => x % 2 !== 0
+const { pipe, swap } = require('combinators')
+const { curry } = require('functions')
+const { add, ne, rem } = require('operators')
+
+const inc = add(1)
+const odd = pipe(swap(rem)(2), ne(0))
 
 describe('pipe', () => {
   it('pipes two or more functions into a single function', () => {

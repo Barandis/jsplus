@@ -4,15 +4,11 @@
 // https://opensource.org/licenses/MIT
 
 const { expect } = require('chai')
-const B = require('combinators/pure/B')
-const C = require('combinators/pure/C')
-const K = require('combinators/pure/K')
-const S = require('combinators/pure/S')
+
+const { B, C, K, S } = require('combinators/pure')
+const { div, sub } = require('operators')
 
 describe('C combinator', () => {
-  const sub = x => y => x - y
-  const div = x => y => x / y
-
   it('flips the order of its final two arguments', () => {
     expect(C(sub)(3)(4)).to.equal(1)
     expect(C(div)(2)(7)).to.equal(3.5)

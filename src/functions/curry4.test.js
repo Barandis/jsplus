@@ -4,6 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 const { expect } = require('chai')
+
 const curry4 = require('functions/curry4')
 
 describe('curry4', () => {

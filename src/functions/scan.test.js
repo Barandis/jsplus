@@ -4,6 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 const { expect } = require('chai')
+
 const scan = require('functions/scan')
 
 function* upTo5() {

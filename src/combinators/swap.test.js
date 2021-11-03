@@ -4,8 +4,9 @@
 // https://opensource.org/licenses/MIT
 
 const { expect } = require('chai')
-const swap = require('combinators/swap')
-const curry = require('functions/curry')
+
+const { swap } = require('combinators')
+const { curry } = require('functions')
 
 describe('swap', () => {
   it('applies two arguments to a function in reverse order', () => {

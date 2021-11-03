@@ -4,14 +4,11 @@
 // https://opensource.org/licenses/MIT
 
 const { expect } = require('chai')
-const C = require('combinators/pure/C')
-const I = require('combinators/pure/I')
-const Sp = require('combinators/pure/Sp')
 
-const div = x => y => x / y
-const eq = x => y => x === y
-const prop = x => y => x[y]
-const sum = xs => xs.reduce((x, y) => x + y, 0)
+const { C, I, Sp } = require('combinators/pure')
+const { add, div, eq, prop } = require('operators')
+
+const sum = xs => xs.reduce(add, 0)
 const rev = s => s.split('').reverse().join('')
 const count = C(prop)('length')
 

@@ -4,6 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 const { expect } = require('chai')
+
 const enumerate = require('functions/enumerate')
 
 describe('enumerate', () => {

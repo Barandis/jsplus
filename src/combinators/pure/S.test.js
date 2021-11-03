@@ -4,18 +4,12 @@
 // https://opensource.org/licenses/MIT
 
 const { expect } = require('chai')
-const B = require('combinators/pure/B')
-const C = require('combinators/pure/C')
-const K = require('combinators/pure/K')
-const I = require('combinators/pure/I')
-const S = require('combinators/pure/S')
-const W = require('combinators/pure/W')
+
+const { B, C, K, I, S, W } = require('combinators/pure')
+const { add, mul } = require('operators')
 
 describe('S combinator', () => {
   it('applies its first two arguments to its third, and then applies the results', () => {
-    const add = x => y => x + y
-    const mul = x => y => x * y
-
     expect(S(mul)(add(1))(4))
       .to.equal(4 * (4 + 1))
       .and.to.equal(20)

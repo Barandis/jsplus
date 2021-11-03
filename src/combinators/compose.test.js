@@ -4,12 +4,13 @@
 // https://opensource.org/licenses/MIT
 
 const { expect } = require('chai')
-const compose = require('combinators/compose')
-const swap = require('combinators/swap')
-const curry = require('functions/curry')
 
-const inc = x => x + 1
-const odd = x => x % 2 !== 0
+const { compose, swap } = require('combinators')
+const { curry } = require('functions')
+const { add, ne, rem } = require('operators')
+
+const inc = add(1)
+const odd = compose(ne(0), swap(rem)(2))
 
 describe('compose', () => {
   it('composes two or more functions into a single function', () => {

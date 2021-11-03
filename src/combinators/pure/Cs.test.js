@@ -5,16 +5,12 @@
 
 const { expect } = require('chai')
 
-const B = require('combinators/pure/B')
-const C = require('combinators/pure/C')
-const Cs = require('combinators/pure/Cs')
-const K = require('combinators/pure/K')
-const S = require('combinators/pure/S')
+const { B, C, Cs, K, S } = require('combinators/pure')
+
+const sub = x => y => z => x + y - z
+const div = x => y => z => (x * y) / z
 
 describe('C* combinator', () => {
-  const sub = x => y => z => x + y - z
-  const div = x => y => z => (x * y) / z
-
   it('flips the order of its final two arguments', () => {
     expect(Cs(sub)(4)(3)(2)).to.equal(3)
     expect(Cs(div)(12)(2)(6)).to.equal(36)

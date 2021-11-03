@@ -4,8 +4,9 @@
 // https://opensource.org/licenses/MIT
 
 const { expect } = require('chai')
-const rotl = require('combinators/rotl')
-const curry = require('functions/curry')
+
+const { rotl } = require('combinators')
+const { curry } = require('functions')
 
 describe('rotl', () => {
   it('applies three arguments to a function in left-rotated order', () => {
