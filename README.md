@@ -10,7 +10,6 @@ To make this happen, the focus is cast to a few particular things.
 - Point-free programming. In particular, combinator use and currying are given a fair bit of attention here, including providing curried functional versions of almost all of JavaScript's operators. This doesn't let you do anything you couldn't already do. It just makes doing it *nicer*, even if you choose not to program in a point-free style.
 
 There will be more added to this list in the near future. For example, I'm exploring the idea of new types like `Option` and `Result` from Rust (or the equivalent `Maybe` and `Either` from Haskell) to see how much they can add.
--
 ## Usage
 
 I'm not planning on publishing this to NPM until it's closer to completion, and who even knows when that will be.
