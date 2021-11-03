@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>functions/curry.js - Documentation</title>
+    <title>iterators - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,76 +32,290 @@
 
 <div id="main">
     
-    <h1 class="page-title">functions/curry.js</h1>
+    <h1 class="page-title">iterators</h1>
     
 
     
 
 
 
+
+<section>
+
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>// Copyright (c) 2021 Thomas J. Otterson
-//
-// This software is released under the MIT License.
-// https://opensource.org/licenses/MIT
+        
+    
+</header>
 
-const CURRIED = Symbol('barandis/curried')
+<article>
+    
+        <div class="container-overview">
+        
+            
 
-/**
- * Produces a curried function out of a regular function.
- *
- * This curried function is quite flexible. If it is called with the same number of
- * arguments as the original function, then it will simply execute the original function.
- *
- * However, if it is called with fewer arguments, it will return a function that takes only
- * the *remaining* arguments and still produces the same result. The returned function is
- * itself curried, so this process can be done again.
- *
- * This currying function requires that its original function specify its arguments. It will
- * not work on functions that use `arguments` to determine its arguments. Rest parameters
- * and default parameters are not counted, so using this function with them will produce
- * curried functions that expect a number of arguments in total that do not include those
- * parameters (or anything after them).
- *
- * If a function has already been curried by this function, or if it has less than two
- * arguments, passing that function to `curry` will be a no-op (the same function will be
- * returned without modification). A corollary is that `curry` will not curry a fully
- * curried function (one in which no parameter list has more than one parameter).
- *
- * ```javascript
- * const sum = curry((a, b, c) => a + b + c)
- *
- * // Each of the following are equivalent, and all print '6' to the console.
- * console.log(sum(1, 2, 3))
- * console.log(sum(1, 2)(3))
- * console.log(sum(1)(2, 3))
- * console.log(sum()(1, 2, 3))
- * console.log(sum(1)(2)(3))
- * ```
- *
- * @param {function} fn A function of any number of arguments.
- * @returns {function} A new function that behaves as `fn`, unless it's called with fewer
- *      arguments than the number given in `fn`'s definition. In this case, the new function
- *      will return another new function that accepts the *rest* of the arguments.
- * @alias module:functions.curry
- */
-function curry(fn) {
-  if (fn[CURRIED] || fn.length &lt; 2) return fn
+            
+        
+        </div>
+    
 
-  function curried(...args) {
-    return args.length >= fn.length ? fn(...args) : (...rest) => curried(...args, ...rest)
-  }
-  Object.defineProperty(curried, CURRIED, { value: true })
+    
 
-  return curried
-}
+    
 
-module.exports = curry
+    
+    
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".iterator"><span class="type-signature">(static) </span>iterator<span class="signature">(x)</span><span class="type-signature"> &rarr; {iterator}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="iterators_iterator.js.html">iterators/iterator.js</a>, <a href="iterators_iterator.js.html#line173">line 173</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Creates an iterator over the provided value.</p>
+<p>For values that implement the iterable protocol (i.e., that have properties named
+<code>Symbol.iterator</code> that evaluate to functions), It's as simple as that. Therefore, arrays,
+strings, and any custom objects that implement the iterable protocol work right out of
+the box.</p>
+<pre class="prettyprint source"><code>const iter = iterator([1, 2, 3]);
+
+console.log(iter.next().value) // 1
+console.log(iter.next().value) // 2
+console.log(iter.next().value) // 3
+console.log(iter.next().done)  // true
 </code></pre>
-        </article>
-    </section>
+<p>There is a particular consideration made for objects that have a <code>next</code> property that is
+a function. If one of those is passed to <code>iterator</code>, it will be assumed to be an iterator
+itself and will be directly returned.</p>
+<p>Generic objects get special support. If an object (meaning an object literal or something
+created with <code>Object.create()</code>, but not custom classes) that does not have a function
+property named <code>next</code> is passed to <code>iterator</code>, a new iterator will be returned that
+iterates over everything that <code>Object.keys</code> returns for that object This will come out in
+the &quot;natural&quot; property order, as follows:</p>
+<ol>
+<li>Integer indices, in numerical order. (This does include strings that convert to
+integers, such as <code>'2'</code>, but not strings that do not directly correspond to an integer
+even if they are convertible to integers, such as <code>'02'</code>.)</li>
+<li>String property names, in the order in which they were added to the object.</li>
+<li>Symbol property names, in the order in which they were added to the object.</li>
+</ol>
+<p>The values that this iterator provides are two-element arrays, in which the first element
+is the key and the second is the value.</p>
+<pre class="prettyprint source"><code>const iter = iterator({ b: 2, a: 4 });
+
+console.log(iter.next().value) // ['b',2]
+console.log(iter.next().value) // ['a',4]
+console.log(iter.next().done)  // true
+</code></pre>
+<p>This does not modify the object itself, so it's not actually made &quot;iterable&quot; in any other
+sense. It's explicit support for objects in this context and nothing more.</p>
+<p>If this function is provided a <em>function</em> as its first argument, an iterator is returned
+which runs that function one time for each call to <code>next</code>. That function is provided two
+arguments: the index of the call (starting at <code>0</code> for the first time it's called and
+increasing by 1 per invocation after that) and the return value of the previous call to
+the function (starting at <code>undefined</code> for the first run before the function is ever
+called). If the function ever returns <code>undefined</code>, the iterator will terminate and set
+the <code>done</code> property of its return value to <code>true</code> at that point.</p>
+<p>Note that since the initial value of the second argument is <code>undefined</code>, using default
+arguments is an excellent way of providing the function an initial value.</p>
+<pre class="prettyprint source"><code>const constIter = iterator(() => 6)   // Bert's favorite number
+console.log(constIter.next().value)   // 6
+console.log(constIter.next().value)   // 6
+// This will go on forever, as long as `next` keeps getting called
+
+const indexIter = iterator(x => x * x)
+console.log(indexIter.next().value)   // 0
+console.log(indexIter.next().value)   // 1
+console.log(indexIter.next().value)   // 4
+console.log(indexIter.next().value)   // 9
+// Again, this will go on forever, or until the numbers get to big JS to handle
+
+// Using default value on `last` parameter for initial value
+const lastIter = iterator((index, last = 1) => last * (index + 1))  // Factorial
+console.log(lastIter.next().value)    // 1
+console.log(lastIter.next().value)    // 2
+console.log(lastIter.next().value)    // 6
+console.log(lastIter.next().value)    // 24
+// Again, forever, though factorials get big quickly
+
+// This iterator will terminate when the function returns `undefined`
+const stopIter = iterator(x => x &lt; 2 ? x : undefined)
+console.log(stopIter.next().value)    // 0
+console.log(stopIter.next().value)    // 1
+console.log(stopIter.next().done)     // true
+</code></pre>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The value to be iterated over.</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>An iterator over the provided value. If the value is not iterable
+(it's not an object or a function, and it doesn't have a protocol-defined iterator),
+<code>null</code> is returned.</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">iterator</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 
