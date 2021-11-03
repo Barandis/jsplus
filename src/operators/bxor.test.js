@@ -3,12 +3,10 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const { expect } = require('chai')
+const { expect, randInt } = require('test/utils')
 
 const range = require('iterators/range')
 const bxor = require('operators/bxor')
-
-const { randInt } = require('test/utils')
 
 describe('bxor', () => {
   it('bitwise XORs two numbers', () => {

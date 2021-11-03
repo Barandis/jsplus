@@ -3,12 +3,10 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const { expect } = require('chai')
+const { expect, rand } = require('test/utils')
 
 const range = require('iterators/range')
 const mul = require('operators/mul')
-
-const { rand } = require('test/utils')
 
 describe('mul', () => {
   it('multiples two numbers', () => {

@@ -3,13 +3,11 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const { expect } = require('chai')
+const { expect, rand } = require('test/utils')
 
 const swap = require('combinators/swap')
 const range = require('iterators/range')
 const rem = require('operators/rem')
-
-const { rand } = require('test/utils')
 
 describe('rem', () => {
   it('divides two numbers and returns the remainder', () => {

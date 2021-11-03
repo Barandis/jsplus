@@ -3,13 +3,11 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const { expect } = require('chai')
+const { expect, rand, randInt } = require('test/utils')
 
 const swap = require('combinators/swap')
 const range = require('iterators/range')
 const opt = require('operators/opt')
-
-const { rand, randInt } = require('test/utils')
 
 describe('opt', () => {
   it('returns the value of a property or an index of an array', () => {

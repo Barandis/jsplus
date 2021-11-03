@@ -3,12 +3,10 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const { expect } = require('chai')
+const { expect, rand, randInt } = require('test/utils')
 
 const range = require('iterators/range')
 const pow = require('operators/pow')
-
-const { rand, randInt } = require('test/utils')
 
 describe('pow', () => {
   it('raises one number to another power', () => {

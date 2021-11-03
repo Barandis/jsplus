@@ -5,7 +5,7 @@
 
 /* eslint-disable max-classes-per-file, no-unused-expressions */
 
-const { expect } = require('chai')
+const { expect } = require('test/utils')
 
 const { iterator, range } = require('iterators')
 

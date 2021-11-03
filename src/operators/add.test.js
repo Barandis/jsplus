@@ -3,12 +3,10 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const { expect } = require('chai')
+const { expect, rand, randInt, randString } = require('test/utils')
 
 const range = require('iterators/range')
 const add = require('operators/add')
-
-const { rand, randInt, randString } = require('test/utils')
 
 describe('add', () => {
   it('adds two numbers', () => {

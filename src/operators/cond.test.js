@@ -3,13 +3,11 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const { expect } = require('chai')
+const { expect, rand, randInt } = require('test/utils')
 
 const rotr = require('combinators/rotr')
 const range = require('iterators/range')
 const cond = require('operators/cond')
-
-const { rand, randInt } = require('test/utils')
 
 describe('cond', () => {
   it('chooses one of its second or third arguments depending on the first', () => {

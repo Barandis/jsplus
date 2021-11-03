@@ -3,12 +3,10 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const { expect } = require('chai')
+const { expect, randInt } = require('test/utils')
 
 const range = require('iterators/range')
 const lor = require('operators/lor')
-
-const { randInt } = require('test/utils')
 
 describe('lor', () => {
   it('logically ORs two numbers', () => {

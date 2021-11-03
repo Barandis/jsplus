@@ -3,13 +3,11 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const { expect } = require('chai')
+const { expect, rand } = require('test/utils')
 
 const swap = require('combinators/swap')
 const range = require('iterators/range')
 const lt = require('operators/lt')
-
-const { rand } = require('test/utils')
 
 describe('lt', () => {
   it('tests two numbers for less than', () => {

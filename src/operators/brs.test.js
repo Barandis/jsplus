@@ -3,13 +3,11 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const { expect } = require('chai')
+const { expect, randInt } = require('test/utils')
 
 const swap = require('combinators/swap')
 const range = require('iterators/range')
 const brs = require('operators/brs')
-
-const { randInt } = require('test/utils')
 
 describe('brs', () => {
   it('bitwise right shifts a number', () => {

@@ -3,7 +3,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const { expect } = require('chai')
+const { expect } = require('test/utils')
 
 const compose = require('combinators/compose')
 const pipe = require('combinators/pipe')

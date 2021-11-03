@@ -3,13 +3,11 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const { expect } = require('chai')
+const { expect, rand } = require('test/utils')
 
 const swap = require('combinators/swap')
 const range = require('iterators/range')
 const coal = require('operators/coal')
-
-const { rand } = require('test/utils')
 
 describe('coal', () => {
   it('returns its first argument or, if null or undefined, its second', () => {
