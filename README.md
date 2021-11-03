@@ -1,13 +1,16 @@
 # JS+
 
-JS+ is a work-in-progress library to help JavaScript do all of the things that I wish it could already do, or at least do them in the way that I wish it would do them.
+JS+ is a library (and a work in progress) to help make JavaScript what it should be*. It was largely inspried by my love and admiration for functional programming languages like Haskell and Clojure; array programming langauges like APL, J, and BQN; and concatenative programming languages like Forth and Factor. All of these have ideas that can be used to make JS programming just...*nicer*.
 
-This library is largely inspired by my love and admiration for functional programming languages like Haskell and Clojure and for array programming languages like APL, J, and BQN. While I do not expect JavaScript to be able to tail recurse like the former (even though it's been part of the spec for 6 years, come on guys) or to be able to handle multi-dimensional arrays as wholes like the latter, there are still a lot of good lessons that can be taken from these languages in how to make programming nicer.
+In essence, this is a library of things that I wish I had on Monday mornings when I go back to JS coding after a weekend of coding in "fun" languages.
 
-In essence, this is a library of things I wish I had on Monday mornings when I go back to coding JS at work after a weekend of more "fun" languages.
+To make this happen, the focus is cast to a few particular things.
 
-Primary consideration in the beginning is for point-free styles of programming and for all manners of combinators, but other really useful functions that don't relate to either will show up here. Like the `range` function I've been unable to do without since working it out a few months ago in my quest to never have to use semi-colons in JavaScript again (even in `for` loops).
+- Iterators. JavaScript designers gave their love only to arrays even as they were adding first-class support for iterators. You'll find that you can reduce, map, and filter an array, but oddly no such methods exist for any other kind of iterable values. This library corrects this with a full implementation of functions that work with iterators.
+- Point-free programming. In particular, combinator use and currying are given a fair bit of attention here, including providing curried functional versions of almost all of JavaScript's operators. This doesn't let you do anything you couldn't already do. It just makes doing it *nicer*, even if you choose not to program in a point-free style.
 
+There will be more added to this list in the near future. For example, I'm exploring the idea of new types like `Option` and `Result` from Rust (or the equivalent `Maybe` and `Either` from Haskell) to see how much they can add.
+-
 ## Usage
 
 I'm not planning on publishing this to NPM until it's closer to completion, and who even knows when that will be.
