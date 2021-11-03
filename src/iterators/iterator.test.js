@@ -7,8 +7,7 @@
 
 const { expect } = require('chai')
 
-const iterator = require('iterators/iterator')
-const range = require('functions/range')
+const { iterator, range } = require('iterators')
 
 function* five() {
   for (const i of range(1, 6)) {

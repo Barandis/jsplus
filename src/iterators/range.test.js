@@ -5,7 +5,7 @@
 
 const { expect } = require('chai')
 
-const range = require('functions/range')
+const range = require('iterators/range')
 
 describe('range', () => {
   it('produces an exclusive range using an end point', () => {

@@ -24,7 +24,7 @@
  *     succeeding tuple has its index incremented by 1.
  * @yields {array} A tuple of the index of a value in the iterable and the value
  *     itself.
- * @alias module:functions.enumerate
+ * @alias module:iterators.enumerate
  */
 function* enumerate(iterable, start = 0) {
   const iterator = iterable[Symbol.iterator]()

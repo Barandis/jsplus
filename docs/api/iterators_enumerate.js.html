@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>operators/mul.js - Documentation</title>
+    <title>iterators/enumerate.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">operators/mul.js</h1>
+    <h1 class="page-title">iterators/enumerate.js</h1>
     
 
     
@@ -47,30 +47,42 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const curry = require('functions/curry')
-
 /**
- * A curried function version of the `*` multiplication operator.
+ * Generates a set of pairs of iterable elements with their indices. This is inspired by
+ * Python's `enumerate` function.
  *
- * ```javascript
- * console.log(4 * 7)     // 28
- * console.log(mul(4, 7)) // 28
- * console.log(mul(4)(7)) // 28
+ * For arrays, these two statements do the same thing:
  *
- * const mul4 = mul(4)
- * console.log(mul4(7))   // 28
- * ```
+ * * `for (const [i, value] of array.entries()) { ... }`
+ * * `for (const [i, value] of enumerate(array)) { ... }`
  *
- * @param {number} x The first operand.
- * @param {number} y The second operand.
- * @returns {number} The product of `x` and `y`.
- * @alias module:operators.mul
+ * The difference is that `enumerate` works on *any* iterable, not only those that have
+ * `entries` defined upon them.
+ *
+ * This function also provides the option to start the index (the first element of the
+ * yielded tuple) from a number other than 0. This number can be passed in as the optional
+ * `start` parameter.
+ *
+ * @param {iterable} iterable The iterable to be enumerated.
+ * @param {number} [start=0] The index of the first tuple that gets yielded. Every
+ *     succeeding tuple has its index incremented by 1.
+ * @yields {array} A tuple of the index of a value in the iterable and the value
+ *     itself.
+ * @alias module:iterators.enumerate
  */
-function mul(x, y) {
-  return x * y
+function* enumerate(iterable, start = 0) {
+  const iterator = iterable[Symbol.iterator]()
+  let result = iterator.next()
+  let index = Math.trunc(start)
+
+  while (!result.done) {
+    yield [index, result.value]
+    index += 1
+    result = iterator.next()
+  }
 }
 
-module.exports = curry(mul)
+module.exports = enumerate
 </code></pre>
         </article>
     </section>

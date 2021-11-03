@@ -68,7 +68,7 @@
  * @param {boolean} [inclusive=false] Determines whether `end` should be included as part of
  *     the range.
  * @yields {number} The values that make up the range.
- * @alias module:functions.range
+ * @alias module:iterators.range
  */
 function* range(start, end, step, inclusive) {
   const s = typeof end === 'number' ? start : 0

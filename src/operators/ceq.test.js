@@ -5,7 +5,7 @@
 
 const { expect } = require('chai')
 
-const range = require('functions/range')
+const range = require('iterators/range')
 const ceq = require('operators/ceq')
 
 const { rand } = require('test/utils')

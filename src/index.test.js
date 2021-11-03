@@ -31,10 +31,12 @@ const curry3 = require('functions/curry3')
 const curry4 = require('functions/curry4')
 const curry5 = require('functions/curry5')
 const curryn = require('functions/curryn')
-const enumerate = require('functions/enumerate')
 const partial = require('functions/partial')
-const range = require('functions/range')
 const scan = require('functions/scan')
+
+const enumerate = require('iterators/enumerate')
+const iterator = require('iterators/iterator')
+const range = require('iterators/range')
 
 const add = require('operators/add')
 const band = require('operators/band')
@@ -100,10 +102,13 @@ describe('src index', () => {
     expect(curry4).to.equal(index.curry4)
     expect(curry5).to.equal(index.curry5)
     expect(curryn).to.equal(index.curryn)
-    expect(enumerate).to.equal(index.enumerate)
     expect(partial).to.equal(index.partial)
-    expect(range).to.equal(index.range)
     expect(scan).to.equal(index.scan)
+
+    // iterators
+    expect(enumerate).to.equal(index.enumerate)
+    expect(iterator).to.equal(index.iterator)
+    expect(range).to.equal(index.range)
 
     // operators
     expect(add).to.equal(index.add)

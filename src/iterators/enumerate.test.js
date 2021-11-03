@@ -5,7 +5,7 @@
 
 const { expect } = require('chai')
 
-const enumerate = require('functions/enumerate')
+const enumerate = require('iterators/enumerate')
 
 describe('enumerate', () => {
   it('yields a series of values along with their indexes', () => {

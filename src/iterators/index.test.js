@@ -7,10 +7,14 @@ const { expect } = require('chai')
 
 const index = require('iterators')
 
+const enumerate = require('iterators/enumerate')
 const iterator = require('iterators/iterator')
+const range = require('iterators/range')
 
 describe('interators index', () => {
   it('provides all of the exported iterator functions', () => {
+    expect(enumerate).to.equal(index.enumerate)
     expect(iterator).to.equal(index.iterator)
+    expect(range).to.equal(index.range)
   })
 })
