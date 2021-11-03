@@ -36,6 +36,7 @@ const partial = require('functions/partial')
 const enumerate = require('iterators/enumerate')
 const iterator = require('iterators/iterator')
 const range = require('iterators/range')
+const reduce = require('iterators/reduce')
 const scan = require('iterators/scan')
 
 const add = require('operators/add')
@@ -120,6 +121,7 @@ describe('src index', () => {
     expect(enumerate).to.equal(index.enumerate)
     expect(iterator).to.equal(index.iterator)
     expect(range).to.equal(index.range)
+    expect(reduce).to.equal(index.reduce)
     expect(scan).to.equal(index.scan)
 
     // operators

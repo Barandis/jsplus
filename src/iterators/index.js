@@ -10,5 +10,6 @@ module.exports = {
   enumerate: require('./enumerate'),
   iterator: require('./iterator'),
   range: require('./range'),
+  reduce: require('./reduce'),
   scan: require('./scan'),
 }
