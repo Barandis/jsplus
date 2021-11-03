@@ -14,5 +14,4 @@ module.exports = {
   curry5: require('./curry5'),
   curryn: require('./curryn'),
   partial: require('./partial'),
-  scan: require('./scan'),
 }

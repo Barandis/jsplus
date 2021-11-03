@@ -22,24 +22,9 @@ const isObject = require('utilities/isObject')
  * @alias module:iterators.objectIterator
  * @private
  */
-function objectIterator(obj) {
-  const entries = Object.entries(obj)
-  let index = 0
-
-  return {
-    next() {
-      if (index < entries.length) {
-        const entry = entries[index]
-        index += 1
-        return {
-          value: entry,
-          done: false,
-        }
-      }
-      return {
-        done: true,
-      }
-    },
+function* objectIterator(obj) {
+  for (const entry of Object.entries(obj)) {
+    yield entry
   }
 }
 
@@ -62,20 +47,18 @@ function objectIterator(obj) {
  * @alias module:iterators.functionIterator
  * @private
  */
-function functionIterator(fn) {
-  return (function* fnIter() {
-    let current
-    let index = 0
+function* functionIterator(fn) {
+  let current
+  let index = 0
 
-    for (;;) {
-      current = fn(index, current)
-      index += 1
-      if (current === undefined) {
-        break
-      }
-      yield current
+  for (;;) {
+    current = fn(index, current)
+    index += 1
+    if (current === undefined) {
+      break
     }
-  })()
+    yield current
+  }
 }
 
 /**
@@ -95,15 +78,11 @@ function functionIterator(fn) {
  * console.log(iter.next().done)  // true
  * ```
  *
- * There is a particular consideration made for objects that have a `next` property that is
- * a function. If one of those is passed to `iterator`, it will be assumed to be an iterator
- * itself and will be directly returned.
- *
  * Generic objects get special support. If an object (meaning an object literal or something
- * created with `Object.create()`, but not custom classes) that does not have a function
- * property named `next` is passed to `iterator`, a new iterator will be returned that
- * iterates over everything that `Object.keys` returns for that object This will come out in
- * the "natural" property order, as follows:
+ * created with `Object.create()`, but not custom classes, which have to implement the
+ * iterable protocol explicitly) is passed to `iterator`, a new iterator will be returned
+ * that iterates over everything that `Object.keys` returns for that object This will come
+ * out in the "natural" property order, as follows:
  *
  * 1. Integer indices, in numerical order. (This does include strings that convert to
  *    integers, such as `'2'`, but not strings that do not directly correspond to an integer
@@ -177,8 +156,6 @@ function iterator(x) {
   switch (true) {
     case isFunction(x[Symbol.iterator]):
       return x[Symbol.iterator]()
-    case isFunction(x.next):
-      return x
     case isFunction(x):
       return functionIterator(x)
     case isObject(x):

@@ -32,11 +32,11 @@ const curry4 = require('functions/curry4')
 const curry5 = require('functions/curry5')
 const curryn = require('functions/curryn')
 const partial = require('functions/partial')
-const scan = require('functions/scan')
 
 const enumerate = require('iterators/enumerate')
 const iterator = require('iterators/iterator')
 const range = require('iterators/range')
+const scan = require('iterators/scan')
 
 const add = require('operators/add')
 const band = require('operators/band')
@@ -68,6 +68,12 @@ const pow = require('operators/pow')
 const prop = require('operators/prop')
 const rem = require('operators/rem')
 const sub = require('operators/sub')
+
+const isArray = require('utilities/isArray')
+const isFunction = require('utilities/isFunction')
+const isNumber = require('utilities/isNumber')
+const isObject = require('utilities/isObject')
+const isString = require('utilities/isString')
 
 const index = require('.')
 
@@ -103,12 +109,12 @@ describe('src index', () => {
     expect(curry5).to.equal(index.curry5)
     expect(curryn).to.equal(index.curryn)
     expect(partial).to.equal(index.partial)
-    expect(scan).to.equal(index.scan)
 
     // iterators
     expect(enumerate).to.equal(index.enumerate)
     expect(iterator).to.equal(index.iterator)
     expect(range).to.equal(index.range)
+    expect(scan).to.equal(index.scan)
 
     // operators
     expect(add).to.equal(index.add)
@@ -141,5 +147,12 @@ describe('src index', () => {
     expect(prop).to.equal(index.prop)
     expect(rem).to.equal(index.rem)
     expect(sub).to.equal(index.sub)
+
+    // utilities
+    expect(isArray).to.equal(index.isArray)
+    expect(isFunction).to.equal(index.isFunction)
+    expect(isNumber).to.equal(index.isNumber)
+    expect(isObject).to.equal(index.isObject)
+    expect(isString).to.equal(index.isString)
   })
 })

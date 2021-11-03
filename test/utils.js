@@ -3,6 +3,8 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
+const { expect } = require('chai')
+
 const CHARACTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 
 function rand(min, max) {
@@ -23,7 +25,13 @@ function randString(length) {
   return result
 }
 
+function expectIterator(actual, expected) {
+  expect([...actual]).to.deep.equal(expected)
+}
+
 module.exports = {
+  expect,
+  expectIterator,
   rand,
   randInt,
   randString,

@@ -46,29 +46,6 @@ describe('iterator', () => {
   })
 
   context('over custom iterable types', () => {
-    it('iterates over types with a next property', () => {
-      class IteratorTest {
-        constructor() {
-          const values = [3, 1, 4, 1, 5]
-          let index = 0
-
-          this.next = () => {
-            if (index < values.length) {
-              const res = {
-                value: values[index],
-                done: false,
-              }
-              index += 1
-              return res
-            }
-            return { done: true }
-          }
-        }
-      }
-      const test = new IteratorTest()
-      expect(toArray(iterator(test))).to.deep.equal([3, 1, 4, 1, 5])
-    })
-
     it('iterates over types with custom iterator protocols', () => {
       class IteratorTest {
         constructor() {

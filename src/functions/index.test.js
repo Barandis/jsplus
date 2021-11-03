@@ -14,7 +14,6 @@ const curry4 = require('functions/curry4')
 const curry5 = require('functions/curry5')
 const curryn = require('functions/curryn')
 const partial = require('functions/partial')
-const scan = require('functions/scan')
 
 describe('functions index', () => {
   it('provides all of the exported functions', () => {
@@ -25,6 +24,5 @@ describe('functions index', () => {
     expect(curry5).to.equal(index.curry5)
     expect(curryn).to.equal(index.curryn)
     expect(partial).to.equal(index.partial)
-    expect(scan).to.equal(index.scan)
   })
 })
