@@ -30,6 +30,7 @@ module.exports = {
       functions: path.resolve(__dirname, 'src/functions'),
       iterators: path.resolve(__dirname, 'src/iterators'),
       operators: path.resolve(__dirname, 'src/operators'),
+      primitives: path.resolve(__dirname, 'src/primitives'),
       utilities: path.resolve(__dirname, 'src/utilities'),
       test: path.resolve(__dirname, 'test'),
     },

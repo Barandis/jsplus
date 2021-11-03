@@ -69,6 +69,12 @@ const prop = require('operators/prop')
 const rem = require('operators/rem')
 const sub = require('operators/sub')
 
+const bigint = require('primitives/bigint')
+const boolean = require('primitives/boolean')
+const number = require('primitives/number')
+const string = require('primitives/string')
+const symbol = require('primitives/symbol')
+
 const isArray = require('utilities/isArray')
 const isFunction = require('utilities/isFunction')
 const isNumber = require('utilities/isNumber')
@@ -147,6 +153,13 @@ describe('src index', () => {
     expect(prop).to.equal(index.prop)
     expect(rem).to.equal(index.rem)
     expect(sub).to.equal(index.sub)
+
+    // primitives
+    expect(bigint).to.equal(index.bigint)
+    expect(boolean).to.equal(index.boolean)
+    expect(number).to.equal(index.number)
+    expect(string).to.equal(index.string)
+    expect(symbol).to.equal(index.symbol)
 
     // utilities
     expect(isArray).to.equal(index.isArray)
