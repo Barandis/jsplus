@@ -140,7 +140,10 @@ describe('iterator', () => {
     })
   })
 
-  it('returns null if the type is not iterable', () => {
-    expect(iterator(new Date())).to.be.null
+  it('returns a single-value iterator with any other type', () => {
+    const date = new Date()
+    const iter = iterator(date)
+    expect(iter.next().value).to.equal(date)
+    expect(iter.next().done).to.be.true
   })
 })

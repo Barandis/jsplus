@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>iterators/index.js - Documentation</title>
+    <title>iterators/map.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">iterators/index.js</h1>
+    <h1 class="page-title">iterators/map.js</h1>
     
 
     
@@ -47,17 +47,40 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
+const curry = require('functions/curry')
+const iterator = require('iterators/iterator')
+
 /**
- * @module iterators
+ * Passes each element of an iterable to a mapping function, returning the results in an
+ * iterator.
+ *
+ * This function comes pre-curried so it can be partially applied easily.
+ *
+ * ```javascript
+ * const result = map(add(1), [1, 2, 3])
+ * console.log(result.next().value) // 2
+ * console.log(result.next().value) // 3
+ * console.log(result.next().value) // 4
+ * console.log(result.next().done)  // true
+ * ```
+ *
+ * @param {function} fn A one-parameter function. Each element of `iterable` is used as an
+ *      argument to this function, and its return values are yielded by the resulting
+ *      iterator.
+ * @param {iterable} iterable The collection to map.
+ * @yields {*} The return value of function `fn` when applied to the next value of
+ *      `iterable`.
+ * @alias module:iterators.map
  */
-module.exports = {
-  enumerate: require('./enumerate'),
-  iterator: require('./iterator'),
-  map: require('./map'),
-  range: require('./range'),
-  reduce: require('./reduce'),
-  scan: require('./scan'),
+function* map(fn, iterable) {
+  const iter = iterator(iterable)
+
+  for (const value of iter) {
+    yield fn(value)
+  }
 }
+
+module.exports = curry(map)
 </code></pre>
         </article>
     </section>

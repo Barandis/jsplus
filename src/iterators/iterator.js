@@ -62,6 +62,18 @@ function* functionIterator(fn) {
 }
 
 /**
+ * Creates an iterator that yields one instance of the provided argument and then completes.
+ *
+ * @param {*} x The value to be contained in the iterator.
+ * @returns {iterator} An iterator of one value, which is `x`.
+ * @alias module:iterators.itemIterator
+ * @private
+ */
+function* itemIterator(x) {
+  yield x
+}
+
+/**
  * Creates an iterator over the provided value.
  *
  * For values that implement the iterable protocol (i.e., that have properties named
@@ -146,10 +158,13 @@ function* functionIterator(fn) {
  * console.log(stopIter.next().done)     // true
  * ```
  *
+ * If the argument is none of these things, then an iterator is returned that yields that
+ * argument one time before completing.
+ *
  * @param {*} x The value to be iterated over.
  * @return {iterator} An iterator over the provided value. If the value is not iterable
  *     (it's not an object or a function, and it doesn't have a protocol-defined iterator),
- *     `null` is returned.
+ *     an iterator that returns only that value once is returned.
  * @alias module:iterators.iterator
  */
 function iterator(x) {
@@ -161,7 +176,7 @@ function iterator(x) {
     case isObject(x):
       return objectIterator(x)
     default:
-      return null
+      return itemIterator(x)
   }
 }
 

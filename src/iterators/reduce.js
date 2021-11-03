@@ -60,7 +60,7 @@ const iterator = require('iterators/iterator')
  *
  * @param {function} fn The reducer function, a function of two parameters that will receive
  *      the current value and the next element as arguments.
- * @param {*} iterable The collection to scan. This can be any type for which
+ * @param {*} iterable The collection to reduce. This can be any type for which
  *      `{@link module:iterators.iterator|iterator}` will produce a non-null value, meaning
  *      objects, functions, or anything that implements the iterable protocol.
  * @returns {*} The result of the reducer function's last call.
