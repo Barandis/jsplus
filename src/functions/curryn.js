@@ -22,14 +22,17 @@
  *
  * ```javascript
  * // variadic function, will sum any number of numbers given to it
- * const sum = (...ns) => ns.reduce((a, b) => a + b, 0)
+ * const sum = (...ns) => reduce(add, ns)
  *
  * const sum2 = curryn(2, sum)
- * console.log(sum2(1)(2))             // 3
+ * const result2 = sum2(1)(2)
+ * console.log(result2)   // 3
  *
  * const sum6 = curryn(6, sum)
- * console.log(sum6(1)(2)(3)(4)(5)(6)) // 21
- * console.log(sum6(1)(2)(3)(4)(5))    // function curried(a)
+ * const result6 = sum6(1)(2)(3)(4)(5)(6)
+ * const partial = sum6(1)(2)(3)(4)(5)
+ * console.log(result6)   // 21
+ * console.log(partial)   // function curried(a)
  * ```
  *
  * @param {number} n The number of arguments that the function to be curried has.

@@ -822,7 +822,7 @@ functions, but with the order of execution reversed.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="combinators_rotl.js.html">combinators/rotl.js</a>, <a href="combinators_rotl.js.html#line42">line 42</a>
+        <a href="combinators_rotl.js.html">combinators/rotl.js</a>, <a href="combinators_rotl.js.html#line46">line 46</a>
     </li></ul></dd>
     
 
@@ -875,11 +875,15 @@ functions which take their data as their last argument, which is in many cases e
 compose.</p>
 <pre class="prettyprint source lang-javascript"><code>const sub = (x, y, z) => x - y - z
 
-// These are all equivalent and all print 6 to the console
-console.log(rotl(sub, 1, 5, -2)) // evaluate directly
-console.log(rotl(sub, 1, 5)(-2)) // produce 1-argument function
-console.log(rotl(sub, 1)(5, -2)) // produce 2-argument function
-console.log(rotl(sub)(1, 5, -2)) // produce 3-argument function
+const direct = rotl(sub, 1, 5, -2) // direct application
+const single = rotl(sub, 1, 5)(-2) // create a 1-arg function
+const double = rotl(sub, 1)(5, -2) // create a 2-arg function
+const triple = rotl(sub)(1, 5, -2) // create a 3-arg function
+
+console.log(direct)  // 6
+console.log(single)  // 6
+console.log(double)  // 6
+console.log(triple)  // 6
 </code></pre>
 </div>
 
@@ -1068,7 +1072,7 @@ from <code>fn</code> but otherwise behaves the same.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="combinators_rotr.js.html">combinators/rotr.js</a>, <a href="combinators_rotr.js.html#line43">line 43</a>
+        <a href="combinators_rotr.js.html">combinators/rotr.js</a>, <a href="combinators_rotr.js.html#line47">line 47</a>
     </li></ul></dd>
     
 
@@ -1122,11 +1126,15 @@ where often the true and false (second and third) arguments are partially applie
 want to leave the conditional (the first argument) as the last argument.</p>
 <pre class="prettyprint source lang-javascript"><code>const sub = (x, y, z) => x - y - z
 
-// These are all equivalent and all print -8 to the console
-console.log(rotr(sub, 1, 5, -2)) // evaluate directly
-console.log(rotr(sub, 1, 5)(-2)) // produce 1-argument function
-console.log(rotr(sub, 1)(5, -2)) // produce 2-argument function
-console.log(rotr(sub)(1, 5, -2)) // produce 3-argument function
+const direct = rotr(sub, 1, 5, -2) // direct application
+const single = rotr(sub, 1, 5)(-2) // create a 1-arg function
+const double = rotr(sub, 1)(5, -2) // create a 2-arg function
+const triple = rotr(sub)(1, 5, -2) // create a 3-arg function
+
+console.log(direct)  // -8
+console.log(single)  // -8
+console.log(double)  // -8
+console.log(triple)  // -8
 </code></pre>
 </div>
 
@@ -1315,7 +1323,7 @@ from <code>fn</code> but otherwise behaves the same.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="combinators_swap.js.html">combinators/swap.js</a>, <a href="combinators_swap.js.html#line39">line 39</a>
+        <a href="combinators_swap.js.html">combinators/swap.js</a>, <a href="combinators_swap.js.html#line42">line 42</a>
     </li></ul></dd>
     
 
@@ -1367,10 +1375,13 @@ Factor. Since many of the other argument-shuffing functions also come from Facto
 retained that here.</p>
 <pre class="prettyprint source lang-javascript"><code>const sub = (x, y) => x - y
 
-// These are all equivalent and all print 4 to the console
-console.log(swap(sub, 1, 5)) // evaluate directly
-console.log(swap(sub, 1)(5)) // produce 1-argument function
-console.log(swap(sub)(1, 5)) // produce 2-argument function
+const direct = swap(sub, 1, 5)  // evaluate directly
+const single = swap(sub, 1)(5)  // create a 1-arg function
+const double = swap(sub)(1, 5)  // create a 2-arg function
+
+console.log(direct)  // 4
+console.log(single)  // 4
+console.log(double)  // 4
 </code></pre>
 </div>
 

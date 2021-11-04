@@ -59,14 +59,19 @@
  * const sum = curry4((a, b, c, d) => a + b + c + d)
  *
  * // This is the only possible calling format.
- * console.log(sum(1)(2)(3)(4)) // 10
+ * const result = sum(1)(2)(3)(4)
  *
  * // This will not work. It is the same as sum(1)(3)(4) as the second argument is ignored.
- * console.log(sum(1, 2)(3)(4)) // function curry4(d)
+ * const part1 = sum(1, 2)(3)(4)
  * // This will not work. It's the same as sum(1)(2)(4) as the third argument is ignored.
- * console.log(sum(1)(2, 3)(4)) // function curry4(d)
+ * const part2 = sum(1)(2, 3)(4)
  * // This is right out.
- * console.log(sum(1, 2, 3, 4)) // function curry4(b)
+ * const part3 = sum(1, 2, 3, 4)
+ *
+ * console.log(result) // 10
+ * console.log(part1)  // function curry3(d)
+ * console.log(part2)  // function curry3(d)
+ * console.log(part3)  // function curry3(b)
  * ```
  *
  * @param {function} fn A function of four arguments.

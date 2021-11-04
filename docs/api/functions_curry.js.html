@@ -73,12 +73,18 @@ const CURRIED = Symbol('barandis/curried')
  * ```javascript
  * const sum = curry((a, b, c) => a + b + c)
  *
- * // Each of the following are equivalent, and all print '6' to the console.
- * console.log(sum(1, 2, 3))
- * console.log(sum(1, 2)(3))
- * console.log(sum(1)(2, 3))
- * console.log(sum()(1, 2, 3))
- * console.log(sum(1)(2)(3))
+ * // Each of the following are equivalent
+ * const res1 = sum(1, 2, 3)
+ * const res2 = sum(1, 2)(3)
+ * const res3 = sum(1)(2, 3)
+ * const res4 = sum()(1, 2, 3)
+ * const res5 = sum(1)(2)(3)
+ *
+ * console.log(res1)  // 6
+ * console.log(res2)  // 6
+ * console.log(res3)  // 6
+ * console.log(res4)  // 6
+ * console.log(res5)  // 6
  * ```
  *
  * @param {function} fn A function of any number of arguments.

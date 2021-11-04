@@ -36,8 +36,8 @@ const iterator = require('iterators/iterator')
  * would probably be best to map the numbers to strings *first* and then concatenate them
  * with `scan` after.
  *
- * `scan` is a curried function and can therefore easily be partially applied. It accepts
- * a reducer function that can be curried or uncurried.
+ * `scan` is a curried function and can therefore easily be partially applied. It accepts a
+ * reducer function that can be curried or uncurried.
  *
  * ```javascript
  * const runningSum = scan(add, [0, 1, 2, 3, 4])
@@ -58,14 +58,14 @@ const iterator = require('iterators/iterator')
  *
  * @param {function} fn The reducer function, a function of two parameters that will receive
  *      the current value and the next element as arguments.
- * @param {*} iterable The collection to scan. This can be any type for which
+ * @param {*} x The collection to scan. This can be any type for which
  *      `{@link module:iterators.iterator|iterator}` will produce a non-null value, meaning
  *      objects, functions, or anything that implements the iterable protocol.
  * @yields {*} The results of the reducer function as it is passed new elements.
  * @alias module:iterators.scan
  */
-function* scan(fn, iterable) {
-  const iter = iterator(iterable)
+function* scan(fn, x) {
+  const iter = iterator(x)
   const reducer = curry(fn)
   let current
 

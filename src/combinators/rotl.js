@@ -24,11 +24,15 @@ const curry = require('functions/curry')
  * ```javascript
  * const sub = (x, y, z) => x - y - z
  *
- * // These are all equivalent and all print 6 to the console
- * console.log(rotl(sub, 1, 5, -2)) // evaluate directly
- * console.log(rotl(sub, 1, 5)(-2)) // produce 1-argument function
- * console.log(rotl(sub, 1)(5, -2)) // produce 2-argument function
- * console.log(rotl(sub)(1, 5, -2)) // produce 3-argument function
+ * const direct = rotl(sub, 1, 5, -2) // direct application
+ * const single = rotl(sub, 1, 5)(-2) // create a 1-arg function
+ * const double = rotl(sub, 1)(5, -2) // create a 2-arg function
+ * const triple = rotl(sub)(1, 5, -2) // create a 3-arg function
+ *
+ * console.log(direct)  // 6
+ * console.log(single)  // 6
+ * console.log(double)  // 6
+ * console.log(triple)  // 6
  * ```
  *
  * @param {function} fn A function of three arguments.

@@ -93,7 +93,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="functions_curry.js.html">functions/curry.js</a>, <a href="functions_curry.js.html#line46">line 46</a>
+        <a href="functions_curry.js.html">functions/curry.js</a>, <a href="functions_curry.js.html#line52">line 52</a>
     </li></ul></dd>
     
 
@@ -150,12 +150,18 @@ returned without modification). A corollary is that <code>curry</code> will not 
 curried function (one in which no parameter list has more than one parameter).</p>
 <pre class="prettyprint source lang-javascript"><code>const sum = curry((a, b, c) => a + b + c)
 
-// Each of the following are equivalent, and all print '6' to the console.
-console.log(sum(1, 2, 3))
-console.log(sum(1, 2)(3))
-console.log(sum(1)(2, 3))
-console.log(sum()(1, 2, 3))
-console.log(sum(1)(2)(3))
+// Each of the following are equivalent
+const res1 = sum(1, 2, 3)
+const res2 = sum(1, 2)(3)
+const res3 = sum(1)(2, 3)
+const res4 = sum()(1, 2, 3)
+const res5 = sum(1)(2)(3)
+
+console.log(res1)  // 6
+console.log(res2)  // 6
+console.log(res3)  // 6
+console.log(res4)  // 6
+console.log(res5)  // 6
 </code></pre>
 </div>
 
@@ -276,7 +282,7 @@ will return another new function that accepts the <em>rest</em> of the arguments
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="functions_curry2.js.html">functions/curry2.js</a>, <a href="functions_curry2.js.html#line29">line 29</a>
+        <a href="functions_curry2.js.html">functions/curry2.js</a>, <a href="functions_curry2.js.html#line32">line 32</a>
     </li></ul></dd>
     
 
@@ -324,10 +330,13 @@ default parameters.</p>
 <pre class="prettyprint source lang-javascript"><code>const sum = curry2((a, b) => a + b)
 
 // This is the only possible calling format.
-console.log(sum(1)(2)) // 3
+const result = sum(1)(2)
 
 // This will not work. It is the same as sum(1) as the second argument is ignored.
-console.log(sum(1, 2)) // function curry2(b)
+const partial = sum(1, 2)
+
+console.log(result)  // 3
+console.log(partial) // function curry2(b)
 </code></pre>
 </div>
 
@@ -447,7 +456,7 @@ parentheses.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="functions_curry3.js.html">functions/curry3.js</a>, <a href="functions_curry3.js.html#line33">line 33</a>
+        <a href="functions_curry3.js.html">functions/curry3.js</a>, <a href="functions_curry3.js.html#line38">line 38</a>
     </li></ul></dd>
     
 
@@ -495,14 +504,19 @@ default parameters.</p>
 <pre class="prettyprint source lang-javascript"><code>const sum = curry3((a, b, c) => a + b + c)
 
 // This is the only possible calling format.
-console.log(sum(1)(2)(3)) // 6
+const result = sum(1)(2)(3)
 
 // This will not work. It is the same as sum(1)(3) as the second argument is ignored.
-console.log(sum(1, 2)(3)) // function curry3(c)
+const part1 = sum(1, 2)(3)
 // This will also not work. It's the same as sum(1)(2) as the third argument is ignored.
-console.log(sum(1)(2, 3)) // function curry3(c)
+const part2 = sum(1)(2, 3)
 // This is right out.
-console.log(sum(1, 2, 3)) // function curry3(b)
+const part3 = sum(1, 2, 3)
+
+console.log(result) // 6
+console.log(part1)  // function curry3(c)
+console.log(part2)  // function curry3(c)
+console.log(part3)  // function curry3(b)
 </code></pre>
 </div>
 
@@ -622,7 +636,7 @@ parentheses.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="functions_curry4.js.html">functions/curry4.js</a>, <a href="functions_curry4.js.html#line33">line 33</a>
+        <a href="functions_curry4.js.html">functions/curry4.js</a>, <a href="functions_curry4.js.html#line38">line 38</a>
     </li></ul></dd>
     
 
@@ -670,14 +684,19 @@ default parameters.</p>
 <pre class="prettyprint source lang-javascript"><code>const sum = curry4((a, b, c, d) => a + b + c + d)
 
 // This is the only possible calling format.
-console.log(sum(1)(2)(3)(4)) // 10
+const result = sum(1)(2)(3)(4)
 
 // This will not work. It is the same as sum(1)(3)(4) as the second argument is ignored.
-console.log(sum(1, 2)(3)(4)) // function curry4(d)
+const part1 = sum(1, 2)(3)(4)
 // This will not work. It's the same as sum(1)(2)(4) as the third argument is ignored.
-console.log(sum(1)(2, 3)(4)) // function curry4(d)
+const part2 = sum(1)(2, 3)(4)
 // This is right out.
-console.log(sum(1, 2, 3, 4)) // function curry4(b)
+const part3 = sum(1, 2, 3, 4)
+
+console.log(result) // 10
+console.log(part1)  // function curry3(d)
+console.log(part2)  // function curry3(d)
+console.log(part3)  // function curry3(b)
 </code></pre>
 </div>
 
@@ -797,7 +816,7 @@ parentheses.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="functions_curry5.js.html">functions/curry5.js</a>, <a href="functions_curry5.js.html#line33">line 33</a>
+        <a href="functions_curry5.js.html">functions/curry5.js</a>, <a href="functions_curry5.js.html#line38">line 38</a>
     </li></ul></dd>
     
 
@@ -845,14 +864,19 @@ default parameters.</p>
 <pre class="prettyprint source lang-javascript"><code>const sum = curry4((a, b, c, d, e) => a + b + c + d + e)
 
 // This is the only possible calling format.
-console.log(sum(1)(2)(3)(4)(5)) // 15
+const result = sum(1)(2)(3)(4)(5))
 
 // This is the same as sum(1)(3)(4)(5) as the second argument is ignored.
-console.log(sum(1, 2)(3)(4)(5)) // function curry5(e)
+const part1 = sum(1, 2)(3)(4)(5)
 // This is the same as sum(1)(2)(4)(5) as the third argument is ignored.
-console.log(sum(1)(2, 3)(4)(5)) // function curry5(e)
+const part2 = sum(1)(2, 3)(4)(5)
 // This is right out.
-console.log(sum(1, 2, 3, 4, 5)) // function curry5(b)
+const part3 = sum(1, 2, 3, 4, 5))
+
+console.log(result) // 15
+console.log(part1)  // function curry3(e)
+console.log(part2)  // function curry3(e)
+console.log(part3)  // function curry3(b)
 </code></pre>
 </div>
 
@@ -972,7 +996,7 @@ parentheses.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="functions_curryn.js.html">functions/curryn.js</a>, <a href="functions_curryn.js.html#line41">line 41</a>
+        <a href="functions_curryn.js.html">functions/curryn.js</a>, <a href="functions_curryn.js.html#line44">line 44</a>
     </li></ul></dd>
     
 
@@ -1026,14 +1050,17 @@ how many arguments a function will be using, or when you want to curry a functio
 than 5 arguments (because there is no specific curry function for parameter lists that
 large).</p>
 <pre class="prettyprint source lang-javascript"><code>// variadic function, will sum any number of numbers given to it
-const sum = (...ns) => ns.reduce((a, b) => a + b, 0)
+const sum = (...ns) => reduce(add, ns)
 
 const sum2 = curryn(2, sum)
-console.log(sum2(1)(2))             // 3
+const result2 = sum2(1)(2)
+console.log(result2)   // 3
 
 const sum6 = curryn(6, sum)
-console.log(sum6(1)(2)(3)(4)(5)(6)) // 21
-console.log(sum6(1)(2)(3)(4)(5))    // function curried(a)
+const result6 = sum6(1)(2)(3)(4)(5)(6)
+const partial = sum6(1)(2)(3)(4)(5)
+console.log(result6)   // 21
+console.log(partial)   // function curried(a)
 </code></pre>
 </div>
 
@@ -1176,7 +1203,7 @@ function, and so on, <code>n</code> times.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="functions_partial.js.html">functions/partial.js</a>, <a href="functions_partial.js.html#line38">line 38</a>
+        <a href="functions_partial.js.html">functions/partial.js</a>, <a href="functions_partial.js.html#line42">line 42</a>
     </li></ul></dd>
     
 
@@ -1226,9 +1253,13 @@ satisfy the function it partially completes. Another call (presumably with empty
 parentheses) will have to be made to get the return value.</p>
 <pre class="prettyprint source lang-javascript"><code>const sum = partial((a, b, c) => a + b + c, 1, 2)
 
-console.log(sum(3))    // 6
-console.log(sum(10))   // 13
-console.log(sum(1001)) // 1004
+const part3 = sum(3)
+const part10 = sum(10)
+const part1001 = sum(1001)
+
+console.log(part3)    // 6
+console.log(part10)   // 13
+console.log(part1001) // 1004
 
 // This still returns a function even though three arguments have been supplied.
 const prod = partial((a, b, c) => a * b * c, 2, 3, 4)

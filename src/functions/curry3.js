@@ -15,14 +15,19 @@
  * const sum = curry3((a, b, c) => a + b + c)
  *
  * // This is the only possible calling format.
- * console.log(sum(1)(2)(3)) // 6
+ * const result = sum(1)(2)(3)
  *
  * // This will not work. It is the same as sum(1)(3) as the second argument is ignored.
- * console.log(sum(1, 2)(3)) // function curry3(c)
+ * const part1 = sum(1, 2)(3)
  * // This will also not work. It's the same as sum(1)(2) as the third argument is ignored.
- * console.log(sum(1)(2, 3)) // function curry3(c)
+ * const part2 = sum(1)(2, 3)
  * // This is right out.
- * console.log(sum(1, 2, 3)) // function curry3(b)
+ * const part3 = sum(1, 2, 3)
+ *
+ * console.log(result) // 6
+ * console.log(part1)  // function curry3(c)
+ * console.log(part2)  // function curry3(c)
+ * console.log(part3)  // function curry3(b)
  * ```
  *
  * @param {function} fn A function of three arguments.

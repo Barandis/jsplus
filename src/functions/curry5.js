@@ -15,14 +15,19 @@
  * const sum = curry4((a, b, c, d, e) => a + b + c + d + e)
  *
  * // This is the only possible calling format.
- * console.log(sum(1)(2)(3)(4)(5)) // 15
+ * const result = sum(1)(2)(3)(4)(5))
  *
  * // This is the same as sum(1)(3)(4)(5) as the second argument is ignored.
- * console.log(sum(1, 2)(3)(4)(5)) // function curry5(e)
+ * const part1 = sum(1, 2)(3)(4)(5)
  * // This is the same as sum(1)(2)(4)(5) as the third argument is ignored.
- * console.log(sum(1)(2, 3)(4)(5)) // function curry5(e)
+ * const part2 = sum(1)(2, 3)(4)(5)
  * // This is right out.
- * console.log(sum(1, 2, 3, 4, 5)) // function curry5(b)
+ * const part3 = sum(1, 2, 3, 4, 5))
+ *
+ * console.log(result) // 15
+ * console.log(part1)  // function curry3(e)
+ * console.log(part2)  // function curry3(e)
+ * console.log(part3)  // function curry3(b)
  * ```
  *
  * @param {function} fn A function of five arguments.

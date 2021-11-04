@@ -81,7 +81,7 @@
 
     
 
-    <h4 class="name" id=".array"><span class="type-signature">(static) </span>array<span class="signature">(iterable)</span><span class="type-signature"> &rarr; {array}</span></h4>
+    <h4 class="name" id=".array"><span class="type-signature">(static) </span>array<span class="signature">(x)</span><span class="type-signature"> &rarr; {array}</span></h4>
 
     
 
@@ -187,7 +187,7 @@ console.log(single) // [4]
 
         <tr>
             
-                <td class="name"><code>iterable</code></td>
+                <td class="name"><code>x</code></td>
             
 
             <td class="type">
@@ -255,7 +255,7 @@ console.log(single) // [4]
 
     
 
-    <h4 class="name" id=".enumerate"><span class="type-signature">(generator, static) </span>enumerate<span class="signature">(iterable, start<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {array}</span></h4>
+    <h4 class="name" id=".enumerate"><span class="type-signature">(generator, static) </span>enumerate<span class="signature">(x, start<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {array}</span></h4>
 
     
 
@@ -267,7 +267,7 @@ console.log(single) // [4]
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="iterators_enumerate.js.html">iterators/enumerate.js</a>, <a href="iterators_enumerate.js.html#line29">line 29</a>
+        <a href="iterators_enumerate.js.html">iterators/enumerate.js</a>, <a href="iterators_enumerate.js.html#line31">line 31</a>
     </li></ul></dd>
     
 
@@ -360,7 +360,7 @@ yielded tuple) from a number other than 0. This number can be passed in as the o
 
         <tr>
             
-                <td class="name"><code>iterable</code></td>
+                <td class="name"><code>x</code></td>
             
 
             <td class="type">
@@ -947,7 +947,7 @@ an iterator that returns only that value once is returned.</p>
 
     
 
-    <h4 class="name" id=".map"><span class="type-signature">(generator, static) </span>map<span class="signature">(fn, iterable)</span><span class="type-signature"> &rarr; {*}</span></h4>
+    <h4 class="name" id=".map"><span class="type-signature">(generator, static) </span>map<span class="signature">(fn, x)</span><span class="type-signature"> &rarr; {*}</span></h4>
 
     
 
@@ -1070,7 +1070,7 @@ iterator.</p></td>
 
         <tr>
             
-                <td class="name"><code>iterable</code></td>
+                <td class="name"><code>x</code></td>
             
 
             <td class="type">
@@ -1151,7 +1151,7 @@ iterator.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="iterators_range.js.html">iterators/range.js</a>, <a href="iterators_range.js.html#line73">line 73</a>
+        <a href="iterators_range.js.html">iterators/range.js</a>, <a href="iterators_range.js.html#line72">line 72</a>
     </li></ul></dd>
     
 
@@ -1203,23 +1203,22 @@ successive number is <em>de</em>cremented by <code>step</code>. <code>step</code
 a negative <code>step</code> is provided, its absolute value will be used instead, and if <code>0</code> is
 provided, it will be regarded as <code>1</code>. The direction of the iteration is always determined
 by <code>start</code> and <code>end</code>.</p>
-<pre class="prettyprint source lang-javascript"><code>// Taking advantage of the fact that `range` is an iterator by using
-// the spread operator to make arrays out of it
-const e = [...range(4)]
+<pre class="prettyprint source lang-javascript"><code>// Using array to change iterators to arrays for ease of display
+const e = array(range(4))
 console.log(e)    // [0,1,2,3]
 
-const ei = [...range(4, true)]
+const ei = array(range(4, true))
 console.log(ei)   // [0,1,2,3,4]
 
-const se = [...range(2, 4)]
+const se = array(range(2, 4))
 console.log(se)   // [2,3]
 
 // 0 is necessary because range(4, 2) would be interpreted as a
 // start of 4 and end of 2, producing [4,3]
-const sep = [...range(0, 4, 2)]
+const sep = array(range(0, 4, 2))
 console.log(sep)  // [0,2]
 
-const sepi = [...range(0, 4, 2, true)]
+const sepi = array(range(0, 4, 2, true))
 console.log(sepi) // [0,2,4]
 
 // Probably the most common use: in `for...of` loops
@@ -1482,7 +1481,7 @@ the range.</p></td>
 
     
 
-    <h4 class="name" id=".reduce"><span class="type-signature">(static) </span>reduce<span class="signature">(fn, iterable)</span><span class="type-signature"> &rarr; {*}</span></h4>
+    <h4 class="name" id=".reduce"><span class="type-signature">(static) </span>reduce<span class="signature">(fn, x)</span><span class="type-signature"> &rarr; {*}</span></h4>
 
     
 
@@ -1632,7 +1631,7 @@ the current value and the next element as arguments.</p></td>
 
         <tr>
             
-                <td class="name"><code>iterable</code></td>
+                <td class="name"><code>x</code></td>
             
 
             <td class="type">
@@ -1872,7 +1871,7 @@ console.log(fn)  // [4, 3, 2, 1, 0]
 
     
 
-    <h4 class="name" id=".scan"><span class="type-signature">(generator, static) </span>scan<span class="signature">(fn, iterable)</span><span class="type-signature"> &rarr; {*}</span></h4>
+    <h4 class="name" id=".scan"><span class="type-signature">(generator, static) </span>scan<span class="signature">(fn, x)</span><span class="type-signature"> &rarr; {*}</span></h4>
 
     
 
@@ -1948,8 +1947,8 @@ then concatenate them will have to be sure that <em>both</em> arguments are turn
 since the first invocation will receive two numbers rather than a string and a number. It
 would probably be best to map the numbers to strings <em>first</em> and then concatenate them
 with <code>scan</code> after.</p>
-<p><code>scan</code> is a curried function and can therefore easily be partially applied. It accepts
-a reducer function that can be curried or uncurried.</p>
+<p><code>scan</code> is a curried function and can therefore easily be partially applied. It accepts a
+reducer function that can be curried or uncurried.</p>
 <pre class="prettyprint source lang-javascript"><code>const runningSum = scan(add, [0, 1, 2, 3, 4])
 console.log(runningSum.next().value)  // 0
 console.log(runningSum.next().value)  // 1
@@ -2026,7 +2025,7 @@ the current value and the next element as arguments.</p></td>
 
         <tr>
             
-                <td class="name"><code>iterable</code></td>
+                <td class="name"><code>x</code></td>
             
 
             <td class="type">

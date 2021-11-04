@@ -27,12 +27,12 @@ const iterator = require('iterators/iterator')
  * console.log(single) // [4]
  * ```
  *
- * @param {*} iterable The object which is being made into an array.
+ * @param {*} x The object which is being made into an array.
  * @returns {array} An array version of the argument.
  * @alias module:iterators.array
  */
-function array(iterable) {
-  return [...iterator(iterable)]
+function array(x) {
+  return [...iterator(x)]
 }
 
 module.exports = array

@@ -47,6 +47,8 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
+const iterator = require('iterators/iterator')
+
 /**
  * Generates a set of pairs of iterable elements with their indices. This is inspired by
  * Python's `enumerate` function.
@@ -63,22 +65,22 @@
  * yielded tuple) from a number other than 0. This number can be passed in as the optional
  * `start` parameter.
  *
- * @param {iterable} iterable The iterable to be enumerated.
+ * @param {iterable} x The iterable to be enumerated.
  * @param {number} [start=0] The index of the first tuple that gets yielded. Every
  *     succeeding tuple has its index incremented by 1.
  * @yields {array} A tuple of the index of a value in the iterable and the value
  *     itself.
  * @alias module:iterators.enumerate
  */
-function* enumerate(iterable, start = 0) {
-  const iterator = iterable[Symbol.iterator]()
-  let result = iterator.next()
+function* enumerate(x, start = 0) {
+  const iter = iterator(x)
+  let result = iter.next()
   let index = Math.trunc(start)
 
   while (!result.done) {
     yield [index, result.value]
     index += 1
-    result = iterator.next()
+    result = iter.next()
   }
 }
 

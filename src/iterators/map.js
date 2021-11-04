@@ -23,15 +23,13 @@ const iterator = require('iterators/iterator')
  * @param {function} fn A one-parameter function. Each element of `iterable` is used as an
  *      argument to this function, and its return values are yielded by the resulting
  *      iterator.
- * @param {iterable} iterable The collection to map.
+ * @param {iterable} x The collection to map.
  * @yields {*} The return value of function `fn` when applied to the next value of
  *      `iterable`.
  * @alias module:iterators.map
  */
-function* map(fn, iterable) {
-  const iter = iterator(iterable)
-
-  for (const value of iter) {
+function* map(fn, x) {
+  for (const value of iterator(x)) {
     yield fn(value)
   }
 }
