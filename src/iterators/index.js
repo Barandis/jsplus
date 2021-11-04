@@ -7,6 +7,7 @@
  * @module iterators
  */
 module.exports = {
+  array: require('./array'),
   enumerate: require('./enumerate'),
   infinite: require('./infinite'),
   iterator: require('./iterator'),

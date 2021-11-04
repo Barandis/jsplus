@@ -6,7 +6,9 @@
 const { expect } = require('test/utils')
 
 const compose = require('combinators/compose')
+const composeAll = require('combinators/composeAll')
 const pipe = require('combinators/pipe')
+const pipeAll = require('combinators/pipeAll')
 const rotl = require('combinators/rotl')
 const rotr = require('combinators/rotr')
 const swap = require('combinators/swap')
@@ -18,6 +20,7 @@ const I = require('combinators/pure/I')
 const Is = require('combinators/pure/Is')
 const K = require('combinators/pure/K')
 const Psi = require('combinators/pure/Psi')
+const Q = require('combinators/pure/Q')
 const R = require('combinators/pure/R')
 const Rs = require('combinators/pure/Rs')
 const S = require('combinators/pure/S')
@@ -33,6 +36,7 @@ const curry5 = require('functions/curry5')
 const curryn = require('functions/curryn')
 const partial = require('functions/partial')
 
+const array = require('iterators/array')
 const enumerate = require('iterators/enumerate')
 const infinite = require('iterators/infinite')
 const iterator = require('iterators/iterator')
@@ -90,7 +94,9 @@ describe('src index', () => {
   it('provides all of the exported functions', () => {
     // combinators
     expect(compose).to.equal(index.compose)
+    expect(composeAll).to.equal(index.composeAll)
     expect(pipe).to.equal(index.pipe)
+    expect(pipeAll).to.equal(index.pipeAll)
     expect(rotl).to.equal(index.rotl)
     expect(rotr).to.equal(index.rotr)
     expect(swap).to.equal(index.swap)
@@ -103,6 +109,7 @@ describe('src index', () => {
     expect(Is).to.equal(index.Is)
     expect(K).to.equal(index.K)
     expect(Psi).to.equal(index.Psi)
+    expect(Q).to.equal(index.Q)
     expect(R).to.equal(index.R)
     expect(Rs).to.equal(index.Rs)
     expect(S).to.equal(index.S)
@@ -120,6 +127,7 @@ describe('src index', () => {
     expect(partial).to.equal(index.partial)
 
     // iterators
+    expect(array).to.equal(index.array)
     expect(enumerate).to.equal(index.enumerate)
     expect(infinite).to.equal(index.infinite)
     expect(iterator).to.equal(index.iterator)

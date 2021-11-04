@@ -14,6 +14,7 @@ module.exports = {
   Is: require('./Is'),
   K: require('./K'),
   Psi: require('./Psi'),
+  Q: require('./Q'),
   R: require('./R'),
   Rs: require('./Rs'),
   S: require('./S'),

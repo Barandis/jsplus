@@ -3,28 +3,35 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
+const curry = require('functions/curry')
+
 /**
- * Combines two or more single-parameter functions into one single-parameter function that
- * passes the results from its contained functions to the next and returns the result of the
- * last contained function.
+ * Composes two functions in left-to-right order.
  *
- * This is an implementation of the **{@link module:combinators/pure.B|B}** combinator
- * except that the order of the composed functions is reversed and that it can compose more
- * than two functions. (In the case of three or more, it's the same as using the **B**
- * combinator multiple times.)
+ * This is the same as `{@link module:combinators.compose|compose}` except for the
+ * left-to-right order replacing `compose`'s right-to-left order. That makes it an
+ * implementation of the **{@link module:combinators/pure.Q|Q} combinator, or alternately,
+ * the same as `swap(compose)`.
  *
- * The order of the functions is *not* reversed. The first function listed is the first
- * applied. This is contrary to the order most often used in functional programming (and
- * opposite of the order in `{@link module:combinators.compose|compose}`), but there are
- * times when the piped order makes more sense than the composed order.
+ * This is then similar to Clojure's `->>` threading macro.
  *
- * @param {...function} fns The functions that should be composed into a single function.
- * @returns {function} A single function that is the composition of all of the provided
- *     functions, but with the order of execution reversed.
+ * ```
+ * // Same as example in `compose`, for contrast
+ * // Turns the digits in an array into strings and then concatenates them
+ * const stringify = pipe(map(string), reduce(add))
+ * const result = stringify([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5])
+ * console.log(result)   // "31415926535"
+ * ```
+ *
+ * @param {function} f The first function executed, applied to `x`. Its result becomes the
+ *      argument to `g`.
+ * @param {function} g The second function executed, applied to the result of `f`'s
+ *      application of `x`. The result of this function will be `compose`'s return value.
+ * @returns Function `g`'s result when applied to the result of `f` being applied to `x`.
  * @alias module:combinators.pipe
  */
-function pipe(...fns) {
-  return x => fns.reduce((y, f) => f(y), x)
+function pipe(f, g, x) {
+  return g(f(x))
 }
 
-module.exports = pipe
+module.exports = curry(pipe)

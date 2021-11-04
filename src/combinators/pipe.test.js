@@ -5,32 +5,23 @@
 
 const { expect } = require('test/utils')
 
-const { pipe, swap } = require('combinators')
-const { curry } = require('functions')
-const { add, ne, rem } = require('operators')
-
-const inc = add(1)
-const odd = pipe(swap(rem)(2), ne(0))
+const compose = require('combinators/compose')
+const pipe = require('combinators/pipe')
+const swap = require('combinators/swap')
+const array = require('iterators/array')
+const map = require('iterators/map')
+const add = require('operators/add')
+const mul = require('operators/mul')
 
 describe('pipe', () => {
-  it('pipes two or more functions into a single function', () => {
-    const m = fn => iterable => Array.from(iterable).map(fn)
-    const f = fn => iterable => Array.from(iterable).filter(fn)
-    const t = n => iterable => Array.from(iterable).slice(0, n)
-
-    const result = pipe(m(inc), f(odd), t(2))([0, 1, 2, 3, 4])
-    expect(result).to.deep.equal([1, 3])
+  it('composes two single-argument functions left-to-right into a new function', () => {
+    const fn = pipe(mul(3), add(1)) // Collatz-conjecturish
+    const result = map(fn, [1, 2, 3, 4, 5])
+    expect(array(result)).to.deep.equal([4, 7, 10, 13, 16])
   })
-  it('works in conjunction with curry and swap', () => {
-    const map = (iterable, fn) => Array.from(iterable).map(fn)
-    const filter = (iterable, fn) => Array.from(iterable).filter(fn)
-    const take = (iterable, n) => Array.from(iterable).slice(0, n)
-
-    const result = pipe(
-      swap(curry(map))(inc),
-      swap(curry(filter))(odd),
-      swap(curry(take))(2),
-    )([0, 1, 2, 3, 4])
-    expect(result).to.deep.equal([1, 3])
+  it('works the same as swap(compose)', () => {
+    const fn = swap(compose)(mul(3))(add(1))
+    const result = map(fn, [1, 2, 3, 4, 5])
+    expect(array(result)).to.deep.equal([4, 7, 10, 13, 16])
   })
 })
