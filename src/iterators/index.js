@@ -8,6 +8,7 @@
  */
 module.exports = {
   enumerate: require('./enumerate'),
+  infinite: require('./infinite'),
   iterator: require('./iterator'),
   map: require('./map'),
   range: require('./range'),

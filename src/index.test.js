@@ -34,6 +34,7 @@ const curryn = require('functions/curryn')
 const partial = require('functions/partial')
 
 const enumerate = require('iterators/enumerate')
+const infinite = require('iterators/infinite')
 const iterator = require('iterators/iterator')
 const map = require('iterators/map')
 const range = require('iterators/range')
@@ -120,6 +121,7 @@ describe('src index', () => {
 
     // iterators
     expect(enumerate).to.equal(index.enumerate)
+    expect(infinite).to.equal(index.infinite)
     expect(iterator).to.equal(index.iterator)
     expect(map).to.equal(index.map)
     expect(range).to.equal(index.range)
