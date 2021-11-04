@@ -12,6 +12,7 @@ module.exports = {
   ...pure,
   compose: require('./compose'),
   composeAll: require('./composeAll'),
+  constant: require('./constant'),
   pipe: require('./pipe'),
   pipeAll: require('./pipeAll'),
   rotl: require('./rotl'),

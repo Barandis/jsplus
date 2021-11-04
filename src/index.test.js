@@ -7,6 +7,7 @@ const { expect } = require('test/utils')
 
 const compose = require('combinators/compose')
 const composeAll = require('combinators/composeAll')
+const constant = require('combinators/constant')
 const pipe = require('combinators/pipe')
 const pipeAll = require('combinators/pipeAll')
 const rotl = require('combinators/rotl')
@@ -96,6 +97,7 @@ describe('src index', () => {
     // combinators
     expect(compose).to.equal(index.compose)
     expect(composeAll).to.equal(index.composeAll)
+    expect(constant).to.equal(index.constant)
     expect(pipe).to.equal(index.pipe)
     expect(pipeAll).to.equal(index.pipeAll)
     expect(rotl).to.equal(index.rotl)

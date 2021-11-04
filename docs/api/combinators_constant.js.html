@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>iterators/array.js - Documentation</title>
+    <title>combinators/constant.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">iterators/array.js</h1>
+    <h1 class="page-title">combinators/constant.js</h1>
     
 
     
@@ -47,39 +47,30 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const iterator = require('iterators/iterator')
-
 /**
- * Transforms an iterable into an array.
+ * Creates a constant function, which always returns the same value no matter its arguments.
  *
- * This is just a nice functional wrapper for `[...iterable]`, but since everything else is
- * functions, it looks nicer to have this be a function too. It's mostly for turning the
- * iterators that this module tends to provide into arrays, but it will work on any kind of
- * value under the same rules as `{@link module:iterators.iterator|iterator}`.
+ * This is an implementation of the **{@link module:combinators/pure.K|K}** combinator. Its
+ * useful in contexts where a function is required but you don't care about the argument(s)
+ * to that function.
  *
  * ```javascript
- * const iter = array(iterator([1, 2, 3, 4, 5]))
- * const str = array('test')
- * const obj = array({a: 1, b: 2})
- * const fn = array(x => (x &lt; 5 ? x : undefined))
- * const single = array(4)
+ * const fn = constant(1729)
  *
- * console.log(iter)   // [1, 2, 3, 4, 5]
- * console.log(str)    // ["t", "e", "s", "t"]
- * console.log(obj)    // [["a", 1], ["b", 2]]
- * console.log(fn)     // [0, 1, 2, 3, 4]
- * console.log(single) // [4]
+ * console.log(fn())       // 1729
+ * console.log(fn('test')) // 1729
+ * console.log(fn(1728))   // 1729
  * ```
  *
- * @param {*} x The object which is being made into an array.
- * @returns {array} An array version of the argument.
- * @alias module:iterators.array
+ * @param {*} x The value that the constant function should return.
+ * @returns {function} A function that returns `x` when invoked no matter the arguments.
+ * @alias module:combinators.constant
  */
-function array(x) {
-  return [...iterator(x)]
+function constant(x) {
+  return () => x
 }
 
-module.exports = array
+module.exports = constant
 </code></pre>
         </article>
     </section>
