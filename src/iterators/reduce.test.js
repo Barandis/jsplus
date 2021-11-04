@@ -5,8 +5,11 @@
 
 const { expect } = require('test/utils')
 
+const compose = require('combinators/compose')
+const map = require('iterators/map')
 const reduce = require('iterators/reduce')
 const add = require('operators/add')
+const string = require('primitives/string')
 
 function* upTo5() {
   for (let i = 0; i <= 5; i += 1) {
@@ -49,5 +52,11 @@ describe('scan', () => {
   it('returns the element in a single-element input', () => {
     const result = reduce(add, [1])
     expect(result).to.equal(1)
+  })
+  // This is the composed example from the doc comments
+  it('works well with map and compose', () => {
+    const stringify = compose(reduce(add), map(string))
+    const result = stringify([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5])
+    expect(result).to.equal('31415926535')
   })
 })
