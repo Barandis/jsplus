@@ -14,5 +14,6 @@ module.exports = {
   map: require('./map'),
   range: require('./range'),
   reduce: require('./reduce'),
+  reverse: require('./reverse'),
   scan: require('./scan'),
 }

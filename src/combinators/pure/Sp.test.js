@@ -5,17 +5,19 @@
 
 const { expect } = require('test/utils')
 
+const compose = require('combinators/compose')
 const swap = require('combinators/swap')
 const I = require('combinators/pure/I')
 const Sp = require('combinators/pure/Sp')
 const reduce = require('iterators/reduce')
+const reverse = require('iterators/reverse')
 const add = require('operators/add')
 const div = require('operators/div')
 const eq = require('operators/eq')
 const prop = require('operators/prop')
 
 const sum = reduce(add)
-const rev = s => s.split('').reverse().join('')
+const rev = compose(reduce(add))(reverse)
 const count = swap(prop)('length')
 
 describe("S' combinator", () => {

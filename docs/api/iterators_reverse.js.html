@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>operators/mul.js - Documentation</title>
+    <title>iterators/reverse.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">operators/mul.js</h1>
+    <h1 class="page-title">iterators/reverse.js</h1>
     
 
     
@@ -47,30 +47,38 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const curry = require('functions/curry')
+const array = require('iterators/array')
 
 /**
- * A curried function version of the `*` multiplication operator.
+ * Reverses the order of an iterable.
+ *
+ * While this function does produce an iterator like most of the iterator functions, it
+ * requires knowing where the end of the input iterable is. Therefore it will not work with
+ * infinite iterators (because they do not have an end) and it does not work lazily in that
+ * it must evaluate the entire input iterable to get to the end.
  *
  * ```javascript
- * console.log(4 * 7)     // 28
- * console.log(mul(4, 7)) // 28
- * console.log(mul(4)(7)) // 28
+ * const arr = reverse([1, 2, 3, 4, 5])
+ * const str = reverse('test')
+ * const fn = reverse(x => (x &lt; 5 ? x : undefined))
  *
- * const mul4 = mul(4)
- * console.log(mul4(7))   // 28
+ * console.log(arr) // [5, 4, 3, 2, 1]
+ * console.log(str) // ["t", "s", "e", "t"]
+ * console.log(fn)  // [4, 3, 2, 1, 0]
  * ```
  *
- * @param {number} x The first operand.
- * @param {number} y The second operand.
- * @returns {number} The product of `x` and `y`.
- * @alias module:operators.mul
+ * @param {*} x The collection to reverse.
+ * @returns {iterator} An iterator over a version of `x` with its elements in reverse order.
+ * @alias module:iterators.reverse
  */
-function mul(x, y) {
-  return x * y
+function* reverse(x) {
+  const a = array(x)
+  for (let i = a.length - 1; i >= 0; i -= 1) {
+    yield a[i]
+  }
 }
 
-module.exports = curry(mul)
+module.exports = reverse
 </code></pre>
         </article>
     </section>

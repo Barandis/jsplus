@@ -43,6 +43,7 @@ const iterator = require('iterators/iterator')
 const map = require('iterators/map')
 const range = require('iterators/range')
 const reduce = require('iterators/reduce')
+const reverse = require('iterators/reverse')
 const scan = require('iterators/scan')
 
 const add = require('operators/add')
@@ -134,6 +135,7 @@ describe('src index', () => {
     expect(map).to.equal(index.map)
     expect(range).to.equal(index.range)
     expect(reduce).to.equal(index.reduce)
+    expect(reverse).to.equal(index.reverse)
     expect(scan).to.equal(index.scan)
 
     // operators
