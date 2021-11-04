@@ -7,7 +7,8 @@
 
 const { expect } = require('test/utils')
 
-const { iterator, range } = require('iterators')
+const iterator = require('iterators/iterator')
+const range = require('iterators/range')
 
 function* five() {
   for (const i of range(1, 6)) {

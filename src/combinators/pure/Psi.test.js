@@ -5,8 +5,14 @@
 
 const { expect } = require('test/utils')
 
-const { B, C, I, Psi } = require('combinators/pure')
-const { add, mul, neg, sub } = require('operators')
+const B = require('combinators/pure/B')
+const C = require('combinators/pure/C')
+const I = require('combinators/pure/I')
+const Psi = require('combinators/pure/Psi')
+const add = require('operators/add')
+const mul = require('operators/mul')
+const neg = require('operators/neg')
+const sub = require('operators/sub')
 
 describe('Ψ combinator', () => {
   const f = mul(2)

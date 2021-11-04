@@ -5,12 +5,16 @@
 
 const { expect } = require('test/utils')
 
-const { pipeAll, swap } = require('combinators')
-const { curry } = require('functions')
-const { add, ne, rem } = require('operators')
+const pipe = require('combinators/pipe')
+const pipeAll = require('combinators/pipeAll')
+const swap = require('combinators/swap')
+const curry = require('functions/curry')
+const add = require('operators/add')
+const ne = require('operators/ne')
+const rem = require('operators/rem')
 
 const inc = add(1)
-const odd = pipeAll(swap(rem)(2), ne(0))
+const odd = pipe(swap(rem)(2), ne(0))
 
 describe('pipeAll', () => {
   it('pipes two or more functions into a single function', () => {

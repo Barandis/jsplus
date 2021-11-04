@@ -5,8 +5,12 @@
 
 const { expect } = require('test/utils')
 
-const { B, C, K, S } = require('combinators/pure')
-const { div, sub } = require('operators')
+const B = require('combinators/pure/B')
+const C = require('combinators/pure/C')
+const K = require('combinators/pure/K')
+const S = require('combinators/pure/S')
+const div = require('operators/div')
+const sub = require('operators/sub')
 
 describe('C combinator', () => {
   it('flips the order of its final two arguments', () => {

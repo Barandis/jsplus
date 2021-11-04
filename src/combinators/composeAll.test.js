@@ -5,12 +5,16 @@
 
 const { expect } = require('test/utils')
 
-const { composeAll, swap } = require('combinators')
-const { curry } = require('functions')
-const { add, ne, rem } = require('operators')
+const compose = require('combinators/compose')
+const composeAll = require('combinators/composeAll')
+const swap = require('combinators/swap')
+const curry = require('functions/curry')
+const add = require('operators/add')
+const ne = require('operators/ne')
+const rem = require('operators/rem')
 
 const inc = add(1)
-const odd = composeAll(ne(0), swap(rem)(2))
+const odd = compose(ne(0), swap(rem)(2))
 
 describe('composeAll', () => {
   it('composes two or more functions into a single function', () => {

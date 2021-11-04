@@ -7,7 +7,8 @@ const { expectIterator } = require('test/utils')
 
 const swap = require('combinators/swap')
 const map = require('iterators/map')
-const { add, prop } = require('operators')
+const add = require('operators/add')
+const prop = require('operators/prop')
 
 function* upTo5() {
   for (let i = 0; i <= 5; i += 1) {

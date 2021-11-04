@@ -5,7 +5,8 @@
 
 const { expect } = require('test/utils')
 
-const { infinite, range } = require('iterators')
+const infinite = require('iterators/infinite')
+const range = require('iterators/range')
 
 describe('infinite', () => {
   it('creates an infinite iterator starting at 0 and increasing by 1', () => {

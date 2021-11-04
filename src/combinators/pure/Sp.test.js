@@ -5,12 +5,18 @@
 
 const { expect } = require('test/utils')
 
-const { C, I, Sp } = require('combinators/pure')
-const { add, div, eq, prop } = require('operators')
+const swap = require('combinators/swap')
+const I = require('combinators/pure/I')
+const Sp = require('combinators/pure/Sp')
+const reduce = require('iterators/reduce')
+const add = require('operators/add')
+const div = require('operators/div')
+const eq = require('operators/eq')
+const prop = require('operators/prop')
 
-const sum = xs => xs.reduce(add, 0)
+const sum = reduce(add)
 const rev = s => s.split('').reverse().join('')
-const count = C(prop)('length')
+const count = swap(prop)('length')
 
 describe("S' combinator", () => {
   it('applies two unary functions to a value, then combines them with a binary function', () => {

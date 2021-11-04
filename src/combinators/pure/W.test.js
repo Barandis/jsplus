@@ -5,8 +5,11 @@
 
 const { expect } = require('test/utils')
 
-const { K, S, W } = require('combinators/pure')
-const { add, mul } = require('operators')
+const K = require('combinators/pure/K')
+const S = require('combinators/pure/S')
+const W = require('combinators/pure/W')
+const add = require('operators/add')
+const mul = require('operators/mul')
 
 describe('W combinator', () => {
   it('doubles its second argument', () => {
