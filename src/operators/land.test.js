@@ -14,9 +14,7 @@ describe('land', () => {
       // two numbers that are either 0 or 1
       const a = randInt(0, 2)
       const b = randInt(0, 2)
-      expect(land(a, b))
-        .to.equal(land(a)(b))
-        .and.to.equal(a && b)
+      expect(land(a)(b)).to.equal(a && b)
     }
   })
 })

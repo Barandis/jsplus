@@ -9,17 +9,15 @@ const curry = require('functions/curry')
  * A curried function version of the `===` equals operator.
  *
  * ```javascript
- * console.log(3 === '3')  // false
- * console.log(eq(3, '3')) // false
- * console.log(eq(3)('3')) // false
+ * console.log(3 === '3')    // false
+ * console.log(eq (3) ('3')) // false
  *
- * const eq3 = eq(3)
- * console.log(eq3('3'))   // false
+ * const eq3 = eq (3)
+ * console.log(eq3 ('3'))    // false
  *
- * console.log(3 === 3)    // true
- * console.log(eq(3, 3))   // true
- * console.log(eq(3)(3))   // true
- * console.log(eq3(3))     // true
+ * console.log(3 === 3)      // true
+ * console.log(eq (3) (3))   // true
+ * console.log(eq3 (3))      // true
  * ```
  *
  * @param {*} x The first parameter.

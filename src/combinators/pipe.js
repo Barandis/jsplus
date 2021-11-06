@@ -11,15 +11,15 @@ const curry = require('functions/curry')
  * This is the same as `{@link module:combinators.compose|compose}` except for the
  * left-to-right order replacing `compose`'s right-to-left order. That makes it an
  * implementation of the **{@link module:combinators/pure.Q|Q} combinator, or alternately,
- * the same as `swap(compose)`.
+ * the same as `swap (compose)`.
  *
  * This is then similar to Clojure's `->>` threading macro.
  *
  * ```
  * // Same as example in `compose`, for contrast
  * // Turns the digits in an array into strings and then concatenates them
- * const stringify = pipe(map(string), reduce(add))
- * const result = stringify([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5])
+ * const stringify = pipe (map (string)) (reduce (add))
+ * const result = stringify ([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5])
  * console.log(result)   // "31415926535"
  * ```
  *

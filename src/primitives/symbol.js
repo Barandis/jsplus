@@ -14,15 +14,15 @@
  * Passing no value at all will produce `Symbol("undefined")`.
  *
  * ```javascript
- * console.log(symbol('test')) // Symbol('test')
- * console.log(symbol(1729))   // Symbol('1729')
- * console.log(symbol(23n))    // Symbol('23')
- * console.log(symbol(true))   // Symbol('true')
- * console.log(symbol([]))     // Symbol('')
- * console.log(symbol([14]))   // Symbol('14')
- * console.log(symbol({}))     // Symbol('[object Object]')
- * console.log(symbol(null))   // Symbol('null')
- * console.log(symbol())       // Symbol('undefined')
+ * console.log(symbol ('test')) // Symbol('test')
+ * console.log(symbol (1729))   // Symbol('1729')
+ * console.log(symbol (23n))    // Symbol('23')
+ * console.log(symbol (true))   // Symbol('true')
+ * console.log(symbol ([]))     // Symbol('')
+ * console.log(symbol ([14]))   // Symbol('14')
+ * console.log(symbol ({}))     // Symbol('[object Object]')
+ * console.log(symbol (null))   // Symbol('null')
+ * console.log(symbol ())       // Symbol('undefined')
  * ```
  *
  * @param {*} x The value to be converted.

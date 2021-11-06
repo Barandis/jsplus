@@ -15,10 +15,8 @@ describe('eq', () => {
       const b = rand(-1000, 1000)
 
       // eslint-disable-next-line no-unused-expressions
-      expect(eq(a, a)).to.equal(eq(a)(a)).and.to.be.true
-      expect(eq(a, b))
-        .to.equal(eq(a)(b))
-        .to.equal(a === b)
+      expect(eq(a)(a)).to.be.true
+      expect(eq(a)(b)).to.equal(a === b)
     }
   })
 })

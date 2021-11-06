@@ -7,8 +7,8 @@
  * A function version of the unary `-` negation operator.
  *
  * ```javascript
- * console.log(-4)     // -4
- * console.log(neg(4)) // -4
+ * console.log(-4)      // -4
+ * console.log(neg (4)) // -4
  * ```
  *
  * @param {number} x The number to negate.

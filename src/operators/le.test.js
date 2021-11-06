@@ -16,10 +16,8 @@ describe('le', () => {
       const b = rand(-1000, 1000)
 
       // eslint-disable-next-line no-unused-expressions
-      expect(le(a, a)).to.equal(le(a)(a)).and.to.be.true
-      expect(le(a, b))
-        .to.equal(le(a)(b))
-        .to.equal(a <= b)
+      expect(le(a)(a)).to.be.true
+      expect(le(a)(b)).to.equal(a <= b)
     }
   })
   it('applies a right operand with swap', () => {

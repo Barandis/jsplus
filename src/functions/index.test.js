@@ -13,6 +13,7 @@ const curry3 = require('functions/curry3')
 const curry4 = require('functions/curry4')
 const curry5 = require('functions/curry5')
 const curryn = require('functions/curryn')
+const curryv = require('functions/curryv')
 const partial = require('functions/partial')
 
 describe('functions index', () => {
@@ -23,6 +24,7 @@ describe('functions index', () => {
     expect(curry4).to.equal(index.curry4)
     expect(curry5).to.equal(index.curry5)
     expect(curryn).to.equal(index.curryn)
+    expect(curryv).to.equal(index.curryv)
     expect(partial).to.equal(index.partial)
   })
 })

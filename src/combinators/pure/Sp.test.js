@@ -22,6 +22,7 @@ const count = swap(prop)('length')
 
 describe("S' combinator", () => {
   it('applies two unary functions to a value, then combines them with a binary function', () => {
+    // This is better done with S because it doesn't require the I, but this is just a test
     const isPalindrome = Sp(eq)(I)(rev)
     // eslint-disable-next-line no-unused-expressions
     expect(isPalindrome('hello')).to.be.false

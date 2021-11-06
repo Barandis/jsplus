@@ -15,9 +15,7 @@ describe('cond', () => {
       const a = randInt(0, 2)
       const b = rand(-1000, 1000)
       const c = rand(-1000, 1000)
-      expect(cond(a, b, c))
-        .to.equal(cond(a)(b)(c))
-        .and.to.equal(a ? b : c)
+      expect(cond(a)(b)(c)).to.equal(a ? b : c)
     }
   })
   it('moves the conditional to the end with rotr', () => {

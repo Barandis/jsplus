@@ -13,5 +13,6 @@ module.exports = {
   curry4: require('./curry4'),
   curry5: require('./curry5'),
   curryn: require('./curryn'),
+  curryv: require('./curryv'),
   partial: require('./partial'),
 }

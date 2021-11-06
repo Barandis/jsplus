@@ -11,17 +11,15 @@ const curry = require('functions/curry')
  * You *probably* mean to use `{@link module:operators.eq|eq}` instead.
  *
  * ```javascript
- * console.log(3 == '3')    // true
- * console.log(ceq(3, '3')) // true
- * console.log(ceq(3)('3')) // true
+ * console.log(3 == '3')      // true
+ * console.log(ceq (3) ('3')) // true
  *
- * const ceq3 = ceq(3)
- * console.log(ceq3('3'))   // true
+ * const ceq3 = ceq (3)
+ * console.log(ceq3 ('3'))    // true
  *
- * console.log(3 == 4)      // false
- * console.log(ceq(3, 4))   // false
- * console.log(ceq(3)(4))   // false
- * console.log(ceq3(4))     // false
+ * console.log(3 == 4)        // false
+ * console.log(ceq (3) (4))   // false
+ * console.log(ceq3 (4))      // false
  * ```
  *
  * @param {*} x The first parameter.

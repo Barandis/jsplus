@@ -50,7 +50,7 @@ const iterator = require('iterators/iterator')
  * do this:
  *
  * ```javascript
- * const stringify = compose(reduce(add), map(string))
+ * const stringify = compose (reduce (add), map (string))
  * ```
  *
  * Requiring the reducer function to take two arguments of the same type makes you have to

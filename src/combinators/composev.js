@@ -15,13 +15,16 @@
  * The order of the functions is reversed, as is traditional in functional programming. If
  * you need the order to not be reversed, use `{@link module:combinators.pipeAll|pipeAll}`.
  *
+ * This function, being variadic, is not curried. However, the result is a single-argument
+ * function, so it can be used in any library function.
+ *
  * @param {...function} fns The functions that should be composed into a single function.
  * @returns {function} A single function that is the composition of all of the provided
  *     functions.
- * @alias module:combinators.composeAll
+ * @alias module:combinators.composev
  */
-function composeAll(...fns) {
+function composev(...fns) {
   return x => fns.reduceRight((y, f) => f(y), x)
 }
 
-module.exports = composeAll
+module.exports = composev

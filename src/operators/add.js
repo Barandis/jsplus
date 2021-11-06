@@ -11,12 +11,11 @@ const curry = require('functions/curry')
  * This works with strings as well as with numbers.
  *
  * ```javascript
- * console.log(4 + 7)     // 11
- * console.log(add(4, 7)) // 11
- * console.log(add(4)(7)) // 11
+ * console.log(4 + 7)       // 11
+ * console.log(add (4) (7)) // 11
  *
- * const add4 = add(4)
- * console.log(add4(7))   // 11
+ * const add4 = add (4)
+ * console.log(add4 (7))    // 11
  * ```
  *
  * @param {number|string} x The first operand.

@@ -7,13 +7,19 @@
  * Partially applies arguments to a function, resulting in another function that takes the
  * rest of the arguments.
  *
- * Unlike {@link module:functions.curry|curry}, this function also takes some arguments
- * (hence it being partial application and not currying). It returns a function that takes
- * more arguments, and calling *that* function will result in an answer.
+ * Unlike {@link module:functions.curryv|curryv}, this function also takes some arguments
+ * (hence it being partial application and not currying). However, it is not the same as
+ * currying a function and then passing it an initial set of argumetns. It returns a
+ * function that takes more arguments, and calling *that* function will result in an answer
+ * whether the expected number of arguments have been provided or not.
  *
  * Note that this function always returns a function, even when provided enough arguments to
  * satisfy the function it partially completes. Another call (presumably with empty
  * parentheses) will have to be made to get the return value.
+ *
+ * `partial` breaks a function application up into exactly two calls, no more, no less. It's
+ * a convenience function. For more complex partial application, choose any curry function
+ * and pass it a few arguments.
  *
  * ```javascript
  * const sum = partial((a, b, c) => a + b + c, 1, 2)

@@ -9,12 +9,11 @@ const curry = require('functions/curry')
  * A curried function version of the `&` bitwise and operator.
  *
  * ```javascript
- * console.log(114 & 75)      // 66
- * console.log(band(114, 75)) // 66
- * console.log(band(114)(75)) // 66
+ * console.log(114 & 75)        // 66
+ * console.log(band (114) (75)) // 66
  *
- * const and114 = band(114)
- * console.log(and114(75))    // 66
+ * const and114 = band (114)
+ * console.log(and114 (75))     // 66
  * ```
  *
  * @param {number} x The first operand.

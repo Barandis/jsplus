@@ -15,9 +15,7 @@ describe('rem', () => {
       const a = rand(-1000, 1000)
       const b = rand(-1000, 1000)
       if (b !== 0) {
-        expect(rem(a, b))
-          .to.equal(rem(a)(b))
-          .and.to.equal(a % b)
+        expect(rem(a)(b)).to.equal(a % b)
       }
     }
   })

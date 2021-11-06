@@ -11,13 +11,13 @@
  * `false`. Every other value is converted to `true`.
  *
  * ```javascript
- * console.log(boolean(0))     // false
- * console.log(boolean(''))    // false
- * console.log(boolean(null))  // false
+ * console.log(boolean (0))     // false
+ * console.log(boolean (''))    // false
+ * console.log(boolean (null))  // false
  *
- * console.log(boolean(14))    // true
- * console.log(boolean('test)) // true
- * console.log(boolean([]))    // true
+ * console.log(boolean (14))    // true
+ * console.log(boolean ('test)) // true
+ * console.log(boolean ([]))    // true
  * ```
  *
  * @param {*} x The value to be converted.

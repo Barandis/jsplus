@@ -15,14 +15,13 @@ const curry = require('functions/curry')
  * value will be `true` and that the second argument won't even be evaluated when provided.
  *
  * ```javascript
- * console.log(true || false)    // true
- * console.log(lor(true, false)) // true
- * console.log(lor(true)(false)) // true
+ * console.log(true || false)      // true
+ * console.log(lor (true) (false)) // true
  *
  * // This will result in `true` no matter the second argument, but the
  * // second argument is still necessary
- * const orTrue = lor(true)
- * console.log(orTrue(false))    // true
+ * const orTrue = lor (true)
+ * console.log(orTrue (false))     // true
  * ```
  *
  * @param {number} x The first operand.

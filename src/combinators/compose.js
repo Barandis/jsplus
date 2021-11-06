@@ -4,14 +4,11 @@
 // https://opensource.org/licenses/MIT
 
 const curry = require('functions/curry')
-
 /**
  * Composes two functions.
  *
  * This is a direct implementation of the **{@link module:combinators/pure.B|B}**
- * combinator, composing two single-argument functions, except that it is optionally
- * curried. To compose more than two functions at once, either `compose` can be chained or
- * `{@link module:combinators.composeAll|composeAll}` can be used.
+ * combinator, composing two single-argument functions.
  *
  * Composition is perhaps the most basic operation of functional programming (after function
  * application). It is widely used in many, many languages. Its Haskell equivalent is `.`,
@@ -25,8 +22,8 @@ const curry = require('functions/curry')
  *
  * ```javascript
  * // Turns the digits in an array into strings and then concatenates them
- * const stringify = compose(reduce(add), map(string))
- * const result = stringify([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5])
+ * const stringify = compose (reduce (add)) (map (string))
+ * const result = stringify ([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5])
  * console.log(result)   // "31415926535"
  * ```
  *

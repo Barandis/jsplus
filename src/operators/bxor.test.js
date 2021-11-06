@@ -13,9 +13,7 @@ describe('bxor', () => {
     for (const _ of range(10)) {
       const a = randInt((-2) ** 32, 2 ** 32)
       const b = randInt((-2) ** 32, 2 ** 32)
-      expect(bxor(a, b))
-        .to.equal(bxor(a)(b))
-        .and.to.equal(a ^ b)
+      expect(bxor(a)(b)).to.equal(a ^ b)
     }
   })
 })

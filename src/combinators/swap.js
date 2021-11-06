@@ -23,13 +23,9 @@ const curry = require('functions/curry')
  * ```javascript
  * const sub = (x, y) => x - y
  *
- * const direct = swap(sub, 1, 5)  // evaluate directly
- * const single = swap(sub, 1)(5)  // create a 1-arg function
- * const double = swap(sub)(1, 5)  // create a 2-arg function
+ * const result = swap(sub)(1)(5)  // equivalent to sub(5)(1)
  *
- * console.log(direct)  // 4
- * console.log(single)  // 4
- * console.log(double)  // 4
+ * console.log(result)  // 4
  * ```
  *
  * @param {function} fn A function of two arguments.

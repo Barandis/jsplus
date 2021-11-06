@@ -6,12 +6,14 @@
 const { expect } = require('test/utils')
 
 const compose = require('combinators/compose')
-const composeAll = require('combinators/composeAll')
+const composev = require('combinators/composev')
 const constant = require('combinators/constant')
+const identity = require('combinators/identity')
 const pipe = require('combinators/pipe')
-const pipeAll = require('combinators/pipeAll')
+const pipev = require('combinators/pipev')
 const rotl = require('combinators/rotl')
 const rotr = require('combinators/rotr')
+const substitute = require('combinators/substitute')
 const swap = require('combinators/swap')
 
 const B = require('combinators/pure/B')
@@ -35,6 +37,7 @@ const curry3 = require('functions/curry3')
 const curry4 = require('functions/curry4')
 const curry5 = require('functions/curry5')
 const curryn = require('functions/curryn')
+const curryv = require('functions/curryv')
 const partial = require('functions/partial')
 
 const array = require('iterators/array')
@@ -96,12 +99,14 @@ describe('src index', () => {
   it('provides all of the exported functions', () => {
     // combinators
     expect(compose).to.equal(index.compose)
-    expect(composeAll).to.equal(index.composeAll)
+    expect(composev).to.equal(index.composev)
     expect(constant).to.equal(index.constant)
+    expect(identity).to.equal(index.identity)
     expect(pipe).to.equal(index.pipe)
-    expect(pipeAll).to.equal(index.pipeAll)
+    expect(pipev).to.equal(index.pipev)
     expect(rotl).to.equal(index.rotl)
     expect(rotr).to.equal(index.rotr)
+    expect(substitute).to.equal(index.substitute)
     expect(swap).to.equal(index.swap)
 
     // pure combinators
@@ -127,6 +132,7 @@ describe('src index', () => {
     expect(curry4).to.equal(index.curry4)
     expect(curry5).to.equal(index.curry5)
     expect(curryn).to.equal(index.curryn)
+    expect(curryv).to.equal(index.curryv)
     expect(partial).to.equal(index.partial)
 
     // iterators

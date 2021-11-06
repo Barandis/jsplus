@@ -3,61 +3,78 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const CURRIED = Symbol('barandis/curried')
-
 /**
- * Produces a curried function out of a regular function.
+ * Curries a function with an arbitrary number of declared arguments.
  *
- * This curried function is quite flexible. If it is called with the same number of
- * arguments as the original function, then it will simply execute the original function.
+ * The result is a single-argument function. If the original function had more than one
+ * argument, then that single-argument function will return another single-argument
+ * function. If the original function had more than *two* arguments, then that
+ * single-argument function will return yet *anotehr* single-argument function. This
+ * continues until there are as many nested single-argument functions as there were
+ * arguments in the original function. The most deeply nested function will then gather all
+ * of the arguments from the other functions and execute the original function.
  *
- * However, if it is called with fewer arguments, it will return a function that takes only
- * the *remaining* arguments and still produces the same result. The returned function is
- * itself curried, so this process can be done again.
+ * To illustrate with an example, currying this function
+ * ```javascript
+ * const sum3 = (a, b, c) => a + b + c
+ * ```
+ * will produce a function that behaves like this function
+ * ```javascript
+ * const curriedSum = a => b => c => a + b + c
+ * ```
  *
- * This currying function requires that its original function specify its arguments. It will
- * not work on functions that use `arguments` to determine its arguments. Rest parameters
- * and default parameters are not counted, so using this function with them will produce
- * curried functions that expect a number of arguments in total that do not include those
- * parameters (or anything after them).
+ * To know how many nested functions to create, `curry` reads the number of arguments in the
+ * original function and creates that many. This means that some argument types don't work
+ * well with `curry`. Optional and rest arguments are not included in the argument total, so
+ * currying this function
+ * ```javascript
+ * const sum2plus = (a, b, ...ns) => a + b + ns.reduce((x, y) => x + y, 0)
+ * ```
+ * will produce a function that acts like this one
+ * ```javascript
+ * const bad = a => b => a + b + ns.reduce((x, y) => x + y, 0)
+ * ```
+ * This, of course, will throw an error when called because `ns` is set to `undefined` and
+ * you can't call `reduce` on that.
  *
- * If a function has already been curried by this function, or if it has less than two
- * arguments, passing that function to `curry` will be a no-op (the same function will be
- * returned without modification). A corollary is that `curry` will not curry a fully
- * curried function (one in which no parameter list has more than one parameter).
+ * If you need to curry a function that uses rest or optional parameters, use the
+ * appropriate numbered curry function (`{@link module:functions.curry2|curry2}`,
+ * {@link module:functions.curry3|curry3}`, {@link module:functions.curry4|curry4}`,
+ * {@link module:functions.curry5|curry5}`, or {@link module:functions.curryn|curryn}`).
+ * These still don't work *well* with these kinds of arguments (currying and variable
+ * numbers of arguments never work well together), at least they won't throw an error and
+ * you'll largely get what you expect.
  *
  * ```javascript
  * const sum = curry((a, b, c) => a + b + c)
+ * const add3 = sum (3)
+ * const add34 = sum (3) (4)
  *
  * // Each of the following are equivalent
- * const res1 = sum(1, 2, 3)
- * const res2 = sum(1, 2)(3)
- * const res3 = sum(1)(2, 3)
- * const res4 = sum()(1, 2, 3)
- * const res5 = sum(1)(2)(3)
+ * const result1 = sum (1) (2) (3)
+ * const result2 = add3 (4) (5)
+ * const result3 = add34 (2)
  *
- * console.log(res1)  // 6
- * console.log(res2)  // 6
- * console.log(res3)  // 6
- * console.log(res4)  // 6
- * console.log(res5)  // 6
+ * console.log(result1)  // 6
+ * console.log(result2)  // 12
+ * console.log(result3)  // 9
  * ```
+ * Most of the functions in this library call `curry` on any multi-argument functions that
+ * they accept, and most of the functions in this library that are multi-argument are
+ * curried themselves. The library expects everything to be a single-argument function.
  *
  * @param {function} fn A function of any number of arguments.
- * @returns {function} A new function that behaves as `fn`, unless it's called with fewer
- *      arguments than the number given in `fn`'s definition. In this case, the new function
- *      will return another new function that accepts the *rest* of the arguments.
+ * @returns {function} A curried function of the same number of arguments.
  * @alias module:functions.curry
  */
 function curry(fn) {
-  if (fn[CURRIED] || fn.length < 2) return fn
+  if (fn.length < 2) return fn
 
   function curried(...args) {
-    return args.length >= fn.length ? fn(...args) : (...rest) => curried(...args, ...rest)
+    return args.length >= fn.length ? fn(...args) : x => curried(...args, x)
   }
-  Object.defineProperty(curried, CURRIED, { value: true })
 
-  return curried
+  return x => curried(x)
 }
 
 module.exports = curry

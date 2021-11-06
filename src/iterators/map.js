@@ -13,7 +13,7 @@ const iterator = require('iterators/iterator')
  * This function comes pre-curried so it can be partially applied easily.
  *
  * ```javascript
- * const result = map(add(1), [1, 2, 3])
+ * const result = map (add(1)) ([1, 2, 3])
  * console.log(result.next().value) // 2
  * console.log(result.next().value) // 3
  * console.log(result.next().value) // 4

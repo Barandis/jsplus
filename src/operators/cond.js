@@ -16,13 +16,12 @@ const curry = require('functions/curry')
  * conditional argument is *last*, which may be useful.
  *
  * ```javascript
- * console.log(true ? 1 : 0)     // 1
- * console.log(cond(true, 1, 0)) // 1
- * console.log(cond(true)(1)(0)) // 1
+ * console.log(true ? 1 : 0)        // 1
+ * console.log(cond (true) (1) (0)) // 1
  *
- * const bool2num = rotr(cond, 1, 0)
- * console.log(bool2num(true))   // 1
- * console.log(bool2num(false))  // 0
+ * const bool2num = rotr (cond) (1) (0)
+ * console.log(bool2num (true))     // 1
+ * console.log(bool2num (false))    // 0
  * ```
  *
  * @param {boolean} x The conditional operand.

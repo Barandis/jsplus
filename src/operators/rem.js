@@ -14,18 +14,16 @@ const curry = require('functions/curry')
  * examples below.
  *
  * ```javascript
- * console.log(4 % 7)           // 4
- * console.log(rem(4, 7))       // 4
- * console.log(rem(4)(7))       // 4
+ * console.log(4 % 7)              // 4
+ * console.log(rem (4) (7))        // 4
  *
- * const rem4 = rem(4)
- * console.log(rem4(7))         // 4
+ * const rem4 = rem (4)
+ * console.log(rem4 (7))           // 4
  *
- * console.log(swap(rem)(4, 7)) // 3
- * console.log(swap(rem)(4)(7)) // 3
+ * console.log(swap (rem) (4) (7)) // 3
  *
- * const remWith4 = swap(rem, 4)
- * console.log(remWith4(7))     // 3
+ * const remWith4 = swap (rem) (4)
+ * console.log(remWith4 (7))       // 3
  * ```
  *
  * @param {number} x The dividend.

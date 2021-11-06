@@ -24,19 +24,18 @@ const curry = require('functions/curry')
  * const a = [1, 2, 3, 4, 5]
  * const b = null
  *
- * console.log(a[1])             // 2
- * console.log(opt(a, 1))        // 2
- * console.log(opt(a)(1))        // 2
+ * console.log(a[1])               // 2
+ * console.log(opt (a) (1))        // 2
  *
- * console.log(a.length)         // 5
- * console.log(opt(a, 'length')) // 5
+ * console.log(a.length)           // 5
+ * console.log(opt (a) ('length')) // 5
  *
- * console.log(b?.length)        // undefined
- * console.log(opt(b, 'length')) // undefined
+ * console.log(b?.length)          // undefined
+ * console.log(opt (b) ('length')) // undefined
  *
- * const count = swap(opt, 'length')
- * console.log(count(a))         // 5
- * console.log(count(b))         // undefined
+ * const count = swap (opt) ('length')
+ * console.log(count (a))          // 5
+ * console.log(count (b))          // undefined
  * ```
  *
  * @param {object|null} x The object to look up the property name or index on.

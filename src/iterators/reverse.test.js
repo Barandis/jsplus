@@ -18,7 +18,7 @@ describe('reverse', () => {
   })
   it('reverses strings', () => {
     const result = reverse('testing')
-    expect(reduce(add, result)).to.equal('gnitset')
+    expect(reduce(add)(result)).to.equal('gnitset')
   })
   it('reverses iterators', () => {
     function* five() {

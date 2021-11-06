@@ -16,10 +16,8 @@ describe('gt', () => {
       const b = rand(-1000, 1000)
 
       // eslint-disable-next-line no-unused-expressions
-      expect(gt(a, a)).to.equal(gt(a)(a)).and.to.be.false
-      expect(gt(a, b))
-        .to.equal(gt(a)(b))
-        .to.equal(a > b)
+      expect(gt(a)(a)).to.be.false
+      expect(gt(a)(b)).to.equal(a > b)
     }
   })
   it('applies a right operand with swap', () => {

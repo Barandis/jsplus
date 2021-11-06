@@ -20,15 +20,14 @@ const curry = require('functions/curry')
  * ```javascript
  * const a = [1, 2, 3, 4, 5]
  *
- * console.log(a[1])              // 2
- * console.log(prop(a, 1))        // 2
- * console.log(prop(a)(1))        // 2
+ * console.log(a[1])                // 2
+ * console.log(prop (a) (1))        // 2
  *
- * console.log(a.length)          // 5
- * console.log(prop(a, 'length')) // 5
+ * console.log(a.length)            // 5
+ * console.log(prop (a) ('length')) // 5
  *
- * const count = swap(prop, 'length')
- * console.log(count(a))          // 5
+ * const count = swap (prop) ('length')
+ * console.log(count (a))           // 5
  * ```
  *
  * @param {object} x The object to look up the property name or index on.

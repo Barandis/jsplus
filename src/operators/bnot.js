@@ -7,8 +7,8 @@
  * A function version of the `~` bitwise not operator.
  *
  * ```javascript
- * console.log(~114)      // -115
- * console.log(bnot(114)) // -115
+ * console.log(~114)       // -115
+ * console.log(bnot (114)) // -115
  * ```
  *
  * @param {number} x The operand.

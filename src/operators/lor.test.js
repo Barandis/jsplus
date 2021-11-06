@@ -14,9 +14,7 @@ describe('lor', () => {
       // two numbers that are either 0 or 1
       const a = randInt(0, 2)
       const b = randInt(0, 2)
-      expect(lor(a, b))
-        .to.equal(lor(a)(b))
-        .and.to.equal(a || b)
+      expect(lor(a)(b)).to.equal(a || b)
     }
   })
 })

@@ -29,11 +29,11 @@
  * inaccuracy.
  *
  * ```javascript
- * console.log(bigint(1729))                       // 1729n
- * console.log(bigint(true))                       // 1n
- * console.log(bigint(6.022e23))                   // 602200000000000027262976n
- * console.log(bigint('602200000000000000000000')) // 602200000000000000000000n
- * console.log(bigint([23]))                       // 23n
+ * console.log(bigint (1729))                       // 1729n
+ * console.log(bigint (true))                       // 1n
+ * console.log(bigint (6.022e23))                   // 602200000000000027262976n
+ * console.log(bigint ('602200000000000000000000')) // 602200000000000000000000n
+ * console.log(bigint ([23]))                       // 23n
  * ```
  *
  * @param {number|string|boolean|array} x The value to be converted.

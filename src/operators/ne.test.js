@@ -15,10 +15,8 @@ describe('ne', () => {
       const b = rand(-1000, 1000)
 
       // eslint-disable-next-line no-unused-expressions
-      expect(ne(a, a)).to.equal(ne(a)(a)).and.to.be.false
-      expect(ne(a, b))
-        .to.equal(ne(a)(b))
-        .to.equal(a !== b)
+      expect(ne(a)(a)).to.be.false
+      expect(ne(a)(b)).to.equal(a !== b)
     }
   })
 })

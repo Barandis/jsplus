@@ -17,15 +17,15 @@ const plusScan = scan(add)
 
 describe('scan', () => {
   it('collects the intermediate results from a reduction', () => {
-    const result = scan(add, [0, 1, 2, 3, 4, 5])
+    const result = scan(add)([0, 1, 2, 3, 4, 5])
     expectIterator(result, [0, 1, 3, 6, 10, 15])
   })
   it('works with strings', () => {
-    const result = scan((a, b) => (a + b).toUpperCase(), 'test')
+    const result = scan((a, b) => (a + b).toUpperCase())('test')
     expectIterator(result, ['t', 'TE', 'TES', 'TEST'])
   })
   it('works with iterators', () => {
-    const result = scan(add, upTo5())
+    const result = scan(add)(upTo5())
     expectIterator(result, [0, 1, 3, 6, 10, 15])
   })
   it('works with objects', () => {
@@ -38,7 +38,7 @@ describe('scan', () => {
   })
   it('works with functions', () => {
     const fn = x => (x <= 5 ? x : undefined)
-    const result = scan(add, fn)
+    const result = scan(add)(fn)
     expectIterator(result, [0, 1, 3, 6, 10, 15])
   })
   it('can be curried to accept just an iterable', () => {
@@ -46,11 +46,11 @@ describe('scan', () => {
     expectIterator(result, [0, 1, 3, 6, 10, 15])
   })
   it('returns an empty iterator if the input has no elements', () => {
-    const result = scan(add, [])
+    const result = scan(add)([])
     expectIterator(result, [])
   })
   it('returns the element in a single-element input', () => {
-    const result = scan(add, [1])
+    const result = scan(add)([1])
     expectIterator(result, [1])
   })
 })

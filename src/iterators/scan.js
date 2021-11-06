@@ -40,15 +40,15 @@ const iterator = require('iterators/iterator')
  * reducer function that can be curried or uncurried.
  *
  * ```javascript
- * const runningSum = scan(add, [0, 1, 2, 3, 4])
+ * const runningSum = scan (add) ([0, 1, 2, 3, 4])
  * console.log(runningSum.next().value)  // 0
  * console.log(runningSum.next().value)  // 1
  * console.log(runningSum.next().value)  // 3
  * console.log(runningSum.next().value)  // 6
  * console.log(runningSum.next().value)  // 10
  *
- * const mulScan = scan(mul)
- * const factorial = mulScan([1, 2, 3, 4, 5])
+ * const mulScan = scan (mul)
+ * const factorial = mulScan ([1, 2, 3, 4, 5])
  * console.log(factorial.next().value)   // 1
  * console.log(factorial.next().value)   // 2
  * console.log(factorial.next().value)   // 6

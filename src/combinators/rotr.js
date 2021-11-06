@@ -23,17 +23,11 @@ const curry = require('functions/curry')
  * want to leave the conditional (the first argument) as the last argument.
  *
  * ```javascript
- * const sub = (x, y, z) => x - y - z
+ * const sub3 = (x, y, z) => x - y - z
  *
- * const direct = rotr(sub, 1, 5, -2) // direct application
- * const single = rotr(sub, 1, 5)(-2) // create a 1-arg function
- * const double = rotr(sub, 1)(5, -2) // create a 2-arg function
- * const triple = rotr(sub)(1, 5, -2) // create a 3-arg function
+ * const result = rotl (sub3) (1) (5) (-2) // equivalent of sub3 (-2) (1) (5)
  *
- * console.log(direct)  // -8
- * console.log(single)  // -8
- * console.log(double)  // -8
- * console.log(triple)  // -8
+ * console.log(result)  // -8
  * ```
  *
  * @param {function} fn A function of three arguments.

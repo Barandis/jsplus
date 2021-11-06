@@ -15,11 +15,9 @@ describe('ceq', () => {
       const b = rand(-1000, 1000)
 
       // eslint-disable-next-line no-unused-expressions
-      expect(ceq(a, a)).to.equal(ceq(a)(a)).and.to.be.true
-      expect(ceq(a, b))
-        .to.equal(ceq(a)(b))
-        // eslint-disable-next-line eqeqeq
-        .to.equal(a == b)
+      expect(ceq(a)(a)).to.be.true
+      // eslint-disable-next-line eqeqeq
+      expect(ceq(a)(b)).to.equal(a == b)
     }
   })
 })

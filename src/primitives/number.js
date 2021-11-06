@@ -23,14 +23,14 @@
  * `TypeError`.
  *
  * ```javascript
- * console.log(number('1729')) // 1729
- * console.log(number(23n))    // 23
- * console.log(number(true))   // 1
- * console.log(number([]))     // 0
- * console.log(number(['14'])) // 14
- * console.log(number({}))     // NaN
- * console.log(number(null))   // 0
- * console.log(number())       // NaN
+ * console.log(number ('1729')) // 1729
+ * console.log(number (23n))    // 23
+ * console.log(number (true))   // 1
+ * console.log(number ([]))     // 0
+ * console.log(number (['14'])) // 14
+ * console.log(number ({}))     // NaN
+ * console.log(number (null))   // 0
+ * console.log(number ())       // NaN
  * ```
  *
  * @param {*} x The value to be converted.

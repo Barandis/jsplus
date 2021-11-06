@@ -14,18 +14,16 @@ const curry = require('functions/curry')
  * combinator. See the examples below.
  *
  * ```javascript
- * console.log(4 - 7)           // -3
- * console.log(sub(4, 7))       // -3
- * console.log(sub(4)(7))       // -3
+ * console.log(4 - 7)              // -3
+ * console.log(sub (4) (7))        // -3
  *
- * const sub4 = sub(4)
- * console.log(sub4(7))         // -3
+ * const sub4 = sub (4)
+ * console.log(sub4 (7))           // -3
  *
- * console.log(swap(sub)(4, 7)) // 3
- * console.log(swap(sub)(4)(7)) // 3
+ * console.log(swap (sub) (4) (7)) // 3
  *
- * const minus4 = swap(sub, 4)
- * console.log(minus4(7))       // 3
+ * const minus4 = swap (sub) (4)
+ * console.log(minus4 (7))         // 3
  * ```
  *
  * @param {number} x The minuend.

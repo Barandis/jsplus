@@ -13,14 +13,13 @@ const curry = require('functions/curry')
  * `{@link module:combinators.swap|swap}` combinator on `coal`. See the examples below.
  *
  * ```javascript
- * console.log(false ?? true)     // false
- * console.log(coal(false, true)) // false
- * console.log(coal(false)(true)) // false
+ * console.log(false ?? true)       // false
+ * console.log(coal (false) (true)) // false
  *
- * const orDef = swap(coal, "default")
- * console.log(orDef(null))       // "default"
- * console.log(orDef(undefined))  // "default"
- * console.log(orDef("value"))    // "value"
+ * const orDef = swap (coal) ('default')
+ * console.log(orDef (null))        // "default"
+ * console.log(orDef (undefined))   // "default"
+ * console.log(orDef ("value"))     // "value"
  * ```
  *
  * @param {*} x The first operand.

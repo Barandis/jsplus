@@ -13,18 +13,14 @@ describe('add', () => {
     for (const _ of range(10)) {
       const a = rand(-1000, 1000)
       const b = rand(-1000, 1000)
-      expect(add(a, b))
-        .to.equal(add(a)(b))
-        .and.to.equal(a + b)
+      expect(add(a)(b)).to.equal(a + b)
     }
   })
   it('concatenates two strings', () => {
     for (const _ of range(10)) {
       const a = randString(randInt(2, 10))
       const b = randString(randInt(2, 10))
-      expect(add(a, b))
-        .to.equal(add(a)(b))
-        .and.to.equal(a + b)
+      expect(add(a)(b)).to.equal(a + b)
     }
   })
 })

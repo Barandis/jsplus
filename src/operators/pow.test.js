@@ -15,9 +15,7 @@ describe('pow', () => {
       const b = a < 0 ? randInt(0, 100) : rand(-100, 100)
 
       if (a !== 0 || b !== 0) {
-        expect(pow(a, b))
-          .to.equal(pow(a)(b))
-          .and.to.equal(a ** b)
+        expect(pow(a)(b)).to.equal(a ** b)
       }
     }
   })

@@ -13,15 +13,14 @@ const curry = require('functions/curry')
  * `{@link module:combinators.swap|swap}` combinator on `bls`. See the examples below.
  *
  * ```javascript
- * console.log(114 << 2)    // 456
- * console.log(bls(114, 2)) // 456
- * console.log(bls(114)(2)) // 456
+ * console.log(114 << 2)      // 456
+ * console.log(bls (114) (2)) // 456
  *
- * const ls114 = bls(114)
- * console.log(ls114(2))   // 456
+ * const ls114 = bls (114)
+ * console.log(ls114 (2))     // 456
  *
- * const lsBy2 = swap(bls, 2)
- * console.log(lsBy2(114)) // 456
+ * const lsBy2 = swap (bls) (2)
+ * console.log(lsBy2 (114))   // 456
  * ```
  *
  * @param {number} x The number to be shifted.

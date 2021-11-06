@@ -6,23 +6,28 @@
 /**
  * Curries a four-argument function.
  *
- * Unlike in `{@link module:functions.curry|curry}`, the curried function so produced must
- * take its arguments one at a time. It will not accept multiple arguments within a single
- * set of parentheses. The advantage is that it works with functions that have rest or
- * default parameters.
+ * The result will always be a four-argument curried function. Whether or not the actual
+ * function takes four arguments, less than four, or more than four doesn't matter. If it
+ * takes less, the extra arguments will be ignored; if it takes more, the arguments past the
+ * second will all be set to `undefined`. This is normal JavaScript behavior.
+ *
+ * Unlike `{@link module:functions.curry|curry}`, the curried function will not fail if one
+ * of the argument is optional or a rest argument. In fact, currying a function takes away
+ * any optional or rest nature of any arguments. The curried function will take exactly four
+ * arguments, whatever kind they are.
  *
  * ```javascript
  * const sum = curry4((a, b, c, d) => a + b + c + d)
  *
  * // This is the only possible calling format.
- * const result = sum(1)(2)(3)(4)
+ * const result = sum (1) (2) (3) (4)
  *
- * // This will not work. It is the same as sum(1)(3)(4) as the second argument is ignored.
- * const part1 = sum(1, 2)(3)(4)
- * // This will not work. It's the same as sum(1)(2)(4) as the third argument is ignored.
- * const part2 = sum(1)(2, 3)(4)
+ * // This will not work. It is the same as sum (1) (3) (4) as the 2nd argument is ignored.
+ * const part1 = sum (1, 2) (3) (4)
+ * // This will not work. It's the same as sum (1) (2) (4) as the 3rd argument is ignored.
+ * const part2 = sum(1) (2, 3) (4)
  * // This is right out.
- * const part3 = sum(1, 2, 3, 4)
+ * const part3 = sum (1, 2, 3, 4)
  *
  * console.log(result) // 10
  * console.log(part1)  // function curry3(d)
@@ -31,8 +36,7 @@
  * ```
  *
  * @param {function} fn A function of four arguments.
- * @returns {function} A function that takes its arguments singly in four sets of
- *     parentheses.
+ * @returns {function} A curried function of four arguments.
  * @alias module:functions.curry4
  */
 function curry4(fn) {

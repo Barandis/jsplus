@@ -12,7 +12,7 @@ describe('neg', () => {
   it('negates a number', () => {
     for (const _ of range(10)) {
       const a = rand(-1000, 1000)
-      expect(neg(a)).to.equal(neg(a)).and.to.equal(-a)
+      expect(neg(a)).to.equal(-a)
     }
   })
 })

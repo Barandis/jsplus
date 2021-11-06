@@ -14,9 +14,9 @@ const array = require('iterators/array')
  * it must evaluate the entire input iterable to get to the end.
  *
  * ```javascript
- * const arr = reverse([1, 2, 3, 4, 5])
- * const str = reverse('test')
- * const fn = reverse(x => (x < 5 ? x : undefined))
+ * const arr = reverse ([1, 2, 3, 4, 5])
+ * const str = reverse ('test')
+ * const fn = reverse (x => (x < 5 ? x : undefined))
  *
  * console.log(arr) // [5, 4, 3, 2, 1]
  * console.log(str) // ["t", "s", "e", "t"]

@@ -14,11 +14,11 @@ const iterator = require('iterators/iterator')
  * value under the same rules as `{@link module:iterators.iterator|iterator}`.
  *
  * ```javascript
- * const iter = array(iterator([1, 2, 3, 4, 5]))
- * const str = array('test')
- * const obj = array({a: 1, b: 2})
- * const fn = array(x => (x < 5 ? x : undefined))
- * const single = array(4)
+ * const iter = array (iterator ([1, 2, 3, 4, 5]))
+ * const str = array ('test')
+ * const obj = array ({a: 1, b: 2})
+ * const fn = array (x => (x < 5 ? x : undefined))
+ * const single = array (4)
  *
  * console.log(iter)   // [1, 2, 3, 4, 5]
  * console.log(str)    // ["t", "e", "s", "t"]

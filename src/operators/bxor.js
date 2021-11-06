@@ -9,12 +9,11 @@ const curry = require('functions/curry')
  * A curried function version of the `^` bitwise exclusive or operator.
  *
  * ```javascript
- * console.log(114 ^ 75)      // 57
- * console.log(bxor(114, 75)) // 57
- * console.log(bxor(114)(75)) // 57
+ * console.log(114 ^ 75)        // 57
+ * console.log(bxor (114) (75)) // 57
  *
- * const xor114 = bxor(114)
- * console.log(xor114(75))    // 57
+ * const xor114 = bxor (114)
+ * console.log(xor114 (75))     // 57
  * ```
  *
  * @param {number} x The first operand.

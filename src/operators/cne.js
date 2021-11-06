@@ -11,17 +11,15 @@ const curry = require('functions/curry')
  * You *probably* mean to use `{@link module:operators.ne|ne}` instead.
  *
  * ```javascript
- * console.log(3 != '3')    // false
- * console.log(cne(3, '3')) // false
- * console.log(cne(3)('3')) // false
+ * console.log(3 != '3')      // false
+ * console.log(cne (3) ('3')) // false
  *
- * const cne3 = cne(3)
- * console.log(cne3('3'))   // false
+ * const cne3 = cne (3)
+ * console.log(cne3 ('3'))    // false
  *
- * console.log(3 != 4)      // true
- * console.log(cne(3, 4))   // true
- * console.log(cne(3)(4))   // true
- * console.log(cne3(4))     // true
+ * console.log(3 != 4)        // true
+ * console.log(cne (3) (4))   // true
+ * console.log(cne3 (4))      // true
  * ```
  *
  * @param {*} x The first parameter.

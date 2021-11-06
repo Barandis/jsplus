@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>combinators/identity.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-combinators.html">combinators</a><ul class='methods'><li data-type='method'><a href="module-combinators.html#.compose">compose</a></li><li data-type='method'><a href="module-combinators.html#.composev">composev</a></li><li data-type='method'><a href="module-combinators.html#.constant">constant</a></li><li data-type='method'><a href="module-combinators.html#.identity">identity</a></li><li data-type='method'><a href="module-combinators.html#.pipe">pipe</a></li><li data-type='method'><a href="module-combinators.html#.pipev">pipev</a></li><li data-type='method'><a href="module-combinators.html#.rotl">rotl</a></li><li data-type='method'><a href="module-combinators.html#.rotr">rotr</a></li><li data-type='method'><a href="module-combinators.html#.substitute">substitute</a></li><li data-type='method'><a href="module-combinators.html#.swap">swap</a></li></ul></li><li><a href="module-combinators_pure.html">combinators/pure</a><ul class='methods'><li data-type='method'><a href="module-combinators_pure.html#.B">B</a></li><li data-type='method'><a href="module-combinators_pure.html#.C">C</a></li><li data-type='method'><a href="module-combinators_pure.html#.Cs">Cs</a></li><li data-type='method'><a href="module-combinators_pure.html#.I">I</a></li><li data-type='method'><a href="module-combinators_pure.html#.Is">Is</a></li><li data-type='method'><a href="module-combinators_pure.html#.K">K</a></li><li data-type='method'><a href="module-combinators_pure.html#.Psi">Psi</a></li><li data-type='method'><a href="module-combinators_pure.html#.Q">Q</a></li><li data-type='method'><a href="module-combinators_pure.html#.R">R</a></li><li data-type='method'><a href="module-combinators_pure.html#.Rs">Rs</a></li><li data-type='method'><a href="module-combinators_pure.html#.S">S</a></li><li data-type='method'><a href="module-combinators_pure.html#.Sp">Sp</a></li><li data-type='method'><a href="module-combinators_pure.html#.T">T</a></li><li data-type='method'><a href="module-combinators_pure.html#.W">W</a></li></ul></li><li><a href="module-functions.html">functions</a><ul class='methods'><li data-type='method'><a href="module-functions.html#.curry">curry</a></li><li data-type='method'><a href="module-functions.html#.curry2">curry2</a></li><li data-type='method'><a href="module-functions.html#.curry3">curry3</a></li><li data-type='method'><a href="module-functions.html#.curry4">curry4</a></li><li data-type='method'><a href="module-functions.html#.curry5">curry5</a></li><li data-type='method'><a href="module-functions.html#.curryn">curryn</a></li><li data-type='method'><a href="module-functions.html#.curryv">curryv</a></li><li data-type='method'><a href="module-functions.html#.partial">partial</a></li></ul></li><li><a href="module-iterators.html">iterators</a><ul class='methods'><li data-type='method'><a href="module-iterators.html#.array">array</a></li><li data-type='method'><a href="module-iterators.html#.enumerate">enumerate</a></li><li data-type='method'><a href="module-iterators.html#.infinite">infinite</a></li><li data-type='method'><a href="module-iterators.html#.iterator">iterator</a></li><li data-type='method'><a href="module-iterators.html#.map">map</a></li><li data-type='method'><a href="module-iterators.html#.range">range</a></li><li data-type='method'><a href="module-iterators.html#.reduce">reduce</a></li><li data-type='method'><a href="module-iterators.html#.reverse">reverse</a></li><li data-type='method'><a href="module-iterators.html#.scan">scan</a></li></ul></li><li><a href="module-operators.html">operators</a><ul class='methods'><li data-type='method'><a href="module-operators.html#.add">add</a></li><li data-type='method'><a href="module-operators.html#.band">band</a></li><li data-type='method'><a href="module-operators.html#.bls">bls</a></li><li data-type='method'><a href="module-operators.html#.bnot">bnot</a></li><li data-type='method'><a href="module-operators.html#.bor">bor</a></li><li data-type='method'><a href="module-operators.html#.brs">brs</a></li><li data-type='method'><a href="module-operators.html#.burs">burs</a></li><li data-type='method'><a href="module-operators.html#.bxor">bxor</a></li><li data-type='method'><a href="module-operators.html#.ceq">ceq</a></li><li data-type='method'><a href="module-operators.html#.cne">cne</a></li><li data-type='method'><a href="module-operators.html#.coal">coal</a></li><li data-type='method'><a href="module-operators.html#.cond">cond</a></li><li data-type='method'><a href="module-operators.html#.div">div</a></li><li data-type='method'><a href="module-operators.html#.eq">eq</a></li><li data-type='method'><a href="module-operators.html#.ge">ge</a></li><li data-type='method'><a href="module-operators.html#.gt">gt</a></li><li data-type='method'><a href="module-operators.html#.land">land</a></li><li data-type='method'><a href="module-operators.html#.le">le</a></li><li data-type='method'><a href="module-operators.html#.lnot">lnot</a></li><li data-type='method'><a href="module-operators.html#.lor">lor</a></li><li data-type='method'><a href="module-operators.html#.lt">lt</a></li><li data-type='method'><a href="module-operators.html#.mul">mul</a></li><li data-type='method'><a href="module-operators.html#.ne">ne</a></li><li data-type='method'><a href="module-operators.html#.neg">neg</a></li><li data-type='method'><a href="module-operators.html#.opt">opt</a></li><li data-type='method'><a href="module-operators.html#.plus">plus</a></li><li data-type='method'><a href="module-operators.html#.pow">pow</a></li><li data-type='method'><a href="module-operators.html#.prop">prop</a></li><li data-type='method'><a href="module-operators.html#.rem">rem</a></li><li data-type='method'><a href="module-operators.html#.sub">sub</a></li></ul></li><li><a href="module-primitives.html">primitives</a><ul class='methods'><li data-type='method'><a href="module-primitives.html#.bigint">bigint</a></li><li data-type='method'><a href="module-primitives.html#.boolean">boolean</a></li><li data-type='method'><a href="module-primitives.html#.number">number</a></li><li data-type='method'><a href="module-primitives.html#.string">string</a></li><li data-type='method'><a href="module-primitives.html#.symbol">symbol</a></li></ul></li><li><a href="module-utilities.html">utilities</a><ul class='methods'><li data-type='method'><a href="module-utilities.html#.isArray">isArray</a></li><li data-type='method'><a href="module-utilities.html#.isFunction">isFunction</a></li><li data-type='method'><a href="module-utilities.html#.isNumber">isNumber</a></li><li data-type='method'><a href="module-utilities.html#.isObject">isObject</a></li><li data-type='method'><a href="module-utilities.html#.isString">isString</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">combinators/identity.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// Copyright (c) 2021 Thomas J. Otterson
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+
+/**
+ * The identity function. This simply returns the argument given to it.
+ *
+ * That makes it an implementation (trival as it is) of the
+ * **{@link module:combinators/pure.I|I}** combinator. It's most often used for contexts
+ * where you need to use a function but you instead have a value. `identity` is a function,
+ * but it gives you that value.
+ *
+ * ```javascript
+ * // Here's a reasonable example: a palindrome detector. In this case we want to see if a
+ * // value is equal to its reverse.
+ *
+ * // converge passes the results of its second and third functions to its first function.
+ * // Since we want to pass the original string as one of the arguments to eq, but converge
+ * // requires a function instead of a simple value, we use identity as a function that
+ * // provides that value.
+ *
+ * const isPalindrome = converge(eq, identity, compose(reduce(add), reverse))
+ * ```
+ *
+ * @param {*} x The value to be returned.
+ * @returns {*} The argument `x`.
+ * @alias module:combinators.identity
+ */
+function identity(x) {
+  return x
+}
+
+module.exports = identity
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

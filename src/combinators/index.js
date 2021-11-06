@@ -11,11 +11,13 @@ const pure = require('./pure')
 module.exports = {
   ...pure,
   compose: require('./compose'),
-  composeAll: require('./composeAll'),
+  composev: require('./composev'),
   constant: require('./constant'),
+  identity: require('./identity'),
   pipe: require('./pipe'),
-  pipeAll: require('./pipeAll'),
+  pipev: require('./pipev'),
   rotl: require('./rotl'),
   rotr: require('./rotr'),
+  substitute: require('./substitute'),
   swap: require('./swap'),
 }

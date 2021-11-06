@@ -14,9 +14,7 @@ describe('brs', () => {
     for (const _ of range(10)) {
       const a = randInt((-2) ** 32, 2 ** 32)
       const b = randInt(0, 16)
-      expect(brs(a, b))
-        .to.equal(brs(a)(b))
-        .and.to.equal(a >> b)
+      expect(brs(a)(b)).to.equal(a >> b)
     }
   })
   it('applies a right operand with swap', () => {

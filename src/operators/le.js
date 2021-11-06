@@ -14,19 +14,18 @@ const curry = require('functions/curry')
  * `{@link module:combinators.swap|swap}` combinator on `le`. See the examples below.
  *
  * ```javascript
- * console.log(3 <= 4)      // true
- * console.log(le(3, 4))    // true
- * console.log(le(3)(4))    // true
+ * console.log(3 <= 4)        // true
+ * console.log(le (3) (4))    // true
  *
  * const leFrom3 = le(3)
  * // This is the same as x => 3 <= x
- * console.log(leFrom3(4))  // true
+ * console.log(leFrom3 (4))   // true
  *
  * // To do x => x <= 3, there are two choices
- * const le3a = swap(le, 3) // Actual x => x <= 3
- * const le3b = ge(3)       // x => 3 >= x is the same thing
- * console.log(le3a(4))     // false
- * console.log(le3b(4))     // false
+ * const le3a = swap (le) (3) // Actual x => x <= 3
+ * const le3b = ge (3)        // x => 3 >= x is the same thing
+ * console.log(le3a (4))      // false
+ * console.log(le3b (4))      // false
  * ```
  *
  * @param {*} x The first parameter.

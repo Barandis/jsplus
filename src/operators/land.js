@@ -15,14 +15,13 @@ const curry = require('functions/curry')
  * value will be `false` and that the second argument won't even be evaluated when provided.
  *
  * ```javascript
- * console.log(true && false)     // false
- * console.log(land(true, false)) // false
- * console.log(land(true)(false)) // false
+ * console.log(true && false)       // false
+ * console.log(land (true) (false)) // false
  *
  * // This will result in `false` no matter the second argument, but the
  * // second argument is still necessary
- * const andFalse = land(false)
- * console.log(andFalse(true))    // false
+ * const andFalse = land (false)
+ * console.log(andFalse (true))     // false
  * ```
  *
  * @param {*} x The first operand.

@@ -13,9 +13,7 @@ describe('band', () => {
     for (const _ of range(10)) {
       const a = randInt((-2) ** 32, 2 ** 32)
       const b = randInt((-2) ** 32, 2 ** 32)
-      expect(band(a, b))
-        .to.equal(band(a)(b))
-        .and.to.equal(a & b)
+      expect(band(a)(b)).to.equal(a & b)
     }
   })
 })

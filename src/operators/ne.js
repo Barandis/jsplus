@@ -9,17 +9,15 @@ const curry = require('functions/curry')
  * A curried function version of the `!==` not equals operator.
  *
  * ```javascript
- * console.log(3 !== '3')  // true
- * console.log(ne(3, '3')) // true
- * console.log(ne(3)('3')) // true
+ * console.log(3 !== '3')    // true
+ * console.log(ne (3) ('3')) // true
  *
- * const ne3 = ne(3)
- * console.log(ne3('3'))   // true
+ * const ne3 = ne (3)
+ * console.log(ne3 ('3'))    // true
  *
- * console.log(3 !== 3)    // false
- * console.log(ne(3, 3))   // false
- * console.log(ne(3)(3))   // false
- * console.log(ne3(3))     // false
+ * console.log(3 !== 3)      // false
+ * console.log(ne (3) (3))   // false
+ * console.log(ne3 (3))      // false
  * ```
  *
  * @param {*} x The first parameter.

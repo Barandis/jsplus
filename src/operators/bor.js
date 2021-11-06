@@ -9,12 +9,11 @@ const curry = require('functions/curry')
  * A curried function version of the `|` bitwise or operator.
  *
  * ```javascript
- * console.log(114 | 75)     // 123
- * console.log(bor(114, 75)) // 123
- * console.log(bor(114)(75)) // 123
+ * console.log(114 | 75)       // 123
+ * console.log(bor (114) (75)) // 123
  *
- * const or114 = bor(114)
- * console.log(or114(75))    // 123
+ * const or114 = bor (114)
+ * console.log(or114 (75))     // 123
  * ```
  *
  * @param {number} x The first operand.

@@ -14,9 +14,7 @@ describe('sub', () => {
     for (const _ of range(10)) {
       const a = rand(-1000, 1000)
       const b = rand(-1000, 1000)
-      expect(sub(a, b))
-        .to.equal(sub(a)(b))
-        .and.to.equal(a - b)
+      expect(sub(a)(b)).to.equal(a - b)
     }
   })
   it('applies a right operand with swap', () => {

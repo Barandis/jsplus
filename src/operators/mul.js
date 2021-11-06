@@ -9,12 +9,11 @@ const curry = require('functions/curry')
  * A curried function version of the `*` multiplication operator.
  *
  * ```javascript
- * console.log(4 * 7)     // 28
- * console.log(mul(4, 7)) // 28
- * console.log(mul(4)(7)) // 28
+ * console.log(4 * 7)       // 28
+ * console.log(mul (4) (7)) // 28
  *
- * const mul4 = mul(4)
- * console.log(mul4(7))   // 28
+ * const mul4 = mul (4)
+ * console.log(mul4 (7))    // 28
  * ```
  *
  * @param {number} x The first operand.

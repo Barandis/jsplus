@@ -15,11 +15,9 @@ describe('cne', () => {
       const b = rand(-1000, 1000)
 
       // eslint-disable-next-line no-unused-expressions
-      expect(cne(a, a)).to.equal(cne(a)(a)).and.to.be.false
-      expect(cne(a, b))
-        .to.equal(cne(a)(b))
-        // eslint-disable-next-line eqeqeq
-        .to.equal(a != b)
+      expect(cne(a)(a)).to.be.false
+      // eslint-disable-next-line eqeqeq
+      expect(cne(a)(b)).to.equal(a != b)
     }
   })
 })

@@ -16,10 +16,8 @@ describe('ge', () => {
       const b = rand(-1000, 1000)
 
       // eslint-disable-next-line no-unused-expressions
-      expect(ge(a, a)).to.equal(ge(a)(a)).and.to.be.true
-      expect(ge(a, b))
-        .to.equal(ge(a)(b))
-        .to.equal(a >= b)
+      expect(ge(a)(a)).to.be.true
+      expect(ge(a)(b)).to.equal(a >= b)
     }
   })
   it('applies a right operand with swap', () => {

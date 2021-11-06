@@ -39,10 +39,10 @@ describe('number', () => {
   })
   it('converts anything else to NaN', () => {
     /* eslint-disable no-unused-expressions */
-    expect(Number.isNaN(number('oops'))).to.be.true
-    expect(Number.isNaN(number({}))).to.be.true
-    expect(Number.isNaN(number([1, 2]))).to.be.true
-    expect(Number.isNaN(number(undefined))).to.be.true
+    expect(number('oops')).to.be.NaN
+    expect(number({})).to.be.NaN
+    expect(number([1, 2])).to.be.NaN
+    expect(number(undefined)).to.be.NaN
     /* eslint-enable no-unused-expressions */
   })
 })

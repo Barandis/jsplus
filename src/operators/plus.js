@@ -7,11 +7,11 @@
  * A function version of the unary `+` plus operator.
  *
  * ```javascript
- * console.log(+'3')      // 3
- * console.log(pos('3'))  // 3
+ * console.log(+'3')       // 3
+ * console.log(pos ('3'))  // 3
  *
- * console.log(+true)     // 1
- * console.log(pos(true)) // 1
+ * console.log(+true)      // 1
+ * console.log(pos (true)) // 1
  * ```
  *
  * @param {*} x The value to convert to a number.

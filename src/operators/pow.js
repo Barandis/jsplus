@@ -14,18 +14,16 @@ const curry = require('functions/curry')
  * examples below.
  *
  * ```javascript
- * console.log(2 ** 5)          // 32
- * console.log(pow(2, 5))       // 32
- * console.log(pow(2)(5))       // 32
+ * console.log(2 ** 5)             // 32
+ * console.log(pow (2) (5))        // 32
  *
- * const powerOf2 = pow(2)
- * console.log(powerOf2(5))     // 32
+ * const powerOf2 = pow (2)
+ * console.log(powerOf2 (5))       // 32
  *
- * console.log(swap(pow)(2, 5)) // 25
- * console.log(swap(pow)(2)(5)) // 25
+ * console.log(swap (pow) (2) (5)) // 25
  *
- * const square = swap(pow, 2)
- * console.log(square(5))       // 25
+ * const square = swap (pow) (2)
+ * console.log(square (5))         // 25
  * ```
  *
  * @param {number} x The base.

@@ -12,14 +12,14 @@
  * been overridden to make a more sensible string.
  *
  * ```javascript
- * console.log(string(1729))   // '1729'
- * console.log(string(23n))    // '23'
- * console.log(string(true))   // 'true'
- * console.log(string([]))     // ''
- * console.log(string([14]))   // '14'
- * console.log(string({}))     // '[object Object]'
- * console.log(string(null))   // 'null'
- * console.log(string())       // 'undefined'
+ * console.log(string (1729))   // '1729'
+ * console.log(string (23n))    // '23'
+ * console.log(string (true))   // 'true'
+ * console.log(string ([]))     // ''
+ * console.log(string ([14]))   // '14'
+ * console.log(string ({}))     // '[object Object]'
+ * console.log(string (null))   // 'null'
+ * console.log(string ())       // 'undefined'
  * ```
  *
  * @param {*} x The value to be converted.
