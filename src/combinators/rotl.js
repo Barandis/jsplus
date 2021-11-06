@@ -4,6 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 const curry = require('functions/curry')
+const curry4 = require('functions/curry4')
 
 /**
  * Rotates a three-parameter function's arguments so that the first parameter is applied
@@ -41,4 +42,4 @@ function rotl(fn, x, y, z) {
   return curry(fn)(y)(z)(x)
 }
 
-module.exports = curry(rotl)
+module.exports = curry4(rotl)

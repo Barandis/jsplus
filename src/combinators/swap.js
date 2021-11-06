@@ -4,6 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 const curry = require('functions/curry')
+const curry3 = require('functions/curry3')
 
 /**
  * Flips the order of the arguments on a two-argument function.
@@ -39,4 +40,4 @@ function swap(fn, x, y) {
   return curry(fn)(y)(x)
 }
 
-module.exports = curry(swap)
+module.exports = curry3(swap)

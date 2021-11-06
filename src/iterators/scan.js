@@ -4,6 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 const curry = require('functions/curry')
+const curry2 = require('functions/curry2')
 const iterator = require('iterators/iterator')
 
 /**
@@ -81,4 +82,4 @@ function* scan(fn, x) {
   }
 }
 
-module.exports = curry(scan)
+module.exports = curry2(scan)

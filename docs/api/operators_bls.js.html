@@ -47,7 +47,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const curry = require('functions/curry')
+const curry2 = require('functions/curry2')
 
 /**
  * A curried function version of the `&lt;&lt;` bitwise left shift operator.
@@ -76,7 +76,7 @@ function bls(x, y) {
   return x &lt;&lt; y
 }
 
-module.exports = curry(bls)
+module.exports = curry2(bls)
 </code></pre>
         </article>
     </section>

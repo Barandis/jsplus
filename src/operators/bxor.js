@@ -3,7 +3,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const curry = require('functions/curry')
+const curry2 = require('functions/curry2')
 
 /**
  * A curried function version of the `^` bitwise exclusive or operator.
@@ -25,4 +25,4 @@ function bxor(x, y) {
   return x ^ y
 }
 
-module.exports = curry(bxor)
+module.exports = curry2(bxor)

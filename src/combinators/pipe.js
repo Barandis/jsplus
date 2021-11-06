@@ -3,7 +3,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const curry = require('functions/curry')
+const curry3 = require('functions/curry3')
 
 /**
  * Composes two functions in left-to-right order.
@@ -34,4 +34,4 @@ function pipe(f, g, x) {
   return g(f(x))
 }
 
-module.exports = curry(pipe)
+module.exports = curry3(pipe)

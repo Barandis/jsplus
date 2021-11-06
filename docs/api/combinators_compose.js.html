@@ -47,7 +47,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const curry = require('functions/curry')
+const curry3 = require('functions/curry3')
 /**
  * Composes two functions.
  *
@@ -82,7 +82,7 @@ function compose(f, g, x) {
   return f(g(x))
 }
 
-module.exports = curry(compose)
+module.exports = curry3(compose)
 </code></pre>
         </article>
     </section>

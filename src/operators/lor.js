@@ -3,7 +3,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const curry = require('functions/curry')
+const curry2 = require('functions/curry2')
 
 /**
  * A curried function version of the `||` logical or operator.
@@ -34,4 +34,4 @@ function lor(x, y) {
   return x || y
 }
 
-module.exports = curry(lor)
+module.exports = curry2(lor)

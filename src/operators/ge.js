@@ -3,7 +3,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const curry = require('functions/curry')
+const curry2 = require('functions/curry2')
 
 /**
  * A curried function version of the `>=` greater than or equal operator.
@@ -37,4 +37,4 @@ function ge(x, y) {
   return x >= y
 }
 
-module.exports = curry(ge)
+module.exports = curry2(ge)

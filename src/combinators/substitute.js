@@ -4,6 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 const curry = require('functions/curry')
+const curry3 = require('functions/curry3')
 
 /**
  * Executes a binary function, applying it to an argument and to the result of passing that
@@ -47,4 +48,4 @@ function substitute(f, g, x) {
   return curry(f)(x)(g(x))
 }
 
-module.exports = curry(substitute)
+module.exports = curry3(substitute)

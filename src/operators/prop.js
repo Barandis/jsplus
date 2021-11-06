@@ -3,7 +3,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const curry = require('functions/curry')
+const curry2 = require('functions/curry2')
 
 /**
  * A curried function version of the `[]` property access operator.
@@ -39,4 +39,4 @@ function prop(x, y) {
   return x[y]
 }
 
-module.exports = curry(prop)
+module.exports = curry2(prop)

@@ -3,7 +3,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const curry = require('functions/curry')
+const curry3 = require('functions/curry3')
 
 /**
  * A curried function version of the `?:` conditional (ternary) operator.
@@ -34,4 +34,4 @@ function cond(x, y, z) {
   return x ? y : z
 }
 
-module.exports = curry(cond)
+module.exports = curry3(cond)

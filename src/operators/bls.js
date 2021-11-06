@@ -3,7 +3,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const curry = require('functions/curry')
+const curry2 = require('functions/curry2')
 
 /**
  * A curried function version of the `<<` bitwise left shift operator.
@@ -32,4 +32,4 @@ function bls(x, y) {
   return x << y
 }
 
-module.exports = curry(bls)
+module.exports = curry2(bls)

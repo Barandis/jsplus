@@ -3,7 +3,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const curry = require('functions/curry')
+const curry2 = require('functions/curry2')
 const iterator = require('iterators/iterator')
 
 /**
@@ -34,4 +34,4 @@ function* map(fn, x) {
   }
 }
 
-module.exports = curry(map)
+module.exports = curry2(map)

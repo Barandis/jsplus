@@ -3,7 +3,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const curry = require('functions/curry')
+const curry2 = require('functions/curry2')
 
 /**
  * A curried function version of the `>>>` bitwise unsigned right shift operator.
@@ -41,4 +41,4 @@ function burs(x, y) {
   return x >>> y
 }
 
-module.exports = curry(burs)
+module.exports = curry2(burs)

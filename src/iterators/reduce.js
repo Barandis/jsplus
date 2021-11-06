@@ -4,6 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 const curry = require('functions/curry')
+const curry2 = require('functions/curry2')
 const iterator = require('iterators/iterator')
 
 /**
@@ -83,4 +84,4 @@ function reduce(fn, x) {
   return current
 }
 
-module.exports = curry(reduce)
+module.exports = curry2(reduce)
