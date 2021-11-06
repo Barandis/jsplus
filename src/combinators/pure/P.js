@@ -4,14 +4,16 @@
 // https://opensource.org/licenses/MIT
 
 /**
- * The **Ψ** (psi) combinator.
+ * The **P** combinator.
  *
  * | Property              | Value                                      |
  * |-----------------------|--------------------------------------------|
  * | Type signature        | `(a -> a -> b) -> (c -> a) -> c -> c -> b` |
  * | Lambda representation | `λxyzw.x(yz)(yw)`                          |
+ * | BCKW System           | `C(B(B(BW)(BBC))(B(BC)(BB(BB))))(BWK)`     |
+ * | Bird                  | Psi bird                                   |
  *
- * The **Ψ** combinator applies its second argument separately to its third and fourth
+ * The **P** combinator applies its second argument separately to its third and fourth
  * arguments, and then it applies its first argument to the two results. This has the effect
  * of passing two arguments, separately, to a unary function and then combining the results
  * with a binary function.
@@ -20,10 +22,9 @@
  * instead of using one value applied to two different unary functions, it uses two
  * different values applied to a single unary function.
  *
- * This is called the **P** combinator in the fantasy-land spec, which is convenient because
- * there really isn't another P combinator, but it's called "psi" in nearly every other
- * instance (both in languages and literature). It does not appear in *To Mock a
- * Mockingbird*.
+ * This is called the **Ψ** (psi) combinator in many places, and it's not unusual for a
+ * function that performs the operation to be called `psi`. While it does not appear in *To
+ * Mock a Mockingbird*, it's often called the "psi bird".
  *
  * @param {function} a A function of two parameters. It's applied to the return values of
  *      both applications of function `b`. Its return value becomes the return value of the
@@ -34,8 +35,8 @@
  * @param {*} d A value to which function `b` is applied.
  * @returns {*} The result of function `a` being applied to the results of function `b`'s
  *      applications to each of `c` and `d`.
- * @alias module:combinators/pure.Psi
+ * @alias module:combinators/pure.P
  */
-const Psi = a => b => c => d => a(b(c))(b(d))
+const P = a => b => c => d => a(b(c))(b(d))
 
-module.exports = Psi
+module.exports = P

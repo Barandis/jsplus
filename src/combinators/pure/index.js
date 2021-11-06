@@ -13,7 +13,7 @@ module.exports = {
   I: require('./I'),
   Is: require('./Is'),
   K: require('./K'),
-  Psi: require('./Psi'),
+  P: require('./P'),
   Q: require('./Q'),
   R: require('./R'),
   Rs: require('./Rs'),

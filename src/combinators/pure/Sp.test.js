@@ -7,8 +7,11 @@ const { expect } = require('test/utils')
 
 const compose = require('combinators/compose')
 const swap = require('combinators/swap')
+const B = require('combinators/pure/B')
+const C = require('combinators/pure/C')
 const I = require('combinators/pure/I')
 const Sp = require('combinators/pure/Sp')
+const W = require('combinators/pure/W')
 const reduce = require('iterators/reduce')
 const reverse = require('iterators/reverse')
 const add = require('operators/add')
@@ -32,5 +35,13 @@ describe("S' combinator", () => {
   it('makes a nice averages function', () => {
     const avg = Sp(div)(sum)(count)
     expect(avg([1, 2, 3, 4, 5])).to.equal(3)
+  })
+  it('can be constructed from B(B(B(BW)(BBC)))B', () => {
+    const sp = B(B(B(B(W))(B(B)(C))))(B)
+    const isPalindrome = sp(eq)(I)(rev)
+    // eslint-disable-next-line no-unused-expressions
+    expect(isPalindrome('hello')).to.be.false
+    // eslint-disable-next-line no-unused-expressions
+    expect(isPalindrome('radar')).to.be.true
   })
 })
