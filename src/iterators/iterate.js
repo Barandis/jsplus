@@ -22,7 +22,7 @@ const isObject = require('utilities/isObject')
  * @alias module:iterators.objectIterator
  * @private
  */
-function* objectIterator(obj) {
+function* iterateObj(obj) {
   for (const entry of Object.entries(obj)) {
     yield entry
   }
@@ -47,7 +47,7 @@ function* objectIterator(obj) {
  * @alias module:iterators.functionIterator
  * @private
  */
-function* functionIterator(fn) {
+function* iterateFn(fn) {
   let current
   let index = 0
 
@@ -69,7 +69,7 @@ function* functionIterator(fn) {
  * @alias module:iterators.itemIterator
  * @private
  */
-function* itemIterator(x) {
+function* iterateItem(x) {
   yield x
 }
 
@@ -82,7 +82,7 @@ function* itemIterator(x) {
  * the box.
  *
  * ```
- * const iter = iterator([1, 2, 3]);
+ * const iter = iterate([1, 2, 3]);
  *
  * console.log(iter.next().value) // 1
  * console.log(iter.next().value) // 2
@@ -92,7 +92,7 @@ function* itemIterator(x) {
  *
  * Generic objects get special support. If an object (meaning an object literal or something
  * created with `Object.create()`, but not custom classes, which have to implement the
- * iterable protocol explicitly) is passed to `iterator`, a new iterator will be returned
+ * iterable protocol explicitly) is passed to `iterate`, a new iterator will be returned
  * that iterates over everything that `Object.keys` returns for that object This will come
  * out in the "natural" property order, as follows:
  *
@@ -109,7 +109,7 @@ function* itemIterator(x) {
  * is the key and the second is the value.
  *
  * ```
- * const iter = iterator({ b: 2, a: 4 });
+ * const iter = iterate({ b: 2, a: 4 });
  *
  * console.log(iter.next().value) // ['b',2]
  * console.log(iter.next().value) // ['a',4]
@@ -131,12 +131,12 @@ function* itemIterator(x) {
  * arguments is an excellent way of providing the function an initial value.
  *
  * ```
- * const constIter = iterator(() => 6)   // Bert's favorite number
+ * const constIter = iterate(() => 6)   // Bert's favorite number
  * console.log(constIter.next().value)   // 6
  * console.log(constIter.next().value)   // 6
  * // This will go on forever, as long as `next` keeps getting called
  *
- * const indexIter = iterator(x => x * x)
+ * const indexIter = iterate(x => x * x)
  * console.log(indexIter.next().value)   // 0
  * console.log(indexIter.next().value)   // 1
  * console.log(indexIter.next().value)   // 4
@@ -144,7 +144,7 @@ function* itemIterator(x) {
  * // Again, this will go on forever, or until the numbers get to big JS to handle
  *
  * // Using default value on `last` parameter for initial value
- * const lastIter = iterator((index, last = 1) => last * (index + 1))  // Factorial
+ * const lastIter = iterate((index, last = 1) => last * (index + 1))  // Factorial
  * console.log(lastIter.next().value)    // 1
  * console.log(lastIter.next().value)    // 2
  * console.log(lastIter.next().value)    // 6
@@ -152,7 +152,7 @@ function* itemIterator(x) {
  * // Again, forever, though factorials get big quickly
  *
  * // This iterator will terminate when the function returns `undefined`
- * const stopIter = iterator(x => x < 2 ? x : undefined)
+ * const stopIter = iterate(x => x < 2 ? x : undefined)
  * console.log(stopIter.next().value)    // 0
  * console.log(stopIter.next().value)    // 1
  * console.log(stopIter.next().done)     // true
@@ -165,19 +165,19 @@ function* itemIterator(x) {
  * @return {iterator} An iterator over the provided value. If the value is not iterable
  *     (it's not an object or a function, and it doesn't have a protocol-defined iterator),
  *     an iterator that returns only that value once is returned.
- * @alias module:iterators.iterator
+ * @alias module:iterators.iterate
  */
-function iterator(x) {
+function iterate(x) {
   switch (true) {
     case isFunction(x[Symbol.iterator]):
       return x[Symbol.iterator]()
     case isFunction(x):
-      return functionIterator(x)
+      return iterateFn(x)
     case isObject(x):
-      return objectIterator(x)
+      return iterateObj(x)
     default:
-      return itemIterator(x)
+      return iterateItem(x)
   }
 }
 
-module.exports = iterator
+module.exports = iterate

@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>operators/rem.js - Documentation</title>
+    <title>iterators/count.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">operators/rem.js</h1>
+    <h1 class="page-title">iterators/count.js</h1>
     
 
     
@@ -47,39 +47,47 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const curry2 = require('functions/curry2')
-
 /**
- * A curried function version of the `%` remainder operator.
+ * Creates an infinite iterator that counts from a starting point.
  *
- * Note that when used with a single argument, that argument is the dividend (the number
- * that gets divided). If you need the argument to be the divisor (the number by which the
- * dividend is divided), use the `{@link module:combinators.swap|swap}` combinator. See the
- * examples below.
+ * By default, the iterator starts at `0` and increases by 1 each invocation. Both of these
+ * can be changed; the first argument is the starting value, and the second is the step
+ * value.
+ *
+ * This function can count backwards by choosing a negative step, and it can create an
+ * infinite series of the same number by choosing a step of `0`.
+ *
+ * This is much like `{@link module:iterators.range|range}` except that it doesn't have an
+ * end or inclusive parameter and therefore does not, in fact, end. It can also be emulated
+ * by passing a function to `{@link module:iterators.iterate|iterate}` that never returns
+ * `undefined`. The `iterate` way allows more flexibility - it can emulate any series, not
+ * just a linear one - but `infinite` is more convenient for the most usual cases.
  *
  * ```javascript
- * console.log(4 % 7)              // 4
- * console.log(rem (4) (7))        // 4
- *
- * const rem4 = rem (4)
- * console.log(rem4 (7))           // 4
- *
- * console.log(swap (rem) (4) (7)) // 3
- *
- * const remWith4 = swap (rem) (4)
- * console.log(remWith4 (7))       // 3
+ * const iter = count()
+ * console.log(iter.next().value) // 0
+ * console.log(iter.next().value) // 1
+ * console.log(iter.next().value) // 2
+ * ...
+ * console.log(iter.next().value) // 42
+ * console.log(iter.next().value) // 43
+ * ...
  * ```
  *
- * @param {number} x The dividend.
- * @param {number} y The divisor.
- * @returns {number} The remainder left when `x` is divided by `y`.
- * @alias module:operators.rem
+ * @param {number} [start=0] The beginning value for the iterator.
+ * @param {number} [step=1] The number added to the current value for the next value.
+ * @yields {number} The start value first, and then the last value plus the step value.
+ * @alias module:iterators.count
  */
-function rem(x, y) {
-  return x % y
+function* count(start = 0, step = 1) {
+  let current = start
+  for (;;) {
+    yield current
+    current += step
+  }
 }
 
-module.exports = curry2(rem)
+module.exports = count
 </code></pre>
         </article>
     </section>

@@ -4,7 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 const curry2 = require('functions/curry2')
-const iterator = require('iterators/iterator')
+const iterate = require('iterators/iterate')
 const range = require('iterators/range')
 
 /**
@@ -29,7 +29,7 @@ const range = require('iterators/range')
  * @alias module:iterators.take
  */
 function* take(n, x) {
-  const iter = iterator(x)
+  const iter = iterate(x)
   for (const _ of range(n, 0, -1)) {
     const next = iter.next()
     if (next.done) {

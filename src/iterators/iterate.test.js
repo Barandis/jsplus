@@ -7,7 +7,7 @@
 
 const { expect } = require('test/utils')
 
-const { iterator, range } = require('iterators')
+const { array, iterate, range } = require('iterators')
 
 function* five() {
   for (const i of range(1, 6)) {
@@ -15,32 +15,22 @@ function* five() {
   }
 }
 
-describe('iterator', () => {
-  function toArray(iter) {
-    const result = []
-    let item
-    // eslint-disable-next-line no-cond-assign
-    while (!(item = iter.next()).done) {
-      result.push(item.value)
-    }
-    return result
-  }
-
+describe('iterate', () => {
   context('over built-in iterable types', () => {
     context('allowing built-in iterator protocol usage', () => {
       it('iterates over strings', () => {
-        const array = toArray(iterator('hello'))
-        expect(array).to.deep.equal(['h', 'e', 'l', 'l', 'o'])
+        const result = array(iterate('hello'))
+        expect(result).to.deep.equal(['h', 'e', 'l', 'l', 'o'])
       })
 
       it('iterates over arrays', () => {
-        const array = toArray(iterator([3, 1, 4, 1, 5]))
-        expect(array).to.deep.equal([3, 1, 4, 1, 5])
+        const result = array(iterate([3, 1, 4, 1, 5]))
+        expect(result).to.deep.equal([3, 1, 4, 1, 5])
       })
 
       it('iterates over generators', () => {
-        const array = toArray(iterator(five()))
-        expect(array).to.deep.equal([1, 2, 3, 4, 5])
+        const result = array(iterate(five()))
+        expect(result).to.deep.equal([1, 2, 3, 4, 5])
       })
     })
   })
@@ -50,25 +40,16 @@ describe('iterator', () => {
       class IteratorTest {
         constructor() {
           const values = [3, 1, 4, 1, 5]
-          let index = 0
 
-          this[Symbol.iterator] = () => ({
-            next: () => {
-              if (index < values.length) {
-                const res = {
-                  value: values[index],
-                  done: false,
-                }
-                index += 1
-                return res
-              }
-              return { done: true }
-            },
-          })
+          this[Symbol.iterator] = function* iterator() {
+            for (const value of values) {
+              yield value
+            }
+          }
         }
       }
       const test = new IteratorTest()
-      expect(toArray(iterator(test))).to.deep.equal([3, 1, 4, 1, 5])
+      expect(array(iterate(test))).to.deep.equal([3, 1, 4, 1, 5])
     })
   })
 
@@ -81,7 +62,7 @@ describe('iterator', () => {
     })
 
     it('produces key-value pairs in natural object property order', () => {
-      expect(toArray(iterator(obj))).to.deep.equal([
+      expect(array(iterate(obj))).to.deep.equal([
         ['1', 2],
         ['c', 1],
       ])
@@ -94,7 +75,7 @@ describe('iterator', () => {
     }
 
     it('produces an infinite repeating series with a constant function', () => {
-      const iter = iterator(() => 6) // Bert's favorite number
+      const iter = iterate(() => 6) // Bert's favorite number
       expect(iter.next().value).to.equal(6)
       expect(iter.next().value).to.equal(6)
       expect(iter.next().value).to.equal(6)
@@ -103,7 +84,7 @@ describe('iterator', () => {
     })
 
     it('produces an infinite series based on the current index', () => {
-      const iter = iterator(index => 1 / 2 ** index)
+      const iter = iterate(index => 1 / 2 ** index)
       expect(iter.next().value).to.equal(1)
       expectWithin(iter.next().value, 1 / 2)
       expectWithin(iter.next().value, 1 / 4)
@@ -112,7 +93,7 @@ describe('iterator', () => {
 
     it('produces an infinite series by feeding back the last value to the next iteration', () => {
       const fn = (index, last = true) => !last
-      const iter = iterator(fn)
+      const iter = iterate(fn)
       expect(iter.next().value).to.be.false
       expect(iter.next().value).to.be.true
       expect(iter.next().value).to.be.false
@@ -122,7 +103,7 @@ describe('iterator', () => {
 
     it('produces an infinite series by using both the index and the last value', () => {
       const fn = (index, last = 1) => last * (index + 1) // Factorial series
-      const iter = iterator(fn)
+      const iter = iterate(fn)
       expect(iter.next().value).to.equal(1)
       expect(iter.next().value).to.equal(2)
       expect(iter.next().value).to.equal(6)
@@ -132,7 +113,7 @@ describe('iterator', () => {
 
     it('produces a finite series if the function at some point returns `undefined`', () => {
       const fn = index => (index < 3 ? index : undefined)
-      const iter = iterator(fn)
+      const iter = iterate(fn)
       expect(iter.next().value).to.equal(0)
       expect(iter.next().value).to.equal(1)
       expect(iter.next().value).to.equal(2)
@@ -142,7 +123,7 @@ describe('iterator', () => {
 
   it('returns a single-value iterator with any other type', () => {
     const date = new Date()
-    const iter = iterator(date)
+    const iter = iterate(date)
     expect(iter.next().value).to.equal(date)
     expect(iter.next().done).to.be.true
   })

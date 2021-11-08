@@ -4,7 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 const curry2 = require('functions/curry2')
-const iterator = require('iterators/iterator')
+const iterate = require('iterators/iterate')
 
 /**
  * Filters the elements of an iterable, returning in an iterator only the ones that make a
@@ -30,7 +30,7 @@ const iterator = require('iterators/iterator')
  * @alias module:iterators.filter
  */
 function* filter(fn, x) {
-  for (const value of iterator(x)) {
+  for (const value of iterate(x)) {
     if (fn(value)) yield value
   }
 }

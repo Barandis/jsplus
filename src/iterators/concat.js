@@ -4,7 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 const curry2 = require('functions/curry2')
-const iterator = require('iterators/iterator')
+const iterate = require('iterators/iterate')
 
 /**
  * Concatenates two collections. The result is an iterator that first yields elements of the
@@ -30,10 +30,10 @@ const iterator = require('iterators/iterator')
  * @alias module:iterators.concat
  */
 function* concat(x, y) {
-  for (const value of iterator(x)) {
+  for (const value of iterate(x)) {
     yield value
   }
-  for (const value of iterator(y)) {
+  for (const value of iterate(y)) {
     yield value
   }
 }

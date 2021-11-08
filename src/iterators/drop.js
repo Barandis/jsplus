@@ -4,7 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 const curry2 = require('functions/curry')
-const iterator = require('iterators/iterator')
+const iterate = require('iterators/iterate')
 
 /**
  * Returns the collection, minus its first `n` elements.
@@ -28,7 +28,7 @@ const iterator = require('iterators/iterator')
  * @alias module:iterators.drop
  */
 function* drop(n, x) {
-  const iter = iterator(x)
+  const iter = iterate(x)
   for (let i = 0; i < n; i += 1) {
     iter.next()
   }

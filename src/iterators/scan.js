@@ -5,7 +5,7 @@
 
 const curry = require('functions/curry')
 const curry2 = require('functions/curry2')
-const iterator = require('iterators/iterator')
+const iterate = require('iterators/iterate')
 
 /**
  * Reduces an iterable with a function, returning an iterator with all of the intermediate
@@ -66,7 +66,7 @@ const iterator = require('iterators/iterator')
  * @alias module:iterators.scan
  */
 function* scan(fn, x) {
-  const iter = iterator(x)
+  const iter = iterate(x)
   const reducer = curry(fn)
   let current
 

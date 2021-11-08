@@ -3,7 +3,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const iterator = require('iterators/iterator')
+const iterate = require('iterators/iterate')
 
 /**
  * Generates a set of pairs of iterable elements with their indices. This is inspired by
@@ -29,7 +29,7 @@ const iterator = require('iterators/iterator')
  * @alias module:iterators.enumerate
  */
 function* enumerate(x, start = 0) {
-  const iter = iterator(x)
+  const iter = iterate(x)
   let result = iter.next()
   let index = Math.trunc(start)
 

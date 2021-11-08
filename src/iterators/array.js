@@ -3,7 +3,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const iterator = require('iterators/iterator')
+const iterate = require('iterators/iterate')
 
 /**
  * Transforms an iterable into an array.
@@ -36,7 +36,7 @@ const iterator = require('iterators/iterator')
  * @alias module:iterators.array
  */
 function array(x) {
-  return Array.from(iterator(x))
+  return Array.from(iterate(x))
 }
 
 module.exports = array

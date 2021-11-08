@@ -3,7 +3,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const iterator = require('iterators/iterator')
+const iterate = require('iterators/iterate')
 const isObject = require('utilities/isObject')
 const isString = require('utilities/isString')
 
@@ -58,7 +58,7 @@ function collect(x) {
     return x
   }
 
-  const array = [...iterator(x)]
+  const array = [...iterate(x)]
   // The `array.every` would pass on empty arrays
   if (array.length > 0) {
     if (array.every(e => isString(e))) {

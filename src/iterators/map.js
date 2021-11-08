@@ -4,7 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 const curry2 = require('functions/curry2')
-const iterator = require('iterators/iterator')
+const iterate = require('iterators/iterate')
 
 /**
  * Passes each element of an iterable to a mapping function, returning the results in an
@@ -27,7 +27,7 @@ const iterator = require('iterators/iterator')
  * @alias module:iterators.map
  */
 function* map(fn, x) {
-  for (const value of iterator(x)) {
+  for (const value of iterate(x)) {
     yield fn(value)
   }
 }
