@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>functions/index.js - Documentation</title>
+    <title>iterators/filter.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">functions/index.js</h1>
+    <h1 class="page-title">iterators/filter.js</h1>
     
 
     
@@ -47,19 +47,39 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
+const curry2 = require('functions/curry2')
+const iterator = require('iterators/iterator')
+
 /**
- * @module functions
+ * Filters the elements of an iterable, returning in an iterator only the ones that make a
+ * filtering function return `true`.
+ *
+ * ```javascript
+ * // Filter odd numbers
+ * const odd = pipe (swap (rem) (2)) (ne (0))
+ * const result = filter (odd) ([1, 2, 3, 4, 5])
+ *
+ * console.log(result.next().value) // 1
+ * console.log(result.next().value) // 3
+ * console.log(result.next().value) // 5
+ * console.log(result.next().done)  // true
+ * ```
+ *
+ * @param {function} fn A predicate function (a single-parameter function that returns a
+ *      boolean). This predicate is run once for every element of `x` with its argument set
+ *      to that element; the elements that cause the predicate to return `true` are the ones
+ *      that are retained in the result iterator.
+ * @param {*} x The collection to filter.
+ * @yields {*} Each element of `x` that causes `fn`, when applied to it, to return `true`.
+ * @alias module:iterators.filter
  */
-module.exports = {
-  curry: require('./curry'),
-  curry2: require('./curry2'),
-  curry3: require('./curry3'),
-  curry4: require('./curry4'),
-  curry5: require('./curry5'),
-  curryn: require('./curryn'),
-  curryv: require('./curryv'),
-  partial: require('./partial'),
+function* filter(fn, x) {
+  for (const value of iterator(x)) {
+    if (fn(value)) yield value
+  }
 }
+
+module.exports = curry2(filter)
 </code></pre>
         </article>
     </section>

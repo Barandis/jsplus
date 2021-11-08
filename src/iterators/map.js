@@ -10,8 +10,6 @@ const iterator = require('iterators/iterator')
  * Passes each element of an iterable to a mapping function, returning the results in an
  * iterator.
  *
- * This function comes pre-curried so it can be partially applied easily.
- *
  * ```javascript
  * const result = map (add(1)) ([1, 2, 3])
  * console.log(result.next().value) // 2
