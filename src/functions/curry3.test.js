@@ -5,7 +5,7 @@
 
 const { expect } = require('test/utils')
 
-const curry3 = require('functions/curry3')
+const { curry3 } = require('functions')
 
 describe('curry3', () => {
   const sum = curry3((a, b, c) => a + b + c)

@@ -5,8 +5,8 @@
 
 const { expect, randInt } = require('test/utils')
 
-const range = require('iterators/range')
-const band = require('operators/band')
+const { range } = require('iterators')
+const { band } = require('operators')
 
 describe('band', () => {
   it('bitwise ANDs two numbers', () => {

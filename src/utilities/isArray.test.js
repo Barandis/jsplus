@@ -5,7 +5,7 @@
 
 const { expect } = require('test/utils')
 
-const isArray = require('utilities/isArray')
+const { isArray } = require('utilities')
 
 /* eslint-disable no-unused-expressions */
 describe('isArray', () => {

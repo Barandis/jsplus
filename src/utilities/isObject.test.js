@@ -5,7 +5,7 @@
 
 const { expect } = require('test/utils')
 
-const isObject = require('utilities/isObject')
+const { isObject } = require('utilities')
 
 /* eslint-disable no-unused-expressions */
 describe('isObject', () => {

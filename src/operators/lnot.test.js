@@ -5,8 +5,8 @@
 
 const { expect, randInt } = require('test/utils')
 
-const range = require('iterators/range')
-const lnot = require('operators/lnot')
+const { range } = require('iterators')
+const { lnot } = require('operators')
 
 describe('lnot', () => {
   it('logically NOTs a number', () => {

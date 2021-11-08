@@ -5,8 +5,8 @@
 
 const { expect, rand, randInt } = require('test/utils')
 
-const range = require('iterators/range')
-const pow = require('operators/pow')
+const { range } = require('iterators')
+const { pow } = require('operators')
 
 describe('pow', () => {
   it('raises one number to another power', () => {

@@ -5,11 +5,10 @@
 
 const { expect } = require('test/utils')
 
-const compose = require('combinators/compose')
-const map = require('iterators/map')
-const reduce = require('iterators/reduce')
-const add = require('operators/add')
-const string = require('primitives/string')
+const { compose } = require('combinators')
+const { map, reduce } = require('iterators')
+const { add } = require('operators')
+const { string } = require('primitives')
 
 function* upTo5() {
   for (let i = 0; i <= 5; i += 1) {

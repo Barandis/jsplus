@@ -5,8 +5,8 @@
 
 const { expect, rand } = require('test/utils')
 
-const range = require('iterators/range')
-const plus = require('operators/plus')
+const { range } = require('iterators')
+const { plus } = require('operators')
 
 describe('plus', () => {
   it('converts a string to a number', () => {

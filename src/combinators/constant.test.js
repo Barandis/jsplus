@@ -5,7 +5,7 @@
 
 const { expect } = require('test/utils')
 
-const constant = require('combinators/constant')
+const { constant } = require('combinators')
 
 describe('constant', () => {
   it('produces functions that always return the same value', () => {

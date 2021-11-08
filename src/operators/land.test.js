@@ -5,8 +5,8 @@
 
 const { expect, randInt } = require('test/utils')
 
-const range = require('iterators/range')
-const land = require('operators/land')
+const { range } = require('iterators')
+const { land } = require('operators')
 
 describe('land', () => {
   it('logically ANDs two numbers', () => {

@@ -5,7 +5,7 @@
 
 const { expect } = require('test/utils')
 
-const symbol = require('primitives/symbol')
+const { symbol } = require('primitives')
 
 describe('symbol', () => {
   it('converts anything into a symbol', () => {

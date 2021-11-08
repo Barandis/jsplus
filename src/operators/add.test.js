@@ -5,8 +5,8 @@
 
 const { expect, rand, randInt, randString } = require('test/utils')
 
-const range = require('iterators/range')
-const add = require('operators/add')
+const { range } = require('iterators')
+const { add } = require('operators')
 
 describe('add', () => {
   it('adds two numbers', () => {

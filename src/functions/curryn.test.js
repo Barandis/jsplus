@@ -5,7 +5,7 @@
 
 const { expect } = require('test/utils')
 
-const curryn = require('functions/curryn')
+const { curryn } = require('functions')
 
 const fn = (...ns) => ns.reduce((a, b) => a + b, 0)
 

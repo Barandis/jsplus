@@ -5,8 +5,8 @@
 
 const { expect, rand } = require('test/utils')
 
-const range = require('iterators/range')
-const ne = require('operators/ne')
+const { range } = require('iterators')
+const { ne } = require('operators')
 
 describe('ne', () => {
   it('tests two numbers for strict inequality', () => {

@@ -5,8 +5,8 @@
 
 const { expect, rand } = require('test/utils')
 
-const range = require('iterators/range')
-const eq = require('operators/eq')
+const { range } = require('iterators')
+const { eq } = require('operators')
 
 describe('eq', () => {
   it('tests two numbers for strict equality', () => {

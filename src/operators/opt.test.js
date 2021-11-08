@@ -5,9 +5,9 @@
 
 const { expect, rand, randInt } = require('test/utils')
 
-const swap = require('combinators/swap')
-const range = require('iterators/range')
-const opt = require('operators/opt')
+const { swap } = require('combinators')
+const { range } = require('iterators')
+const { opt } = require('operators')
 
 describe('opt', () => {
   it('returns the value of a property or an index of an array', () => {

@@ -5,9 +5,9 @@
 
 const { expect, rand } = require('test/utils')
 
-const swap = require('combinators/swap')
-const range = require('iterators/range')
-const ge = require('operators/ge')
+const { swap } = require('combinators')
+const { range } = require('iterators')
+const { ge } = require('operators')
 
 describe('ge', () => {
   it('tests two numbers for greater than or equal', () => {

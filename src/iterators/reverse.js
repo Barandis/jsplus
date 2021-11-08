@@ -8,10 +8,9 @@ const array = require('iterators/array')
 /**
  * Reverses the order of an iterable.
  *
- * While this function does produce an iterator like most of the iterator functions, it
- * requires knowing where the end of the input iterable is. Therefore it will not work with
- * infinite iterators (because they do not have an end) and it does not work lazily in that
- * it must evaluate the entire input iterable to get to the end.
+ * **`reverse` should not be used with infinite iterators.** By its nature, it must evaluate
+ * an entire iterator so that it can find the end, which is where the new iterator will
+ * begin. Thus it returns a lazy value (an iterator), but it eagerly evaluates its input.
  *
  * ```javascript
  * const arr = reverse ([1, 2, 3, 4, 5])

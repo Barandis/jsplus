@@ -15,8 +15,8 @@ const iterator = require('iterators/iterator')
  * element of the iterable, repeating until there are no elements left. The result is a
  * single answer, which is returned.
  *
- * As this function does not produce an iterator and needs to consume an entire iterable to
- * calculate its answer, it should not be used with an infinite iterator as the input.
+ * **`reduce` is not lazy.** By its nature, it must evaluate an entire iterator to work and
+ * is thus not suitable for infinite iterators.
  *
  * Use of this function is done a little differently than traditional `Array.reduce`. It
  * does not have the option of an initial value. This means two things: first, the reduction

@@ -5,7 +5,7 @@
 
 const { expect } = require('test/utils')
 
-const isFunction = require('utilities/isFunction')
+const { isFunction } = require('utilities')
 
 /* eslint-disable no-unused-expressions */
 describe('isFunction', () => {

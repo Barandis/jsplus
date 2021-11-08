@@ -5,9 +5,9 @@
 
 const { expect, rand } = require('test/utils')
 
-const swap = require('combinators/swap')
-const range = require('iterators/range')
-const lt = require('operators/lt')
+const { swap } = require('combinators')
+const { range } = require('iterators')
+const { lt } = require('operators')
 
 describe('lt', () => {
   it('tests two numbers for less than', () => {

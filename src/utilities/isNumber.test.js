@@ -5,7 +5,7 @@
 
 const { expect } = require('test/utils')
 
-const isNumber = require('utilities/isNumber')
+const { isNumber } = require('utilities')
 
 /* eslint-disable no-unused-expressions */
 describe('isNumber', () => {

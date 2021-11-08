@@ -5,7 +5,7 @@
 
 const { expect } = require('test/utils')
 
-const string = require('primitives/string')
+const { string } = require('primitives')
 
 describe('string', () => {
   it('converts anything into a string', () => {

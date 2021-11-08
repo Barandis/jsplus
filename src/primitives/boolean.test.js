@@ -5,7 +5,7 @@
 
 const { expect } = require('test/utils')
 
-const boolean = require('primitives/boolean')
+const { boolean } = require('primitives')
 
 /* eslint-disable no-unused-expressions */
 

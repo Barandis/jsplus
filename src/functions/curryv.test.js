@@ -5,7 +5,7 @@
 
 const { expect } = require('test/utils')
 
-const curryv = require('functions/curryv')
+const { curryv } = require('functions')
 
 describe('curryv', () => {
   it('will curry a 2-argument function', () => {

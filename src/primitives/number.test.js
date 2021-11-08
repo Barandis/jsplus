@@ -5,7 +5,7 @@
 
 const { expect } = require('test/utils')
 
-const number = require('primitives/number')
+const { number } = require('primitives')
 
 describe('number', () => {
   it('converts numeric strings to numbers', () => {

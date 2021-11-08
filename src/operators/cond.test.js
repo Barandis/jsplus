@@ -5,9 +5,9 @@
 
 const { expect, rand, randInt } = require('test/utils')
 
-const rotr = require('combinators/rotr')
-const range = require('iterators/range')
-const cond = require('operators/cond')
+const { rotr } = require('combinators')
+const { range } = require('iterators')
+const { cond } = require('operators')
 
 describe('cond', () => {
   it('chooses one of its second or third arguments depending on the first', () => {

@@ -5,9 +5,9 @@
 
 const { expect, randInt } = require('test/utils')
 
-const swap = require('combinators/swap')
-const range = require('iterators/range')
-const brs = require('operators/brs')
+const { swap } = require('combinators')
+const { range } = require('iterators')
+const { brs } = require('operators')
 
 describe('brs', () => {
   it('bitwise right shifts a number', () => {

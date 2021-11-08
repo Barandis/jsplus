@@ -5,7 +5,7 @@
 
 const { expect } = require('test/utils')
 
-const bigint = require('primitives/bigint')
+const { bigint } = require('primitives')
 
 describe('bigint', () => {
   it('converts numbers to bigints', () => {

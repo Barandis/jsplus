@@ -5,8 +5,8 @@
 
 const { expect, randInt } = require('test/utils')
 
-const range = require('iterators/range')
-const lor = require('operators/lor')
+const { range } = require('iterators')
+const { lor } = require('operators')
 
 describe('lor', () => {
   it('logically ORs two numbers', () => {

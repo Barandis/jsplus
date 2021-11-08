@@ -5,8 +5,7 @@
 
 const { expect } = require('test/utils')
 
-const array = require('iterators/array')
-const range = require('iterators/range')
+const { array, range } = require('iterators')
 
 describe('array', () => {
   it('transforms a string into an array', () => {

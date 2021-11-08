@@ -5,8 +5,8 @@
 
 const { expect, rand } = require('test/utils')
 
-const identity = require('combinators/identity')
-const range = require('iterators/range')
+const { identity } = require('combinators')
+const { range } = require('iterators')
 
 describe('identity', () => {
   it('returns the value given to it', () => {

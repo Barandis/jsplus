@@ -5,8 +5,8 @@
 
 const { expect, randInt } = require('test/utils')
 
-const range = require('iterators/range')
-const bxor = require('operators/bxor')
+const { range } = require('iterators')
+const { bxor } = require('operators')
 
 describe('bxor', () => {
   it('bitwise XORs two numbers', () => {

@@ -5,9 +5,9 @@
 
 const { expect, rand } = require('test/utils')
 
-const swap = require('combinators/swap')
-const range = require('iterators/range')
-const sub = require('operators/sub')
+const { swap } = require('combinators')
+const { range } = require('iterators')
+const { sub } = require('operators')
 
 describe('sub', () => {
   it('subtracts two numbers', () => {

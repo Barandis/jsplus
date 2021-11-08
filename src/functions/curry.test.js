@@ -5,7 +5,7 @@
 
 const { expect } = require('test/utils')
 
-const curry = require('functions/curry')
+const { curry } = require('functions')
 
 describe('curryn', () => {
   it('will return a 0-arg function', () => {

@@ -5,8 +5,8 @@
 
 const { expect, rand } = require('test/utils')
 
-const range = require('iterators/range')
-const mul = require('operators/mul')
+const { range } = require('iterators')
+const { mul } = require('operators')
 
 describe('mul', () => {
   it('multiples two numbers', () => {

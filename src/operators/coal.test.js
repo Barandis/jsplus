@@ -5,9 +5,9 @@
 
 const { expect, rand } = require('test/utils')
 
-const swap = require('combinators/swap')
-const range = require('iterators/range')
-const coal = require('operators/coal')
+const { swap } = require('combinators')
+const { range } = require('iterators')
+const { coal } = require('operators')
 
 describe('coal', () => {
   it('returns its first argument or, if null or undefined, its second', () => {

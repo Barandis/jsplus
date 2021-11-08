@@ -5,8 +5,8 @@
 
 const { expect, rand } = require('test/utils')
 
-const range = require('iterators/range')
-const neg = require('operators/neg')
+const { range } = require('iterators')
+const { neg } = require('operators')
 
 describe('neg', () => {
   it('negates a number', () => {

@@ -5,9 +5,9 @@
 
 const { expect, rand } = require('test/utils')
 
-const swap = require('combinators/swap')
-const range = require('iterators/range')
-const div = require('operators/div')
+const { swap } = require('combinators')
+const { range } = require('iterators')
+const { div } = require('operators')
 
 describe('div', () => {
   it('divides two numbers', () => {

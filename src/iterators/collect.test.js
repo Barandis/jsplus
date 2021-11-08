@@ -5,7 +5,7 @@
 
 const { expect } = require('test/utils')
 
-const collect = require('iterators/collect')
+const { collect } = require('iterators')
 
 function* upTo5() {
   for (let i = 0; i <= 5; i += 1) {

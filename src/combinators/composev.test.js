@@ -5,13 +5,9 @@
 
 const { expect } = require('test/utils')
 
-const compose = require('combinators/compose')
-const composev = require('combinators/composev')
-const swap = require('combinators/swap')
-const curry = require('functions/curry')
-const add = require('operators/add')
-const ne = require('operators/ne')
-const rem = require('operators/rem')
+const { compose, composev, swap } = require('combinators')
+const { curry } = require('functions')
+const { add, ne, rem } = require('operators')
 
 const inc = add(1)
 const odd = compose(ne(0))(swap(rem)(2))

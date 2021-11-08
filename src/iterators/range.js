@@ -21,22 +21,22 @@
  * by `start` and `end`.
  *
  * ```javascript
- * // Using array to change iterators to arrays for ease of display
- * const e = array(range(4))
+ * // Using collect to change iterators to arrays for ease of display
+ * const e = collect(range(4))
  * console.log(e)    // [0,1,2,3]
  *
- * const ei = array(range(4, true))
+ * const ei = collect(range(4, true))
  * console.log(ei)   // [0,1,2,3,4]
  *
- * const se = array(range(2, 4))
+ * const se = collect(range(2, 4))
  * console.log(se)   // [2,3]
  *
  * // 0 is necessary because range(4, 2) would be interpreted as a
  * // start of 4 and end of 2, producing [4,3]
- * const sep = array(range(0, 4, 2))
+ * const sep = collect(range(0, 4, 2))
  * console.log(sep)  // [0,2]
  *
- * const sepi = array(range(0, 4, 2, true))
+ * const sepi = collect(range(0, 4, 2, true))
  * console.log(sepi) // [0,2,4]
  *
  * // Probably the most common use: in `for...of` loops

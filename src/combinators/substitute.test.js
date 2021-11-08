@@ -5,16 +5,9 @@
 
 const { expect } = require('test/utils')
 
-const compose = require('combinators/compose')
-const substitute = require('combinators/substitute')
-const swap = require('combinators/swap')
-const reduce = require('iterators/reduce')
-const reverse = require('iterators/reverse')
-const add = require('operators/add')
-const eq = require('operators/eq')
-const mul = require('operators/mul')
-const prop = require('operators/prop')
-const sub = require('operators/sub')
+const { compose, substitute, swap } = require('combinators')
+const { reduce, reverse } = require('iterators')
+const { add, eq, mul, prop, sub } = require('operators')
 
 describe('substitute', () => {
   it('applies a fn to a value and the result of another fn applied to that value', () => {

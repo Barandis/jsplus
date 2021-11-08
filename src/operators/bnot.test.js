@@ -5,8 +5,8 @@
 
 const { expect, randInt } = require('test/utils')
 
-const range = require('iterators/range')
-const bnot = require('operators/bnot')
+const { range } = require('iterators')
+const { bnot } = require('operators')
 
 describe('bnot', () => {
   it('bitwise NOTs a number', () => {

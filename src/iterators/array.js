@@ -13,6 +13,10 @@ const iterator = require('iterators/iterator')
  * iterators that this module tends to provide into arrays, but it will work on any kind of
  * value under the same rules as `{@link module:iterators.iterator|iterator}`.
  *
+ * This function will always turn the input into an array. For a function that will turn
+ * inputs also into strings or objects as appropriate, see
+ * `{@link module:functions.collect|collect}`
+ *
  * ```javascript
  * const iter = array (iterator ([1, 2, 3, 4, 5]))
  * const str = array ('test')
@@ -32,7 +36,7 @@ const iterator = require('iterators/iterator')
  * @alias module:iterators.array
  */
 function array(x) {
-  return [...iterator(x)]
+  return Array.from(iterator(x))
 }
 
 module.exports = array

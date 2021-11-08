@@ -5,7 +5,7 @@
 
 const { expect } = require('test/utils')
 
-const range = require('iterators/range')
+const { range } = require('iterators')
 
 describe('range', () => {
   it('produces an exclusive range using an end point', () => {

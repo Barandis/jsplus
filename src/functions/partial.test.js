@@ -5,7 +5,7 @@
 
 const { expect } = require('test/utils')
 
-const partial = require('functions/partial')
+const { partial } = require('functions')
 
 describe('partial', () => {
   it('partially applies arguments to a function', () => {

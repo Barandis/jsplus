@@ -5,13 +5,9 @@
 
 const { expect } = require('test/utils')
 
-const pipe = require('combinators/pipe')
-const pipev = require('combinators/pipev')
-const swap = require('combinators/swap')
-const curry = require('functions/curry')
-const add = require('operators/add')
-const ne = require('operators/ne')
-const rem = require('operators/rem')
+const { pipe, pipev, swap } = require('combinators')
+const { curry } = require('functions')
+const { add, ne, rem } = require('operators')
 
 const inc = add(1)
 const odd = pipe(swap(rem)(2))(ne(0))

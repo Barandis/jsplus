@@ -5,8 +5,8 @@
 
 const { expect, rand } = require('test/utils')
 
-const range = require('iterators/range')
-const cne = require('operators/cne')
+const { range } = require('iterators')
+const { cne } = require('operators')
 
 describe('cne', () => {
   it('tests two numbers for inequality', () => {
