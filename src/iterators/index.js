@@ -8,7 +8,9 @@
  */
 module.exports = {
   array: require('./array'),
+  drop: require('./drop'),
   enumerate: require('./enumerate'),
+  filter: require('./filter'),
   infinite: require('./infinite'),
   iterator: require('./iterator'),
   map: require('./map'),
@@ -16,4 +18,5 @@ module.exports = {
   reduce: require('./reduce'),
   reverse: require('./reverse'),
   scan: require('./scan'),
+  take: require('./take'),
 }
