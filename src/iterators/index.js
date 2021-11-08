@@ -9,6 +9,7 @@
 module.exports = {
   array: require('./array'),
   collect: require('./collect'),
+  concat: require('./concat'),
   drop: require('./drop'),
   enumerate: require('./enumerate'),
   filter: require('./filter'),
