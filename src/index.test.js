@@ -41,6 +41,7 @@ const curryv = require('functions/curryv')
 const partial = require('functions/partial')
 
 const array = require('iterators/array')
+const collect = require('iterators/collect')
 const drop = require('iterators/drop')
 const enumerate = require('iterators/enumerate')
 const filter = require('iterators/filter')
@@ -140,6 +141,7 @@ describe('src index', () => {
 
     // iterators
     expect(array).to.equal(index.array)
+    expect(collect).to.equal(index.collect)
     expect(drop).to.equal(index.drop)
     expect(enumerate).to.equal(index.enumerate)
     expect(filter).to.equal(index.filter)
