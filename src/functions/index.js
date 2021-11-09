@@ -12,7 +12,7 @@ module.exports = {
   curry3: require('./curry3'),
   curry4: require('./curry4'),
   curry5: require('./curry5'),
-  curryn: require('./curryn'),
   curryv: require('./curryv'),
   partial: require('./partial'),
+  uncurry: require('./uncurry'),
 }

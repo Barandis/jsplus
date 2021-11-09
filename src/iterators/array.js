@@ -11,14 +11,14 @@ const iterate = require('iterators/iterate')
  * This is just a nice functional wrapper for `[...iterable]`, but since everything else is
  * functions, it looks nicer to have this be a function too. It's mostly for turning the
  * iterators that this module tends to provide into arrays, but it will work on any kind of
- * value under the same rules as `{@link module:iterators.iterator|iterator}`.
+ * value under the same rules as `{@link module:iterators.iterate|iterate}`.
  *
  * This function will always turn the input into an array. For a function that will turn
  * inputs also into strings or objects as appropriate, see
  * `{@link module:functions.collect|collect}`
  *
  * ```javascript
- * const iter = array (iterator ([1, 2, 3, 4, 5]))
+ * const iter = array (iterate ([1, 2, 3, 4, 5]))
  * const str = array ('test')
  * const obj = array ({a: 1, b: 2})
  * const fn = array (x => (x < 5 ? x : undefined))

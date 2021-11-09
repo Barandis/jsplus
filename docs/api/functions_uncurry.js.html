@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>iterators/concat.js - Documentation</title>
+    <title>functions/uncurry.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">iterators/concat.js</h1>
+    <h1 class="page-title">functions/uncurry.js</h1>
     
 
     
@@ -47,42 +47,48 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const curry2 = require('functions/curry2')
-const iterate = require('iterators/iterate')
-
 /**
- * Concatenates two collections. The result is an iterator that first yields elements of the
- * first collection, and when that is finished, the elements over the second collection.
+ * Reverses the currying on a function, returning a function of multiple parameters.
  *
- * This function works fine with infinite iterators, but be aware that if the first
- * collection is an infinite iterator, the second collection will never be iterated over.
+ * Since curried functions are all single-argument, there's no way to automatically read the
+ * number of arguments in the entire function. For this reason, `uncurry` has a second
+ * argument like `{@link module:functions.curry|curry}`, but in this case, the argument is
+ * *not* optional.
+ *
+ * The returned function takes `n` arguments. Like any other JavaScript function, if you
+ * pass more arguments than that, the extra will be ignored, and if you pass fewer, the
+ * unspecified arguments will be set to `undefined`.
+ *
+ * It is the responsibility of the caller of `uncurry` to get `n` right, as `uncurry` will
+ * faithfully produce an `n`-parameter function even if that's not actually the right number
+ * of parameters. Getting `n` wrong can lead to functions that return functions rather than
+ * expected values (if `n` is too low) or functions that throw errors when they're called
+ * (if `n` is to high).
  *
  * ```javascript
- * const arrarr = concat ([1, 2, 3]) ([4, 5, 6])
- * const arrstr = concat ([1, 2, 3]) ('test')
- * const strstr = concat ('test') ('ing')
- *
- * console.log(collect(arrarr)) // [1, 2, 3, 4, 5, 6]
- * console.log(collect(arrstr)) // [1, 2, 3, 't', 'e', 's', 't']
- * console.log(collect(strstr)) // "testing"
+ * const curriedSum = a => b => c => a + b + c
+ * const sum = uncurry(sum, 3)
+ * const result = sum(1, 2, 3)
+ * console.log(sum) // 6
  * ```
  *
- * @param {*} x The first collection to be concatenated.
- * @param {*} y The second collection to be concatenated.
- * @returns {iterator} An iterator of all of the elements of `x` followed by all of the
- *      elements of `y`.
- * @alias module:iterators.concat
+ * @param {function} fn A curried function of `n` parameters.
+ * @param {number} n The number of parameters in the curried function `fn`.
+ * @returns {function} An uncurried function of `n` parameters that does the same thing as
+ *      the original function `fn`.
+ * @alias module:functions.uncurry
  */
-function* concat(x, y) {
-  for (const value of iterate(x)) {
-    yield value
+function uncurry(fn, n) {
+  if (n &lt; 2) {
+    return fn
   }
-  for (const value of iterate(y)) {
-    yield value
+  return (...args) => {
+    for (let i = args.length; i &lt; n; i += 1) args.push(undefined)
+    return args.slice(0, n).reduce((x, y) => x(y), fn)
   }
 }
 
-module.exports = curry2(concat)
+module.exports = uncurry
 </code></pre>
         </article>
     </section>
