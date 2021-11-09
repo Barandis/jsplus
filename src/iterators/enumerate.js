@@ -21,11 +21,11 @@ const iterate = require('iterators/iterate')
  * yielded tuple) from a number other than 0. This number can be passed in as the optional
  * `start` parameter.
  *
- * @param {iterable} x The iterable to be enumerated.
+ * @param {iterable} x The collection to be enumerated.
  * @param {number} [start=0] The index of the first tuple that gets yielded. Every
- *     succeeding tuple has its index incremented by 1.
- * @yields {array} A tuple of the index of a value in the iterable and the value
- *     itself.
+ *      succeeding tuple has its index incremented by 1.
+ * @returns {iterator} An iterator containing one entry for each element in `x`. Each entry
+ *      will be a two-element array of the index followed by the value.
  * @alias module:iterators.enumerate
  */
 function* enumerate(x, start = 0) {

@@ -26,7 +26,8 @@ const iterate = require('iterators/iterate')
  *      to that element; the elements that cause the predicate to return `true` are the ones
  *      that are retained in the result iterator.
  * @param {*} x The collection to filter.
- * @yields {*} Each element of `x` that causes `fn`, when applied to it, to return `true`.
+ * @returns {iterator} An iterator containing each element in `x` that makes `fn` return
+ *      `true` when applied to it.
  * @alias module:iterators.filter
  */
 function* filter(fn, x) {

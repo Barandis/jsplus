@@ -644,7 +644,7 @@ elements of <code>y</code>.</p>
 
     
 
-    <h4 class="name" id=".count"><span class="type-signature">(generator, static) </span>count<span class="signature">(start<span class="signature-attributes">opt</span>, step<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    <h4 class="name" id=".count"><span class="type-signature">(generator, static) </span>count<span class="signature">(start<span class="signature-attributes">opt</span>, step<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {iterator}</span></h4>
 
     
 
@@ -656,7 +656,7 @@ elements of <code>y</code>.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="iterators_count.js.html">iterators/count.js</a>, <a href="iterators_count.js.html#line38">line 38</a>
+        <a href="iterators_count.js.html">iterators/count.js</a>, <a href="iterators_count.js.html#line39">line 39</a>
     </li></ul></dd>
     
 
@@ -850,13 +850,12 @@ console.log(iter.next().value) // 43
 
 
 
+<h5>Returns:</h5>
 
-		
-<h5>Yields:</h5>		
-		
         
 <div class="param-desc">
-    The start value first, and then the last value plus the step value.
+    <p>An infinite iterator starting at <code>start</code> and increasing by <code>step</code> on
+each iteration.</p>
 </div>
 
 
@@ -867,13 +866,15 @@ console.log(iter.next().value) // 43
     </dt>
     <dd>
         
-<span class="param-type">number</span>
+<span class="param-type">iterator</span>
 
 
     </dd>
 </dl>
-		
+
     
+
+
 
         
             
@@ -1071,7 +1072,7 @@ console.log(collect(obj)) // { d: 4, e: 5 }
 
     
 
-    <h4 class="name" id=".enumerate"><span class="type-signature">(generator, static) </span>enumerate<span class="signature">(x, start<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {array}</span></h4>
+    <h4 class="name" id=".enumerate"><span class="type-signature">(generator, static) </span>enumerate<span class="signature">(x, start<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {iterator}</span></h4>
 
     
 
@@ -1204,7 +1205,7 @@ yielded tuple) from a number other than 0. This number can be passed in as the o
                 </td>
             
 
-            <td class="description last"><p>The iterable to be enumerated.</p></td>
+            <td class="description last"><p>The collection to be enumerated.</p></td>
         </tr>
 
     
@@ -1266,14 +1267,12 @@ succeeding tuple has its index incremented by 1.</p></td>
 
 
 
+<h5>Returns:</h5>
 
-		
-<h5>Yields:</h5>		
-		
         
 <div class="param-desc">
-    A tuple of the index of a value in the iterable and the value
-    itself.
+    <p>An iterator containing one entry for each element in <code>x</code>. Each entry
+will be a two-element array of the index followed by the value.</p>
 </div>
 
 
@@ -1284,20 +1283,22 @@ succeeding tuple has its index incremented by 1.</p></td>
     </dt>
     <dd>
         
-<span class="param-type">array</span>
+<span class="param-type">iterator</span>
 
 
     </dd>
 </dl>
-		
+
     
+
+
 
         
             
 
     
 
-    <h4 class="name" id=".filter"><span class="type-signature">(generator, static) </span>filter<span class="signature">(fn, x)</span><span class="type-signature"> &rarr; {*}</span></h4>
+    <h4 class="name" id=".filter"><span class="type-signature">(generator, static) </span>filter<span class="signature">(fn, x)</span><span class="type-signature"> &rarr; {iterator}</span></h4>
 
     
 
@@ -1309,7 +1310,7 @@ succeeding tuple has its index incremented by 1.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="iterators_filter.js.html">iterators/filter.js</a>, <a href="iterators_filter.js.html#line32">line 32</a>
+        <a href="iterators_filter.js.html">iterators/filter.js</a>, <a href="iterators_filter.js.html#line33">line 33</a>
     </li></ul></dd>
     
 
@@ -1461,13 +1462,12 @@ that are retained in the result iterator.</p></td>
 
 
 
+<h5>Returns:</h5>
 
-		
-<h5>Yields:</h5>		
-		
         
 <div class="param-desc">
-    Each element of `x` that causes `fn`, when applied to it, to return `true`.
+    <p>An iterator containing each element in <code>x</code> that makes <code>fn</code> return
+<code>true</code> when applied to it.</p>
 </div>
 
 
@@ -1478,13 +1478,15 @@ that are retained in the result iterator.</p></td>
     </dt>
     <dd>
         
-<span class="param-type">*</span>
+<span class="param-type">iterator</span>
 
 
     </dd>
 </dl>
-		
+
     
+
+
 
         
             
@@ -1723,7 +1725,7 @@ an iterator that returns only that value once is returned.</p>
 
     
 
-    <h4 class="name" id=".map"><span class="type-signature">(generator, static) </span>map<span class="signature">(fn, x)</span><span class="type-signature"> &rarr; {*}</span></h4>
+    <h4 class="name" id=".map"><span class="type-signature">(generator, static) </span>map<span class="signature">(fn, x)</span><span class="type-signature"> &rarr; {iterator}</span></h4>
 
     
 
@@ -1851,7 +1853,7 @@ iterator.</p></td>
             <td class="type">
             
                 
-<span class="param-type">iterable</span>
+<span class="param-type">*</span>
 
 
             
@@ -1883,14 +1885,12 @@ iterator.</p></td>
 
 
 
+<h5>Returns:</h5>
 
-		
-<h5>Yields:</h5>		
-		
         
 <div class="param-desc">
-    The return value of function `fn` when applied to the next value of
-     `iterable`.
+    <p>An iterator containing the return values of <code>fn</code> when applied to each
+of the elements of <code>x</code>.</p>
 </div>
 
 
@@ -1901,20 +1901,22 @@ iterator.</p></td>
     </dt>
     <dd>
         
-<span class="param-type">*</span>
+<span class="param-type">iterator</span>
 
 
     </dd>
 </dl>
-		
+
     
+
+
 
         
             
 
     
 
-    <h4 class="name" id=".range"><span class="type-signature">(generator, static) </span>range<span class="signature">(start<span class="signature-attributes">opt</span>, end, step<span class="signature-attributes">opt</span>, inclusive<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    <h4 class="name" id=".range"><span class="type-signature">(generator, static) </span>range<span class="signature">(start<span class="signature-attributes">opt</span>, end, step<span class="signature-attributes">opt</span>, inclusive<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {iterator}</span></h4>
 
     
 
@@ -1926,7 +1928,7 @@ iterator.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="iterators_range.js.html">iterators/range.js</a>, <a href="iterators_range.js.html#line72">line 72</a>
+        <a href="iterators_range.js.html">iterators/range.js</a>, <a href="iterators_range.js.html#line73">line 73</a>
     </li></ul></dd>
     
 
@@ -2226,13 +2228,12 @@ the range.</p></td>
 
 
 
+<h5>Returns:</h5>
 
-		
-<h5>Yields:</h5>		
-		
         
 <div class="param-desc">
-    The values that make up the range.
+    <p>An iterator of numbers that make up the range, according to all of
+the parameters above.</p>
 </div>
 
 
@@ -2243,13 +2244,15 @@ the range.</p></td>
     </dt>
     <dd>
         
-<span class="param-type">number</span>
+<span class="param-type">iterator</span>
 
 
     </dd>
 </dl>
-		
+
     
+
+
 
         
             
@@ -2268,7 +2271,7 @@ the range.</p></td>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="iterators_reduce.js.html">iterators/reduce.js</a>, <a href="iterators_reduce.js.html#line70">line 70</a>
+        <a href="iterators_reduce.js.html">iterators/reduce.js</a>, <a href="iterators_reduce.js.html#line69">line 69</a>
     </li></ul></dd>
     
 
@@ -2422,9 +2425,8 @@ the current value and the next element as arguments.</p></td>
 
             
 
-            <td class="description last"><p>The collection to reduce. This can be any type for which
-<code>iterator</code> will produce a non-null value, meaning
-objects, functions, or anything that implements the iterable protocol.</p></td>
+            <td class="description last"><p>The collection to reduce. This can be of any type; a non-iterable value will
+be transformed into an array containing only that value.</p></td>
         </tr>
 
     
@@ -2645,7 +2647,7 @@ console.log(fn)  // [4, 3, 2, 1, 0]
 
     
 
-    <h4 class="name" id=".scan"><span class="type-signature">(generator, static) </span>scan<span class="signature">(fn, x)</span><span class="type-signature"> &rarr; {*}</span></h4>
+    <h4 class="name" id=".scan"><span class="type-signature">(generator, static) </span>scan<span class="signature">(fn, x)</span><span class="type-signature"> &rarr; {iterator}</span></h4>
 
     
 
@@ -2815,9 +2817,8 @@ the current value and the next element as arguments.</p></td>
 
             
 
-            <td class="description last"><p>The collection to scan. This can be any type for which
-<code>iterator</code> will produce a non-null value, meaning
-objects, functions, or anything that implements the iterable protocol.</p></td>
+            <td class="description last"><p>The collection to scan. This can be of any type; a non-iterable value will
+be transformed into an array containing only that value.</p></td>
         </tr>
 
     
@@ -2839,13 +2840,12 @@ objects, functions, or anything that implements the iterable protocol.</p></td>
 
 
 
+<h5>Returns:</h5>
 
-		
-<h5>Yields:</h5>		
-		
         
 <div class="param-desc">
-    The results of the reducer function as it is passed new elements.
+    <p>An iterator containing each of the return values of the reducer
+function <code>fn</code>.</p>
 </div>
 
 
@@ -2856,13 +2856,15 @@ objects, functions, or anything that implements the iterable protocol.</p></td>
     </dt>
     <dd>
         
-<span class="param-type">*</span>
+<span class="param-type">iterator</span>
 
 
     </dd>
 </dl>
-		
+
     
+
+
 
         
             

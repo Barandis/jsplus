@@ -105,9 +105,8 @@ const iterate = require('iterators/iterate')
  *
  * @param {function} fn The reducer function, a function of two parameters that will receive
  *      the current value and the next element as arguments.
- * @param {*} x The collection to reduce. This can be any type for which
- *      `{@link module:iterators.iterator|iterator}` will produce a non-null value, meaning
- *      objects, functions, or anything that implements the iterable protocol.
+ * @param {*} x The collection to reduce. This can be of any type; a non-iterable value will
+ *      be transformed into an array containing only that value.
  * @returns {*} The result of the reducer function's last call.
  * @alias module:iterators.reduce
  */

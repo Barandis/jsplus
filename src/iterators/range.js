@@ -66,7 +66,8 @@
  *     iteration.
  * @param {boolean} [inclusive=false] Determines whether `end` should be included as part of
  *     the range.
- * @yields {number} The values that make up the range.
+ * @returns {iterator} An iterator of numbers that make up the range, according to all of
+ *      the parameters above.
  * @alias module:iterators.range
  */
 function* range(start, end, step, inclusive) {

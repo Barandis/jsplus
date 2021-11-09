@@ -32,7 +32,8 @@
  *
  * @param {number} [start=0] The beginning value for the iterator.
  * @param {number} [step=1] The number added to the current value for the next value.
- * @yields {number} The start value first, and then the last value plus the step value.
+ * @returns {iterator} An infinite iterator starting at `start` and increasing by `step` on
+ *      each iteration.
  * @alias module:iterators.count
  */
 function* count(start = 0, step = 1) {
