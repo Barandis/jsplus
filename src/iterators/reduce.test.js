@@ -26,8 +26,8 @@ describe('scan', () => {
     const result = reduce((a, b) => (a + b).toUpperCase())('test')
     expect(result).to.equal('TEST')
   })
-  it('works with iterators', () => {
-    const result = reduce(add)(upTo5())
+  it('works with generator functions', () => {
+    const result = reduce(add)(upTo5)
     expect(result).to.equal(15)
   })
   it('works with objects', () => {

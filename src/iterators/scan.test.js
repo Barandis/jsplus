@@ -24,8 +24,8 @@ describe('scan', () => {
     const result = scan((a, b) => (a + b).toUpperCase())('test')
     expectIterator(result, ['t', 'TE', 'TES', 'TEST'])
   })
-  it('works with iterators', () => {
-    const result = scan(add)(upTo5())
+  it('works with generators', () => {
+    const result = scan(add)(upTo5)
     expectIterator(result, [0, 1, 3, 6, 10, 15])
   })
   it('works with objects', () => {

@@ -16,13 +16,13 @@ describe('reverse', () => {
     const result = reverse('testing')
     expect(collect(result)).to.equal('gnitset')
   })
-  it('reverses iterators', () => {
+  it('reverses generators', () => {
     function* five() {
       for (const i of range(5)) {
         yield i
       }
     }
-    const result = reverse(five())
+    const result = reverse(five)
     expect(collect(result)).to.deep.equal([4, 3, 2, 1, 0])
   })
   it('reverses objects', () => {

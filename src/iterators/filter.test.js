@@ -28,8 +28,8 @@ describe('filter', () => {
     const result = filter(lower)('TeStInG')
     expect(collect(result)).to.equal('etn')
   })
-  it('works with iterators', () => {
-    const result = filter(odd)(upTo5())
+  it('works with generator functions', () => {
+    const result = filter(odd)(upTo5)
     expect(collect(result)).to.deep.equal([1, 3, 5])
   })
   it('works with objects', () => {

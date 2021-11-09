@@ -22,8 +22,8 @@ describe('concat', () => {
     const result = concat('test')('ing')
     expect(collect(result)).to.deep.equal('testing')
   })
-  it('concatenates two iterators', () => {
-    const result = concat(upTo5())(upTo5())
+  it('concatenates two generators', () => {
+    const result = concat(upTo5)(upTo5)
     expect(collect(result)).to.deep.equal([0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5])
   })
   it('concatenates two objects', () => {

@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>combinators/rotl.js - Documentation</title>
+    <title>utilities/isGeneratorFunction.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">combinators/rotl.js</h1>
+    <h1 class="page-title">utilities/isGeneratorFunction.js</h1>
     
 
     
@@ -47,46 +47,23 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const curry = require('functions/curry')
-const curry4 = require('functions/curry4')
-
 /**
- * Rotates a three-parameter function's arguments so that the first parameter is applied
- * last.
+ * Determines whether a value is a generator function.
  *
- * To rotate the arguments in the other direction, use
- * `{@link module:combinators.rotr|rotr}`.
+ * This function will return `false` either for regular (non-generator) functions (functions
+ * that are not defined with `function*`) or for generators themselves (the objects that are
+ * returned when you invoke a generator function).
  *
- * This is an implementation of the **R\*** combinator. It takes its name from Factor's
- * `rot` function; Factor's function to rotate in the opposite direction is `-rot` and we
- * can't use a `-` in a function name in JavaScript, so we use `rotl` and `rotr` instead.
- *
- * `rotl` makes the first argument given into the last argument applied. This is very useful
- * for functions that take their data as their first argument; it can turn them into
- * functions which take their data as their last argument, which is in many cases easier to
- * compose.
- *
- * ```javascript
- * const sub3 = (x, y, z) => x - y - z
- *
- * const result = rotl (sub3) (1) (5) (-2) // equivalent of sub3 (5) (-2) (1)
- *
- * console.log(result)  // 6
- * ```
- *
- * @param {function} fn A function of three arguments.
- * @param {*} x The first argument, which `fn` will apply as its third argument.
- * @param {*} y The second argument, which `fn` will apply as its first argument.
- * @param {*} z The third argument, which `fn` will apply as its second argument.
- * @returns {function} A curried function which expects its arguments in left-rotated order
- *      from `fn` but otherwise behaves the same.
- * @alias module:combinators.rotl
+ * @param {*} `x` The value being tested to see if it is a generator function
+ * @returns {boolean} Either `true` if the test value is a generator function or `false` if
+ *      it is not.
+ * @alias module:utilities.isGeneratorFunction
  */
-function rotl(fn, x, y, z) {
-  return curry(fn)(y)(z)(x)
+function isGeneratorFunction(x) {
+  return Object.prototype.toString.call(x) === '[object GeneratorFunction]'
 }
 
-module.exports = curry4(rotl)
+module.exports = isGeneratorFunction
 </code></pre>
         </article>
     </section>

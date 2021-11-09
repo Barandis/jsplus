@@ -9,6 +9,7 @@
 module.exports = {
   isArray: require('./isArray'),
   isFunction: require('./isFunction'),
+  isGeneratorFunction: require('./isGeneratorFunction'),
   isNumber: require('./isNumber'),
   isObject: require('./isObject'),
   isString: require('./isString'),

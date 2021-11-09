@@ -4,6 +4,7 @@
 // https://opensource.org/licenses/MIT
 
 const isFunction = require('utilities/isFunction')
+const isGeneratorFunction = require('utilities/isGeneratorFunction')
 const isObject = require('utilities/isObject')
 
 /**
@@ -158,6 +159,24 @@ function* iterateItem(x) {
  * console.log(stopIter.next().done)     // true
  * ```
  *
+ * Finally, `iterate` behaves nicely with generator functions (and with generators
+ * themselves) but there are some things to be aware of.
+ *
+ * Passing in a generator function (anything actually defined with `function*`) will return
+ * a generator, meaning that `iterate` will invoke the generator function each time it's
+ * called. However, passing in a *generator* will result in the generator itself (because
+ * generators implement the iterable protocol but simply use it to return themselves).
+ *
+ * While both will work, this does mean that passing in the same *generator function*
+ * multiple times is fine, but passing in the same *generator* multiple times is probably
+ * not. This is because a generator is an iterator, especially in the sense that after its
+ * traversed, it's useless. Using a generator and then calling `iterate` with it again will
+ * just return the same spent generator. Calling `iterate` with a generator *function* will
+ * return a *new* generator, ready to be traversed from the beginning. The difference can be
+ * tricky to grasp, but it's important.
+ *
+ * Passing in either a generator is fine if it's only being used once.
+ *
  * If the argument is none of these things, then an iterator is returned that yields that
  * argument one time before completing.
  *
@@ -169,6 +188,8 @@ function* iterateItem(x) {
  */
 function iterate(x) {
   switch (true) {
+    case isGeneratorFunction(x):
+      return x()
     case isFunction(x[Symbol.iterator]):
       return x[Symbol.iterator]()
     case isFunction(x):

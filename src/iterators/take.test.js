@@ -24,8 +24,8 @@ describe('take', () => {
     const result = take(3)('testing')
     expect(collect(result)).to.equal('tes')
   })
-  it('works with iterators', () => {
-    const result = take(3)(naturals())
+  it('works with generators', () => {
+    const result = take(3)(naturals)
     expect(collect(result)).to.deep.equal([1, 2, 3])
   })
   it('works with objects', () => {

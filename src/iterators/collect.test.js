@@ -26,8 +26,8 @@ describe('collect', () => {
     const result = collect({ a: 1, b: 2, c: 3 })
     expect(result).to.deep.equal({ a: 1, b: 2, c: 3 })
   })
-  it('collects iterators into an array', () => {
-    const result = collect(upTo5())
+  it('collects generators into an array', () => {
+    const result = collect(upTo5)
     expect(result).to.deep.equal([0, 1, 2, 3, 4, 5])
   })
   it('collects function results into an array', () => {

@@ -16,6 +16,13 @@ function* five() {
 }
 
 describe('iterate', () => {
+  context('over generator functions', () => {
+    it('iterates over a generator produced from such a function', () => {
+      const result = array(iterate(five))
+      expect(result).to.deep.equal([1, 2, 3, 4, 5])
+    })
+  })
+
   context('over built-in iterable types', () => {
     context('allowing built-in iterator protocol usage', () => {
       it('iterates over strings', () => {

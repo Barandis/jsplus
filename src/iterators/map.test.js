@@ -24,8 +24,8 @@ describe('map', () => {
     const result = map(x => x.toUpperCase())('test')
     expect(collect(result)).to.equal('TEST')
   })
-  it('works with iterators', () => {
-    const result = map(add(1))(upTo5())
+  it('works with generator functions', () => {
+    const result = map(add(1))(upTo5)
     expect(collect(result)).to.deep.equal([1, 2, 3, 4, 5, 6])
   })
   it('works with objects', () => {

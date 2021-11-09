@@ -11,6 +11,7 @@ module.exports = {
   collect: require('./collect'),
   concat: require('./concat'),
   count: require('./count'),
+  cycle: require('./cycle'),
   drop: require('./drop'),
   enumerate: require('./enumerate'),
   filter: require('./filter'),

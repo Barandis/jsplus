@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>combinators/rotl.js - Documentation</title>
+    <title>iterators/cycle.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">combinators/rotl.js</h1>
+    <h1 class="page-title">iterators/cycle.js</h1>
     
 
     
@@ -47,46 +47,66 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-const curry = require('functions/curry')
-const curry4 = require('functions/curry4')
+const iterate = require('iterators/iterate')
 
 /**
- * Rotates a three-parameter function's arguments so that the first parameter is applied
- * last.
+ * Produces an iterator that cycles through the values in the input collection infinitely.
  *
- * To rotate the arguments in the other direction, use
- * `{@link module:combinators.rotr|rotr}`.
- *
- * This is an implementation of the **R\*** combinator. It takes its name from Factor's
- * `rot` function; Factor's function to rotate in the opposite direction is `-rot` and we
- * can't use a `-` in a function name in JavaScript, so we use `rotl` and `rotr` instead.
- *
- * `rotl` makes the first argument given into the last argument applied. This is very useful
- * for functions that take their data as their first argument; it can turn them into
- * functions which take their data as their last argument, which is in many cases easier to
- * compose.
+ * Like `{@link module:iterators.count|count}`, this function can't do anything that
+ * `{@link module:iterators.iterate|iterate}` can't already do. However, it can do it more
+ * easily.
  *
  * ```javascript
- * const sub3 = (x, y, z) => x - y - z
+ * const iter = cycle([1, 2, 3])
  *
- * const result = rotl (sub3) (1) (5) (-2) // equivalent of sub3 (5) (-2) (1)
+ * console.log(iter.next().value) // 1
+ * console.log(iter.next().value) // 2
+ * console.log(iter.next().value) // 3
+ * console.log(iter.next().value) // 1
+ * console.log(iter.next().value) // 2
  *
- * console.log(result)  // 6
+ * // The same function, but using iterate
+ * const iter2 = iterate(x => (1 + x % 3))
  * ```
  *
- * @param {function} fn A function of three arguments.
- * @param {*} x The first argument, which `fn` will apply as its third argument.
- * @param {*} y The second argument, which `fn` will apply as its first argument.
- * @param {*} z The third argument, which `fn` will apply as its second argument.
- * @returns {function} A curried function which expects its arguments in left-rotated order
- *      from `fn` but otherwise behaves the same.
- * @alias module:combinators.rotl
+ * Notably, `cycle` can take a single value and repeat that value ad infinitum. This can be
+ * done by `iterate` or by `count`, but again `cycle` does it more easily.
+ *
+ * ```javascript
+ * const iter = cycle(3)
+ *
+ * console.log(iter.next().value) // 3
+ * console.log(iter.next().value) // 3
+ * console.log(iter.next().value) // 3
+ * console.log(iter.next().value) // 3
+ * console.log(iter.next().value) // 3
+ *
+ * // The same function, but using count
+ * const iter2 = count(3, 0)
+ * // And again the same, but with iterate this time
+ * const iter3 = iterate(_ => 3)
+ * ```
+ *
+ * **Important note**: This function internally calls `iterate` on its argument as many
+ * times as it needed and then produces its values from those iterators. This means you
+ * should *not* call `cycle` with a generator argument, as once exhausted, the generator
+ * will no longer yield anything and the function will hang. Use a generator function
+ * instead.
+ *
+ * @param {*} x The collection to cycle through infinitely.
+ * @returns {iterator} An iterator that yields the elements of the input collection over and
+ *      over, infinitely.
+ * @alias module:iterators.cycle
  */
-function rotl(fn, x, y, z) {
-  return curry(fn)(y)(z)(x)
+function* cycle(x) {
+  for (;;) {
+    for (const value of iterate(x)) {
+      yield value
+    }
+  }
 }
 
-module.exports = curry4(rotl)
+module.exports = cycle
 </code></pre>
         </article>
     </section>

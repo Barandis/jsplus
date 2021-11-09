@@ -19,13 +19,13 @@ describe('array', () => {
       ['b', 2],
     ])
   })
-  it('transforms an iterator into an array', () => {
+  it('transforms an generator into an array', () => {
     function* five() {
       for (const i of range(5)) {
         yield i
       }
     }
-    const result = array(five())
+    const result = array(five)
     expect(result).to.deep.equal([0, 1, 2, 3, 4])
   })
   it('transforms an iterable function into an array', () => {

@@ -22,8 +22,8 @@ describe('drop', () => {
     const result = drop(3)('testing')
     expect(collect(result)).to.equal('ting')
   })
-  it('works with iterators', () => {
-    const result = drop(3)(upTo5())
+  it('works with generator functions', () => {
+    const result = drop(3)(upTo5)
     expect(collect(result)).to.deep.equal([3, 4, 5])
   })
   it('works with objects', () => {
