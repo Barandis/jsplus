@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>operators/cne.js - Documentation</title>
+    <title>iterators/takeWhile.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -32,7 +32,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">operators/cne.js</h1>
+    <h1 class="page-title">iterators/takeWhile.js</h1>
     
 
     
@@ -48,35 +48,39 @@
 // https://opensource.org/licenses/MIT
 
 const curry2 = require('functions/curry2')
+const iterate = require('iterators/iterate')
 
 /**
- * A curried function version of the `!=` coercing not equals operator.
+ * Returns the elements of a collection until a predicate returns `false`.
  *
- * You *probably* mean to use `{@link module:operators.ne|ne}` instead.
+ * The change from returning elements to not happens exactly once. Once the predicate is
+ * `false`, the return iterator is complete. It will not then test any further elements, so
+ * later elements that make the predicate produce `true` will not be yielded. (That's the
+ * difference between this function and `{@link module:iterators.filter|filter}`; the latter
+ * will continue to yield elements even after the first one that returns `false` from the
+ * predicate).
  *
  * ```javascript
- * console.log(3 != '3')      // false
- * console.log(cne (3) ('3')) // false
- *
- * const cne3 = cne (3)
- * console.log(cne3 ('3'))    // false
- *
- * console.log(3 != 4)        // true
- * console.log(cne (3) (4))   // true
- * console.log(cne3 (4))      // true
+ * const result = takeWhile (swap (lt) (3)) ([1, 2, 3, 1, 0])
+ * console.log(result) // [1, 2]
  * ```
  *
- * @param {*} x The first parameter.
- * @param {*} y The second parameter.
- * @returns {boolean} Whether the two arguments are unequal, with equality defined by `==`.
- * @alias module:operators.cne
+ * @param {function} fn A function of one parameter that returns a boolean (a predicate).
+ *      Elements of the input are passed into the predicate and are yielded by the result
+ *      iterator until the first one returns `false`.
+ * @param {*} x The collection to take elements from.
+ * @returns {iterator} An iterator that yields elements of `x` until the first one that
+ *      makes `fn` return `true`.
+ * @alias module:iterators.takeWhile
  */
-function cne(x, y) {
-  // eslint-disable-next-line eqeqeq
-  return x != y
+function* takeWhile(fn, x) {
+  for (const value of iterate(x)) {
+    if (!fn(value)) break
+    yield value
+  }
 }
 
-module.exports = curry2(cne)
+module.exports = curry2(takeWhile)
 </code></pre>
         </article>
     </section>

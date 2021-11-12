@@ -58,8 +58,8 @@ function collect(x) {
     return x
   }
 
-  const array = [...iterate(x)]
-  // The `array.every` would pass on empty arrays
+  const array = Array.from(iterate(x))
+  // `array.every` would succeed on empty arrays
   if (array.length > 0) {
     if (array.every(e => isString(e))) {
       return array.join('')

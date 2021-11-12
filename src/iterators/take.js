@@ -30,7 +30,7 @@ const range = require('iterators/range')
  */
 function* take(n, x) {
   const iter = iterate(x)
-  for (const _ of range(n, 0, -1)) {
+  for (const _ of range(n)) {
     const next = iter.next()
     if (next.done) {
       break

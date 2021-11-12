@@ -55,6 +55,7 @@ const reduce = require('iterators/reduce')
 const reverse = require('iterators/reverse')
 const scan = require('iterators/scan')
 const take = require('iterators/take')
+const takeWhile = require('iterators/takeWhile')
 
 const add = require('operators/add')
 const band = require('operators/band')
@@ -158,6 +159,7 @@ describe('src index', () => {
     expect(reverse).to.equal(index.reverse)
     expect(scan).to.equal(index.scan)
     expect(take).to.equal(index.take)
+    expect(takeWhile).to.equal(index.takeWhile)
 
     // operators
     expect(add).to.equal(index.add)

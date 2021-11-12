@@ -22,6 +22,7 @@ const reduce = require('iterators/reduce')
 const reverse = require('iterators/reverse')
 const scan = require('iterators/scan')
 const take = require('iterators/take')
+const takeWhile = require('iterators/takeWhile')
 
 describe('interators index', () => {
   it('provides all of the exported iterator functions', () => {
@@ -40,5 +41,6 @@ describe('interators index', () => {
     expect(reverse).to.equal(index.reverse)
     expect(scan).to.equal(index.scan)
     expect(take).to.equal(index.take)
+    expect(takeWhile).to.equal(index.takeWhile)
   })
 })

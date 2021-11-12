@@ -22,4 +22,5 @@ module.exports = {
   reverse: require('./reverse'),
   scan: require('./scan'),
   take: require('./take'),
+  takeWhile: require('./takeWhile'),
 }
