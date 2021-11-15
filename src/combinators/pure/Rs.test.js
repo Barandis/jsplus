@@ -5,12 +5,7 @@
 
 const { expect } = require('test/utils')
 
-const B = require('combinators/pure/B')
-const C = require('combinators/pure/C')
-const Cs = require('combinators/pure/Cs')
-const K = require('combinators/pure/K')
-const Rs = require('combinators/pure/Rs')
-const S = require('combinators/pure/S')
+const { B, C, Cs, K, Rs, S } = require('combinators/pure')
 
 const sub = x => y => z => x - y - z
 const div = x => y => z => x / y / z

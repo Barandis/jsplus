@@ -5,15 +5,8 @@
 
 const { expect } = require('test/utils')
 
-const B = require('combinators/pure/B')
-const C = require('combinators/pure/C')
-const K = require('combinators/pure/K')
-const R = require('combinators/pure/R')
-const S = require('combinators/pure/S')
-const T = require('combinators/pure/T')
-const W = require('combinators/pure/W')
-const div = require('operators/div')
-const sub = require('operators/sub')
+const { B, C, K, R, S, T, W } = require('combinators/pure')
+const { div, sub } = require('operators')
 
 describe('R combinator', () => {
   it('rotates its arguments once to the left', () => {

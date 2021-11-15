@@ -5,14 +5,8 @@
 
 const { expect } = require('test/utils')
 
-const B = require('combinators/pure/B')
-const C = require('combinators/pure/C')
-const I = require('combinators/pure/I')
-const K = require('combinators/pure/K')
-const S = require('combinators/pure/S')
-const W = require('combinators/pure/W')
-const add = require('operators/add')
-const mul = require('operators/mul')
+const { B, C, I, K, S, W } = require('combinators/pure')
+const { add, mul } = require('operators')
 
 describe('S combinator', () => {
   it('applies its first two arguments to its third, and then applies the results', () => {

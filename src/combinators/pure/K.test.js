@@ -5,9 +5,7 @@
 
 const { expect } = require('test/utils')
 
-const I = require('combinators/pure/I')
-const K = require('combinators/pure/K')
-const S = require('combinators/pure/S')
+const { I, K, S } = require('combinators/pure')
 
 describe('K combinator', () => {
   it('returns its first argument whatever the value of its second', () => {

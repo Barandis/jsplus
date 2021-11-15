@@ -5,13 +5,8 @@
 
 const { expect } = require('test/utils')
 
-const B = require('combinators/pure/B')
-const C = require('combinators/pure/C')
-const K = require('combinators/pure/K')
-const Q = require('combinators/pure/Q')
-const S = require('combinators/pure/S')
-const add = require('operators/add')
-const mul = require('operators/mul')
+const { B, C, K, Q, S } = require('combinators/pure')
+const { add, mul } = require('operators')
 
 describe('B combinator', () => {
   it('composes single-argument functions left-to-right', () => {
