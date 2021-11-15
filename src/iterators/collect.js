@@ -64,7 +64,7 @@ function collect(x) {
     if (array.every(e => isString(e))) {
       return array.join('')
     }
-    if (array.every(e => e.length === 2)) {
+    if (array.every(e => e?.length === 2)) {
       return array.reduce((obj, [k, v]) => {
         obj[k] = v
         return obj

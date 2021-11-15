@@ -13,6 +13,7 @@ module.exports = {
   count: require('./count'),
   cycle: require('./cycle'),
   drop: require('./drop'),
+  dropWhile: require('./dropWhile'),
   enumerate: require('./enumerate'),
   filter: require('./filter'),
   iterate: require('./iterate'),
