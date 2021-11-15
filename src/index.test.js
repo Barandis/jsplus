@@ -85,6 +85,7 @@ const opt = require('operators/opt')
 const plus = require('operators/plus')
 const pow = require('operators/pow')
 const prop = require('operators/prop')
+const propOf = require('operators/propOf')
 const rem = require('operators/rem')
 const sub = require('operators/sub')
 
@@ -190,6 +191,7 @@ describe('src index', () => {
     expect(plus).to.equal(index.plus)
     expect(pow).to.equal(index.pow)
     expect(prop).to.equal(index.prop)
+    expect(propOf).to.equal(index.propOf)
     expect(rem).to.equal(index.rem)
     expect(sub).to.equal(index.sub)
 

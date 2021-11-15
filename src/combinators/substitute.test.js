@@ -5,9 +5,9 @@
 
 const { expect } = require('test/utils')
 
-const { compose, substitute, swap } = require('combinators')
+const { compose, substitute } = require('combinators')
 const { reduce, reverse } = require('iterators')
-const { add, eq, mul, prop, sub } = require('operators')
+const { add, eq, mul, prop, propOf, subBy } = require('operators')
 
 describe('substitute', () => {
   it('applies a fn to a value and the result of another fn applied to that value', () => {
@@ -17,7 +17,7 @@ describe('substitute', () => {
       .and.to.equal(20)
   })
   it('can be used to look up the last element of an array', () => {
-    const lastElement = substitute(prop)(compose(swap(sub)(1))(swap(prop)('length')))
+    const lastElement = substitute(propOf)(compose(subBy(1))(prop('length')))
     const result = lastElement([1, 3, 5, 7, 9])
     expect(result).to.equal(9)
   })

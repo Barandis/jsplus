@@ -20,6 +20,7 @@ module.exports = {
   cne: require('./cne'),
   cond: require('./cond'),
   div: require('./div'),
+  divBy: require('./divBy'),
   eq: require('./eq'),
   ge: require('./ge'),
   gt: require('./gt'),
@@ -35,6 +36,9 @@ module.exports = {
   plus: require('./plus'),
   pow: require('./pow'),
   prop: require('./prop'),
+  propOf: require('./propOf'),
   rem: require('./rem'),
+  remBy: require('./remBy'),
   sub: require('./sub'),
+  subBy: require('./subBy'),
 }

@@ -6,7 +6,6 @@
 const { expect } = require('test/utils')
 
 const compose = require('combinators/compose')
-const swap = require('combinators/swap')
 const B = require('combinators/pure/B')
 const C = require('combinators/pure/C')
 const I = require('combinators/pure/I')
@@ -21,7 +20,7 @@ const prop = require('operators/prop')
 
 const sum = reduce(add)
 const rev = compose(reduce(add))(reverse)
-const count = swap(prop)('length')
+const count = prop('length')
 
 describe("S' combinator", () => {
   it('applies two unary functions to a value, then combines them with a binary function', () => {

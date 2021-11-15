@@ -5,7 +5,6 @@
 
 const { expect } = require('test/utils')
 
-const { swap } = require('combinators')
 const { collect, map } = require('iterators')
 const { add, prop } = require('operators')
 
@@ -29,7 +28,7 @@ describe('map', () => {
     expect(collect(result)).to.deep.equal([1, 2, 3, 4, 5, 6])
   })
   it('works with objects', () => {
-    const result = map(swap(prop)(1))({ a: 1, b: 2, c: 3 })
+    const result = map(prop(1))({ a: 1, b: 2, c: 3 })
     expect(collect(result)).to.deep.equal([1, 2, 3])
   })
   it('works with functions', () => {

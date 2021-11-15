@@ -5,12 +5,12 @@
 
 const { expect } = require('test/utils')
 
-const { compose, swap, substitute } = require('combinators')
+const { compose, substitute } = require('combinators')
 const { collect, filter } = require('iterators')
-const { eq, ne, prop, rem } = require('operators')
+const { eq, ne, prop, remBy } = require('operators')
 
-const odd = compose(ne(0))(swap(rem)(2))
-const oddValue = compose(odd)(swap(prop)(1))
+const odd = compose(ne(0))(remBy(2))
+const oddValue = compose(odd)(prop(1))
 const lower = substitute(eq)(x => x.toLowerCase())
 
 function* upTo5() {

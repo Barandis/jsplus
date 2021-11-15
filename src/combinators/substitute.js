@@ -29,8 +29,8 @@ const curry3 = require('functions/curry3')
  * // const lastIndex = array => array.length - 1
  * // const lastElement = array => array[lastIndex(array)]
  *
- * const lastIndex = compose (swap (sub) (1)) (swap (prop) ('length'))
- * const lastElement = substitute (prop) (lastIndex)
+ * const lastIndex = compose (swap (sub) (1)) (prop ('length'))
+ * const lastElement = substitute (propOf) (lastIndex)
  *
  * const result = lastElement([1, 2, 3, 4, 5])
  * console.log(result)  // 5
