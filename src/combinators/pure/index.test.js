@@ -21,6 +21,7 @@ const S = require('combinators/pure/S')
 const Sp = require('combinators/pure/Sp')
 const T = require('combinators/pure/T')
 const W = require('combinators/pure/W')
+const Z = require('combinators/pure/Z')
 
 describe('pure combinators index', () => {
   it('provides all of the exported combinators', () => {
@@ -38,5 +39,6 @@ describe('pure combinators index', () => {
     expect(Sp).to.equal(index.Sp)
     expect(T).to.equal(index.T)
     expect(W).to.equal(index.W)
+    expect(Z).to.equal(index.Z)
   })
 })

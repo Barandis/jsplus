@@ -21,4 +21,5 @@ module.exports = {
   Sp: require('./Sp'),
   T: require('./T'),
   W: require('./W'),
+  Z: require('./Z'),
 }

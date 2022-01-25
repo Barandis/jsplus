@@ -16,8 +16,9 @@
  *
  * The **T** combinator reverses function application, applying the function `b` to the
  * value `a`. This is a not-uncommon operation, and unlike many combinators, that operation
- * has adopted the bird name in many languages; i.e., both Haskell and Racket have a
- * `thrush` function.
+ * has adopted the bird name in some languages; i.e., Racket has a `thrush` function as a
+ * relatively standard part of its library, and Haskell implements it in a combinator
+ * library (separate from the `&` operator).
  *
  * @param {*} a A value which gets passed to function `b`.
  * @param {function} b A function of one parameter. This gets applied to value `a` and the

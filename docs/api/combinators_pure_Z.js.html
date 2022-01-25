@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>combinators/pure/Z.js - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-combinators.html">combinators</a><ul class='methods'><li data-type='method'><a href="module-combinators.html#.apply">apply</a></li><li data-type='method'><a href="module-combinators.html#.applyTo">applyTo</a></li><li data-type='method'><a href="module-combinators.html#.compose">compose</a></li><li data-type='method'><a href="module-combinators.html#.composev">composev</a></li><li data-type='method'><a href="module-combinators.html#.constant">constant</a></li><li data-type='method'><a href="module-combinators.html#.converge">converge</a></li><li data-type='method'><a href="module-combinators.html#.dup">dup</a></li><li data-type='method'><a href="module-combinators.html#.fix">fix</a></li><li data-type='method'><a href="module-combinators.html#.identity">identity</a></li><li data-type='method'><a href="module-combinators.html#.on">on</a></li><li data-type='method'><a href="module-combinators.html#.pipe">pipe</a></li><li data-type='method'><a href="module-combinators.html#.pipev">pipev</a></li><li data-type='method'><a href="module-combinators.html#.rotl">rotl</a></li><li data-type='method'><a href="module-combinators.html#.rotr">rotr</a></li><li data-type='method'><a href="module-combinators.html#.substitute">substitute</a></li><li data-type='method'><a href="module-combinators.html#.swap">swap</a></li></ul></li><li><a href="module-combinators_pure.html">combinators/pure</a><ul class='methods'><li data-type='method'><a href="module-combinators_pure.html#.B">B</a></li><li data-type='method'><a href="module-combinators_pure.html#.C">C</a></li><li data-type='method'><a href="module-combinators_pure.html#.Cs">Cs</a></li><li data-type='method'><a href="module-combinators_pure.html#.I">I</a></li><li data-type='method'><a href="module-combinators_pure.html#.Is">Is</a></li><li data-type='method'><a href="module-combinators_pure.html#.K">K</a></li><li data-type='method'><a href="module-combinators_pure.html#.P">P</a></li><li data-type='method'><a href="module-combinators_pure.html#.Q">Q</a></li><li data-type='method'><a href="module-combinators_pure.html#.R">R</a></li><li data-type='method'><a href="module-combinators_pure.html#.Rs">Rs</a></li><li data-type='method'><a href="module-combinators_pure.html#.S">S</a></li><li data-type='method'><a href="module-combinators_pure.html#.Sp">Sp</a></li><li data-type='method'><a href="module-combinators_pure.html#.T">T</a></li><li data-type='method'><a href="module-combinators_pure.html#.W">W</a></li><li data-type='method'><a href="module-combinators_pure.html#.Z">Z</a></li></ul></li><li><a href="module-functions.html">functions</a><ul class='methods'><li data-type='method'><a href="module-functions.html#.curry">curry</a></li><li data-type='method'><a href="module-functions.html#.curry2">curry2</a></li><li data-type='method'><a href="module-functions.html#.curry3">curry3</a></li><li data-type='method'><a href="module-functions.html#.curry4">curry4</a></li><li data-type='method'><a href="module-functions.html#.curry5">curry5</a></li><li data-type='method'><a href="module-functions.html#.curryv">curryv</a></li><li data-type='method'><a href="module-functions.html#.partial">partial</a></li><li data-type='method'><a href="module-functions.html#.uncurry">uncurry</a></li></ul></li><li><a href="module-iterators.html">iterators</a><ul class='methods'><li data-type='method'><a href="module-iterators.html#.array">array</a></li><li data-type='method'><a href="module-iterators.html#.collect">collect</a></li><li data-type='method'><a href="module-iterators.html#.concat">concat</a></li><li data-type='method'><a href="module-iterators.html#.count">count</a></li><li data-type='method'><a href="module-iterators.html#.cycle">cycle</a></li><li data-type='method'><a href="module-iterators.html#.drop">drop</a></li><li data-type='method'><a href="module-iterators.html#.dropWhile">dropWhile</a></li><li data-type='method'><a href="module-iterators.html#.enumerate">enumerate</a></li><li data-type='method'><a href="module-iterators.html#.filter">filter</a></li><li data-type='method'><a href="module-iterators.html#.iterate">iterate</a></li><li data-type='method'><a href="module-iterators.html#.map">map</a></li><li data-type='method'><a href="module-iterators.html#.range">range</a></li><li data-type='method'><a href="module-iterators.html#.reduce">reduce</a></li><li data-type='method'><a href="module-iterators.html#.reverse">reverse</a></li><li data-type='method'><a href="module-iterators.html#.scan">scan</a></li><li data-type='method'><a href="module-iterators.html#.take">take</a></li><li data-type='method'><a href="module-iterators.html#.takeWhile">takeWhile</a></li></ul></li><li><a href="module-operators.html">operators</a><ul class='methods'><li data-type='method'><a href="module-operators.html#.add">add</a></li><li data-type='method'><a href="module-operators.html#.band">band</a></li><li data-type='method'><a href="module-operators.html#.bls">bls</a></li><li data-type='method'><a href="module-operators.html#.bnot">bnot</a></li><li data-type='method'><a href="module-operators.html#.bor">bor</a></li><li data-type='method'><a href="module-operators.html#.brs">brs</a></li><li data-type='method'><a href="module-operators.html#.burs">burs</a></li><li data-type='method'><a href="module-operators.html#.bxor">bxor</a></li><li data-type='method'><a href="module-operators.html#.ceq">ceq</a></li><li data-type='method'><a href="module-operators.html#.cne">cne</a></li><li data-type='method'><a href="module-operators.html#.coal">coal</a></li><li data-type='method'><a href="module-operators.html#.cond">cond</a></li><li data-type='method'><a href="module-operators.html#.div">div</a></li><li data-type='method'><a href="module-operators.html#.divBy">divBy</a></li><li data-type='method'><a href="module-operators.html#.eq">eq</a></li><li data-type='method'><a href="module-operators.html#.ge">ge</a></li><li data-type='method'><a href="module-operators.html#.gt">gt</a></li><li data-type='method'><a href="module-operators.html#.land">land</a></li><li data-type='method'><a href="module-operators.html#.le">le</a></li><li data-type='method'><a href="module-operators.html#.lnot">lnot</a></li><li data-type='method'><a href="module-operators.html#.lor">lor</a></li><li data-type='method'><a href="module-operators.html#.lt">lt</a></li><li data-type='method'><a href="module-operators.html#.mul">mul</a></li><li data-type='method'><a href="module-operators.html#.ne">ne</a></li><li data-type='method'><a href="module-operators.html#.neg">neg</a></li><li data-type='method'><a href="module-operators.html#.opt">opt</a></li><li data-type='method'><a href="module-operators.html#.plus">plus</a></li><li data-type='method'><a href="module-operators.html#.pow">pow</a></li><li data-type='method'><a href="module-operators.html#.prop">prop</a></li><li data-type='method'><a href="module-operators.html#.propOf">propOf</a></li><li data-type='method'><a href="module-operators.html#.rem">rem</a></li><li data-type='method'><a href="module-operators.html#.remBy">remBy</a></li><li data-type='method'><a href="module-operators.html#.sub">sub</a></li><li data-type='method'><a href="module-operators.html#.subBy">subBy</a></li></ul></li><li><a href="module-primitives.html">primitives</a><ul class='methods'><li data-type='method'><a href="module-primitives.html#.bigint">bigint</a></li><li data-type='method'><a href="module-primitives.html#.boolean">boolean</a></li><li data-type='method'><a href="module-primitives.html#.number">number</a></li><li data-type='method'><a href="module-primitives.html#.string">string</a></li><li data-type='method'><a href="module-primitives.html#.symbol">symbol</a></li></ul></li><li><a href="module-utilities.html">utilities</a><ul class='methods'><li data-type='method'><a href="module-utilities.html#.isArray">isArray</a></li><li data-type='method'><a href="module-utilities.html#.isFunction">isFunction</a></li><li data-type='method'><a href="module-utilities.html#.isGeneratorFunction">isGeneratorFunction</a></li><li data-type='method'><a href="module-utilities.html#.isNumber">isNumber</a></li><li data-type='method'><a href="module-utilities.html#.isObject">isObject</a></li><li data-type='method'><a href="module-utilities.html#.isString">isString</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">combinators/pure/Z.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>// Copyright (c) 2021 Thomas J. Otterson
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+
+/**
+ * The **Z** combinator. This is the applicative or strict fixed point combinator.
+ *
+ * This is the famous **Y** combinator, except a version of it that works in a language with
+ * eager evaluation. In such languages, executing the regular **Y** combinator results in an
+ * infinite loop and therefore an error when the stack runs out of space. The **Z**
+ * combinator is a variation of **Y** that works with eager evaluation.
+ *
+ * | Property              | Value                     |
+ * |-----------------------|---------------------------|
+ * | Type signature        | `(a -> a) -> a`           |
+ * | Lambda representation | `λx.x(λx)`                |
+ * | Bird                  | Sage Bird                 |
+ *
+ * The difference between the **Y** and the **Z** combinators is that the former is useful
+ * only in lazy languages, and the latter can be used in strict/eager languages (such as
+ * JavaScript). The following discussion applies to both.
+ *
+ * This combinator is the *fixed-point* combinator. It takes a function, and it produces a
+ * new function that, when applied to itself, will return itself. This can be expressed
+ * mathematically as
+ * ```
+ * Z(f) = f(Z(f))
+ * ```
+ * It turns out that having a fixed point is necessary to producing recursion out of
+ * anonymous functions, and it turns out that this is what the **Y** / **Z** combinator is
+ * most famous for. (Famous does not mean practical; the use of the combinator for this
+ * reason is only necessary if your language doesn't have recursion, and JS does.)
+ *
+ * Take a factorial function as an example. This can easily be defined recursively like so:
+ * ```javascript
+ * const factorial = x => x &lt; 1 ? 1 : x * factorial(x - 1)
+ * ```
+ * The self-reference makes this function recursive, and it's also what makes it useless in
+ * the lambda calculus, where all functions are anonymous (i.e., they don't have names) and
+ * therefore cannot have references to names in their bodies.
+ *
+ * To do something like this anonymously, we have to change the function so that it does
+ * not reference itself. We do this by instead having it reference a function that is passed
+ * in as an argument.
+ * ```javascript
+ * const anonFact = f => x => x &lt; 1 ? 1 : x * f(x - 1)
+ * ```
+ * Now the function contains no reference to a named function, merely a reference to a
+ * function as parameter `f`. But what is `f` and how can we find it to pass it into this
+ * function?
+ *
+ * That's where **Z** comes in. It turns out that if you modify a recursive function in this
+ * way to take the formerly-recursive function as a parameter, the fixed point of that
+ * modified function will act just like a recursive function. And so:
+ * ```javascript
+ * const zfact = Z(anonFact)
+ * const f3 = zfact(3)
+ * const f5 = zfact(5)
+ * const f10 = zfact(10)
+ *
+ * console.log(f3)  // 6
+ * console.log(f5)  // 120
+ * console.log(f10) // 3628800
+ * ```
+ *
+ * @param {function} a A function to produce a fixed point for.
+ * @returns {function} A function that is the fixed point of `a`.
+ * @alias module:combinators/pure.Z
+ */
+const Z = a => (f => f(f))(f => a(x => f(f)(x)))
+
+module.exports = Z
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+</html>

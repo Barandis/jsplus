@@ -31,6 +31,7 @@ const curry3 = require('functions/curry3')
  *      application of `x`. The result of this function will be `compose`'s return value.
  * @param {function} g The first function executed, applied to `x`. Its result becomes the
  *      argument to `f`.
+ * @param {*} x The argument that is passed to `g`.
  * @returns Function `f`'s result when applied to the result of `g` being applied to `x`.
  * @alias module:combinators.compose
  */

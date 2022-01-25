@@ -5,10 +5,16 @@
 
 const { expect } = require('test/utils')
 
+const apply = require('combinators/apply')
+const applyTo = require('combinators/applyTo')
 const compose = require('combinators/compose')
 const composev = require('combinators/composev')
 const constant = require('combinators/constant')
+const converge = require('combinators/converge')
+const dup = require('combinators/dup')
+const fix = require('combinators/fix')
 const identity = require('combinators/identity')
+const on = require('combinators/on')
 const pipe = require('combinators/pipe')
 const pipev = require('combinators/pipev')
 const rotl = require('combinators/rotl')
@@ -30,6 +36,7 @@ const S = require('combinators/pure/S')
 const Sp = require('combinators/pure/Sp')
 const T = require('combinators/pure/T')
 const W = require('combinators/pure/W')
+const Z = require('combinators/pure/Z')
 
 const curry = require('functions/curry')
 const curry2 = require('functions/curry2')
@@ -108,10 +115,16 @@ const index = require('.')
 describe('src index', () => {
   it('provides all of the exported functions', () => {
     // combinators
+    expect(apply).to.equal(index.apply)
+    expect(applyTo).to.equal(index.applyTo)
     expect(compose).to.equal(index.compose)
     expect(composev).to.equal(index.composev)
     expect(constant).to.equal(index.constant)
+    expect(converge).to.equal(index.converge)
+    expect(dup).to.equal(index.dup)
+    expect(fix).to.equal(index.fix)
     expect(identity).to.equal(index.identity)
+    expect(on).to.equal(index.on)
     expect(pipe).to.equal(index.pipe)
     expect(pipev).to.equal(index.pipev)
     expect(rotl).to.equal(index.rotl)
@@ -134,6 +147,7 @@ describe('src index', () => {
     expect(Sp).to.equal(index.Sp)
     expect(T).to.equal(index.T)
     expect(W).to.equal(index.W)
+    expect(Z).to.equal(index.Z)
 
     // functions
     expect(curry).to.equal(index.curry)
