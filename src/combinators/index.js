@@ -13,6 +13,7 @@ module.exports = {
   apply: require('./apply'),
   applyTo: require('./applyTo'),
   compose: require('./compose'),
+  compose2: require('./compose2'),
   composev: require('./composev'),
   constant: require('./constant'),
   converge: require('./converge'),

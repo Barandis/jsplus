@@ -8,6 +8,7 @@
  */
 module.exports = {
   B: require('./B'),
+  B1: require('./B1'),
   C: require('./C'),
   Cs: require('./Cs'),
   I: require('./I'),

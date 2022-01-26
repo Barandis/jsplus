@@ -19,9 +19,9 @@ const curry4 = require('functions/curry4')
  * database, for example) or to preprocess values before performing a calculation with `f`.
  *
  * ```javascript
- * const getLen = prop ('length')
- * const compare = (a, b) => a < b ? 'second' : 'first'
- * const longest = on (compare) (getLen)
+ * const size = prop ('length')
+ * const compare = compose2 (rotr (cond) ('second') ('first')) (lt)
+ * const longest = on (compare) (size)
  *
  * const ex1 = longest ([1, 2, 3]) ([1, 2, 3, 4])
  * const ex2 = longest ([1, 2, 3]) ([1, 2])

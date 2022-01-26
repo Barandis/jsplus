@@ -8,6 +8,7 @@ const { expect } = require('test/utils')
 const index = require('combinators/pure')
 
 const B = require('combinators/pure/B')
+const B1 = require('combinators/pure/B1')
 const C = require('combinators/pure/C')
 const Cs = require('combinators/pure/Cs')
 const I = require('combinators/pure/I')
@@ -26,6 +27,7 @@ const Z = require('combinators/pure/Z')
 describe('pure combinators index', () => {
   it('provides all of the exported combinators', () => {
     expect(B).to.equal(index.B)
+    expect(B1).to.equal(index.B1)
     expect(C).to.equal(index.C)
     expect(Cs).to.equal(index.Cs)
     expect(I).to.equal(index.I)
